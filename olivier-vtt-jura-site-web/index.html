@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivier Guide VTT - Explorez le Haut-Jura</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="header-home">
+        <nav class="container-main">
+        <div class="logo">Olivier VTT</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#galerie">Olivier TV</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#apropos">À propos</a></li>
+            </ul>
+        </nav>
+        <div class="scroll-progress"></div>
+    </header>
+    <section id="loader">
+    <div class="show-title-oliver">
+        <div class="title">OLIVIER LE FAIVRE - HAUT JURA VTT</div>
+        <div class="text-loader">0%</div>
+    </div>
+</section>
+
+    <section style="display: none;" id="accueil" class="hero">
+        <div class="container-main">
+            <div class="hero-content">
+                <h1>L'aventure <span id="randoTitle">RANDOS VTT</span> commence ici</h1>
+                <script>
+                    const title = document.getElementById("randoTitle");
+                    const colors = [
+                        "#FF0000", // rouge
+                        "#008000", // vert
+                        "#FFA500", // orange
+                        "#FFC0CB", // rose
+                        "#FFFF00", // jaune
+                        "#008080", // teal
+                        "#FFD700", // or
+                        "#A52A2A", // brun
+                        "#4B0082", // indigo
+                        "#00FF00", // vert clair
+                        "#DA70D6", // orchid
+                        "#C0C0C0", // argent
+                        "#20B2AA", // vert d’eau
+                        "#FF1493"  // rose profond
+                    ];
+                    let index = 0;
+
+                    function changeColor() {
+                        title.style.color = colors[index];
+                        index = (index + 1) % colors.length;
+                        setTimeout(changeColor, 1000); // change toutes les 1 seconde
+                    }
+
+                    changeColor(); // lance la fonction
+                    </script>
+                <p>Découvrez le Haut-Jura comme jamais auparavant avec Olivier, votre guide expert. VTT, raquettes, fatbike - des expériences inoubliables vous attendent dans des paysages à couper le souffle.</p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary">Réserver maintenant</a>
+                    <a href="#apropos" class="btn btn-secondary">Découvrir plus</a>
+                </div>
+            </div>
+        </div>
+           <div class="container-hero-box">
+            <div class="child-contrainer-hero-box">
+                <div id="box-1" class="hero-box-content"></div>
+                 <div id="box-2" class="hero-box-content"></div>
+            </div>
+            <div id="box-3" class="hero-box-content"></div>
+        </div>
+    </section>
+      <section class="search-google-maps">
+        <h2 style="font-size: 40px;text-align: center;padding: 20px;">Rechercher les sites culturelle du JURA</h2>
+        <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un site touristique du Jura...">
+        </div>
+        <div class="site-list" id="siteList">
+        
+        <!-- Les sites seront ajoutés ici via JS -->
+        </div>
+    </section>
+    <section id="apropos" class="about">
+        <div class="container-main">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Votre guide d'exception</h2>
+                    <p>Passionné par les sports de montagne depuis plus de 15 ans, je transforme chaque sortie en aventure mémorable. Guide diplômé et expert local, je connais chaque sentier secret du Haut-Jura.</p>
+                    <p>Mon approche ? Personnaliser chaque expérience selon votre niveau et vos envies, tout en respectant notre environnement exceptionnel.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Aventuriers guidés</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual"></div>
+            </div>
+        </div>
+    </section>
+
+     <section id="olivier-tv" class="olivier-tv">
+    <h2 class="titles-services-main">Olivier TV</h2>
+        <div class="container-main-tv">
+            <div class="container-iframe">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lEmaovUgG5o?si=k4ebrAKJp70Q5MG7" 
+                        title="Vidéo Silo Images Août 22" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPACE SERVICES -->
+
+
+    <section class="body-services" id="services">
+    <h2 class="titles-services-main">Nos services</h2>
+    <div class="app-services" aria-live="polite">
+    <main class="container-services">
+        
+        <section class="grid-services" id="grid" aria-label="Grille d'éléments">
+        <!-- 12 cartes -->
+        <!-- Vous pouvez adapter les données ci-dessous à vos besoins -->
+        </section>
+    </main>
+
+    <!-- Backdrop -->
+    <div class="panel-backdrop-services" id="backdrop" tabindex="-1" aria-hidden="true"></div>
+
+    <!-- Panneau latéral / Modale -->
+    <aside class="panel-services" id="panel" aria-labelledby="panelTitle" aria-modal="true" role="dialog">
+        <header class="detail-header-services">
+         <button class="close-services" id="closeBtn" aria-label="Fermer le panneau">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.75 6.75L17.25 17.25M17.25 6.75L6.75 17.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        </button>
+        <h2 id="panelTitle">Détails</h2>
+       
+        </header>
+        <div class="panel-content-services">
+        <p class="badge-services" id="panelBadge">—</p>
+        <h3 class="title" id="panelName" style="margin:.2rem 0 .4rem"></h3>
+        <p class="desc" id="panelDesc" style="margin:.2rem 0 1rem"></p>
+        <div class="meta-services" id="panelMeta"></div>
+        <div id="panelExtra"></div>
+        <div id="panelPicture"></div>
+        </div>
+        <div class="panel-footer-services">
+        <button class="btn-services" id="prevBtn" aria-label="Précédent">Précédent</button>
+        <button class="btn-services" id="nextBtn" aria-label="Suivant">Suivant</button>
+        </div>
+    </aside>
+    </div>
+    </section>
+    <section id="galerie" class="gallery">
+        <div class="container-main">
+            <div class="btn-gallery">
+                <button class="gallery-btn left" id="galleryPrev"><i class="fas fa-arrow-left"></i></button>
+                <h2 class="section-title">Galerie</h2>
+                <button class="gallery-btn right" id="galleryNext"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Hautes Combe</h4>
+                        <p>Randonnée VTT</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Saint-Claude Lizon</h4>
+                        <p>Balade à la ferme traditionnelle</p>
+                    </div>
+                </div>
+               
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Le Pays des Lacs</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Rousses, La Dole</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Rousses, La Dole</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Rousses, La Dole</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Rousses, La Dole</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Les Rousses, La Dole</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Le Grand Vaux</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Le Grand Vaux</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+                  <div class="gallery-item">
+                    <div class="gallery-overlay">
+                        <h4>Le Grand Vaux</h4>
+                        <p>Magie hivernale sous les étoiles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="contact" class="contact">
+        <div class="container-main">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations</h3>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Olivier FAIVRE, Randos Haut-Jura VTT </br>Le Moulin-Chappez 39150 Grande-Rivière-Château</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>06 85 69 89 90</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <span>olivierfaivre.hautjura@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🌐</span>
+                        <a style="text-decoration: none;color:#006eff;cursor:pointer;" href="">Olivier Le Faivre Site Web</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-main">
+            <p>&copy; 2024 Olivier Guide VTT - Une expérience signée</p>
+            </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+    //SCRIPT SERVICES
+        const sites = [
+            {
+            nom: "Château de Joux",
+            adresse: "25520 La Cluse-et-Mijoux",
+            image: "../assets/search/chateau-de-joux.jpg",
+            map: "https://www.google.com/maps?q=Château+de+Joux"
+            },
+            {
+            nom: "Cascades du Hérisson",
+            adresse: "39300 Bonlieu",
+            image: "../assets/search/cascades-du-herisson.jpg",
+            map: "https://www.google.com/maps?q=Cascades+du+Hérisson"
+            },
+            {
+            nom: "Musée des Beaux-Arts de Dole",
+            adresse: "39100 Dole",
+            image: "../assets/search/musee-beaux-arts-dole.jpg",
+            map: "https://www.google.com/maps?q=Musée+des+Beaux-Arts+Dole"
+            }
+            ,
+            {
+            nom: "Georges de l'abime",
+            adresse: "39200 Saint Claud ",
+            image: "../assets/search/georges-de-labime.jpg",
+            map: "https://www.google.com/maps/place/Gorges+de+l'Ab%C3%AEme/@46.4021092,5.8673663,15z/data=!3m1!4b1!4m6!3m5!1s0x478cf2870636f2bb:0x6311c08586d3d79!8m2!3d46.4021102!4d5.8776875!16s%2Fg%2F11h51b68pd?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            }
+            ,
+            {
+            nom: "Lac de Chalain",
+            adresse: "39130 Fontenu",
+            image: "../assets/search/lac-de-chalain.jpg",
+            map: "https://www.google.com/maps/place/Lac+de+Chalain/@46.6705216,5.772592,14z/data=!3m1!4b1!4m6!3m5!1s0x478ce1d242dea6ed:0x190e49c9885d98e6!8m2!3d46.6719112!4d5.7871095!16s%2Fm%2F04f2h90?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            }
+            ,
+            {
+            nom: "Lac des Rousses",
+            adresse: "39220 Les Rousses",
+            image: "../assets/search/lac-des-rousses.jpg",
+            map: "https://www.google.com/maps/place/Lac+des+Rousses/@46.504376,6.0797937,15z/data=!3m1!4b1!4m6!3m5!1s0x478c581ed7689499:0xe835995058a21a5f!8m2!3d46.5049276!4d6.0918916!16s%2Fm%2F03h47g6?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            }
+            ,
+            {
+            nom: "Pic de L'aigle",
+            adresse: "39150 La-Chaux-du-Dombief",
+            image: "../assets/search/pic-de-laigle.jpg",
+            map: "https://www.google.com/maps/place/Pic+de+l'Aigle/@46.614667,5.8913448,15z/data=!3m1!4b1!4m6!3m5!1s0x478ce347fb3b4c97:0x5a9571b35ab6d8fb!8m2!3d46.614668!4d5.901666!16s%2Fg%2F122jr4w4?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            }
+            ,
+            {
+            nom: "Cascade de baumes les messions",
+            adresse: "Cascade de baumes les messieurs, 39210 Baume-les-Messieurs",
+            image: "../assets/search/reculee-de-baume-les-messieurs.jpg",
+            map: "https://www.google.com/maps/dir//Cascade+de+baumes+les+messieurs,+39210+Baume-les-Messieurs/@46.689028,5.6291268,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x478d2736125d07c7:0x8aa62d11801ff82c!2m2!1d5.6387604!2d46.6906696?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            }
+        ];
+
+        const siteList = document.getElementById('siteList');
+        const searchInput = document.getElementById('searchInput');
+
+        const displaySites = (filteredSites) => {
+            siteList.innerHTML = '';
+            filteredSites.forEach(site => {
+            const card = document.createElement('div');
+            card.className = 'site-card';
+            card.innerHTML = `
+                <img src="${site.image}" alt="${site.nom}">
+                <div class="site-info">
+                <h3>${site.nom}</h3>
+                <p>${site.adresse}</p>
+                <button class="button" onclick="window.open('${site.map}', '_blank')">Voir sur Google Maps</button>
+                </div>
+               
+            `;
+            siteList.appendChild(card);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+           
+            const loader = document.getElementById("loader");
+            const loaderText = document.querySelector(".text-loader");
+            const mainContent = document.querySelector("#accueil");
+            let percent = 0;
+            let interval = setInterval(() => {
+                percent++;
+                loaderText.textContent = percent + "%";
+
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    loader.style.display = "none";
+                    mainContent.style.display = "flex";
+                }
+            }, 20); // vitesse (20ms pour monter de 0 à 100 en ~2 secondes)
+
+
+            searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredSites = sites.filter(site => 
+            site.nom.toLowerCase().includes(searchTerm) || 
+            site.adresse.toLowerCase().includes(searchTerm)
+            );
+            displaySites(filteredSites);
+        });
+    });
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = question.querySelector('i');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+
+     // Animation des éléments au scroll
+        gsap.utils.toArray('[data-gsap]').forEach(element => {
+            gsap.fromTo(element, 
+                { 
+                    opacity: 0, 
+                    y: 50 
+                },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+    
+
+    //SCRIPT SERVICES
+       // --- Données de démonstration ---
+
+    pictures = [
+        "./assets/vtt/card-vtt.png",
+        "./assets/stroll/card-forest-stroll.png",
+        "./assets/hiking/hiking.png",
+        "./assets/raquette/card_treking_rental.png",
+        "./assets/raquette/card_trekking_snowshoe.png"
+    ]
+    badges = [
+        "Randonnée à VTT", 
+        "Balade à la ferme traditionnelle", 
+        "Randonnée pédestre", 
+        "Randonnée Raquettes",
+        "Location Raquettes en journéee"
+    ]
+    titles = [
+        "Découvrez les superbes points de vue du lac Vouglans", 
+        "Découverte d'une ferme taditionnelle et balade par le train",
+        "Découvrez les Gorges de la Cimante : sa grotte-resirgence et ses cascades",
+        "En hiver, testez la randonnée en raquette",
+        "En hiver, louez les raquettes pour voir les fabualeux paysages du Jura"
+    ]
+    pricesAdults = [
+        "44€",
+        "40€",
+         "21€",
+         "32€",
+         "10€"
+    ]
+    pricesChildren = [
+        "21€",
+        "20€",
+         "8€",
+         "16€",
+         "8€"
+    ]
+
+    extras = [
+        "Parcours empruntant l'ancienne voie romaine, puis s'aventurant dans les sentiers herbeux du secteur du Désert et ses prairies sèches. Au retour, on évolue sur de jolis singles au milieu des pins et des buis, le long des falaises qui dominent le lac de Vouglans.",
+        "Véritable folie née de l'esprit utopiste et avant-gardiste de l'époque, ainsi que de la volonté et de l'ambition des entrepreneurs locaux, l'implantation du chemin de fer dans les montagnes du Jura, entre Morbier, Morez et Saint-Claude a constitué un défi technologique extraordinaire pour la fin du 19ième siècle et l'aube du vingtième.",
+        "Une superbe balade ombragée qui longe le torrent de la Cimante, visite plusieurs cascades et permet de s'aventurer dans une grotte-résurgence ornée d'une magnifique concrétion.",
+        "Partez à la découverte de paysages enneigés grâce à une randonnée en raquettes, une activité accessible et conviviale pour tous. Nous vous proposons :Une immersion totale dans la nature hivernale, hors des sentiers battus.Des itinéraires adaptés à votre niveau, du parcours découverte à la randonnée sportive.La découverte de panoramas exceptionnels, loin du bruit et de la foule.Un encadrement par un guide passionné, qui partagera anecdotes, conseils et secrets de la montagne.",
+        "Partez à la découverte du Jura en toute liberté grâce à la location de raquettes. Équipés de matériel adapté, vous pourrez explorer les forêts enneigées, profiter du calme des grands espaces et admirer les panoramas uniques de la région. Que vous soyez débutant ou habitué, la raquette est une activité accessible à tous et idéale pour apprécier la beauté de l’hiver jurassien à votre rythme.",
+    ]
+    tags = [ 
+        "<span class='pill-1'>VTT - Niveau débutant</span>",
+        "<span class='pill-2'>Balade - Niveau intermédiaire</span>",
+        "<span class='pill-3'>Pédestre - Niveau intermédiaire</span>",
+        "<span class='pill-4'>Raquettes - Niveau intermédiaire</span>",
+        "<span class='pill-5'>Raquettes - Niveau intermédiaire à Confirmée</span>",
+    ]
+    modalPictures = [
+        "./assets/services/lac-vhouglans.jpg",
+        "./assets/services/forest-high-jura.jpg",
+        "./assets/services/trekking-jura.jpg",
+        "./assets/services/pedestre-hiking.jpg",
+        "./assets/services/trekking-locate.jpg"
+    ]
+
+    const data = Array.from({ length: 5 }).map((_, i) => ({
+        id: i ,
+        pictures: pictures[i],
+        badge: badges[i], 
+        title: titles[i],
+        pricesAdults: pricesAdults[i],
+        pricesChildren: pricesChildren[i],
+        desc: `En savoir plus`,
+        tags: [tags[i]],
+        extra: extras[i],
+        modalPictures: [modalPictures[i]]
+    }));
+
+
+    const grid = document.getElementById('grid');
+    const panel = document.getElementById('panel');
+    const backdrop = document.getElementById('backdrop');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+
+    const panelBadge = document.getElementById('panelBadge');
+    const panelName = document.getElementById('panelName');
+    const panelDesc = document.getElementById('panelDesc');
+    const panelMeta = document.getElementById('panelMeta');
+    const panelExtra = document.getElementById('panelExtra');
+    const panelPicture = document.getElementById('panelPicture');
+    let currentIndex = -1;
+
+    // Génère la grille
+    function buildGrid(){
+      grid.innerHTML = '';
+      data.forEach((item, idx)=>{
+        const card = document.createElement('button');
+        card.className = 'card-services';
+        card.type = 'button';
+        card.setAttribute('data-index', idx);
+        card.setAttribute('aria-label', `${item.title}, cliquez pour voir les détails`);
+        card.innerHTML = `
+           <img src="${item.pictures}" class="img-services" />
+            <div class="container-services">
+                <h2 class="badge-services">${item.badge}</h2>
+                <span class="title-services">${item.title}</span>
+            <div>
+            <div class="box-price">
+                <span class="prices-services">${item.pricesAdults}</span>
+                <span style="font-weight:400;"> / Adultes</span>
+            </div>
+            <div class="box-price">
+                <span class="prices-services">${item.pricesChildren}</span>
+                <span style="font-weight:400;"> / Enfants</span>
+            </div>
+        </div>      
+          <span class="desc-services">${item.desc}</span>
+        </div>
+        `;
+        card.addEventListener('click', ()=> openPanel(idx));
+        grid.appendChild(card);
+      })
+    }
+
+    function fillPanel(item){
+      panelBadge.textContent = item.badge;
+      panelName.textContent = item.title;
+      panelDesc.textContent = item.desc;
+      panelMeta.innerHTML = item.tags.map(t =>`${t}`).join('');
+      panelExtra.innerHTML = `<p style="color:#9fb3d4; line-height:1.6">${item.extra}</p>`;
+      panelPicture.innerHTML = item.modalPictures
+        .map(p => `<img class="img-panel-services" src="${p}" alt="image">`)
+        .join('');
+    }
+
+    function openPanel(idx){
+      currentIndex = idx;
+      fillPanel(data[idx]);
+      panel.classList.add('open');
+      backdrop.classList.add('open');
+      panel.setAttribute('aria-hidden','false');
+      backdrop.setAttribute('aria-hidden','false');
+      // Gestion du focus
+      panel.querySelector('#closeBtn').focus();
+      document.body.style.overflow='scroll';
+    }
+    function closePanel(){
+      panel.classList.remove('open');
+      backdrop.classList.remove('open');
+      panel.setAttribute('aria-hidden','true');
+      backdrop.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      // Rendre le focus à la carte courante
+      if(currentIndex>-1){
+        const btn = grid.querySelector(`[data-index="${currentIndex}"]`);
+        btn && btn.focus();
+      }
+    }
+
+    function next(){
+      if(currentIndex<0) return;
+      currentIndex = (currentIndex + 1) % data.length;
+      fillPanel(data[currentIndex]);
+    }
+    function prev(){
+      if(currentIndex<0) return;
+      currentIndex = (currentIndex - 1 + data.length) % data.length;
+      fillPanel(data[currentIndex]);
+    }
+
+    // Events
+    backdrop.addEventListener('click', closePanel);
+    closeBtn.addEventListener('click', closePanel);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+  
+
+    // Clavier : ESC pour fermer, flèches pour naviguer
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape' && backdrop.classList.contains('open')) closePanel();
+      if(e.key==='ArrowRight' && backdrop.classList.contains('open')) next();
+      if(e.key==='ArrowLeft' && backdrop.classList.contains('open')) prev();
+    });
+    const galleryGrid = document.getElementById("galleryGrid");
+    const prevBtnGallery = document.getElementById("galleryPrev");
+    const nextBtnGallery = document.getElementById("galleryNext");
+
+    prevBtnGallery.addEventListener("click", () => {
+    galleryGrid.scrollBy({ left: -300, behavior: "smooth" }); // recule de 300px
+    });
+
+    nextBtnGallery.addEventListener("click", () => {
+    galleryGrid.scrollBy({ left: 300, behavior: "smooth" }); // avance de 300px
+    });
+
+    buildGrid();
+   
+
+ 
+
+    </script>
+
+</body>
