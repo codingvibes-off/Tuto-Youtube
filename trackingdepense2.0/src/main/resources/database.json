@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nom": "Alice",
+      "email": "alice@example.com",
+      "depenses": [
+        {
+          "id": 101,
+          "categorie": "Alimentation",
+          "montant": 45.90,
+          "date": "2025-08-01",
+          "description": "Courses supermarché"
+        },
+        {
+          "id": 102,
+          "categorie": "Transport",
+          "montant": 15.00,
+          "date": "2025-08-02",
+          "description": "Ticket de métro"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nom": "Bob",
+      "email": "bob@example.com",
+      "depenses": [
+        {
+          "id": 201,
+          "categorie": "Divertissement",
+          "montant": 29.99,
+          "date": "2025-08-03",
+          "description": "Abonnement Netflix"
+        },
+        {
+          "id": 202,
+          "categorie": "Santé",
+          "montant": 60.00,
+          "date": "2025-08-05",
+          "description": "Consultation médecin"
+        }
+      ]
+    }
+  ]
+}
