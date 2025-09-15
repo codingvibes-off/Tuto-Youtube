@@ -13,15 +13,24 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "expense")
 public class Expense {
     @Id
-    @Column(name = "expense_id", columnDefinition = "uuid", updatable = false, nullable = false)
+    @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id; 
-    @Column(name = "montant", nullable = false)
-    private Double montant;
+
+    @Column(name = "amount", nullable = false)
+    private Double amount;
     @Column(name = "date", nullable = false)
     private Date date;
     @Column(name = "description", nullable = false)
