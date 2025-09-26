@@ -9,5 +9,5 @@ import com.example.tacking.entity.Expense;
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, UUID> {
-
+    
 }

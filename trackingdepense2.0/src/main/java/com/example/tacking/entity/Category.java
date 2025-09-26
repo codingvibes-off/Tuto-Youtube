@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "category")
+@Table(name = "categories")
 public class Category {
     @Id
     @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)

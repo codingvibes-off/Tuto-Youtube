@@ -1,41 +1,24 @@
 package com.example.tacking;
-import com.example.tacking.TackingApplication;
 import com.example.tacking.entity.Category;
 import com.example.tacking.entity.Expense;
 import com.example.tacking.entity.User;
 import com.example.tacking.repository.CategoryRepository;
 import com.example.tacking.repository.ExpenseRepository;
 import com.example.tacking.repository.UserRepository;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.http.MediaType;
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.sql.Date;
 import java.util.UUID;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -50,29 +33,59 @@ public class ExpenseControllerTestIT {
 
     @Autowired
     private ExpenseRepository expenseRepository;
+
+    @Autowired
+    private TestCreateObject testCreateObject;
+    //Date Object
+    private final Date date = java.sql.Date.valueOf("2019-05-02");
+    //CATEGORY
+    
+    private final String LABEL_1 = "Alimentation";
+    private final String LABEL_2 = "Course";
+    private final String LABEL_3 = "Investissement";
+
+    //USER
+    private final String MAIL_1 = UUID.randomUUID().toString()+"@example.com";
+    private final String MAIL_2 = UUID.randomUUID().toString()+"@example.com";
+    private final String MAIL_3 = UUID.randomUUID().toString()+"@example.com";
+    //EXPENSE
+    private final String NAME_1 = "User_1";
+    private final String NAME_2 = "User_2";
+    private final String NAME_3 = "User_3";
+
+    private final String DESCRIPTION_EXPENSE_1 = "Course supermarché";
+    private final String DESCRIPTION_EXPENSE_2 = "Taxi";
+    private final String DESCRIPTION_EXPENSE_3 = "Cinéma";
+
+    private final Double AMOUNT_EXPENSE_1 = 100.0;
+    private final Double AMOUNT_EXPENSE_2 = 100.0;
+    private final Double AMOUNT_EXPENSE_3 = 100.0;
     @BeforeEach
-    void setup() {
-        User user = new User();
-        user.setId(UUID.randomUUID()); // unique à chaque test
-        user.setName("Test User");
-        user.setEmail(UUID.randomUUID() + "@example.com"); // email unique
-        userRepository.save(user);
+    void init(){
+        //On crée les objets de données de tests
+        User user_1 = testCreateObject.createUser(UUID.randomUUID(),MAIL_1,NAME_1);
+        User user_2 = testCreateObject.createUser(UUID.randomUUID(),MAIL_2,NAME_2);
+        User user_3 = testCreateObject.createUser(UUID.randomUUID(),MAIL_3,NAME_3);
 
-        Category category = new Category();
-        category.setId(UUID.randomUUID());
-        category.setLabel("Test Category");
-        category.setDate(java.sql.Date.valueOf("2025-09-15"));
-        categoryRepository.save(category);
+        userRepository.save(user_1);
+        userRepository.save(user_2);
+        userRepository.save(user_3);
 
-        Expense expense = new Expense();
-        expense.setId(UUID.randomUUID());
-        expense.setAmount(100.0);
-        expense.setDescription("Test Expense 1");
-        expense.setDate(java.sql.Date.valueOf("2025-09-15"));
-        expense.setUser(user);
-        expense.setCategory(category);
-        expenseRepository.save(expense);
+        Category category_1 = testCreateObject.createCategory(UUID.randomUUID(),date, LABEL_1);
+        Category category_2 = testCreateObject.createCategory(UUID.randomUUID() ,date, LABEL_2);
+        Category category_3 = testCreateObject.createCategory(UUID.randomUUID(), date, LABEL_3);
+        
+        categoryRepository.save(category_1);
+        categoryRepository.save(category_2);
+        categoryRepository.save(category_3);
 
+        Expense expense_1 = testCreateObject.createExpense(UUID.randomUUID(),AMOUNT_EXPENSE_1, category_1, DESCRIPTION_EXPENSE_1, user_1, date);
+        Expense expense_2 = testCreateObject.createExpense(UUID.randomUUID(),AMOUNT_EXPENSE_2, category_2, DESCRIPTION_EXPENSE_2, user_2, date);
+        Expense expense_3 = testCreateObject.createExpense(UUID.randomUUID(),AMOUNT_EXPENSE_3, category_3, DESCRIPTION_EXPENSE_3, user_3, date);
+        //Sauvegarde en base de donnée
+        expenseRepository.save(expense_1);
+        expenseRepository.save(expense_2);
+        expenseRepository.save(expense_3);
     }
     @AfterEach
     void cleanup() throws IOException {
@@ -80,18 +93,29 @@ public class ExpenseControllerTestIT {
         categoryRepository.deleteAll();
         userRepository.deleteAll();
     }
+
     @Test
     void shouldReturnAllExpenses() throws Exception {
-       ResultActions result = this.mockMvc.perform(MockMvcRequestBuilders.get("/api/expenses")
+       
+       this.mockMvc.perform(MockMvcRequestBuilders.get("/api/expenses")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
-        
-        MvcResult mvcResult = result.andReturn();
-        String responseBody = mvcResult.getResponse().getContentAsString();
-        System.out.println(responseBody);
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
 
+                .andExpect(jsonPath("$[0].amount").value(AMOUNT_EXPENSE_1))
+                .andExpect(jsonPath("$[0].date").value(date.toString()))
+                .andExpect(jsonPath("$[0].description").value(DESCRIPTION_EXPENSE_1))
+
+                .andExpect(jsonPath("$[1].amount").value(AMOUNT_EXPENSE_2))
+                .andExpect(jsonPath("$[1].date").value(date.toString()))
+                .andExpect(jsonPath("$[1].description").value(DESCRIPTION_EXPENSE_2))
+
+                .andExpect(jsonPath("$[2].amount").value(AMOUNT_EXPENSE_3))
+                .andExpect(jsonPath("$[2].date").value(date.toString()))
+                .andExpect(jsonPath("$[2].description").value(DESCRIPTION_EXPENSE_3))
+                .andReturn();
     }
+
 
 
 }

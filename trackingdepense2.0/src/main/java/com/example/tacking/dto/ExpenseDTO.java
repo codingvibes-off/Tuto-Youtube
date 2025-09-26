@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import lombok.Data;
 
 @Data
-public class DepenseDTO {
+public class ExpenseDTO {
     private String categorie; 
     private String montant;
     private DateTimeFormatter date;

@@ -2,16 +2,11 @@ package com.example.tacking.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,12 +20,15 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id; 
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "email", nullable = false, unique= true)
     private String email;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Expense> expenses = new ArrayList<>();
+    @Column(name = "password", nullable = false, unique= true)
+    private String password;
 }
+
+

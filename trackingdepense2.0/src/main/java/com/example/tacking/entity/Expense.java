@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,18 +30,18 @@ public class Expense {
     @Id
     @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id; 
-
     @Column(name = "amount", nullable = false)
     private Double amount;
     @Column(name = "date", nullable = false)
     private Date date;
     @Column(name = "description", nullable = false)
     private String description;
+    
     @ManyToOne
     @JoinColumn(name = "user_id") // clé étrangère vers User
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "category_id") // clé étrangère vers User
+    @JoinColumn(name = "category_id") // clé étrangère vers Catégorie
     private Category category;
 }
