@@ -16,6 +16,7 @@ public class UserDTO {
     private String name;
     private String email;
     private String password;
+    private Boolean enabled;
     public static UserDTO fromUserToUserDTO(User user){
         UserDTO userDTO = new UserDTO();
         userDTO.setEmail(user.getEmail());

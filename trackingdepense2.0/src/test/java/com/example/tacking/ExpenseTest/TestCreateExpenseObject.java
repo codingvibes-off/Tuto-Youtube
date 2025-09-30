@@ -1,4 +1,4 @@
-package com.example.tacking;
+package com.example.tacking.ExpenseTest;
 
 import java.sql.Date;
 import java.util.UUID;
@@ -10,8 +10,7 @@ import com.example.tacking.entity.Expense;
 import com.example.tacking.entity.User;
 
 @Component
-public class TestCreateObject {
-    
+public class TestCreateExpenseObject {
     //Créer une catégorie
     public Category createCategory(UUID id,Date date,  String label){
         Category category = new Category();

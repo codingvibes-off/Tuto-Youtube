@@ -38,7 +38,7 @@ public class Expense {
     private String description;
     
     @ManyToOne
-    @JoinColumn(name = "user_id") // clé étrangère vers User
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne

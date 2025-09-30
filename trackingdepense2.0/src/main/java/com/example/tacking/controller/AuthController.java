@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.tacking.util.JwtUtil;
 import com.example.tacking.dto.AuthRequestDTO;
+import com.example.tacking.dto.OtpDTO;
 import com.example.tacking.dto.UserAuthDTO;
 import com.example.tacking.dto.UserDTO;
+import com.example.tacking.dto.UserResponseDTO;
 import com.example.tacking.entity.User;
 import com.example.tacking.service.AuthUserService;
 
@@ -30,7 +32,7 @@ public class AuthController {
         this.authUserService = authUserService;
     }
     @PostMapping("/register")
-    public User register(@RequestBody UserDTO userDTO) {
+    public UserResponseDTO register(@RequestBody UserDTO userDTO) {
         return this.authUserService.register(userDTO);
     } 
     @PostMapping("/login")
@@ -38,6 +40,12 @@ public class AuthController {
         System.out.println(userDTO);
         return this.authUserService.verify(userDTO);
     }
+    @PostMapping("otp/check")
+    public OtpDTO otpCheck(@RequestBody OtpDTO otpDTO) {
+        System.out.println(otpDTO);
+        return this.authUserService.checkOtp(otpDTO);
+    }
+
 } 
 
 

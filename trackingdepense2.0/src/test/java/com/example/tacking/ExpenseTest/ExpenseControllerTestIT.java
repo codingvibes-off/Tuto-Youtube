@@ -1,4 +1,4 @@
-package com.example.tacking;
+package com.example.tacking.ExpenseTest;
 import com.example.tacking.entity.Category;
 import com.example.tacking.entity.Expense;
 import com.example.tacking.entity.User;
@@ -35,7 +35,7 @@ public class ExpenseControllerTestIT {
     private ExpenseRepository expenseRepository;
 
     @Autowired
-    private TestCreateObject testCreateObject;
+    private TestCreateExpenseObject testCreateObject;
     //Date Object
     private final Date date = java.sql.Date.valueOf("2019-05-02");
     //CATEGORY
