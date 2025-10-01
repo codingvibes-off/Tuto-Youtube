@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.tacking.config.SecurityConfig;
 import com.example.tacking.dto.OtpDTO;
+import com.example.tacking.dto.SuccessDTO;
 import com.example.tacking.dto.UserDTO;
 import com.example.tacking.dto.UserResponseDTO;
 import com.example.tacking.entity.Otp;
@@ -17,6 +18,9 @@ import com.example.tacking.entity.User;
 import com.example.tacking.repository.OtpRepository;
 import com.example.tacking.repository.UserRepository;
 import com.example.tacking.util.OtpUtil;
+
+import io.jsonwebtoken.io.IOException;
+import jakarta.mail.MessagingException;
 
 @Service
 public class AuthUserService {
@@ -41,7 +45,7 @@ public class AuthUserService {
     }
     
 
-    public UserResponseDTO register(UserDTO userDTO){
+    public UserResponseDTO register(UserDTO userDTO) throws IOException, MessagingException{
         if (this.userRepository.existsByEmail(userDTO.getEmail())) {
             throw new RuntimeException("Email Already Used");
         }
@@ -71,16 +75,20 @@ public class AuthUserService {
         }
 
     }
-    public OtpDTO checkOtp(OtpDTO otpDTO){
-        //Verifier si l'otp générer en base de donnée et entrer par l'utilisateur ton égale
-        if(otpDTO.getExpiration().isAfter(LocalDateTime.now())){
-            this.otpRepository.findByUseremailAndCode(otpDTO.getUseremail(), otpDTO.getCode())
+    public SuccessDTO checkOtp(OtpDTO otpDTO){
+        Otp otpCheck = this.otpRepository.findByUseremailAndCode(otpDTO.getUseremail(), otpDTO.getCode())
                 .orElseThrow(() -> new RuntimeException("Code and UserEmail not validated"));
-        } else {
-            throw new RuntimeException("Code and UserEmail not validated");
+        
+        if(otpCheck.getExpiration().isAfter(LocalDateTime.now())){
+            throw new RuntimeException("Localdate was expired");
         }
+
+        User userEnabled = otpCheck.getUser();
+        userEnabled.setEnabled(true);
+        this.userRepository.save(userEnabled);
         this.otpRepository.deleteByCode(otpDTO.getCode());
-        return otpDTO;
+        
+        return new SuccessDTO(true);
     }
     public String verify(UserDTO userDTO) {
         Authentication authentication = this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));
