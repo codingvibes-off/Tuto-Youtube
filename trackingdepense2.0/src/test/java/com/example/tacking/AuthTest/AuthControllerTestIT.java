@@ -7,6 +7,7 @@ import com.example.tacking.entity.User;
 import com.example.tacking.entity.Otp;
 import com.example.tacking.repository.OtpRepository;
 import com.example.tacking.repository.UserRepository;
+import com.example.tacking.util.OtpUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.jupiter.api.AfterEach;
@@ -56,11 +57,12 @@ public class AuthControllerTestIT {
     private final String LABEL_3 = "Investissement";
 
     //USER
-    private final String MAIL_1 = UUID.randomUUID().toString()+"@example.com";
+    private final String MAIL_1 = UUID.randomUUID().toString()+"@yopmail.com";
     //EXPENSE
     private final String NAME_1 = "User_1";
     //OTP CODE
     private final String OTP_CODE = "8890";
+    private LocalDateTime expiration_date = LocalDateTime.now();
     /*@AfterEach
     void cleanup() throws IOException {
         userRepository.deleteAll();
@@ -105,25 +107,26 @@ public class AuthControllerTestIT {
 
        this.userRepository.save(user);
 
-       Otp otp = new Otp();
-       otp.setCode(OTP_CODE);
-       otp.setExpiration(LocalDateTime.now());
-       otp.setUseremail(MAIL_1);
+    
+       Otp userRegisterOtp = Otp.builder()
+        .code(OTP_CODE)
+        .expiration(LocalDateTime.now().plusMinutes(5))
+        .useremail(user.getEmail())
+        .user(user)
+        .build();
 
-       this.otpRepository.save(otp);
+       this.otpRepository.save(userRegisterOtp);
 
        OtpDTO otpDTO = new OtpDTO();
        otpDTO.setCode(OTP_CODE);
-       otpDTO.setExpiration(LocalDateTime.now());
-       otpDTO.setUseremail(MAIL_1);
-
+       otpDTO.setUseremail(user.getEmail());
 
        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(otpDTO)))
     .andExpect(status().isOk())
     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-    .andExpect(jsonPath("$.successs").value(Boolean.valueOf(true)))
+    .andExpect(jsonPath("$.success").value(Boolean.valueOf(true)))
     .andReturn();
 
 

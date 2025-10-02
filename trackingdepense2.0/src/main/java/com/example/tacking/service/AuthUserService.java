@@ -21,6 +21,7 @@ import com.example.tacking.util.OtpUtil;
 
 import io.jsonwebtoken.io.IOException;
 import jakarta.mail.MessagingException;
+import jakarta.transaction.Transactional;
 
 @Service
 public class AuthUserService {
@@ -62,7 +63,9 @@ public class AuthUserService {
         .code(OtpUtil.generateOtp())
         .expiration(LocalDateTime.now().plusMinutes(5))
         .useremail(userDTO.getEmail())
+        .user(userRegister)
         .build();
+        this.otpRepository.save(userRegisterOtp);
         try {
             mailService.sendOtpEmail(userDTO.getEmail(), userRegisterOtp.getCode());
             return UserResponseDTO.builder()
@@ -75,11 +78,13 @@ public class AuthUserService {
         }
 
     }
+
+    @Transactional
     public SuccessDTO checkOtp(OtpDTO otpDTO){
         Otp otpCheck = this.otpRepository.findByUseremailAndCode(otpDTO.getUseremail(), otpDTO.getCode())
                 .orElseThrow(() -> new RuntimeException("Code and UserEmail not validated"));
         
-        if(otpCheck.getExpiration().isAfter(LocalDateTime.now())){
+        if(!otpCheck.getExpiration().isAfter(LocalDateTime.now())){
             throw new RuntimeException("Localdate was expired");
         }
 
@@ -88,7 +93,7 @@ public class AuthUserService {
         this.userRepository.save(userEnabled);
         this.otpRepository.deleteByCode(otpDTO.getCode());
         
-        return new SuccessDTO(true);
+        return SuccessDTO.builder().success(true).build();
     }
     public String verify(UserDTO userDTO) {
         Authentication authentication = this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));

@@ -48,7 +48,6 @@ public class AuthController {
     }
     @PostMapping("otp/check/{code}")
     public SuccessDTO otpCheck(@PathVariable String code, @RequestBody OtpDTO otpDTO) {
-        System.out.println(otpDTO);
         return this.authUserService.checkOtp(otpDTO);
     }
 
