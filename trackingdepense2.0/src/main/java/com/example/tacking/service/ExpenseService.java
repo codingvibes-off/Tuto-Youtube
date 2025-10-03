@@ -43,7 +43,9 @@ public SuccessDTO deleteExpense(@PathVariable UUID id) {
         .orElseThrow(() -> new RuntimeException("Expense not found"));
 
     this.expenseRepository.deleteById(expense.getId());
-    return new SuccessDTO(true);
+    return SuccessDTO.builder()
+    .success(true)
+    .message("Expense deleted Succesfull !").build();
 }
 
 }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Sullivan Sextans
@@ -15,6 +16,6 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserAuthDTO {
-    private String id;
+    private UUID id;
     private String email;
 }

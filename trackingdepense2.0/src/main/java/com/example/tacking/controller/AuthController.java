@@ -1,5 +1,8 @@
 package com.example.tacking.controller;
 
+import java.security.Principal;
+
+import com.example.tacking.util.SecurityUtil;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,6 +26,8 @@ import com.example.tacking.dto.UserDTO;
 import com.example.tacking.dto.UserResponseDTO;
 import com.example.tacking.entity.User;
 import com.example.tacking.service.AuthUserService;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping("/api/auth")
@@ -37,20 +42,26 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
         this.authUserService = authUserService;
     }
-    @PostMapping("/register")
+    @PostMapping("/user/register")
     public UserResponseDTO register(@RequestBody UserDTO userDTO) throws IOException, MessagingException {
         return this.authUserService.register(userDTO);
     } 
-    @PostMapping("/login")
+    @PostMapping("/user/login")
     public String login(@RequestBody UserDTO userDTO) {
-        System.out.println(userDTO);
         return this.authUserService.verify(userDTO);
     }
-    @PostMapping("otp/check/{code}")
+    @PutMapping("/user")
+    public UserDTO updateUser(@RequestBody UserDTO userDTO, Principal principal) {
+        UserAuthDTO userAuth = SecurityUtil.getUserFromPrincipal(principal);
+        return this.authUserService.updateUser(userAuth.getId(), userDTO);
+    }
+    
+    @PostMapping("/otp/check/{code}")
     public SuccessDTO otpCheck(@PathVariable String code, @RequestBody OtpDTO otpDTO) {
         return this.authUserService.checkOtp(otpDTO);
     }
 
+ 
 } 
 
 

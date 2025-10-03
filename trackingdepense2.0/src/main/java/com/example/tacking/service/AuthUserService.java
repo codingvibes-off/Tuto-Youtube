@@ -1,9 +1,13 @@
 package com.example.tacking.service;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
+import java.util.*;
 import org.springframework.mail.MailException;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -15,6 +19,7 @@ import com.example.tacking.dto.UserDTO;
 import com.example.tacking.dto.UserResponseDTO;
 import com.example.tacking.entity.Otp;
 import com.example.tacking.entity.User;
+import com.example.tacking.exception.OtpExpiredException;
 import com.example.tacking.repository.OtpRepository;
 import com.example.tacking.repository.UserRepository;
 import com.example.tacking.util.OtpUtil;
@@ -81,26 +86,57 @@ public class AuthUserService {
 
     @Transactional
     public SuccessDTO checkOtp(OtpDTO otpDTO){
-        Otp otpCheck = this.otpRepository.findByUseremailAndCode(otpDTO.getUseremail(), otpDTO.getCode())
-                .orElseThrow(() -> new RuntimeException("Code and UserEmail not validated"));
-        
-        if(!otpCheck.getExpiration().isAfter(LocalDateTime.now())){
-            throw new RuntimeException("Localdate was expired");
-        }
+        Optional<Otp> optionalOtp = otpRepository.findByUseremailAndCode(
+        otpDTO.getUseremail(),
+        otpDTO.getCode());
 
+    if (optionalOtp.isPresent()) {
+        Otp otpCheck = optionalOtp.get();
+        if(!otpCheck.getExpiration().isAfter(LocalDateTime.now())){
+            throw new OtpExpiredException("Localdate was expired");
+        }
         User userEnabled = otpCheck.getUser();
         userEnabled.setEnabled(true);
-        this.userRepository.save(userEnabled);
-        this.otpRepository.deleteByCode(otpDTO.getCode());
-        
-        return SuccessDTO.builder().success(true).build();
+        userRepository.save(userEnabled);
+
+        otpRepository.deleteByCode(otpDTO.getCode());
+        return SuccessDTO.builder()
+                .success(true)
+                .message("OTP validé avec succès")
+                .build();
+    } else {
+        return SuccessDTO.builder()
+                .success(false)
+                .message("Code And email not validated")
+                .build();
     }
+   }
     public String verify(UserDTO userDTO) {
-        Authentication authentication = this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));
-        if(authentication.isAuthenticated()){
-            return this.jwtService.generateToken(userDTO);
-        } else {
-            return "fail";
-        }  
+        try {
+            Authentication authentication = this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));
+            if(authentication.isAuthenticated()){
+                return this.jwtService.generateToken(userDTO);
+            } else {
+                throw new RuntimeException("User authentication failed");
+            }
+        } catch (BadCredentialsException e) {
+            throw new RuntimeException("Failed to check user authentication");
+        }
+      
+    }
+    
+    public UserDTO updateUser(UUID uuid, UserDTO userDTO) {
+       Optional<User> optionalUser = this.userRepository.findById(uuid);
+        if (optionalUser.isPresent()) {
+            User userUpdated = optionalUser.get();
+            if (Objects.nonNull(userDTO.getName())) {
+                userUpdated.setName(userDTO.getName());
+            }
+            if (Objects.nonNull(userDTO.getEmail())) {
+                userUpdated.setEmail(userDTO.getEmail());
+            }
+        }
+        return UserDTO.builder().email(userDTO.getEmail()).name(userDTO.getName()).build();
+
     }
 }

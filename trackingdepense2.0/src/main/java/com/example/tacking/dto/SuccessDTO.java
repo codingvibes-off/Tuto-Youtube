@@ -15,4 +15,5 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SuccessDTO {
     private Boolean success;
+    private String message;
 }

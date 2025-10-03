@@ -63,11 +63,12 @@ public class AuthControllerTestIT {
     //OTP CODE
     private final String OTP_CODE = "8890";
     private LocalDateTime expiration_date = LocalDateTime.now();
-    /*@AfterEach
+   
+    @AfterEach
     void cleanup() throws IOException {
-        userRepository.deleteAll();
-    }*/
-
+        this.userRepository.deleteAll();
+        this.otpRepository.deleteAll();
+    }
     @Test
     void shouldReturnRegisterUser() throws Exception {
        UserDTO userDTO = UserDTO.builder()
@@ -75,12 +76,6 @@ public class AuthControllerTestIT {
        .password("test")
        .name(NAME_1)
        .build();
-
-       /*OtpDTO otpDTO = new OtpDTO();
-       otpDTO.setCode("8890");
-       otpDTO.setExpiration(LocalDateTime.now());
-       otpDTO.setUseremail(MAIL_1);*/
-
        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/register")
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(userDTO)))
@@ -94,16 +89,21 @@ public class AuthControllerTestIT {
     User savedUser = userRepository.findByEmail(MAIL_1).orElseThrow();
     assertTrue(passwordEncoder.matches(userDTO.getPassword(), savedUser.getPassword()));
     }
-
-      @Test
+     @Test
+    void shoudlUserLogin() throws Exception {
+    }
+    @Test
+    void shoudlEmailAlreadyUsed() throws Exception {
+    }
+    @Test
     void shouldOtpCheck() throws Exception {
-       User user = User.builder()
-       .email(MAIL_1)
-       .enabled(false)
-       .password("test")
-       .version(0L)
-       .name(NAME_1)
-       .build();
+        User user = User.builder()
+        .email(MAIL_1)
+        .enabled(false)
+        .password("test")
+        .version(0L)
+        .name(NAME_1)
+        .build();
 
        this.userRepository.save(user);
 
@@ -128,10 +128,142 @@ public class AuthControllerTestIT {
     .andExpect(content().contentType(MediaType.APPLICATION_JSON))
     .andExpect(jsonPath("$.success").value(Boolean.valueOf(true)))
     .andReturn();
-
-
-
     }
+   
+    @Test
+    void shouldUserEmailNotValidated() throws Exception {
+             User user = User.builder()
+        .email("test.test-validated@yopmail.com")
+        .enabled(false)
+        .password("validated")
+        .version(0L)
+        .name("name-user-mail")
+        .build();
+        
+        this.userRepository.save(user);
+          
+        User different_user = User.builder()
+        .email("different_user@yopmail.com")
+        .enabled(false)
+        .password("not-validated")
+        .version(0L)
+        .name("differentemail")
+        .build();
+
+       this.userRepository.save(different_user);
+
+       Otp userRegisterOtp = Otp.builder()
+        .code("9000")
+        .expiration(LocalDateTime.now().plusMinutes(5))
+        .useremail("test.not-validated@yopmail.com")
+        .user(user)
+        .build();
+
+       this.otpRepository.save(userRegisterOtp);
+
+       OtpDTO otpDTO = new OtpDTO();
+       otpDTO.setCode("9000");
+       otpDTO.setUseremail(different_user.getEmail());
+
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(otpDTO)))
+    .andExpect(status().isOk())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.success").value(Boolean.valueOf(false)))
+    .andExpect(jsonPath("$.message").value("Code And email not validated"))
+    .andReturn();
+    }
+    
+    @Test
+    void shouldCodeNotValidated() throws Exception {
+               User user = User.builder()
+        .email("test.test-validated@yopmail.com")
+        .enabled(false)
+        .password("validated")
+        .version(0L)
+        .name("name-user-mail")
+        .build();
+        
+        this.userRepository.save(user);
+          
+        User different_user = User.builder()
+        .email("different_user@yopmail.com")
+        .enabled(false)
+        .password("not-validated")
+        .version(0L)
+        .name("differentemail")
+        .build();
+
+       this.userRepository.save(different_user);
+
+       Otp userRegisterOtp = Otp.builder()
+        .code("8000")
+        .expiration(LocalDateTime.now().plusMinutes(5))
+        .useremail("test.not-validated@yopmail.com")
+        .user(user)
+        .build();
+
+       this.otpRepository.save(userRegisterOtp);
+
+       OtpDTO otpDTO = new OtpDTO();
+       otpDTO.setCode("9000");
+       otpDTO.setUseremail(different_user.getEmail());
+
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", userRegisterOtp.getCode())
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(otpDTO)))
+    .andExpect(status().isOk())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.success").value(Boolean.valueOf(false)))
+    .andExpect(jsonPath("$.message").value("Code And email not validated"))
+    .andReturn();
+    }
+
+    @Test
+    void shoudlOtpWasExpired() throws Exception {
+            User user = User.builder()
+        .email(MAIL_1)
+        .enabled(false)
+        .password("test")
+        .version(0L)
+        .name(NAME_1)
+        .build();
+
+       this.userRepository.save(user);
+
+       Otp userRegisterOtp = Otp.builder()
+        .code(OTP_CODE)
+        .expiration(LocalDateTime.now().minusMinutes(5))
+        .useremail(user.getEmail())
+        .user(user)
+        .build();
+
+       this.otpRepository.save(userRegisterOtp);
+
+       OtpDTO otpDTO = new OtpDTO();
+       otpDTO.setCode(OTP_CODE);
+       otpDTO.setUseremail(user.getEmail());
+
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(otpDTO)))
+    .andExpect(status().isBadRequest())
+    .andExpect(jsonPath("$.message").value("Localdate was expired"))
+    .andReturn();
+    }
+
+
+    @Test
+     void shouldUpdateUser() throws Exception {
+
+     }
+    
+
+   
+   
+
+
 
 
 

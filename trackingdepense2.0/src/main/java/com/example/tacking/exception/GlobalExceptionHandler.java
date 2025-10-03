@@ -22,15 +22,12 @@ public class GlobalExceptionHandler {
         public String getMessage() { return message; }
         public LocalDateTime getTimestamp() { return timestamp; }
     }
-
-    // Méthode pour gérer toutes les RuntimeExceptions
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex) {
         ErrorResponse error = new ErrorResponse(ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
-    // Méthode pour gérer toutes les autres exceptions génériques
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(Exception ex) {
         ErrorResponse error = new ErrorResponse("Erreur interne : " + ex.getMessage());

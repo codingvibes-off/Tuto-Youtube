@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.UUID;
 
 public class UserPrincipal implements UserDetails {
 
@@ -18,6 +19,11 @@ public class UserPrincipal implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority("USER"));
     }
+    
+    public UUID getId() {
+        return user.getId();
+    }
+
 
     @Override
     public String getPassword() {
