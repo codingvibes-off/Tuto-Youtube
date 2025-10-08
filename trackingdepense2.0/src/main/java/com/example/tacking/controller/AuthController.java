@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.tacking.util.JwtUtil;
-
 import io.jsonwebtoken.io.IOException;
 import jakarta.mail.MessagingException;
 
 import com.example.tacking.dto.AuthRequestDTO;
+import com.example.tacking.dto.AuthResponseDTO;
 import com.example.tacking.dto.OtpDTO;
 import com.example.tacking.dto.SuccessDTO;
 import com.example.tacking.dto.UserAuthDTO;
@@ -34,12 +33,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
-    private final JwtUtil jwtUtil;
     private AuthUserService authUserService;
-    public AuthController(AuthenticationManager authenticationManager, JwtUtil jwtUtil,
+    public AuthController(AuthenticationManager authenticationManager,
     AuthUserService authUserService) {
         this.authenticationManager = authenticationManager;
-        this.jwtUtil = jwtUtil;
         this.authUserService = authUserService;
     }
     @PostMapping("/user/register")
@@ -47,12 +44,13 @@ public class AuthController {
         return this.authUserService.register(userDTO);
     } 
     @PostMapping("/user/login")
-    public String login(@RequestBody UserDTO userDTO) {
+    public AuthResponseDTO login(@RequestBody UserDTO userDTO) {
         return this.authUserService.verify(userDTO);
     }
-    @PutMapping("/user")
+    @PutMapping("/user/update")
     public UserDTO updateUser(@RequestBody UserDTO userDTO, Principal principal) {
         UserAuthDTO userAuth = SecurityUtil.getUserFromPrincipal(principal);
+        System.out.println(userAuth);
         return this.authUserService.updateUser(userAuth.getId(), userDTO);
     }
     
@@ -60,8 +58,6 @@ public class AuthController {
     public SuccessDTO otpCheck(@PathVariable String code, @RequestBody OtpDTO otpDTO) {
         return this.authUserService.checkOtp(otpDTO);
     }
-
- 
 } 
 
 

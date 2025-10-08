@@ -2,8 +2,6 @@ package com.example.tacking.service;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
-import java.util.Optional;
-
 import java.util.*;
 import org.springframework.mail.MailException;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,13 +11,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import com.example.tacking.config.SecurityConfig;
+import com.example.tacking.dto.AuthResponseDTO;
 import com.example.tacking.dto.OtpDTO;
 import com.example.tacking.dto.SuccessDTO;
 import com.example.tacking.dto.UserDTO;
 import com.example.tacking.dto.UserResponseDTO;
 import com.example.tacking.entity.Otp;
 import com.example.tacking.entity.User;
+import com.example.tacking.exception.InvalidCredentialsException;
 import com.example.tacking.exception.OtpExpiredException;
+import com.example.tacking.exception.UserDisabledException;
+import com.example.tacking.exception.UserNotFoundException;
 import com.example.tacking.repository.OtpRepository;
 import com.example.tacking.repository.UserRepository;
 import com.example.tacking.util.OtpUtil;
@@ -111,32 +113,48 @@ public class AuthUserService {
                 .build();
     }
    }
-    public String verify(UserDTO userDTO) {
+     public AuthResponseDTO verify(UserDTO userDTO) {
+        User user = userRepository.findByEmail(userDTO.getEmail())
+            .orElseThrow(() -> new UserNotFoundException("User not found"));
         try {
-            Authentication authentication = this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword()));
-            if(authentication.isAuthenticated()){
-                return this.jwtService.generateToken(userDTO);
-            } else {
-                throw new RuntimeException("User authentication failed");
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            userDTO.getEmail(),
+                            userDTO.getPassword()
+                    )
+            );
+            if (!authentication.isAuthenticated()) {
+                throw new InvalidCredentialsException("Invalid credentials");
             }
-        } catch (BadCredentialsException e) {
-            throw new RuntimeException("Failed to check user authentication");
-        }
-      
-    }
-    
-    public UserDTO updateUser(UUID uuid, UserDTO userDTO) {
-       Optional<User> optionalUser = this.userRepository.findById(uuid);
-        if (optionalUser.isPresent()) {
-            User userUpdated = optionalUser.get();
-            if (Objects.nonNull(userDTO.getName())) {
-                userUpdated.setName(userDTO.getName());
+            if(!user.getEnabled()){
+                throw new UserDisabledException("User account is disabled");
             }
-            if (Objects.nonNull(userDTO.getEmail())) {
-                userUpdated.setEmail(userDTO.getEmail());
-            }
-        }
-        return UserDTO.builder().email(userDTO.getEmail()).name(userDTO.getName()).build();
+            UserDTO userDTOToken = UserDTO.fromUserToUserDTO(user);
+            String accessToken = jwtService.generateToken(userDTOToken);
+            String refreshToken = jwtService.generateRefreshToken(userDTOToken);
 
+            return AuthResponseDTO.builder().accessToken(accessToken).refreshToken(refreshToken).build();
+        } catch (BadCredentialsException e) {
+            throw new RuntimeException("Invalid credentials"); 
+        }
     }
+    public UserDTO updateUser(UUID userId, UserDTO userDTO) {
+        System.out.print(userId + "" + userDTO );
+        return this.userRepository.findById(userId)
+                .map(userUpdated -> {
+                    if (Objects.nonNull(userDTO.getName())) {
+                        userUpdated.setName(userDTO.getName());
+                    }
+                    if (Objects.nonNull(userDTO.getEmail())) {
+                        userUpdated.setEmail(userDTO.getEmail());
+                    }
+                    if (Objects.nonNull(userDTO.getPassword())) {
+                        userUpdated.setPassword(this.securityConfig.passwordEncoder().encode(userDTO.getPassword()));
+                    }
+                    this.userRepository.save(userUpdated);
+                    return UserDTO.fromUserToUserDTO(userUpdated);
+                })
+                .orElseThrow(() -> new RuntimeException("User not found"));
+            }
+
 }

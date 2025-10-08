@@ -4,6 +4,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import com.example.tacking.dto.UserAuthDTO;
+import com.example.tacking.entity.User;
 
 import java.security.Principal;
 /**

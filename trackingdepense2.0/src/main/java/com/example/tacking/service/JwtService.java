@@ -1,26 +1,43 @@
 package com.example.tacking.service;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.io.IOException;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import com.example.tacking.dto.UserAuthDTO;
 import com.example.tacking.dto.UserDTO;
+import com.example.tacking.entity.User;
+import com.example.tacking.exception.UserNotFoundException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Function;
+import static io.jsonwebtoken.security.Keys.hmacShaKeyFor;
 
 @Service
 public class JwtService {
-    private String secretkey = "cf781";
-
+    private String secretkey = "uneCléTrèsLongueEtSécuriséePourSignerLeToken123456789";
+    public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     public JwtService() {
         try {
             KeyGenerator keyGen = KeyGenerator.getInstance("HmacSHA256");
@@ -30,8 +47,22 @@ public class JwtService {
             throw new RuntimeException(e);
         }
     }
+      
+     public String generateRefreshToken(UserDTO userDTO) {
+        Date now = new Date();
+        Date expiry = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 jours
+
+        return Jwts.builder()
+                .setSubject(userDTO.getEmail())
+                .setIssuedAt(now)
+                .setExpiration(expiry)
+                 .signWith(getKey())
+                .compact();
+    }
+
     public String generateToken(UserDTO userDTO) {
        Map<String, Object> claims = new HashMap<>();
+        claims.put("id", userDTO.getId());
         claims.put("name", userDTO.getName());
         claims.put("email", userDTO.getEmail());
         claims.put("ROLES", "USER");
@@ -51,9 +82,8 @@ public class JwtService {
     }
 
     public String extractUserName(String token) {
-        // extract the username from jwt token
         return extractClaim(token, Claims::getSubject);
-    }
+    }  
 
     private <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
         final Claims claims = extractAllClaims(token);
@@ -79,5 +109,21 @@ public class JwtService {
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
+    public UserAuthDTO getUserFromToken(String token) throws IOException {
+        Claims claims = getAllClaimsFromToken(token);
+        UserAuthDTO userAuthDTO = new UserAuthDTO();
+        userAuthDTO.setId(UUID.fromString((String) claims.get("id")));
+        userAuthDTO.setEmail((String) claims.get("email"));
+        return userAuthDTO;  
+    }
+
+
+    public Claims getAllClaimsFromToken(String token) {
+    JwtParser parser = Jwts.parserBuilder()
+            .setSigningKey(getKey())
+            .build();
+    return parser.parseClaimsJws(token).getBody();
+    }
+
 
 }

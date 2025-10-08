@@ -3,6 +3,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.tacking.dto.UserAuthDTO;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.UUID;
@@ -22,12 +24,6 @@ public class UserPrincipal implements UserDetails {
     
     public UUID getId() {
         return user.getId();
-    }
-
-
-    @Override
-    public String getPassword() {
-        return user.getPassword();
     }
 
     @Override
@@ -53,5 +49,10 @@ public class UserPrincipal implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String getPassword() {
+        return user.getPassword();
     }
 }

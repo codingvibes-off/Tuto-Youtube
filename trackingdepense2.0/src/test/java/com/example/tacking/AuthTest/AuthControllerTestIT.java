@@ -1,47 +1,49 @@
 package com.example.tacking.AuthTest;
 
-import com.example.tacking.ExpenseTest.TestCreateExpenseObject;
-import com.example.tacking.dto.OtpDTO;
-import com.example.tacking.dto.UserDTO;
-import com.example.tacking.entity.User;
-import com.example.tacking.entity.Otp;
-import com.example.tacking.repository.OtpRepository;
-import com.example.tacking.repository.UserRepository;
-import com.example.tacking.util.OtpUtil;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.http.MediaType;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Base64;
+import java.util.Optional;
 import java.util.UUID;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.example.tacking.ExpenseTest.TestCreateExpenseObject;
+import com.example.tacking.dto.AuthResponseDTO;
+import com.example.tacking.dto.OtpDTO;
+import com.example.tacking.dto.UserDTO;
+import com.example.tacking.entity.Otp;
+import com.example.tacking.entity.User;
+import com.example.tacking.repository.OtpRepository;
+import com.example.tacking.repository.UserRepository;
+//import com.example.tacking.service.JwtService;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @AutoConfigureMockMvc
 @SpringBootTest
 public class AuthControllerTestIT {
     @Autowired
     private MockMvc mockMvc;
+
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private OtpRepository otpRepository;
-    
-    @Autowired
-    private TestCreateExpenseObject testCreateObject;
     
     @Autowired
     private ObjectMapper objectMapper;
@@ -76,7 +78,7 @@ public class AuthControllerTestIT {
        .password("test")
        .name(NAME_1)
        .build();
-       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/register")
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/register")
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(userDTO)))
     .andExpect(status().isOk())
@@ -91,9 +93,104 @@ public class AuthControllerTestIT {
     }
      @Test
     void shoudlUserLogin() throws Exception {
+        UserDTO userDTO = UserDTO.builder()
+        .email(MAIL_1)
+        .password("test")
+        .name(NAME_1)
+        .build();
+
+         User user = User.builder()
+       .email(MAIL_1)
+       .password(passwordEncoder.encode("test"))
+       .enabled(true)
+       .version(0L)
+       .name(NAME_1)
+       .build();
+       
+       this.userRepository.save(user);
+
+       MvcResult result =  this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(userDTO)))
+    .andExpect(status().isOk())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.accessToken").exists())
+    .andExpect(jsonPath("$.refreshToken").exists())
+    .andReturn();
+
+    String responseBody = result.getResponse().getContentAsString();
+    AuthResponseDTO authResponse = objectMapper.readValue(responseBody, new TypeReference<AuthResponseDTO>() {});
+
+    String[] parts = authResponse.getAccessToken().split("\\.");
+    String payload = new String(Base64.getDecoder().decode(parts[1]));
+    assertTrue(payload.contains("\"sub\":\"" + userDTO.getEmail() + "\""));
+    }
+
+    @Test
+    void shouldUserInvalidCredentials() throws Exception {
+           
+        User userRegistered = User.builder().email("userRegistered@gmail.com")
+        .enabled(false)
+        .name("userRegistered")
+        .version(0L)
+        .password("test-false-password").build();
+        this.userRepository.save(userRegistered);
+
+        UserDTO userDTO = UserDTO.builder()
+        .email(userRegistered.getEmail())
+        .password("test-login-bad-credentials")
+        .build();
+        
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(userDTO)))
+    .andExpect(status().isBadRequest())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.accessToken").doesNotExist())
+    .andExpect(jsonPath("$.refreshToken").doesNotExist())
+    .andExpect(jsonPath("$.message").value("Invalid credentials"))
+    .andReturn();
     }
     @Test
+    void shouldUserIsNotEnabled() throws Exception {
+           
+        User userRegistered = User.builder().email("userRegistered@gmail.com")
+        .enabled(false)
+        .name("userRegistered")
+        .version(0L)
+        .password(passwordEncoder.encode("test-false-password")).build();
+        this.userRepository.save(userRegistered);
+
+        UserDTO userDTO = UserDTO.builder()
+        .email(userRegistered.getEmail())
+        .password("test-false-password")
+        .build();
+        
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(userDTO)))
+    .andExpect(status().isForbidden())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.accessToken").doesNotExist())
+    .andExpect(jsonPath("$.refreshToken").doesNotExist())
+    .andExpect(jsonPath("$.message").value("User account is disabled"))
+    .andReturn();
+    }
+
+    @Test
     void shoudlEmailAlreadyUsed() throws Exception {
+        UserDTO userDTO = UserDTO.builder()
+        .email(MAIL_1)
+        .password("test")
+        .name(NAME_1)
+        .build();
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(userDTO)))
+    .andExpect(status().isBadRequest())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.message").value("User not found"))
+    .andReturn();
     }
     @Test
     void shouldOtpCheck() throws Exception {
@@ -121,7 +218,7 @@ public class AuthControllerTestIT {
        otpDTO.setCode(OTP_CODE);
        otpDTO.setUseremail(user.getEmail());
 
-       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/otp/check/{code}", OTP_CODE)
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(otpDTO)))
     .andExpect(status().isOk())
@@ -165,7 +262,7 @@ public class AuthControllerTestIT {
        otpDTO.setCode("9000");
        otpDTO.setUseremail(different_user.getEmail());
 
-       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/otp/check/{code}", OTP_CODE)
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(otpDTO)))
     .andExpect(status().isOk())
@@ -210,7 +307,7 @@ public class AuthControllerTestIT {
        otpDTO.setCode("9000");
        otpDTO.setUseremail(different_user.getEmail());
 
-       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", userRegisterOtp.getCode())
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/otp/check/{code}", userRegisterOtp.getCode())
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(otpDTO)))
     .andExpect(status().isOk())
@@ -245,7 +342,7 @@ public class AuthControllerTestIT {
        otpDTO.setCode(OTP_CODE);
        otpDTO.setUseremail(user.getEmail());
 
-       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/otp/check/{code}", OTP_CODE)
+       this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/otp/check/{code}", OTP_CODE)
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(otpDTO)))
     .andExpect(status().isBadRequest())
@@ -255,8 +352,57 @@ public class AuthControllerTestIT {
 
 
     @Test
-     void shouldUpdateUser() throws Exception {
+    void shouldUpdateUser() throws Exception {
+       UserDTO userDTO = UserDTO.builder()
+        .email(MAIL_1)
+        .password("test")
+        .name(NAME_1)
+        .build();
 
+         User user = User.builder()
+       .email(MAIL_1)
+       .password(passwordEncoder.encode("test"))
+       .enabled(true)
+       .version(0L)
+       .name(NAME_1)
+       .build();
+       this.userRepository.save(user);
+
+       MvcResult result =  this.mockMvc.perform(MockMvcRequestBuilders.post("/api/auth/user/login")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(userDTO)))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.accessToken").exists())
+        .andExpect(jsonPath("$.refreshToken").exists())
+        .andReturn();
+
+    String responseBody = result.getResponse().getContentAsString();
+    AuthResponseDTO authResponse = objectMapper.readValue(responseBody, new TypeReference<AuthResponseDTO>() {});
+
+    UserDTO updatedUser = UserDTO.builder()
+    .email("update@gmail.com")
+    .password("updatedPassword")
+    .name("updatedUser")
+    .build();
+
+    this.mockMvc.perform(MockMvcRequestBuilders.put("/api/auth/user/update")
+        .header("Authorization", "Bearer " + authResponse.getAccessToken())  
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(objectMapper.writeValueAsString(updatedUser)))
+    .andExpect(status().isOk())
+    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+    .andExpect(jsonPath("$.name").value(updatedUser.getName()))
+    .andExpect(jsonPath("$.email").value(updatedUser.getEmail()))
+    .andReturn();
+
+    Optional<User> userUpdated = userRepository.findByName(updatedUser.getName());
+    assertTrue(userUpdated.isPresent());
+
+    User userOptionnal = userUpdated.get();
+    assertEquals(updatedUser.getEmail(), userOptionnal.getEmail());
+    assertTrue(passwordEncoder.matches("updatedPassword", userOptionnal.getPassword())); 
+   
      }
     
 
