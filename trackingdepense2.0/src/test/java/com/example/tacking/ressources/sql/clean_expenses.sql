@@ -1,3 +1,3 @@
 DELETE FROM users;
-DELETE FROM category;
+DELETE FROM categories;
 DELETE FROM expense

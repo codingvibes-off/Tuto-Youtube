@@ -9,14 +9,15 @@ CREATE TABLE users (
 
 CREATE TABLE categories (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name VARCHAR(100) NOT NULL
+    label VARCHAR(100) NOT NULL,
+    date DATE NOT NULL DEFAULT (CURRENT_DATE)
 );
 
 
 CREATE TABLE expense (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     amount DECIMAL(10,2) NOT NULL,
-    expense_date DATE NOT NULL DEFAULT (CURRENT_DATE),
+    date DATE NOT NULL DEFAULT (CURRENT_DATE),
     user_id UUID NOT NULL,
     categories_id UUID NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),

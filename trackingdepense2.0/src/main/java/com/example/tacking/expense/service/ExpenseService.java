@@ -36,15 +36,6 @@ public class ExpenseService {
         if (userAuthDTO == null) {
                 throw new UserNotFoundException("User not found or not authenticated");
         }
-        boolean exists = expenseRepository.existsByCategory_LabelAndMontantAndDateAndDescription(
-                expenseDTO.getCategoryDTO().getLabel(), 
-                expenseDTO.getAmount(),
-                expenseDTO.getDate(),
-                expenseDTO.getDescription()
-        );
-        if (exists) {
-            throw new RuntimeException("Cette dépense a déjà été ajoutée !");
-        }
         if (expenseDTO.getAmount() == null) {
             throw new RuntimeException("Le montant est obligatoire !");
         }
@@ -55,9 +46,8 @@ public class ExpenseService {
             throw new RuntimeException("La catégorie est obligatoire !");
         }
 
-        Category category = Category.fromDTOToCategory(expenseDTO.getCategoryDTO());
-        this.categoryRepository.findById(category.getId())
-                    .orElseThrow(() -> new RuntimeException("Catégorie non trouvée"));
+        Category category = this.categoryRepository.findByLabel(expenseDTO.getCategoryDTO().getLabel())
+                    .orElseThrow(() -> new RuntimeException("Categorie not found"));
 
         Expense expense = Expense.builder()
                 .category(category)

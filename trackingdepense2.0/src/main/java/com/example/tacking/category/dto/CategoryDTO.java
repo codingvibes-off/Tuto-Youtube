@@ -1,6 +1,7 @@
 package com.example.tacking.category.dto;
 
 import java.util.Date;
+import java.util.UUID;
 
 import com.example.tacking.category.entity.Category;
 
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryDTO {
+    private UUID id;
     private Date date;
     private String label;
     public static CategoryDTO fromCategoryToDTO(Category category) {

@@ -12,6 +12,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -30,6 +31,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "expense")
 public class Expense {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id; 
     @Column(name = "amount", nullable = false)
@@ -44,6 +46,6 @@ public class Expense {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "category_id") // clé étrangère vers Catégorie
+    @JoinColumn(name = "categories_id") 
     private Category category;
 }

@@ -2,7 +2,7 @@ package com.example.tacking.expense;
 
 import java.sql.Date;
 import java.util.UUID;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.example.tacking.category.entity.Category;
@@ -11,18 +11,23 @@ import com.example.tacking.user.entity.User;
 
 @Component
 public class TestCreateExpenseObject {
+
+    private final PasswordEncoder passwordEncoder;
+
+    TestCreateExpenseObject(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
     //Créer une catégorie
-    public Category createCategory(UUID id,Date date,  String label){
+    public Category createCategory(Date date,  String label){
         Category category = new Category();
-        category.setId(id);
         category.setDate(date);
+        category.setVersion(1L);
         category.setLabel(label);
         return category;
     }
     //Créer une Dépense
-    public Expense createExpense(UUID id ,Double amount, Category category, String description, User user, Date date){
+    public Expense createExpense(Double amount, Category category, String description, User user, Date date){
         Expense expense = new Expense();
-        expense.setId(id);
         expense.setAmount(amount);
         expense.setCategory(category);
         expense.setDescription(description);
@@ -31,10 +36,11 @@ public class TestCreateExpenseObject {
         return expense;
     }
     //Créer un utilisateur
-    public User createUser(UUID id,String email, String name){
+    public User createUser(String email, String name, String password){
         User user = new User();
-        user.setId(id);
+        user.setPassword(passwordEncoder.encode(password));
         user.setEmail(email);
+        user.setEnabled(true);
         user.setName(name);
         return user;
     }

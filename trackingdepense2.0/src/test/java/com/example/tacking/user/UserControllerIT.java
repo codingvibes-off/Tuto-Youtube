@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.example.tacking.TackingApplication;
 import com.example.tacking.otp.dto.OtpDTO;
 import com.example.tacking.otp.entity.Otp;
 import com.example.tacking.otp.repository.OtpRepository;
@@ -33,22 +34,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @AutoConfigureMockMvc
-@SpringBootTest
+@SpringBootTest(classes = TackingApplication.class)
 public class UserControllerIT {
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private OtpRepository otpRepository;
-    
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
     //Date Object
     private final Date date = java.sql.Date.valueOf("2019-05-02");
     //CATEGORY
@@ -64,9 +51,24 @@ public class UserControllerIT {
     //OTP CODE
     private final String OTP_CODE = "8890";
     private LocalDateTime expiration_date = LocalDateTime.now();
-    private final Boolean ENABLED_ACTIVE = Boolean.valueOf(true);
-    private final Boolean ENABLED_NOT_ACTIVE = Boolean.valueOf(false);
-   
+    private final Boolean ENABLED_ACTIVE = true;
+    private final Boolean ENABLED_NOT_ACTIVE = false;
+
+      @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private OtpRepository otpRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @AfterEach
     void cleanup() throws IOException {
         this.userRepository.deleteAll();
@@ -74,23 +76,23 @@ public class UserControllerIT {
     }
     @Test
     void shouldReturnRegisterUser() throws Exception {
-       UserDTO userDTO = UserDTO.builder()
-       .email(MAIL_1)
-       .password("test")
-       .name(NAME_1)
-       .build();
-       this.mockMvc.perform(MockMvcRequestBuilders.post(UrlMapping.API_BASE_PATH + UrlMapping.USER + UrlMapping.REGISTER)
-        .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(userDTO)))
-    .andExpect(status().isOk())
-    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-    .andExpect(jsonPath("$.name").value(NAME_1))
-    .andExpect(jsonPath("$.email").value(MAIL_1))
-    .andExpect(jsonPath("$.password").doesNotExist()) 
-    .andReturn();
+        UserDTO userDTO = UserDTO.builder()
+            .email(MAIL_1)
+            .password("test")
+            .name(NAME_1)
+            .build();
+        this.mockMvc.perform(MockMvcRequestBuilders.post(UrlMapping.API_BASE_PATH + UrlMapping.USER + UrlMapping.REGISTER)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(userDTO)))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andExpect(jsonPath("$.name").value(NAME_1))
+            .andExpect(jsonPath("$.email").value(MAIL_1))
+            .andExpect(jsonPath("$.password").doesNotExist()) 
+            .andReturn();
 
-    User savedUser = userRepository.findByEmail(MAIL_1).orElseThrow();
-    assertTrue(passwordEncoder.matches(userDTO.getPassword(), savedUser.getPassword()));
+        User savedUser = userRepository.findByEmail(MAIL_1).orElseThrow();
+        assertTrue(passwordEncoder.matches(userDTO.getPassword(), savedUser.getPassword()));
     }
      @Test
     void shoudlUserLogin() throws Exception {
@@ -154,7 +156,6 @@ public class UserControllerIT {
     }
     @Test
     void shouldUserIsNotEnabled() throws Exception {
-           
         User userRegistered = User.builder().email("userRegistered@gmail.com")
         .enabled(ENABLED_NOT_ACTIVE)
         .name("userRegistered")
@@ -164,18 +165,19 @@ public class UserControllerIT {
 
         UserDTO userDTO = UserDTO.builder()
         .email(userRegistered.getEmail())
+        .name("userRegistered")
         .password("test-false-password")
         .build();
         
         this.mockMvc.perform(MockMvcRequestBuilders.post(UrlMapping.API_BASE_PATH + UrlMapping.USER + UrlMapping.LOGIN)
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(userDTO)))
-    .andExpect(status().isForbidden())
-    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-    .andExpect(jsonPath("$.accessToken").doesNotExist())
-    .andExpect(jsonPath("$.refreshToken").doesNotExist())
-    .andExpect(jsonPath("$.message").value("User account is disabled"))
-    .andReturn();
+            .andExpect(status().isForbidden())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andExpect(jsonPath("$.accessToken").doesNotExist())
+            .andExpect(jsonPath("$.refreshToken").doesNotExist())
+            .andExpect(jsonPath("$.message").value("User account is disabled"))
+            .andReturn();
     }
 
     @Test

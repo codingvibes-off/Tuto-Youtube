@@ -27,22 +27,23 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping(UrlMapping.API_BASE_PATH)
+@RequestMapping(UrlMapping.API_BASE_PATH + UrlMapping.USER)
 public class UserController {
     private UserService authUserService;
     public UserController(AuthenticationManager authenticationManager,
     UserService authUserService) {
         this.authUserService = authUserService;
     }
-    @PostMapping(UrlMapping.USER + UrlMapping.REGISTER)
+    @PostMapping(UrlMapping.REGISTER)
     public UserResponseDTO register(@RequestBody UserDTO userDTO) throws IOException, MessagingException {
         return this.authUserService.register(userDTO);
     } 
-    @PostMapping(UrlMapping.USER + UrlMapping.LOGIN)
+    
+    @PostMapping(UrlMapping.LOGIN)
     public AuthResponseDTO login(@RequestBody UserDTO userDTO) {
         return this.authUserService.verify(userDTO);
     }
-    @PutMapping(UrlMapping.USER + UrlMapping.UPDATE)
+    @PutMapping(UrlMapping.UPDATE)
     public UserDTO updateUser(@RequestBody UserDTO userDTO, Principal principal) {
         UserAuthDTO userAuth = SecurityUtil.getUserFromPrincipal(principal);
         

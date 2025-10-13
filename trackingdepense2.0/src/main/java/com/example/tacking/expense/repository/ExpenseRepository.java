@@ -11,12 +11,5 @@ import com.example.tacking.expense.entity.Expense;
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, UUID> {
-
-    boolean existsByCategory_LabelAndMontantAndDateAndDescription(
-            String categoryLabel,
-            Double montant,
-            Date date,
-            String description
-    );
 }
 
