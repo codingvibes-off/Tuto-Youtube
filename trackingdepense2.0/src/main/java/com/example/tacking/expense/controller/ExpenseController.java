@@ -18,6 +18,7 @@ import com.example.tacking.web.UrlMapping;
 import com.example.tacking.expense.dto.ExpenseDTO;
 import com.example.tacking.expense.entity.Expense;
 import com.example.tacking.expense.service.ExpenseService;
+import com.example.tacking.security.util.SecurityUtil;
 import com.example.tacking.user.dto.SuccessDTO;
 import com.example.tacking.user.dto.UserAuthDTO;
 import com.example.tacking.user.service.UserService;
@@ -41,7 +42,7 @@ public class ExpenseController {
     }
     @PostMapping(UrlMapping.EXPENSE)
     public ExpenseDTO postExpense(@RequestBody ExpenseDTO expenseDTO, Principal principal) {
-        UserAuthDTO userAuthDTO = userService.getUserAuthenticated(principal.getName());
+        UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
         return expenseService.postExpense(expenseDTO, userAuthDTO); 
     }
     @PutMapping(UrlMapping.EXPENSE + "/{expenseId}") 

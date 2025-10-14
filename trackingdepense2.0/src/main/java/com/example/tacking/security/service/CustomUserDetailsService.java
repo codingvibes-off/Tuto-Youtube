@@ -22,7 +22,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> {
                     return new UsernameNotFoundException("User not found with email: " + email);
                 });
-        //UserAuthDTO userAuthDTO = UserAuthDTO.userFromUserAuthDto(user);
         return new UserPrincipal(user);
     }
 }

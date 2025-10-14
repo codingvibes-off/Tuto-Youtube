@@ -142,16 +142,12 @@ public class UserService {
             throw new RuntimeException("Invalid credentials"); 
         }
     }
-    public UserAuthDTO getUserAuthenticated(String userEmail) {
+    public UserAuthDTO getUserAuthenticated(Principal principal) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        
         if (auth == null || !auth.isAuthenticated()) {
             throw new UserNotFoundException("User Not Authenticated");
         }
-        User user = userRepository.findByEmail(userEmail)
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
-
-        return UserAuthDTO.userFromUserAuthDto(user);
+        return (UserAuthDTO) auth.getPrincipal();
     }
 
 

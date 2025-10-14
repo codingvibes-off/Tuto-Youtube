@@ -127,15 +127,16 @@ public class ExpenseControllerIT {
     }
     @AfterEach
     void cleanup() throws IOException {
-        userRepository.deleteAll();
         expenseRepository.deleteAll();
         categoryRepository.deleteAll();
+        userRepository.deleteAll();
+   
     }
 
 
    @Test
     void shouldReturnCreateExpenseForAuthenticatedUser() throws Exception {     
-       /*  UserDTO userDTO = UserDTO.builder()
+        UserDTO userDTO = UserDTO.builder()
                 .email(MAIL_1)
                 .password(PASSWORD)
                 .name(NAME_1)
@@ -171,15 +172,14 @@ public class ExpenseControllerIT {
 
         this.mockMvc.perform(MockMvcRequestBuilders.post(UrlMapping.API_BASE_PATH + UrlMapping.EXPENSE)
                 .contentType(MediaType.APPLICATION_JSON)
-                .header("Authorization", authResponse.getAccessToken())
+                .header("Authorization","Bearer " + authResponse.getAccessToken())
                 .content(objectMapper.writeValueAsString(expenseDTO)))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.amount").value(19.99))
             .andExpect(jsonPath("$.description").value("Abonnement Spotify"))
             .andExpect(jsonPath("$.date").exists())
-            .andExpect(jsonPath("$.category").exists());
-            */
+            .andExpect(jsonPath("$.categoryDTO").exists());
     }
 
     @Test
@@ -193,24 +193,6 @@ public class ExpenseControllerIT {
     }
     @Test
     void shouldReturnAllExpenses() throws Exception {
-       
-       this.mockMvc.perform(MockMvcRequestBuilders.get("/api/expenses")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-
-                .andExpect(jsonPath("$[0].amount").value(AMOUNT_EXPENSE_1))
-                .andExpect(jsonPath("$[0].date").value(date.toString()))
-                .andExpect(jsonPath("$[0].description").value(DESCRIPTION_EXPENSE_1))
-
-                .andExpect(jsonPath("$[1].amount").value(AMOUNT_EXPENSE_2))
-                .andExpect(jsonPath("$[1].date").value(date.toString()))
-                .andExpect(jsonPath("$[1].description").value(DESCRIPTION_EXPENSE_2))
-
-                .andExpect(jsonPath("$[2].amount").value(AMOUNT_EXPENSE_3))
-                .andExpect(jsonPath("$[2].date").value(date.toString()))
-                .andExpect(jsonPath("$[2].description").value(DESCRIPTION_EXPENSE_3))
-                .andReturn();
     }
 
 

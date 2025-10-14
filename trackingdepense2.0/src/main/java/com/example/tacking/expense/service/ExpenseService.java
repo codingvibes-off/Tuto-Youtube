@@ -9,7 +9,9 @@ import com.example.tacking.expense.repository.ExpenseRepository;
 import com.example.tacking.user.dto.SuccessDTO;
 import com.example.tacking.user.dto.UserAuthDTO;
 import com.example.tacking.user.dto.UserDTO;
+import com.example.tacking.user.entity.User;
 import com.example.tacking.user.exception.UserNotFoundException;
+import com.example.tacking.user.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,10 +23,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class ExpenseService {
-  private static ExpenseRepository expenseRepository;
-  private static CategoryRepository categoryRepository;
-    ExpenseService(ExpenseRepository expenseRepository ){
+
+    private final UserRepository userRepository;
+    private final ExpenseRepository expenseRepository;
+    private final CategoryRepository categoryRepository;
+    ExpenseService(ExpenseRepository expenseRepository , UserRepository userRepository,  CategoryRepository categoryRepository){
       this.expenseRepository = expenseRepository;
+      this.userRepository = userRepository;
+      this.categoryRepository = categoryRepository;
     }
     public List<Expense> getAllExpense(){
       return this.expenseRepository.findAll();
@@ -33,9 +39,6 @@ public class ExpenseService {
         return this.expenseRepository.findById(id);
     }
     public ExpenseDTO postExpense(ExpenseDTO expenseDTO, UserAuthDTO userAuthDTO) {
-        if (userAuthDTO == null) {
-                throw new UserNotFoundException("User not found or not authenticated");
-        }
         if (expenseDTO.getAmount() == null) {
             throw new RuntimeException("Le montant est obligatoire !");
         }
@@ -46,13 +49,17 @@ public class ExpenseService {
             throw new RuntimeException("La catégorie est obligatoire !");
         }
 
-        Category category = this.categoryRepository.findByLabel(expenseDTO.getCategoryDTO().getLabel())
-                    .orElseThrow(() -> new RuntimeException("Categorie not found"));
+        Category category = this.categoryRepository.findById(expenseDTO.getCategoryDTO().getId())
+                    .orElseThrow(() -> new RuntimeException("Category not found"));
+
+        User user = this.userRepository.findById(userAuthDTO.getId())
+        .orElseThrow(() -> new UserNotFoundException("User not found"));
 
         Expense expense = Expense.builder()
                 .category(category)
                 .amount(expenseDTO.getAmount())
                 .date(expenseDTO.getDate())
+                .user(user)
                 .description(Optional.ofNullable(expenseDTO.getDescription()).orElse(""))
                 .build();
 
