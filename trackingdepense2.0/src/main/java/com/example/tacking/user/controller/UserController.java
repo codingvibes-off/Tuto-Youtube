@@ -5,7 +5,7 @@ import java.security.Principal;
 import com.example.tacking.web.UrlMapping;
 
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,11 +49,11 @@ public class UserController {
         
         return this.authUserService.updateUser(userAuth.getId(), userDTO);
     }
-    @PostMapping(UrlMapping.OTP + UrlMapping.CHECK + UrlMapping.CODE)
-    public SuccessDTO otpCheck(@PathVariable String code, @RequestBody OtpDTO otpDTO) {
+    @PostMapping(UrlMapping.OTP)
+    public SuccessDTO otpCheck(@RequestBody OtpDTO otpDTO) {
         return this.authUserService.checkOtp(otpDTO);
     }
-} 
+}
 
 
 

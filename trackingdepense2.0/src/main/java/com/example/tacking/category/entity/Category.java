@@ -1,9 +1,7 @@
 package com.example.tacking.category.entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
-
-import com.example.tacking.category.dto.CategoryDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +9,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,7 +26,7 @@ public class Category {
     @Column(name = "id", columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID id; 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
     @Column(name = "label", nullable = false)
     private String label;
     @Column(nullable = false)

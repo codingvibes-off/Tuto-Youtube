@@ -1,13 +1,8 @@
 package com.example.tacking.security.service;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
-import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.IOException;
 import io.jsonwebtoken.security.Keys;
@@ -16,23 +11,18 @@ import org.springframework.stereotype.Service;
 
 import com.example.tacking.user.dto.UserAuthDTO;
 import com.example.tacking.user.dto.UserDTO;
-import com.example.tacking.user.entity.User;
-import com.example.tacking.user.exception.UserNotFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
-import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.Function;
-import static io.jsonwebtoken.security.Keys.hmacShaKeyFor;
 
 @Service
 public class JwtService {

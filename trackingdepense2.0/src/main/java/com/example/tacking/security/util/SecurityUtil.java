@@ -1,10 +1,7 @@
 package com.example.tacking.security.util;
-
-import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import com.example.tacking.user.dto.UserAuthDTO;
-import com.example.tacking.user.entity.User;
 
 import java.security.Principal;
 /**

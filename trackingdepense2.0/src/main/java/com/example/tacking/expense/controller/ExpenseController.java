@@ -21,36 +21,50 @@ import com.example.tacking.expense.service.ExpenseService;
 import com.example.tacking.security.util.SecurityUtil;
 import com.example.tacking.user.dto.SuccessDTO;
 import com.example.tacking.user.dto.UserAuthDTO;
-import com.example.tacking.user.service.UserService;
+import com.example.tacking.user.exception.UserNotFoundException;
 
 @RestController
 @RequestMapping(UrlMapping.API_BASE_PATH)
 public class ExpenseController {
-    private final UserService userService;
     private final ExpenseService expenseService;
-    public ExpenseController(ExpenseService expenseService, UserService userService){
+    public ExpenseController(ExpenseService expenseService){
         this.expenseService = expenseService;
-        this.userService = userService;
     }
     @GetMapping
-    public List<Expense> getAllExpense() {
+    public List<Expense> getAllExpense(Principal principal) {
+        UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
+        if(userAuthDTO == null){
+            throw new UserNotFoundException("User not found");
+        }
         return this.expenseService.getAllExpense();
     }
     @GetMapping(UrlMapping.EXPENSE + "/{expenseId}")
-    public Optional<Expense> getExpense(@PathVariable UUID expenseId) {
+    public Optional<Expense> getExpense(Principal principal,@PathVariable UUID expenseId) {
+        UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
+        if(userAuthDTO == null){
+            throw new UserNotFoundException("User not found");
+        }
         return expenseService.getExpense(expenseId);
     }
     @PostMapping(UrlMapping.EXPENSE)
     public ExpenseDTO postExpense(@RequestBody ExpenseDTO expenseDTO, Principal principal) {
         UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
-        return expenseService.postExpense(expenseDTO, userAuthDTO); 
+        return expenseService.postExpense(expenseDTO, userAuthDTO);
     }
     @PutMapping(UrlMapping.EXPENSE + "/{expenseId}") 
-    public  Expense putExpense(@PathVariable UUID expenseId, @RequestBody Expense expense) {
+    public  Expense putExpense(@PathVariable UUID expenseId, @RequestBody Expense expense, Principal principal) {
+        UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
+        if(userAuthDTO == null){
+            throw new UserNotFoundException("User not found");
+        }
         return expenseService.putExpense(expenseId, expense);
     }
     @DeleteMapping(UrlMapping.EXPENSE + "/{expenseId}")
-    public SuccessDTO deleteExpense(@PathVariable UUID id) {
+    public SuccessDTO deleteExpense(Principal principal,@PathVariable UUID id) {
+        UserAuthDTO userAuthDTO = SecurityUtil.getUserFromPrincipal(principal);
+        if(userAuthDTO == null){
+            throw new UserNotFoundException("User not found");
+        }
         return expenseService.deleteExpense(id);
     }
 }

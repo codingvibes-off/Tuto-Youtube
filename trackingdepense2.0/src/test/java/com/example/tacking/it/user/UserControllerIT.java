@@ -1,10 +1,9 @@
-package com.example.tacking.user;
+package com.example.tacking.it.user;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.Optional;
@@ -36,21 +35,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 @SpringBootTest(classes = TackingApplication.class)
 public class UserControllerIT {
-    //Date Object
-    private final Date date = java.sql.Date.valueOf("2019-05-02");
-    //CATEGORY
-    
-    private final String LABEL_1 = "Alimentation";
-    private final String LABEL_2 = "Course";
-    private final String LABEL_3 = "Investissement";
-
     //USER
     private final String MAIL_1 = UUID.randomUUID().toString()+"@yopmail.com";
     //EXPENSE
     private final String NAME_1 = "User_1";
     //OTP CODE
     private final String OTP_CODE = "8890";
-    private LocalDateTime expiration_date = LocalDateTime.now();
     private final Boolean ENABLED_ACTIVE = true;
     private final Boolean ENABLED_NOT_ACTIVE = false;
 

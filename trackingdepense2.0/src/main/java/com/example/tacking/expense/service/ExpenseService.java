@@ -5,10 +5,10 @@ import com.example.tacking.category.entity.Category;
 import com.example.tacking.category.repository.CategoryRepository;
 import com.example.tacking.expense.dto.ExpenseDTO;
 import com.example.tacking.expense.entity.Expense;
+import com.example.tacking.expense.exception.ExpenseValidationException;
 import com.example.tacking.expense.repository.ExpenseRepository;
 import com.example.tacking.user.dto.SuccessDTO;
 import com.example.tacking.user.dto.UserAuthDTO;
-import com.example.tacking.user.dto.UserDTO;
 import com.example.tacking.user.entity.User;
 import com.example.tacking.user.exception.UserNotFoundException;
 import com.example.tacking.user.repository.UserRepository;
@@ -39,22 +39,22 @@ public class ExpenseService {
         return this.expenseRepository.findById(id);
     }
     public ExpenseDTO postExpense(ExpenseDTO expenseDTO, UserAuthDTO userAuthDTO) {
-        if (expenseDTO.getAmount() == null) {
-            throw new RuntimeException("Le montant est obligatoire !");
-        }
-        if (expenseDTO.getDate() == null) {
-            throw new RuntimeException("La date est obligatoire !");
-        }
-        if (expenseDTO.getCategoryDTO() == null) {
-            throw new RuntimeException("La catégorie est obligatoire !");
-        }
-
-        Category category = this.categoryRepository.findById(expenseDTO.getCategoryDTO().getId())
-                    .orElseThrow(() -> new RuntimeException("Category not found"));
-
-        User user = this.userRepository.findById(userAuthDTO.getId())
+        User user = Optional.ofNullable(userAuthDTO)
+        .map(UserAuthDTO::getId)
+        .flatMap(userRepository::findById)
         .orElseThrow(() -> new UserNotFoundException("User not found"));
 
+        if (expenseDTO.getAmount() == null) {
+            throw new ExpenseValidationException("The amount must be required");
+        }
+        if (expenseDTO.getDate() == null) {
+            throw new ExpenseValidationException("The date must be required");
+        }
+        if (expenseDTO.getCategoryDTO() == null) {
+            throw new ExpenseValidationException("The category must be required");
+        }
+        Category category = this.categoryRepository.findById(expenseDTO.getCategoryDTO().getId())
+                    .orElseThrow(() -> new RuntimeException("Category not found"));      
         Expense expense = Expense.builder()
                 .category(category)
                 .amount(expenseDTO.getAmount())
@@ -62,9 +62,7 @@ public class ExpenseService {
                 .user(user)
                 .description(Optional.ofNullable(expenseDTO.getDescription()).orElse(""))
                 .build();
-
         Expense savedExpense = expenseRepository.save(expense);
-
         return ExpenseDTO.builder()
                 .categoryDTO(CategoryDTO.fromCategoryToDTO(savedExpense.getCategory()))
                 .amount(savedExpense.getAmount())
@@ -83,11 +81,9 @@ public class ExpenseService {
         expense.setCategory(updatedExpense.getCategory());
         return this.expenseRepository.save(expense);
 }
-
 public SuccessDTO deleteExpense(@PathVariable UUID id) {
     Expense expense = this.expenseRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Expense not found"));
-
     this.expenseRepository.deleteById(expense.getId());
     return SuccessDTO.builder()
     .success(true)

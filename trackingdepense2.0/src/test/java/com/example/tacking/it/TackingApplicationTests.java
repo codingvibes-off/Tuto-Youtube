@@ -1,4 +1,4 @@
-package com.example.tacking;
+package com.example.tacking.it;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
