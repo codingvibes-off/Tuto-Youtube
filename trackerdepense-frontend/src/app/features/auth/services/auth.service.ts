@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { User } from '../../users/models/user.model';
+import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private readonly API_URL = '/api/auth';
+  private readonly API_URL = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {}
 
@@ -35,4 +36,15 @@ export class AuthService {
   getUserByEmail(email: string): Observable<any> {
     return this.http.get<any>(`${this.API_URL}?email=${email}`);
   }
+
+  registerUser(userDTO: User) {
+    return this.http.post(API_ENDPOINTS.USER.REGISTER, userDTO);
+  }
+  loginUser(userDTO: User) {
+    return this.http.post(API_ENDPOINTS.USER.LOGIN, userDTO);
+  }
+  updateUser(id: number, userDTO: User) {
+    return this.http.put(`${API_ENDPOINTS.USER.UPDATE}/${id}`, userDTO);
+  }
+
 }

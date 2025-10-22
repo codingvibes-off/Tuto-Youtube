@@ -21,8 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
       ReactiveFormsModule,
       CardModule,
       ButtonModule,
-      ToastModule,
-      RegisterComponent
+      ToastModule
     ],
     providers: [MessageService]
 })
