@@ -5,7 +5,7 @@ import java.security.Principal;
 import com.example.tacking.web.UrlMapping;
 
 import org.springframework.security.authentication.AuthenticationManager;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +25,7 @@ import com.example.tacking.user.service.UserService;
 
 import org.springframework.web.bind.annotation.PutMapping;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(UrlMapping.API_BASE_PATH + UrlMapping.USER)
 public class UserController {

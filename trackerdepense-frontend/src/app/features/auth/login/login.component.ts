@@ -8,8 +8,6 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
-import { RegisterComponent } from '../register/register.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',

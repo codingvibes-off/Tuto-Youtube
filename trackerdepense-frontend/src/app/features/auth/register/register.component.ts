@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { passwordMatchValidator } from '../../../shared/directives/passsword-match.directive';
+import { Notyf } from 'notyf';
 
 @Component({
   selector: 'app-register',
@@ -25,11 +26,11 @@ import { passwordMatchValidator } from '../../../shared/directives/passsword-mat
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  private notyf = new Notyf();
   registerForm: any;
   constructor(
       private fb: FormBuilder,
       private authService: AuthService,
-      private messageService: MessageService,
       private router: Router
     ) { }
   ngOnInit(): void {
@@ -65,11 +66,11 @@ export class RegisterComponent {
     this.authService.registerUser(postData as User).subscribe(
       response => {
         console.log(response);
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Register successfully' });
-        this.router.navigate(['login'])
+        this.notyf.success('Your subsribed succesfully !');
+        //this.router.navigate(['login'])
       },
       error => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+         this.notyf.error('SomeThing went wrong!');
       }
     )
   }
