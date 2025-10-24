@@ -66,8 +66,8 @@ export class RegisterComponent {
     this.authService.registerUser(postData as User).subscribe(
       response => {
         console.log(response);
-        this.notyf.success('Your subsribed succesfully !');
-        //this.router.navigate(['login'])
+        this.notyf.success('Subscription successful! An OTP has been sent to your email.!');
+        this.router.navigate(['login'])
       },
       error => {
          this.notyf.error('SomeThing went wrong!');
