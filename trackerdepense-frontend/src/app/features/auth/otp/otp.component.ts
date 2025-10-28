@@ -10,9 +10,9 @@ import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-otp',
+  templateUrl: './otp.component.html',
+  styleUrl: './otp.component.css',
   standalone: true,
   imports: [FormsModule, RouterModule,
       CommonModule,
@@ -23,34 +23,42 @@ import { ToastModule } from 'primeng/toast';
     ],
     providers: [MessageService]
 })
-export class LoginComponent {
-    loginForm: any;
+export class OtpComponent {
+ otpForm: any;
     constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
     private msgService: MessageService
   ) { }
-  ngOnInit(): void {
-      this.loginForm = this.fb.group({
+  
+    ngOnInit(): void {
+      this.otpForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      otp: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]],
     })
   }
-  get email() {
-    return this.loginForm.controls['email'];
+  get otp() {
+    return this.otpForm.controls['otp'];
   }
-  get password() { return this.loginForm.controls['password']; }
-  loginUser() {
-    const user: User = this.loginForm.value as User;
-    this.authService.loginUser(user).subscribe(
-      response => {
-        if (response.accessToken) {
-          this.authService.registredToken(response.accessToken);
-          this.router.navigate(['/home']);
+    get email() {
+    return this.otpForm.controls['email'];
+  }
+  sendOtpCode() {
+    const otpCode: number = this.otpForm.value.otp;
+    const email: String = this.otpForm.value.email;
+    this.authService.sendOtpCode(otpCode, email).subscribe( 
+      response=> {
+        console.log(response);
+        if(!response.success) {
+          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
         } else {
-          this.msgService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });
+          this.msgService.add({ severity: 'success', summary: 'Success', detail: 'OTP code sent successfully' });
+          if(response.token)
+            this.authService.registredToken(response.token);
+          this.router.navigate(['/home']);
         }
+       
       },
       error => {
         this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });

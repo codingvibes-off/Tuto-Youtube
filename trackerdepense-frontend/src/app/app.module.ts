@@ -11,12 +11,14 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { RegisterComponent } from './features/auth/register/register.component';
+import { ExpenseCreateComponent } from './features/expense/expense-create/expense-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ExpenseCreateComponent
   ],
   imports: [
     BrowserModule,

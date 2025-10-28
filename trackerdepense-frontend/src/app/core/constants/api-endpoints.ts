@@ -11,6 +11,7 @@ export const API_ENDPOINTS = {
         LOGIN: `${USER_BASE}/login`,
         REGISTER: `${USER_BASE}/register`,
         LOGOUT: `${USER_BASE}/logout`,
+        SEND_OTP: `${USER_BASE}/otp`,
         UPDATE: (id: string | number) => `${USER_BASE}/${id}`,
     },
     EXPENSE: {

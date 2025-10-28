@@ -1,0 +1,48 @@
+<form
+  [formGroup]="otpForm"
+  (ngSubmit)="sendOtpCode()"
+  class="min-h-screen flex items-center justify-center  text-white font-[Poppins]"
+>
+  <div class="bg-[#0f0f0f] p-8 rounded-2xl shadow-xl w-full max-w-sm">
+    <h2 class="text-2xl font-semibold text-center mb-2">Enter OTP Code & Email</h2>
+    <p class="text-gray-400 text-center mb-6">Welcome back, last step before registration !</p>
+     <div class="mb-5">
+      <label for="email" class="block mb-2 text-sm text-gray-300"></label>
+      <input
+        type="email"
+        formControlName="email"
+        id="email"
+        placeholder="Enter your email"
+        class="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <small *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-500 text-sm">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Please enter a valid Email.</div>
+      </small>
+    </div>
+    <!-- otp -->
+    <div class="mb-5">
+      <label for="otp" class="block mb-2 text-sm text-gray-300"></label>
+      <input
+        type="number"
+        formControlName="otp"
+        id="otp"
+        placeholder="Enter your otp"
+        class="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <small *ngIf="otp.invalid && (otp.dirty || otp.touched)" class="text-red-500 text-sm">
+        <div *ngIf="otp.errors?.['required']">OTP Code is required.</div>
+        <div *ngIf="otp.errors?.['otp']">Please enter a valid otp.</div>
+      </small>
+    </div>
+    <!-- Send OTP button -->
+    <button
+      type="submit"
+      [disabled]="otpForm.invalid"
+      class="w-full bg-yellow-400 text-black font-semibold py-3 rounded-xl mt-4 hover:bg-yellow-500 transition disabled:opacity-50"
+    >
+      Send OTP
+    </button>
+
+  </div>
+</form>

@@ -11,5 +11,4 @@ public class TackingApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(TackingApplication.class, args);
 	}
-
 }

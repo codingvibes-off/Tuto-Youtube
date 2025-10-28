@@ -1,10 +1,9 @@
-<p-toast></p-toast>
-
+<div class="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen flex items-center justify-center">
+  <p-toast></p-toast>
 <form
-  class="min-h-screen flex items-center justify-center bg-gradient-to-br  text-white font-[Poppins]"
+  class="flex items-center justify-center bg-gradient-to-br  text-white font-[Poppins]"
   [formGroup]="registerForm"
-  (ngSubmit)="submitDetails()"
->
+  (ngSubmit)="submitDetails()">
   <div
     class="bg-[#0f0f0f] backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-md border border-gray-700"
   >
@@ -112,7 +111,7 @@
       data-testid="submit-button"
       type="submit"
       [disabled]="registerForm.invalid"
-      class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-600 rounded-md font-medium transition-all"
+      class="w-full bg-yellow-400 text-black font-semibold py-3 rounded-xl mt-4 hover:bg-yellow-500 transition disabled:opacity-50"
     >
       Sign Up
     </button>
@@ -120,7 +119,9 @@
     <!-- Link -->
     <div class="text-center text-sm mt-4 text-gray-300">
       Already a member?
-      <a routerLink="/login" class="text-indigo-400 hover:underline">Login</a>
+      <a routerLink="/login" class="text-yellow-400 font-medium hover:underline">Login</a>
     </div>
   </div>
 </form>
+
+</div>

@@ -9,6 +9,7 @@ export const AuthGuard: CanActivateFn = () => {
   if (authService.hasToken()) {
     return true;
   } else {
+    console.log('No token found, redirecting to login');
     router.navigate(['/login']);
     return false;
   }

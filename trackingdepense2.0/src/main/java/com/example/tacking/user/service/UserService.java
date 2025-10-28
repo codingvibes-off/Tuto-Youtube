@@ -104,11 +104,13 @@ public class UserService {
         User userEnabled = otpCheck.getUser();
         userEnabled.setEnabled(true);
         userRepository.save(userEnabled);
-
+        
+        String token = jwtService.generateToken(UserDTO.fromUserToUserDTO(userEnabled));
         otpRepository.deleteByCode(otpDTO.getCode());
         return SuccessDTO.builder()
                 .success(true)
                 .message("OTP validé avec succès")
+                .token(token)
                 .build();
     } else {
         return SuccessDTO.builder()

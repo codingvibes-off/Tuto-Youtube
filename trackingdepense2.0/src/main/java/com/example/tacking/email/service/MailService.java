@@ -34,7 +34,7 @@ public class MailService {
         try {
             htmlTemplate = Files.readString(resource.getFile().toPath(), StandardCharsets.UTF_8);
             
-            String otpLink = "http://localhost:8080/otp/check?code=" + otpCode; 
+            String otpLink = "http://localhost:4200/apiotp"; 
             String htmlBody = htmlTemplate.replace("{{otpCode}}", otpCode) .replace("{{otpLink}}", otpLink); 
             
             helper.setText(htmlBody, true); 
