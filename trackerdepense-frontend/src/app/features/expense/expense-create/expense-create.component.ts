@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../../layout/header/header.component';
 import { CommonModule } from '@angular/common';
+import { Category } from '../../categories/models/category .model';
 
 @Component({
   standalone: true,
@@ -17,28 +18,38 @@ import { CommonModule } from '@angular/common';
 export class ExpenseCreateComponent implements OnInit {
   expenseForm!: FormGroup;
   isSubmitting = false;
-  categories = [
-  { name: 'Restauration', icon: 'assets/categories/food.png', value: 'food' },
-  { name: 'Transport', icon: 'assets/categories/transport.png', value: 'transport' },
-  { name: 'Logement', icon: 'assets/categories/home.png', value: 'home' },
-  { name: 'Divertissement', icon: 'assets/categories/entertainment.png', value: 'entertainment' },
-  { name: 'Shopping', icon: 'assets/categories/shopping.png', value: 'shopping' },
-  { name: 'Santé', icon: 'assets/categories/health.png', value: 'health' }
+  categories: Category[] = [
+  { label: 'Restauration', icon: 'assets/categories/food.png', value: 'food' },
+  { label: 'Transport', icon: 'assets/categories/transport.png', value: 'transport' },
+  { label: 'Logement', icon: 'assets/categories/home.png', value: 'home' },
+  { label: 'Divertissement', icon: 'assets/categories/entertainment.png', value: 'entertainment' },
+  { label: 'Shopping', icon: 'assets/categories/shopping.png', value: 'shopping' },
+  { label: 'Santé', icon: 'assets/categories/health.png', value: 'health' }
 ];
-
   constructor(
     private fb: FormBuilder,
     private expenseService: ExpenseService,
     private msgService: MessageService,
     private router: Router
   ) {}
+  selectCategory(cat: Category) {
+    this.expenseForm.patchValue({ category: cat });
+    console.log(this.expenseForm.get('category')?.value?.value === cat.value);
+  }
+  isSelected(cat: Category): boolean {
+    return this.expenseForm.get('category')?.value?.value === cat.value;
+}
 
   ngOnInit(): void {
     this.expenseForm = this.fb.group({
       title: ['', Validators.required],
       amount: [null, [Validators.required, Validators.min(1)]],
       date: ['', Validators.required],
-      category: [''],
+      category: this.fb.group({
+        label: [''],
+        value: [''],
+        icon: ['']  
+      }),
       description: ['']
     });
   }
@@ -52,6 +63,9 @@ export class ExpenseCreateComponent implements OnInit {
   }
   get date() {
     return this.expenseForm.get('date')!;
+  }
+  get category() {
+    return this.expenseForm.get('category')!;
   }
 
   /** Méthode principale pour créer une dépense */
