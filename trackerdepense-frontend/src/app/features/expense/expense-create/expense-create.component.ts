@@ -19,13 +19,13 @@ export class ExpenseCreateComponent implements OnInit {
   expenseForm!: FormGroup;
   isSubmitting = false;
   categories: Category[] = [
-  { label: 'Restauration', icon: 'assets/categories/food.png', value: 'food' },
-  { label: 'Transport', icon: 'assets/categories/transport.png', value: 'transport' },
-  { label: 'Logement', icon: 'assets/categories/home.png', value: 'home' },
-  { label: 'Divertissement', icon: 'assets/categories/entertainment.png', value: 'entertainment' },
-  { label: 'Shopping', icon: 'assets/categories/shopping.png', value: 'shopping' },
-  { label: 'Santé', icon: 'assets/categories/health.png', value: 'health' }
-];
+    { label: 'Restauration', icon: 'assets/categories/food.png', value: 'food' },
+    { label: 'Transport', icon: 'assets/categories/transport.png', value: 'transport' },
+    { label: 'Logement', icon: 'assets/categories/home.png', value: 'home' },
+    { label: 'Divertissement', icon: 'assets/categories/entertainment.png', value: 'entertainment' },
+    { label: 'Shopping', icon: 'assets/categories/shopping.png', value: 'shopping' },
+    { label: 'Santé', icon: 'assets/categories/health.png', value: 'health' }
+  ];
   constructor(
     private fb: FormBuilder,
     private expenseService: ExpenseService,
@@ -67,16 +67,18 @@ export class ExpenseCreateComponent implements OnInit {
   get category() {
     return this.expenseForm.get('category')!;
   }
+  get description() {
+    return this.expenseForm.get('description')!;
+  }
 
   /** Méthode principale pour créer une dépense */
   createExpense(): void {
+    console.log('Dépense créée :', this.expenseForm.value); 
     if (this.expenseForm.invalid) {
       this.expenseForm.markAllAsTouched();
       return;
     }
-
     this.isSubmitting = true;
-
     this.expenseService.createExpense(this.expenseForm.value).subscribe({
       next: () => {
         this.isSubmitting = false;

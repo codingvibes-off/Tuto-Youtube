@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ import com.example.tacking.user.dto.UserAuthDTO;
 import com.example.tacking.user.exception.UserNotFoundException;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(UrlMapping.API_BASE_PATH)
 public class ExpenseController {
     private final ExpenseService expenseService;
