@@ -16,4 +16,5 @@ import lombok.NoArgsConstructor;
 public class SuccessDTO {
     private Boolean success;
     private String message;
+    private String token ;
 }

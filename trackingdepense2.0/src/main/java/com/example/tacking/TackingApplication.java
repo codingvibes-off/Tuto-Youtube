@@ -7,9 +7,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class TackingApplication {
+public class TackingApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(TackingApplication.class, args);
 	}
-
 }

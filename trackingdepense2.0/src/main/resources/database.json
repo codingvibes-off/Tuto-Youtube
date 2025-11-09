@@ -41,6 +41,28 @@
           "description": "Consultation médecin"
         }
       ]
+    },
+    {
+      "id": 3,
+      "nom": "Bob",
+      "email": "testtestetststststts@yopmail.com",
+      "password": "mk8yi7eaqM@sss!",
+      "depenses": [
+        {
+          "id": 201,
+          "categorie": "Divertissement",
+          "montant": 29.99,
+          "date": "2025-08-03",
+          "description": "Abonnement Netflix"
+        },
+        {
+          "id": 202,
+          "categorie": "Santé",
+          "montant": 60.00,
+          "date": "2025-08-05",
+          "description": "Consultation médecin"
+        }
+      ]
     }
   ]
 }

@@ -2,9 +2,6 @@ package com.example.tacking.user.entity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import com.example.tacking.user.dto.UserAuthDTO;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.UUID;

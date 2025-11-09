@@ -1,0 +1,182 @@
+
+<div class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white min-h-screen">
+<app-header> </app-header>
+<!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <!-- Animated Background Blobs -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s"></div>
+      <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s"></div>
+    </div>
+
+    <div class="relative z-10 text-center max-w-5xl mx-auto">
+      <!-- Hero Content -->
+      <div class="mb-8 animate-slide-up">
+        <h1 class="text-7xl sm:text-8xl md:text-9xl font-black mb-6 bg-gradient-to-r from-blue-400 via-violet-400 to-pink-400 bg-clip-text text-transparent leading-tight animate-zoom-in">
+          BUDGETLY
+        </h1>
+        <p class="text-xl sm:text-2xl md:text-3xl text-slate-300 font-light mb-4">
+          Vos dépenses, <span class="font-semibold text-white">simples</span> et 
+          <span class="font-semibold bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">intelligentes</span>
+        </p>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          Prenez le contrôle total de vos finances avec l'assistant IA le plus avancé du marché
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slide-up-delayed">
+        <button 
+          (click)="navigateTo('/dashboard')"
+          class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 hover:scale-105">
+          Démarrer maintenant
+        </button>
+        <button 
+          (click)="scrollToSection('features')"
+          class="px-8 py-4 rounded-full bg-slate-800/50 backdrop-blur text-white font-semibold text-lg border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300">
+          Voir la démo
+        </button>
+      </div>
+
+      <!-- Stats
+      <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto animate-slide-up-more-delayed">
+        <div>
+
+          <div class="text-slate-400 text-sm mt-1">Utilisateurs actifs</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+            98%
+          </div>
+          <div class="text-slate-400 text-sm mt-1">Satisfaction client</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+            4.9/5
+          </div>
+          <div class="text-slate-400 text-sm mt-1">Note moyenne</div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-400 text-3xl">
+      ▼
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-32 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="text-5xl sm:text-6xl font-bold mb-6">
+          Des fonctionnalités qui font la 
+          <span class="bg-gradient-to-r from-blue-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
+            différence
+          </span>
+        </h2>
+        <p class="text-slate-400 text-xl max-w-2xl mx-auto">
+          Découvrez pourquoi Budgetly est l'outil préféré de milliers d'utilisateurs
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div 
+          *ngFor="let feature of features" (click)="navigateTo(feature.root)"
+          class="group relative p-8 rounded-2xl bg-slate-800/30 backdrop-blur border border-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/20 cursor-pointer">
+          <!-- Icon -->
+          <div [class]="'inline-flex p-3 rounded-xl bg-gradient-to-r ' + feature.gradient + ' mb-6 group-hover:scale-110 transition-transform duration-300 text-4xl'">
+            {{ feature.icon }}
+          </div>
+          <!-- Title -->
+          <h3 class="text-2xl font-bold mb-3 text-white">
+            {{ feature.title }}
+          </h3>
+          <!-- Description -->
+          <p class="text-slate-400 leading-relaxed">
+            {{ feature.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-violet-500/10 to-pink-500/10"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-5xl sm:text-6xl font-bold mb-6">
+        Prêt à transformer votre 
+        <span class="bg-gradient-to-r from-blue-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
+          gestion financière
+        </span> ?
+      </h2>
+      <p class="text-slate-300 text-xl mb-10">
+        Rejoignez des milliers d'utilisateurs satisfaits et prenez le contrôle de vos finances dès aujourd'hui
+      </p>
+      <button 
+        (click)="navigateTo('/dashboard')"
+        class="px-12 py-5 rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 text-white font-bold text-xl hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 hover:scale-105">
+        Commencer gratuitement
+      </button>
+      <p class="text-slate-500 text-sm mt-6">
+        Aucune carte de crédit requise • 14 jours d'essai gratuit
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h4 class="font-semibold mb-4">Produit</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a (click)="scrollToSection('features')" class="hover:text-white transition cursor-pointer">Fonctionnalités</a></li>
+            <li><a href="#" class="hover:text-white transition">Tarifs</a></li>
+            <li><a href="#" class="hover:text-white transition">Sécurité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Entreprise</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="#" class="hover:text-white transition">À propos</a></li>
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition">Carrières</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="#" class="hover:text-white transition">Aide</a></li>
+            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+            <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Légal</h4>
+          <ul class="space-y-2 text-slate-400 text-sm">
+            <li><a href="#" class="hover:text-white transition">Confidentialité</a></li>
+            <li><a href="#" class="hover:text-white transition">Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-800">
+        <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-violet-400 to-pink-400 bg-clip-text text-transparent mb-4 md:mb-0">
+          Budgetly
+        </div>
+        <div class="text-slate-400 text-sm">
+          © 2025 Budgetly. Tous droits réservés.
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+

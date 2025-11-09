@@ -1,0 +1,25 @@
+
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out;
+}
+
+.animate-slide-up-delayed {
+  animation: slide-up 1s ease-out 0.3s backwards;
+}
+
+.animate-slide-up-more-delayed {
+  animation: slide-up 1s ease-out 0.5s backwards;
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s infinite;
+}

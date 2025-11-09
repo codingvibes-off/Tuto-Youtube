@@ -18,6 +18,9 @@ public class UrlMapping {
     public static final String CODE = "/{code}";
     //EXPENSE
     public static final String EXPENSE = "/expense";
+    //Category 
+    public static final String CATEGORY = "/category";
+
 
 
 
