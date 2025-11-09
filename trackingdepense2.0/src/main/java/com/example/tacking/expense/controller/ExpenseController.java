@@ -24,8 +24,8 @@ import com.example.tacking.user.dto.SuccessDTO;
 import com.example.tacking.user.dto.UserAuthDTO;
 import com.example.tacking.user.exception.UserNotFoundException;
 
-@RestController
 @CrossOrigin(origins = "*")
+@RestController
 @RequestMapping(UrlMapping.API_BASE_PATH)
 public class ExpenseController {
     private final ExpenseService expenseService;
