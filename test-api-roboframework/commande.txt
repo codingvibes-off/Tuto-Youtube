@@ -1,0 +1,77 @@
+✅ TERMINAL N°1 – API Node.js
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✔️ Ordre correct (très important)
+npm install uuid@8.3.2
+npm install
+node api-ecommerce.js
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+🔎 Remarques
+
+✅ uuid@8.3.2 → OBLIGATOIRE (CommonJS compatible)
+✅ npm install → installe le reste des dépendances (package.json)
+✅ node api-ecommerce.js → démarre ton serveur API
+
+📌 Laisse ce terminal ouvert
+👉 l’API doit rester en cours d’exécution pendant les tests Robot.
+
+✅ TERMINAL N°2 – Robot Framework
+✔️ Création de l’environnement virtuel (OK)
+python3 -m venv venv
+
+✔️ Activation (macOS / Linux)
+source venv/bin/activate
+
+--------------------------------------------------------------------------------------------------------
+➡️ Tu dois voir (venv) au début de la ligne
+
+✔️ Installation des librairies
+pip install robotframework robotframework-requests
+--------------------------------------------------------------------------------------------------------
+
+👍 Correct pour des tests API
+⚠️ Petite correction ici
+❌ Tu as écrit :
+
+robot /checkout.robot
+----------------------------------------------------------------------------------------------------------------------------------
+
+👉 Le / au début signifie racine du disque, ce qui va casser le chemin.
+✅ À faire à la place
+Si le fichier est dans le dossier courant execute la commande suivante :
+
+robot checkout.robot
+
+--------------------------------------------------------------------------------------------------------
+Ou dans un dossier :
+
+robot tests/checkout.robot
+
+🧠 Résumé clair (mode opératoire validé)
+Terminal 1 (API)
+npm install uuid@8.3.2
+npm install
+node api-ecommerce.js
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Terminal 2 (Robot)
+
+python3 -m venv venv
+source venv/bin/activate
+pip install robotframework robotframework-requests
+robot checkout.robot
+
+
+✅ Oui, le mode opératoire est bon
+✅ Les deux terminaux doivent tourner en parallèle
+⚠️ Attention au chemin du fichier .robot
+----------------------------------------------------------------------------------------------------------------------------------
+💡 Bonus 
+
+Vérifie que l’API écoute bien sur localhost:3000 ou autre
+
+Teste l’API à la main (curl ou Postman) avant Robot
+
+Ouvre log.html si un test échoue → indispensable
