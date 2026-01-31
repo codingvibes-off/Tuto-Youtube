@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.0 on darwin)" generated="2025-12-06T22:41:48.541980" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/sullivan/Desktop/Tuto-Youtube/robot-framework/niveau-10/tests">
+<suite id="s1-s1" name="Create Test-2" source="/Users/sullivan/Desktop/Tuto-Youtube/robot-framework/niveau-10/tests/create_test-2.robot">
+<test id="s1-s1-t1" name="Create Data in Database" line="4">
+<kw name="Setup Database" owner="setup_database">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-12-06T22:41:48.602395" level="INFO">${json} = [{'id': '1', 'name': 'Product A', 'price': '10.99', 'stock': '100'}]</msg>
+<var>${json}</var>
+<arg>${DB_PATH}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.602110" elapsed="0.000315"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-12-06T22:41:48.602612" level="INFO">${database} = []</msg>
+<var>${database}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.602522" elapsed="0.000104"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-06T22:41:48.602883" level="INFO">${new_product} = {'id': '2', 'name': 'Product B', 'price': '20.99', 'stock': '400'}</msg>
+<var>${new_product}</var>
+<arg>id=${product_id}</arg>
+<arg>name=${name}</arg>
+<arg>price=${price}</arg>
+<arg>stock=${stock}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.602686" elapsed="0.000212"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${database}</arg>
+<arg>${new_product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.602952" elapsed="0.000075"/>
+</kw>
+<kw name="Dump Json To File" owner="JSONLibrary">
+<arg>${DB_PATH}</arg>
+<arg>${database}</arg>
+<doc>Dump JSON to file</doc>
+<status status="PASS" start="2025-12-06T22:41:48.603072" elapsed="0.000458"/>
+</kw>
+<return>
+<value>${database}</value>
+<status status="PASS" start="2025-12-06T22:41:48.603587" elapsed="0.000055"/>
+</return>
+<msg time="2025-12-06T22:41:48.603750" level="INFO">${database} = [{'id': '2', 'name': 'Product B', 'price': '20.99', 'stock': '400'}]</msg>
+<var>${database}</var>
+<arg>2</arg>
+<arg>Product B</arg>
+<arg>20.99</arg>
+<arg>400</arg>
+<status status="PASS" start="2025-12-06T22:41:48.601511" elapsed="0.002259"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T22:41:48.603926" level="INFO">Initial data created in the database. [{'id': '2', 'name': 'Product B', 'price': '20.99', 'stock': '400'}]</msg>
+<arg>Initial data created in the database. ${database}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.603843" elapsed="0.000107"/>
+</kw>
+<doc>This test case creates initial data in the database.</doc>
+<status status="PASS" start="2025-12-06T22:41:48.600893" elapsed="0.003118"/>
+</test>
+<status status="PASS" start="2025-12-06T22:41:48.555172" elapsed="0.049054"/>
+</suite>
+<status status="PASS" start="2025-12-06T22:41:48.548814" elapsed="0.055644"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Create Test-2" id="s1-s1" pass="1" fail="0" skip="0">Tests.Create Test-2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

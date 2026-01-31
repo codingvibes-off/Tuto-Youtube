@@ -1,0 +1,16 @@
+--suite Tests.Create Test-2
+--variable CALLER_ID:f14d430ef1064faab303cfd4de09c4be
+--variable PABOTLIBURI:127.0.0.1:8270
+--variable PABOTEXECUTIONPOOLID:0
+--variable PABOTISLASTEXECUTIONINPOOL:1
+--variable PABOTNUMBEROFPROCESSES:4
+--variable PABOTQUEUEINDEX:1
+--variable PABOTLASTLEVEL:Tests.Create Test-2
+--outputdir results/pabot_results/1
+--listener RobotStackTracer
+--log NONE
+--report NONE
+--xunit NONE
+--consolecolors off
+--consolemarkers off
+./niveau-10/tests/
