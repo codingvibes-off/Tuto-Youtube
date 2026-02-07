@@ -1,0 +1,27 @@
+python3 -m venv venv
+source venv/bin/activate
+
+
+pip install robotframework robotframework-requests
+pip install robotframework-seleniumlibrary
+pip install robotframework-requests
+pip install --upgrade pip
+pip install robotframework-datadriver
+#Execution du script
+robot   formation-robot.robot
+robot   formation-robot-selenium-custom.robot
+robot formation-robot-customLibrairies.robot
+#Si le venv a ete déplacé
+deactivate
+rm -rf venv
+
+#Permet de tout lancer d'un coup
+robot .
+
+robot formation-robot.robot
+robot formation-robot-customLibrairies.robot
+robot formation-robot-datadriver.robot
+robot formation-robot-framework-python.robot
+robot formation-robot-selenium-custom.robot
+robot formation-robot-test-template.robot
+robot --outputdir results formation-robot.robot
