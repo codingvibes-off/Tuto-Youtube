@@ -1,244 +1,1091 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.0 on darwin)" generated="2026-02-07T10:18:04.293777" rpa="false" schemaversion="5">
-<suite id="s1" name="Formation-End-To-End-Checkout" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-end-to-end-checkout.robot">
-<test id="s1-t1" name="Test end to end Checkout Page" line="22">
+<robot generator="Robot 7.4.1 (Python 3.13.0 on darwin)" generated="2026-02-12T12:19:27.746097" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test">
+<suite id="s1-s1" name="Formation-End-To-End-Checkout" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-end-to-end-checkout.robot">
+<test id="s1-s1-t1" name="Test end to end Checkout Page" line="22">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:04.436677" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<msg time="2026-02-12T12:19:27.884014" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-12T12:19:27.883900" elapsed="7.696125"/>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-12T12:19:35.585405" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<msg time="2026-02-12T12:19:35.586306" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<arg>css:input[name="username"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-02-12T12:19:35.581710" elapsed="0.010486">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:input[name="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:35.592457" elapsed="0.000042"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:35.592608" elapsed="0.000024"/>
+</kw>
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="FAIL" start="2026-02-12T12:19:35.580991" elapsed="0.011866">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:35.593550" elapsed="0.000034"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:35.593735" elapsed="0.000044"/>
+</kw>
+<kw name="verify card titles in the shop page" owner="ShopPage">
+<status status="NOT RUN" start="2026-02-12T12:19:35.594080" elapsed="0.000034"/>
+</kw>
+<kw name="Add Items To Card And Checkout" owner="Shop">
+<arg>${card_titles}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:35.594233" elapsed="0.000027"/>
+</kw>
+<kw name="Verify items in the checkout Page and proceed" owner="CheckoutPage">
+<status status="NOT RUN" start="2026-02-12T12:19:35.594516" elapsed="0.000115"/>
+</kw>
+<kw name="Confirmation Checkout Product and select the terms" owner="ConfirmationPage">
+<arg>India</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:35.594944" elapsed="0.000029"/>
+</kw>
+<kw name="Purchase the product and Confirm the Purchase" owner="ConfirmationPage">
+<status status="NOT RUN" start="2026-02-12T12:19:35.595107" elapsed="0.000024"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:35.595378" elapsed="0.075901"/>
+</kw>
+<tag>SMOKE</tag>
+<status status="FAIL" start="2026-02-12T12:19:27.883276" elapsed="7.788161">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:27.762200" elapsed="7.909749"/>
+</suite>
+<suite id="s1-s2" name="formation-robot-customLibrairies" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-customLibrairies.robot">
+<test id="s1-s2-t1" name="Test CustomLibraries" line="24">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-12T12:19:35.675761" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
 <arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
 <arg>chrome</arg>
 <arg>options=add_experimental_option("detach", True)</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-07T10:18:04.436531" elapsed="2.477378"/>
+<status status="PASS" start="2026-02-12T12:19:35.675649" elapsed="2.787714"/>
 </kw>
 <kw name="Fill The Login Form" owner="LandingPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-12T12:19:38.468212" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<msg time="2026-02-12T12:19:38.468943" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
 <arg>css:input[name="username"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-07T10:18:06.915601" elapsed="0.022222"/>
+<status status="FAIL" start="2026-02-12T12:19:38.465111" elapsed="0.006544">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:06.938266" level="INFO">Typing text 'rahulshettyacademy' into text field 'css:input[name="username"]'.</msg>
 <arg>css:input[name="username"]</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:06.938027" elapsed="0.108605"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.472279" elapsed="0.000047"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:07.047805" level="INFO">Typing text 'Learning@830$3mK2' into text field 'css:input[name="password"]'.</msg>
 <arg>css:input[name="password"]</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:07.047269" elapsed="0.051595"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.472438" elapsed="0.000056"/>
 </kw>
 <arg>${valid_username}</arg>
 <arg>${valid_password}</arg>
-<status status="PASS" start="2026-02-07T10:18:06.914986" elapsed="0.183956"/>
+<status status="FAIL" start="2026-02-12T12:19:38.464338" elapsed="0.008322">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:07.099211" level="INFO">Clicking button 'signInBtn'.</msg>
 <arg>signInBtn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:07.099091" elapsed="0.049664"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.472858" elapsed="0.000025"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-07T10:18:10.152601" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-07T10:18:07.149124" elapsed="3.003944"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.473079" elapsed="0.000028"/>
 </kw>
 <kw name="verify card titles in the shop page" owner="ShopPage">
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:10.669684" level="INFO">${card_titles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.48")&gt;, &lt;selenium.webdriv...</msg>
-<var>${card_titles}</var>
-<arg>css=.card-title a</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.161451" elapsed="0.508270"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2026-02-07T10:18:10.670074" level="INFO">@{expectedList} = [ iphone X | Samsung Note 8 | Nokia Edge | Blackberry ]</msg>
-<var>@{expectedList}</var>
-<arg>iphone X</arg>
-<arg>Samsung Note 8</arg>
-<arg>Nokia Edge</arg>
-<arg>Blackberry</arg>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.669845" elapsed="0.000246"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2026-02-07T10:18:10.670263" level="INFO">@{actualList} = [ ]</msg>
-<var>@{actualList}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.670158" elapsed="0.000118"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.670485" elapsed="0.007309"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.677933" elapsed="0.004545"/>
-</kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.48")&gt;</var>
-<status status="PASS" start="2026-02-07T10:18:10.670425" elapsed="0.012101"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.682684" elapsed="0.003867"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.686639" elapsed="0.003571"/>
-</kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.49")&gt;</var>
-<status status="PASS" start="2026-02-07T10:18:10.682614" elapsed="0.007626"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.690356" elapsed="0.003782"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.694229" elapsed="0.004023"/>
-</kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.50")&gt;</var>
-<status status="PASS" start="2026-02-07T10:18:10.690306" elapsed="0.007985"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.698419" elapsed="0.004020"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${element.text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.702529" elapsed="0.003641"/>
-</kw>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.51")&gt;</var>
-<status status="PASS" start="2026-02-07T10:18:10.698359" elapsed="0.007851"/>
-</iter>
-<var>${element}</var>
-<value>@{card_titles}</value>
-<status status="PASS" start="2026-02-07T10:18:10.670320" elapsed="0.035917"/>
-</for>
-<kw name="Lists Should Be Equal" owner="Collections">
-<arg>${actualList}</arg>
-<arg>${expectedList}</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.706320" elapsed="0.000172"/>
-</kw>
-<status status="PASS" start="2026-02-07T10:18:10.154309" elapsed="0.552221"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.473656" elapsed="0.000070"/>
 </kw>
 <kw name="Add Items To Card And Checkout" owner="Shop">
-<msg time="2026-02-07T10:18:10.716096" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[1]/button'.</msg>
-<msg time="2026-02-07T10:18:10.760620" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[2]/button'.</msg>
-<msg time="2026-02-07T10:18:10.804221" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[3]/button'.</msg>
-<msg time="2026-02-07T10:18:10.841463" level="INFO">Clicking button 'xpath:(//*[@class='card-footer'])[4]/button'.</msg>
-<msg time="2026-02-07T10:18:10.875707" level="INFO">[&lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.48")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.49")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.50")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="94639db6cf9b761fa6d9072f083400ae", element="f.6C838C924898375A03EF1C18A4606924.d.DC8CBBD05BE753616E546B84BA83FA92.e.51")&gt;]</msg>
 <arg>${card_titles}</arg>
-<status status="PASS" start="2026-02-07T10:18:10.706609" elapsed="0.169218"/>
-</kw>
-<kw name="Verify items in the checkout Page and proceed" owner="CheckoutPage">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:10.876255" level="INFO">Clicking element 'xpath=//a[contains(@class,'btn-primary')]'.</msg>
-<arg>xpath=//a[contains(@class,'btn-primary')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.876154" elapsed="0.037952"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:10.914342" level="INFO">Clicking element 'css:.btn-success'.</msg>
-<arg>css:.btn-success</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.914230" elapsed="0.033326"/>
-</kw>
-<status status="PASS" start="2026-02-07T10:18:10.875997" elapsed="0.071627"/>
-</kw>
-<kw name="Confirmation Checkout Product and select the terms" owner="ConfirmationPage">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:10.948243" level="INFO">Typing text 'India' into text field 'id=country'.</msg>
-<arg>id=country</arg>
-<arg>${country_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:10.948110" elapsed="0.051585"/>
-</kw>
-<kw name="Wait until element passed is located on Page" owner="GenericPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${page_locator}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-07T10:18:11.000137" elapsed="5.149861"/>
-</kw>
-<arg>//a[text()='${country_name}']</arg>
-<status status="PASS" start="2026-02-07T10:18:10.999876" elapsed="5.150444"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-07T10:18:19.153243" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-07T10:18:16.150647" elapsed="3.002800"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:19.154183" level="INFO">Clicking element '//a[text()='India']'.</msg>
-<arg>//a[text()='${country_name}']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:19.153753" elapsed="0.061097"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:19.215136" level="INFO">Clicking element '//label[@for='checkbox2']'.</msg>
-<arg>//label[@for='checkbox2']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:19.214991" elapsed="0.038634"/>
-</kw>
-<arg>India</arg>
-<status status="PASS" start="2026-02-07T10:18:10.947924" elapsed="8.305770"/>
-</kw>
-<kw name="Purchase the product and Confirm the Purchase" owner="ConfirmationPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:19.254111" level="INFO">Clicking button 'css:.btn-success'.</msg>
-<arg>css:.btn-success</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-07T10:18:19.254023" elapsed="0.030979"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-02-07T10:18:19.291589" level="INFO">Current page contains text 'Success!'.</msg>
-<arg>Success!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-02-07T10:18:19.285123" elapsed="0.006510"/>
-</kw>
-<status status="PASS" start="2026-02-07T10:18:19.253863" elapsed="0.037815"/>
+<status status="NOT RUN" start="2026-02-12T12:19:38.473990" elapsed="0.000031"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-07T10:18:19.291864" elapsed="0.086434"/>
+<status status="PASS" start="2026-02-12T12:19:38.474316" elapsed="0.088708"/>
 </kw>
-<status status="PASS" start="2026-02-07T10:18:04.435884" elapsed="14.942503"/>
+<tag>SMOKE</tag>
+<status status="FAIL" start="2026-02-12T12:19:35.675438" elapsed="2.887682">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
 </test>
-<status status="PASS" start="2026-02-07T10:18:04.294354" elapsed="15.084336"/>
+<status status="FAIL" start="2026-02-12T12:19:35.672198" elapsed="2.891460"/>
+</suite>
+<suite id="s1-s3" name="Formation-Robot-Datadriver" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-datadriver.robot">
+<test id="s1-s3-t1" name="Login with user ${username} and password ${password}" line="23">
+<kw name="Validate Unsuccessful Login" owner="LandingPage">
+<kw name="Open Browser with mortgage payment url" owner="GenericPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-12T12:19:38.582256" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1071a2ad0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.581994" elapsed="0.000282"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-02-12T12:19:38.582537" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</msg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-02-12T12:19:38.582383" elapsed="0.000207">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582655" elapsed="0.000013"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582713" elapsed="0.000010"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582773" elapsed="0.000011"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582825" elapsed="0.000009"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.581882" elapsed="0.000996">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582946" elapsed="0.000012"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.582999" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.583047" elapsed="0.000008"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.583104" elapsed="0.000010"/>
+</kw>
+<arg>xyc</arg>
+<arg>123456</arg>
+<status status="FAIL" start="2026-02-12T12:19:38.581719" elapsed="0.001426">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.583251" elapsed="0.000054"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.581231" elapsed="0.002107">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:38.563909" elapsed="0.019556"/>
+</suite>
+<suite id="s1-s4" name="Formation-Robot-Framework-Python" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-framework-python.robot">
+<test id="s1-s4-t1" name="Validate Invalid Login Shows Error Message" line="22">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.587413" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.587389" elapsed="0.000049">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${invalid_username}</arg>
+<arg>${invalid_password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.587540" elapsed="0.000015"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.587621" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.587687" elapsed="0.000011"/>
+</kw>
+<kw name="wait until checks and display error message" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.587765" elapsed="0.000012"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.587840" elapsed="0.000011"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.587946" elapsed="0.000053"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.586470" elapsed="0.001560">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<test id="s1-s4-t2" name="Validate User Can Select User Type" line="30">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.589067" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.589034" elapsed="0.000059">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.589280" elapsed="0.000019"/>
+</kw>
+<kw name="Fill the login Details and select the user option" owner="LandingPage">
+<arg>consult</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.589390" elapsed="0.000011"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.589460" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.589523" elapsed="0.000010"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.589630" elapsed="0.000058"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.588120" elapsed="0.001598">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<test id="s1-s4-t3" name="Validate User Can Select User Type" line="37">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.590632" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.590618" elapsed="0.000030">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.590728" elapsed="0.000013"/>
+</kw>
+<kw name="Fill the login Details and select the user option" owner="LandingPage">
+<arg>teach</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.590815" elapsed="0.000011"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.590927" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.591036" elapsed="0.000020"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.591172" elapsed="0.000056"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.589810" elapsed="0.001452">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<test id="s1-s4-t4" name="Validate User Can Select User Type" line="44">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.592212" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.592195" elapsed="0.000036">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.592322" elapsed="0.000014"/>
+</kw>
+<kw name="Fill the login Details and select the user option" owner="LandingPage">
+<arg>stud</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.592418" elapsed="0.000012"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.592486" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.592546" elapsed="0.000011"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.592646" elapsed="0.000050"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.591361" elapsed="0.001366">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<test id="s1-s4-t5" name="Validate Card Titles In Shop Page" line="51">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.593700" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.593685" elapsed="0.000034">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.593803" elapsed="0.000013"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.593873" elapsed="0.000010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.593932" elapsed="0.000011"/>
+</kw>
+<kw name="verify card titles in the shop page" owner="ShopPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.594028" elapsed="0.000011"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.594126" elapsed="0.000049"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.592820" elapsed="0.001389">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<test id="s1-s4-t6" name="Validate Child window Functionality" line="58">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:38.595049" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:38.595036" elapsed="0.000028">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Select the link of the child window" owner="DocumentsRequestPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.595137" elapsed="0.000013"/>
+</kw>
+<kw name="Verify the user is Switched to Child Window" owner="DocumentsRequestPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.595211" elapsed="0.000010"/>
+</kw>
+<kw name="Grab the Email id in the Child Window" owner="DocumentsRequestPage">
+<var>${expected_email_args}</var>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595290" elapsed="0.000011"/>
+</kw>
+<kw name="Switch to Parent window and enter the email" owner="DocumentsRequestPage">
+<arg>${expected_email_args}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595361" elapsed="0.000011"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595423" elapsed="0.000010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595484" elapsed="0.000009"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595542" elapsed="0.000009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:38.595594" elapsed="0.000010"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:38.595678" elapsed="0.000012"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.595772" elapsed="0.000044"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.594295" elapsed="0.001550">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:38.583648" elapsed="0.012341"/>
+</suite>
+<suite id="s1-s5" name="Formation-Robot-Selenium-Custom" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-selenium-custom.robot">
+<test id="s1-s5-t1" name="Test Selenium framework custom" line="22">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-12T12:19:38.599024" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/'.</msg>
+<arg>https://rahulshettyacademy.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-12T12:19:38.598930" elapsed="1.610919"/>
+</kw>
+<kw name="Hello Robot" owner="SeleniumCustom">
+<msg time="2026-02-12T12:19:40.211264" level="INFO">Hello Robot</msg>
+<status status="PASS" start="2026-02-12T12:19:40.210964" elapsed="0.000361"/>
+</kw>
+<kw name="Open Custom Browser" owner="SeleniumCustom">
+<msg time="2026-02-12T12:19:40.212984" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000100d17928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000100d0fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x00000001007f283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x00000001007cb330 chromedriver + 160560
+4   chromedriver                        0x0000000100864c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x000000010087ab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010083007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000100cd6884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000100cd9fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x0000000100cbb578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000100cda850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x0000000100cab640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000100cfe194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000100cfe310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x0000000100d0f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<arg>${url}</arg>
+<status status="FAIL" start="2026-02-12T12:19:40.211496" elapsed="0.003101">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000100d17928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000100d0fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x00000001007f283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x00000001007cb330 chromedriver + 160560
+4   chromedriver                        0x0000000100864c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x000000010087ab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010083007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000100cd6884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000100cd9fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x0000000100cbb578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000100cda850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x0000000100cab640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000100cfe194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000100cfe310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x0000000100d0f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
+</kw>
+<kw name="Close Browser Custom" owner="SeleniumCustom">
+<status status="NOT RUN" start="2026-02-12T12:19:40.214847" elapsed="0.000038"/>
+</kw>
+<kw name="Open All Navigator" owner="SeleniumCustom">
+<arg>Chrome</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:40.215172" elapsed="0.000030"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.215673" elapsed="0.075714"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:38.598695" elapsed="1.692783">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000100d17928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000100d0fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x00000001007f283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x00000001007cb330 chromedriver + 160560
+4   chromedriver                        0x0000000100864c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x000000010087ab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010083007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000100cd6884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000100cd9fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x0000000100cbb578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000100cda850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x0000000100cab640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000100cfe194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000100cfe310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x0000000100d0f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:38.596218" elapsed="1.695552"/>
+</suite>
+<suite id="s1-s6" name="Formation-Robot-Test-Template" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-test-template.robot">
+<test id="s1-s6-t1" name="Invalid username" line="20">
+<kw name="Validate Unsuccessful Login" owner="LandingPage">
+<kw name="Open Browser with mortgage payment url" owner="GenericPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.294604" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10691afd0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.294384" elapsed="0.000236"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.294823" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</msg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-02-12T12:19:40.294681" elapsed="0.000195">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.294935" elapsed="0.000012"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.294990" elapsed="0.000009"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.295089" elapsed="0.000013"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.295144" elapsed="0.000009"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.294286" elapsed="0.000911">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:40.295263" elapsed="0.000012"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.295316" elapsed="0.000009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.295362" elapsed="0.000010"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.295425" elapsed="0.000010"/>
+</kw>
+<arg>dsahed</arg>
+<arg>learning</arg>
+<status status="FAIL" start="2026-02-12T12:19:40.294146" elapsed="0.001321">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.295574" elapsed="0.000046"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.293967" elapsed="0.001685">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</test>
+<test id="s1-s6-t2" name="Invalid password" line="21">
+<kw name="Validate Unsuccessful Login" owner="LandingPage">
+<kw name="Open Browser with mortgage payment url" owner="GenericPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.296414" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x107624dd0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.296226" elapsed="0.000205"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.296636" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</msg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-02-12T12:19:40.296493" elapsed="0.000191">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.296745" elapsed="0.000012"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.296800" elapsed="0.000010"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.296854" elapsed="0.000010"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.296904" elapsed="0.000009"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.296118" elapsed="0.001010">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:40.297237" elapsed="0.000016"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.297314" elapsed="0.000011"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.297365" elapsed="0.000010"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.297432" elapsed="0.000013"/>
+</kw>
+<arg>rahusl</arg>
+<arg>ploufg</arg>
+<status status="FAIL" start="2026-02-12T12:19:40.295926" elapsed="0.001561">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.297620" elapsed="0.000057"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.295747" elapsed="0.001965">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</test>
+<test id="s1-s6-t3" name="Special chatracters" line="22">
+<kw name="Validate Unsuccessful Login" owner="LandingPage">
+<kw name="Open Browser with mortgage payment url" owner="GenericPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.298493" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1076d4c00&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.298248" elapsed="0.000263"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-02-12T12:19:40.298780" level="FAIL">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</msg>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless=new</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="FAIL" start="2026-02-12T12:19:40.298574" elapsed="0.000264">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.298909" elapsed="0.000015"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.298972" elapsed="0.000010"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.299029" elapsed="0.000011"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.299112" elapsed="0.000010"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.298156" elapsed="0.001068">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Fill The Login Form" owner="LandingPage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:40.299297" elapsed="0.000014"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.299354" elapsed="0.000009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.299400" elapsed="0.000010"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.299467" elapsed="0.000011"/>
+</kw>
+<arg>@#$</arg>
+<arg>learning</arg>
+<status status="FAIL" start="2026-02-12T12:19:40.298019" elapsed="0.001494">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.299653" elapsed="0.000063"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.297865" elapsed="0.001911">Calling method 'add_argument' failed: TypeError: ArgOptions.add_argument() got an unexpected keyword argument '--headless'</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:40.291984" elapsed="0.007953"/>
+</suite>
+<suite id="s1-s7" name="Formation-Robot" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot.robot">
+<test id="s1-s7-t1" name="Validate Child window Functionality" line="23">
+<kw name="Open Browser with de mortage payment url">
+<msg time="2026-02-12T12:19:40.305757" level="FAIL">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</msg>
+<status status="FAIL" start="2026-02-12T12:19:40.305728" elapsed="0.000059">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</kw>
+<kw name="Select the link of the child window" owner="DocumentsRequestPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.305907" elapsed="0.000016"/>
+</kw>
+<kw name="Verify the user is Switched to Child Window" owner="DocumentsRequestPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.305993" elapsed="0.000011"/>
+</kw>
+<kw name="Grab the Email id in the Child Window" owner="DocumentsRequestPage">
+<var>${expected_email_args}</var>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306082" elapsed="0.000011"/>
+</kw>
+<kw name="Switch to Parent window and enter the email" owner="DocumentsRequestPage">
+<arg>${expected_email_args}</arg>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306161" elapsed="0.000012"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306235" elapsed="0.000011"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:input[name="password"]</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306298" elapsed="0.000012"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306362" elapsed="0.000010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-12T12:19:40.306420" elapsed="0.000010"/>
+</kw>
+<kw name="verify error message is correct" owner="GenericPage">
+<status status="NOT RUN" start="2026-02-12T12:19:40.306527" elapsed="0.000018"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T12:19:40.306665" elapsed="0.000058"/>
+</kw>
+<status status="FAIL" start="2026-02-12T12:19:40.304717" elapsed="0.002039">No keyword with name 'Open Browser with de mortage payment url' found. Did you mean:
+    GenericPage.Open Browser with mortgage payment url</status>
+</test>
+<status status="FAIL" start="2026-02-12T12:19:40.300136" elapsed="0.006749"/>
+</suite>
+<status status="FAIL" start="2026-02-12T12:19:27.746644" elapsed="12.560448"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="14" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="2" skip="0">SMOKE</stat>
 </tag>
 <suite>
-<stat name="Formation-End-To-End-Checkout" id="s1" pass="1" fail="0" skip="0">Formation-End-To-End-Checkout</stat>
+<stat name="Test" id="s1" pass="0" fail="14" skip="0">Test</stat>
+<stat name="Formation-End-To-End-Checkout" id="s1-s1" pass="0" fail="1" skip="0">Test.Formation-End-To-End-Checkout</stat>
+<stat name="formation-robot-customLibrairies" id="s1-s2" pass="0" fail="1" skip="0">Test.formation-robot-customLibrairies</stat>
+<stat name="Formation-Robot-Datadriver" id="s1-s3" pass="0" fail="1" skip="0">Test.Formation-Robot-Datadriver</stat>
+<stat name="Formation-Robot-Framework-Python" id="s1-s4" pass="0" fail="6" skip="0">Test.Formation-Robot-Framework-Python</stat>
+<stat name="Formation-Robot-Selenium-Custom" id="s1-s5" pass="0" fail="1" skip="0">Test.Formation-Robot-Selenium-Custom</stat>
+<stat name="Formation-Robot-Test-Template" id="s1-s6" pass="0" fail="3" skip="0">Test.Formation-Robot-Test-Template</stat>
+<stat name="Formation-Robot" id="s1-s7" pass="0" fail="1" skip="0">Test.Formation-Robot</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-02-12T12:19:35.585405" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x0000000105077928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x000000010506fc04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x0000000104b5283c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000104b2b330 chromedriver + 160560
+4   chromedriver                        0x0000000104bc4c4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x0000000104bdab30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x0000000104b9007c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x0000000105036884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105039fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x000000010501b578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x000000010503a850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x000000010500b640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x000000010505e194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x000000010505e310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010506f85c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<msg time="2026-02-12T12:19:38.468212" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=144.0.7559.133)
+Stacktrace:
+0   chromedriver                        0x000000010554f928 cxxbridge1$str$ptr + 3098388
+1   chromedriver                        0x0000000105547c04 cxxbridge1$str$ptr + 3066352
+2   chromedriver                        0x000000010502a83c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75008
+3   chromedriver                        0x0000000105003330 chromedriver + 160560
+4   chromedriver                        0x000000010509cc4c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 542992
+5   chromedriver                        0x00000001050b2b30 _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632820
+6   chromedriver                        0x000000010506807c _RNvCs5DBLTqoOdVp_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326976
+7   chromedriver                        0x000000010550e884 cxxbridge1$str$ptr + 2831984
+8   chromedriver                        0x0000000105511fcc cxxbridge1$str$ptr + 2846136
+9   chromedriver                        0x00000001054f3578 cxxbridge1$str$ptr + 2720612
+10  chromedriver                        0x0000000105512850 cxxbridge1$str$ptr + 2848316
+11  chromedriver                        0x00000001054e3640 cxxbridge1$str$ptr + 2655276
+12  chromedriver                        0x0000000105536194 cxxbridge1$str$ptr + 2994048
+13  chromedriver                        0x0000000105536310 cxxbridge1$str$ptr + 2994428
+14  chromedriver                        0x000000010554785c cxxbridge1$str$ptr + 3065416
+15  libsystem_pthread.dylib             0x0000000196be6f94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x0000000196be1d34 thread_start + 8
+</msg>
+<msg time="2026-02-12T12:19:38.579216" level="ERROR">[ DataDriver ] Error in robot file:
+  File "/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-datadriver.robot", line 0</msg>
+<msg time="2026-02-12T12:19:38.579285" level="ERROR">In source file:
+  File "../resources/datadriver.csv", line 0</msg>
+<msg time="2026-02-12T12:19:38.580604" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+<msg time="2026-02-12T12:19:38.586137" level="ERROR">Error in file '/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/formation-robot-framework-python.robot' on line 7: Invalid resource file extension '.py'. Supported extensions are '.json', '.resource', '.rest', '.robot', '.rsrc', '.rst', '.tsv' and '.txt'.</msg>
+<msg time="2026-02-12T12:19:38.589829" level="WARN">Multiple tests with name 'Validate User Can Select User Type' executed in suite 'Test.Formation-Robot-Framework-Python'.</msg>
+<msg time="2026-02-12T12:19:38.591376" level="WARN">Multiple tests with name 'Validate User Can Select User Type' executed in suite 'Test.Formation-Robot-Framework-Python'.</msg>
 </errors>
 </robot>

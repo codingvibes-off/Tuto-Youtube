@@ -1,0 +1,17 @@
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install robotframework
+
+pip install robotframework robotframework-requests
+
+pip install robotframework-seleniumlibrary
+
+pip install robotframework-pabot
+
+robot test-load-robotframework.robot
+for i in {1..10}; do cp test-load-robotframework.robot test-load-robotframework_$i.robot; done
+
+pabot --processes 10 .
+

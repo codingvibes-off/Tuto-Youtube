@@ -7,10 +7,16 @@ pip install robotframework-seleniumlibrary
 pip install robotframework-requests
 pip install --upgrade pip
 pip install robotframework-datadriver
+pip install robotframework-pabot
+
 #Execution du script
+
 robot   formation-robot.robot
 robot   formation-robot-selenium-custom.robot
 robot formation-robot-customLibrairies.robot
+pip install robotframework-pabot
+pabot --testlevelsplit formation-end-to-end-checkout.robot
+
 #Si le venv a ete déplacé
 deactivate
 rm -rf venv
@@ -25,3 +31,26 @@ robot formation-robot-framework-python.robot
 robot formation-robot-selenium-custom.robot
 robot formation-robot-test-template.robot
 robot --outputdir results formation-robot.robot
+
+
+Command Line Scénarios
+
+Excute All test in the folder : robot . 
+Execute Specific test robot <testfilename>.robot
+Execute Test Cases by Test Name robot --t <tagname> . (Tu dois mentionner le fichier ou se trouve le test)
+Execute Test Cases By multiple tags robot --include <tagname1>AND<tagname1> . robot --include <tagname1>OR<tagname1> .
+Execute the test by tag robot --exclude <tagname> .
+Execute Tests by suite name robot --suite <foldername>
+Execute Only Failed Tests robot --rerunfailed outpul.xml .
+
+
+Change variables in Runtime command
+
+robot --variable browser_name:Firefox "name_file".robot
+robot formation-end-to-end-checkout.robot
+Installer Jenkins pour mac
+
+brew install jenkins-lts
+
+Démarrer Jenkins sur le serveur local
+brew services start jenkins-lts

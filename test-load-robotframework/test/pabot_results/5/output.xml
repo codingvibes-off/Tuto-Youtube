@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.0 on darwin)" generated="2026-02-08T14:57:03.520246" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/sullivan/Desktop/Tuto-Youtube/test-load-robotframework/test">
+<suite id="s1-s1" name="Test-Load-Robotframework 4" source="/Users/sullivan/Desktop/Tuto-Youtube/test-load-robotframework/test/test-load-robotframework_4.robot">
+<test id="s1-s1-t1" name="Test Load" line="17">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-08T14:57:03.727659" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-08T14:57:03.727235" elapsed="12.704352"/>
+</kw>
+<kw name="Fill login Form">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-08T14:57:16.435851" level="INFO">Typing text 'rahulshettyacademy' into text field 'css:input[name="username"]'.</msg>
+<arg>css:input[name="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-08T14:57:16.435070" elapsed="1.321300"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-08T14:57:17.756944" level="INFO">Typing text 'Learning@830$3mK2' into text field 'css:input[name="password"]'.</msg>
+<arg>css:input[name="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-08T14:57:17.756630" elapsed="1.267691"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-08T14:57:19.025477" level="INFO">Clicking element 'id:signInBtn'.</msg>
+<arg>id:signInBtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-08T14:57:19.024935" elapsed="0.520344"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-02-08T14:57:16.433947" elapsed="3.111798"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-08T14:57:19.545942" elapsed="0.195502"/>
+</kw>
+<status status="PASS" start="2026-02-08T14:57:03.725795" elapsed="16.016081"/>
+</test>
+<status status="PASS" start="2026-02-08T14:57:03.586970" elapsed="16.155794"/>
+</suite>
+<status status="PASS" start="2026-02-08T14:57:03.522019" elapsed="16.227821"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+<stat name="Test-Load-Robotframework 4" id="s1-s1" pass="1" fail="0" skip="0">Test.Test-Load-Robotframework 4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,19 @@
+[INFO]    Initialized logging in ./pabot_results
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 started.
+[DEBUG]   Storing .pabotsuitenames file
+[DEBUG]   2026-02-11 11:06:56.363365 [PID:23472] [0] [ID:0] EXECUTING Formation-End-To-End-Checkout.Test end to end Checkout Page
+[DEBUG]   2026-02-11 11:07:01.546605 [PID:23472] [0] [ID:0] still running Formation-End-To-End-Checkout.Test end to end Checkout Page after 5.0s
+[DEBUG]   2026-02-11 11:07:11.938658 [PID:23472] [0] [ID:0] still running Formation-End-To-End-Checkout.Test end to end Checkout Page after 15.0s
+[INFO]    2026-02-11 11:07:14.325033 [PID:23472] [0] [ID:0] PASSED Formation-End-To-End-Checkout.Test end to end Checkout Page in 18.0 seconds
+[INFO]    1 tests, 1 passed, 0 failed, 0 skipped.
+[INFO]    ===================================================
+[INFO]    Output:  /Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/output.xml
+[INFO]    Log:     /Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/log.html
+[INFO]    Report:  /Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/test/report.html
+[DEBUG]   Finalizing Pabot execution...
+[DEBUG]   Stopping PabotLib process
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 stopped.
+[DEBUG]   PabotLib process stopped
+[INFO]    Total testing: 18.0 seconds
+[INFO]    Elapsed time:  18.38 seconds
+[DEBUG]   Logs flushed successfully.

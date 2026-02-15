@@ -2,12 +2,16 @@
 Library    String
 Library    SeleniumLibrary
 *** Variables ***
-
+${URL}    https://rahulshettyacademy.com/loginpagePractise/
 *** Keywords ***
-Open Browser with de mortage payment url
-    [Documentation]    Opens the browser and navigates to the mortage payment url
-    Create Webdriver    Chrome
-    Go To    https://rahulshettyacademy.com/loginpagePractise/
+Open Browser with mortgage payment url
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --headless=new
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Create Webdriver    Chrome    options=${options}
+    Go To    ${URL}
+
 wait until checks and display error message
     Wait Until Element Is Visible    css=.alert.alert-danger
 verify error message is correct

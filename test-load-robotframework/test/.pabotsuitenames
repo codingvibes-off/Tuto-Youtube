@@ -1,0 +1,15 @@
+datasources:35e620f15ff5e35b797cd5931ccd276b0d2831dd
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:b3fcc038e1fe4667d5e5e9acc9bded98dc505986
+--suite Test.Test-Load-Robotframework
+--suite Test.Test-Load-Robotframework 1
+--suite Test.Test-Load-Robotframework 10
+--suite Test.Test-Load-Robotframework 2
+--suite Test.Test-Load-Robotframework 3
+--suite Test.Test-Load-Robotframework 4
+--suite Test.Test-Load-Robotframework 5
+--suite Test.Test-Load-Robotframework 6
+--suite Test.Test-Load-Robotframework 7
+--suite Test.Test-Load-Robotframework 8
+--suite Test.Test-Load-Robotframework 9

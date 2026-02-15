@@ -22,6 +22,7 @@ ${invalid_password}    invalidPass
 
 *** Test Cases ***
 Test CustomLibraries
+    [Tags]    SMOKE
     Open Browser     https://rahulshettyacademy.com/loginpagePractise/    chrome    options=add_experimental_option("detach", True)   
     LandingPage.Fill The Login Form    ${valid_username}    ${valid_password}
     Click Button    signInBtn

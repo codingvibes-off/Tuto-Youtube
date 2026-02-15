@@ -21,7 +21,7 @@ Fill the login Details and select the user option
     Checkbox Should Be Selected    terms
 Validate Unsuccessful Login
     [Arguments]    ${username}    ${password}
-    Open Browser with de mortage payment url
+    Open Browser with mortgage payment url
     Fill The Login Form    ${username}    ${password}
     Click Button    signInBtn
     Sleep     3s

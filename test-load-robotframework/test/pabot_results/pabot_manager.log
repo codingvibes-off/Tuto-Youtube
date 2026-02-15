@@ -1,0 +1,48 @@
+[INFO]    Initialized logging in ./pabot_results
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 started.
+[DEBUG]   Storing .pabotsuitenames file
+[DEBUG]   2026-02-08 14:57:03.203319 [PID:10313] [4] [ID:1] EXECUTING Test.Test-Load-Robotframework 1
+[DEBUG]   2026-02-08 14:57:03.204992 [PID:10314] [3] [ID:0] EXECUTING Test.Test-Load-Robotframework
+[DEBUG]   2026-02-08 14:57:03.212798 [PID:10315] [2] [ID:7] EXECUTING Test.Test-Load-Robotframework 6
+[DEBUG]   2026-02-08 14:57:03.221926 [PID:10318] [0] [ID:8] EXECUTING Test.Test-Load-Robotframework 7
+[DEBUG]   2026-02-08 14:57:03.240146 [PID:10319] [6] [ID:2] EXECUTING Test.Test-Load-Robotframework 10
+[DEBUG]   2026-02-08 14:57:03.242061 [PID:10321] [8] [ID:9] EXECUTING Test.Test-Load-Robotframework 8
+[DEBUG]   2026-02-08 14:57:03.261646 [PID:10320] [7] [ID:5] EXECUTING Test.Test-Load-Robotframework 4
+[DEBUG]   2026-02-08 14:57:03.263662 [PID:10324] [9] [ID:3] EXECUTING Test.Test-Load-Robotframework 2
+[DEBUG]   2026-02-08 14:57:03.267566 [PID:10323] [5] [ID:6] EXECUTING Test.Test-Load-Robotframework 5
+[DEBUG]   2026-02-08 14:57:03.285356 [PID:10322] [1] [ID:4] EXECUTING Test.Test-Load-Robotframework 3
+[DEBUG]   2026-02-08 14:57:10.252342 [PID:10318] [0] [ID:8] still running Test.Test-Load-Robotframework 7 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.397565 [PID:10315] [2] [ID:7] still running Test.Test-Load-Robotframework 6 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.397666 [PID:10322] [1] [ID:4] still running Test.Test-Load-Robotframework 3 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.497555 [PID:10314] [3] [ID:0] still running Test.Test-Load-Robotframework after 5.0s
+[DEBUG]   2026-02-08 14:57:10.502530 [PID:10324] [9] [ID:3] still running Test.Test-Load-Robotframework 2 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.725937 [PID:10319] [6] [ID:2] still running Test.Test-Load-Robotframework 10 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.707535 [PID:10320] [7] [ID:5] still running Test.Test-Load-Robotframework 4 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.828482 [PID:10321] [8] [ID:9] still running Test.Test-Load-Robotframework 8 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.829063 [PID:10323] [5] [ID:6] still running Test.Test-Load-Robotframework 5 after 5.0s
+[DEBUG]   2026-02-08 14:57:10.903057 [PID:10313] [4] [ID:1] still running Test.Test-Load-Robotframework 1 after 5.0s
+[INFO]    2026-02-08 14:57:14.329047 [PID:10315] [2] [ID:7] PASSED Test.Test-Load-Robotframework 6 in 11.1 seconds
+[DEBUG]   2026-02-08 14:57:14.336675 [PID:11084] [0] [ID:10] EXECUTING Test.Test-Load-Robotframework 9
+[INFO]    2026-02-08 14:57:14.341666 [PID:10321] [8] [ID:9] PASSED Test.Test-Load-Robotframework 8 in 11.1 seconds
+[INFO]    2026-02-08 14:57:14.363444 [PID:10324] [9] [ID:3] PASSED Test.Test-Load-Robotframework 2 in 11.1 seconds
+[DEBUG]   2026-02-08 14:57:20.292247 [PID:11084] [0] [ID:10] still running Test.Test-Load-Robotframework 9 after 5.0s
+[INFO]    2026-02-08 14:57:20.392594 [PID:10319] [6] [ID:2] PASSED Test.Test-Load-Robotframework 10 in 17.2 seconds
+[INFO]    2026-02-08 14:57:20.393522 [PID:10320] [7] [ID:5] PASSED Test.Test-Load-Robotframework 4 in 17.2 seconds
+[INFO]    2026-02-08 14:57:20.396252 [PID:10323] [5] [ID:6] PASSED Test.Test-Load-Robotframework 5 in 17.2 seconds
+[INFO]    2026-02-08 14:57:20.497123 [PID:10318] [0] [ID:8] PASSED Test.Test-Load-Robotframework 7 in 17.3 seconds
+[INFO]    2026-02-08 14:57:20.498097 [PID:10314] [3] [ID:0] PASSED Test.Test-Load-Robotframework in 17.3 seconds
+[INFO]    2026-02-08 14:57:20.499765 [PID:10313] [4] [ID:1] PASSED Test.Test-Load-Robotframework 1 in 17.3 seconds
+[INFO]    2026-02-08 14:57:20.501133 [PID:10322] [1] [ID:4] PASSED Test.Test-Load-Robotframework 3 in 17.3 seconds
+[INFO]    2026-02-08 14:57:23.308378 [PID:11084] [0] [ID:10] PASSED Test.Test-Load-Robotframework 9 in 9.0 seconds
+[INFO]    11 tests, 11 passed, 0 failed, 0 skipped.
+[INFO]    ===================================================
+[INFO]    Output:  /Users/sullivan/Desktop/Tuto-Youtube/test-load-robotframework/test/output.xml
+[INFO]    Log:     /Users/sullivan/Desktop/Tuto-Youtube/test-load-robotframework/test/log.html
+[INFO]    Report:  /Users/sullivan/Desktop/Tuto-Youtube/test-load-robotframework/test/report.html
+[DEBUG]   Finalizing Pabot execution...
+[DEBUG]   Stopping PabotLib process
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 stopped.
+[DEBUG]   PabotLib process stopped
+[INFO]    Total testing: 2 minutes 43.10 seconds
+[INFO]    Elapsed time:  20.66 seconds
+[DEBUG]   Logs flushed successfully.

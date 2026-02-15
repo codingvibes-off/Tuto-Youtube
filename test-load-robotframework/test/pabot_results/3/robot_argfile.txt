@@ -1,0 +1,16 @@
+--suite Test.Test-Load-Robotframework 2
+--variable CALLER_ID:d7e9477ffef645cb979da4f2ad08d724
+--variable PABOTLIBURI:127.0.0.1:8270
+--variable PABOTEXECUTIONPOOLID:9
+--variable PABOTISLASTEXECUTIONINPOOL:0
+--variable PABOTNUMBEROFPROCESSES:10
+--variable PABOTQUEUEINDEX:3
+--variable PABOTLASTLEVEL:Test.Test-Load-Robotframework 2
+--output output.xml
+--log NONE
+--report NONE
+--xunit NONE
+--outputdir ./pabot_results/3
+--consolecolors off
+--consolemarkers off
+.
