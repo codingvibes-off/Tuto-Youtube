@@ -1,0 +1,29 @@
+FROM python:3.12-alpine
+
+RUN apk add --no-cache bash
+
+# Copier requirements
+COPY ./webapp/requirements.txt /tmp/requirements.txt
+
+# Créer un virtual environment
+RUN python3 -m venv /opt/venv
+
+# Ajouter le venv au PATH (important !)
+ENV PATH="/opt/venv/bin:$PATH"
+
+RUN which pip
+RUN pip --version
+
+# Installer les dépendances dans le venv
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Copier l'application
+COPY ./webapp /opt/webapp
+WORKDIR /opt/webapp
+
+# Créer un utilisateur non-root
+RUN adduser -D myuser && chown -R myuser:myuser /opt/webapp
+USER myuser
+
+# Lancer l'application
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "wsgi"]

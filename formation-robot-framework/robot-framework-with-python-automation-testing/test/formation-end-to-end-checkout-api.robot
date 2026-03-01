@@ -1,7 +1,8 @@
 *** Settings ***
 Resource    resource-formation-robot.robot
-Test Teardown    Close Browser
 Library    String
+Librayr    Collections
+Library    RequestsLibrary
 Library    ../customLibrairies/Shop.py
 Resource    ../POM/LandingPage.robot
 Resource    ../POM/GenericPage.robot
@@ -16,19 +17,17 @@ ${invalid_username}    invalidUser
 ${invalid_password}    invalidPass
 @{card_titles}=    Nokia Edge    Blackberry    iphone X   Samsung Note 8    Nokia Edge    Blackberry
 ${browser_name}=    chrome
+
 *** Keywords ***
 
 *** Test Cases ***
-Test end to end Checkout Page
-    [Tags]    SMOKE
-    Open Browser     https://rahulshettyacademy.com/loginpagePractise/    ${browser_name}    
-    LandingPage.Fill The Login Form    ${valid_username}    ${valid_password}
-    Click Button    signInBtn
-    Sleep     3s
-    ShopPage.verify card titles in the shop page
-    Add Items To Card And Checkout    ${card_titles}
-    CheckoutPage.Verify items in the checkout Page and proceed
-    ConfirmationPage.Confirmation Checkout Product and select the terms    India
-    ConfirmationPage.Purchase the product and Confirm the Purchase
+Add book into Library
+    [Tags]    SMOKE_API
+    &{req_body}=    Create Dictionary   name=Robotframeworkeeee    isbn=21093829dd830128    aisle=219333812398    auth=rahushdddetty
+    ${response}=    POST    ${MORTAGE_PAYMENT_URL}Library/Addbook.php    json=${req_body}    expected_status=200
+    Log    ${response.text}
+
+
+
 
 

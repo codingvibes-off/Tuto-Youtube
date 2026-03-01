@@ -1,0 +1,33 @@
+Modus opérandi
+python3 -m venv venv
+source venv/bin/activate
+Installer docker
+     - Créer un conteneur + une image jenkins
+
+Télécharger la dernière version de JENKINS
+docker pull jenkins/jenkins
+
+
+
+#Créer un conteneur sur l'image jenkins jenkins + On crée le volume qui va sauvegarder nos evolutions sur Jenkins
+docker run -p 8080:8080 jenkins/jenkins -v jenkins_home:/var/jenkins_home
+docker run -d \
+  --name jenkins \
+  -p 9090:8080 \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins/jenkins
+
+#Accéder au bash dans le docker 
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+#Accéder au bash dans le docker
+docker exec -it jenkins bash
+
+
+#mot de passe
+1de24ad4552341a19449cd379de44009
+
+
+
+Section 5 Build
+
