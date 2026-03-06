@@ -1,0 +1,145 @@
+//Exercice 1
+pipeline {
+    agent any 
+        stages {
+            stage("exercice_1") {
+                steps {
+                    sh "echo Hello World"
+                }
+            }      
+        }
+    
+}
+
+//Exercice 2 Niveau CI Junior
+pipeline {
+    agent any 
+        stages {
+            stage("Git clone") {
+                steps {
+                    sh "git clone https://github.com/priximmo/jenkins-helloworld"
+                }
+            }   
+            stage("build") {
+                steps {
+                    sh "cd jenkins-helloworld && javac Main.java"
+                }
+            } 
+            stage("run") {
+                steps {
+                    sh "cd jenkins-helloworld && java Main"
+                }
+            }    
+        }
+    
+}
+
+pipeline {
+    agent any 
+        stages {
+            stage("Git clone") {
+                steps {
+                    sh "git clone https://github.com/priximmo/jenkins-helloworld"
+                }
+            }   
+            stage("build") {
+                    steps {
+                dir("jenkins-helloworld") {
+                    sh "javac Main.java"
+                }
+                    }
+            } 
+            stage("run") {
+                steps{
+                    dir("jenkins-helloworld") {
+                    sh "java Main"
+                    }
+                }
+            }    
+        }
+    
+}
+
+
+//Exercice 3 Niveau CI/CD réel / DevOps intermédiaire
+pipeline {
+    agent any
+    environment {
+        REPO_DIR = "jenkins-helloworld"
+    }
+    stages {
+        stage("clone") {
+            steps {
+                sh "git clone https://github.com/priximmo/jenkins-helloworld"
+            }
+        }
+        stage("build") {
+            steps {
+                dir(REPO_DIR) {
+                    sh "javac Main.java"
+                }
+            }
+        }
+        stage("run") {
+            steps {
+                dir(REPO_DIR) {
+                    sh "java Main"
+                }
+            }
+        }
+        stage("clean up"){
+            steps {
+                sh "rm -rf *"
+            }
+        }
+    }
+}
+
+//Master jenkinsfile
+pipeline {
+    agent any
+    parameters {
+        string(name: 'BRANCH', defaultValue: 'main', description: 'branche Git')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Exécuter les tests ?')
+    }
+    environment {
+        REPO_DIR = "jenkins-helloworld"
+    }
+  
+    stages {
+        stage("clone") {
+            steps {
+                sh "git clone -b ${params.BRANCH} https://github.com/priximmo/jenkins-helloworld"
+            }
+        }
+        stage("build") {
+            steps {
+                dir(REPO_DIR) {
+                    sh "javac Main.java"
+                }
+            }
+        }
+        stage("run tests") {
+            when {
+                expression { params.RUN_TESTS }
+            }
+            parallel(
+                Build: {
+                    dir(REPO_DIR) {
+                        sh "javac Main.java"
+                    }
+                },
+                Tests: {
+                    dir(REPO_DIR) {
+                        sh "java Main"
+                    }
+                }
+            )
+        }
+        stage("clean up"){
+            steps {
+                sh "rm -rf *"
+            }
+        }
+    }
+}
