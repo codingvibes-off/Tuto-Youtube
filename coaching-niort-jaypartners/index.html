@@ -1075,7 +1075,7 @@
       .cours-grid { grid-template-columns: 1fr; }
       .pourqui-grid { grid-template-columns: 1fr 1fr; }
       .benefices-grid { grid-template-columns: 1fr; }
-      .benefices-img { display: none; }
+      /*.benefices-img { display: none; }*/
       .social-cards { grid-template-columns: 1fr; }
       .localisation-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
@@ -1630,20 +1630,26 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // --- Mobile menu ---
+ 
+
+    // --- Hero text stagger on load ---
+    document.addEventListener('DOMContentLoaded', () => {
+         // --- Mobile menu ---
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileClose = document.getElementById('mobileClose');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+ 
+    hamburger.addEventListener('click', () =>  {
+      mobileMenu.classList.add('open')
+    });
+    mobileClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open')
+    });
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
-
-    // --- Hero text stagger on load ---
-    document.addEventListener('DOMContentLoaded', () => {
       const heroReveal = document.querySelectorAll('#hero .reveal');
       heroReveal.forEach((el, i) => {
         setTimeout(() => el.classList.add('visible'), 200 + i * 150);
