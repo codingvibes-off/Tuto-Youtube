@@ -143,3 +143,20 @@ pipeline {
         }
     }
 }
+
+//Exercice 1 - Docker Agent
+pipeline {
+        agent {
+            docker {
+                image 'openjdk:17'
+            }
+        }
+        stages {
+            stage("Test Java") {
+                steps {
+                    sh "java -version"
+                }
+            }
+        }
+   
+}

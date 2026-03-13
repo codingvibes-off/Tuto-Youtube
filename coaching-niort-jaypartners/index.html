@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JayPartner's – Cours de Pilates à Niort | Coach Pilates Fitness Park Niort</title>
+  <meta name="description" content="Cours de Pilates dynamiques à Niort avec JayPartner's chez Fitness Park. Pilates Flow, Core & Strength, Mobilité. Réservez votre séance dès maintenant." />
+  <meta name="keywords" content="Pilates Niort, Coach Pilates Niort, cours Pilates Niort, Pilates Fitness Park Niort, JayPartner's, fitness Niort" />
+  <meta property="og:title" content="JayPartner's – Cours de Pilates à Niort" />
+  <meta property="og:description" content="Transforme ton corps et ton énergie avec le Pilates à Niort. Cours avec JayPartner's chez Fitness Park." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="/assets/logo-jaypartners.jpeg">
+  <style>
+    /* ===========================
+       CSS VARIABLES & RESET
+    =========================== */
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e8e8e8;
+      --gray-400: #999999;
+      --gray-600: #555555;
+      --accent: #00f068;
+      --accent-dark: #cc4400;
+      --accent-light: #5f4efb;
+      --purple: #958afd;
+      --section-pad: clamp(60px, 10vw, 120px);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===========================
+       UTILITY
+    =========================== */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 60px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background:  var(--purple);
+      color: var(--white);
+      border-color:var(--purple);
+    }
+    .btn-primary:hover {
+      background: #009f45;
+      border-color: #00e162;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px #00e162;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--white);
+    }
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+    .btn-dark:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: var(--purple);
+      padding: 6px 14px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+    =========================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0.1s !important; }
+    .stagger-2 { transition-delay: 0.2s !important; }
+    .stagger-3 { transition-delay: 0.3s !important; }
+    .stagger-4 { transition-delay: 0.4s !important; }
+
+    /* ===========================
+       NAVIGATION
+    =========================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--purple); }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--black);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--purple); }
+    .mobile-close {
+      position: absolute;
+      top: 24px; right: 5%;
+      color: var(--white);
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    /* ===========================
+       SECTION 1 — HERO
+    =========================== */
+    #hero {
+      min-height: 100vh;
+      background: var(--black);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Animated grain overlay */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Orange glow accent */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, #00f06865 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      animation: pulse-glow 6s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0 60px;
+    }
+    .hero-content {}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #2d2570;
+      border: 1px solid var(--purple);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--purple);
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5.5vw, 78px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+      position: relative;
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 1.8vw, 20px);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      max-width: 480px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Hero image */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+    }
+    .hero-img-card {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+    .hero-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(20%);
+      transition: filter 0.6s;
+    }
+    .hero-img-card:hover img { filter: grayscale(0%); }
+    .hero-img-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.7) 100%);
+    }
+
+    /* Floating quote badge */
+    .hero-quote {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background:var(--purple);
+      color: var(--white);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      max-width: 220px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.5;
+      z-index: 3;
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero-quote::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 36px;
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+      opacity: 0.6;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ===========================
+       SECTION 2 — ABOUT
+    =========================== */
+    #about {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-main {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .about-img-main img {
+    width: 87%;
+    height: 95%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.8s var(--transition);
+    }
+    .about-img-main:hover img { transform: scale(1.04); }
+    .about-accent-card {
+      position: absolute;
+      top: 40px;
+      right: -30px;
+      background: var(--black);
+      color: var(--white);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      z-index: 2;
+    }
+    .about-accent-card .num {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .about-accent-card .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+    .section-tag { margin-bottom: 20px; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--purple); }
+    .section-body {
+      font-size: 17px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .pill {
+      background: var(--gray-100);
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-600);
+      border: 1px solid var(--gray-200);
+    }
+
+    /* ===========================
+       SECTION 3 — COURS
+    =========================== */
+    #cours {
+      padding: var(--section-pad) 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    #cours::before {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(255,85,0,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+    .section-header .section-title { color: var(--white); }
+    .section-header .section-body { color: rgba(255,255,255,0.5); }
+    .cours-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .cours-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 36px 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .cours-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(157, 0, 255, 0.08) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .cours-card:hover {
+      border-color: rgba(157, 0, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+    .cours-card:hover::before { opacity: 1; }
+    .cours-icon {
+      width: 56px;
+      height: 56px;
+      background: #fff;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 26px;
+      transition: background 0.3s;
+    }
+    .cours-card:hover .cours-icon { background: var(--accent); }
+    .cours-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .cours-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+    .cours-tag {
+      display: inline-flex;
+      background: rgba(255,85,0,0.12);
+      color: var(--accent-light);
+      padding: 4px 12px;
+      border-radius: 60px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* ===========================
+       SECTION 4 — POUR QUI
+    =========================== */
+    #pourqui {
+      padding: var(--section-pad) 0;
+      background: var(--purple);
+    }
+    .pourqui-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .pourqui-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+    .pourqui-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border-color: var(--accent);
+    }
+    .pourqui-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .pourqui-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .pourqui-desc {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ===========================
+       SECTION 5 — BENEFITS
+    =========================== */
+    #benefices {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+    .benefices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .benefices-img {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .benefices-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.8s var(--transition);
+    }
+    .benefices-img:hover img { transform: scale(1.04); }
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 24px;
+      background: var(--gray-100);
+      border-radius: 14px;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+    .benefit-item:hover {
+      border-color: var(--accent);
+      background: rgba(255,85,0,0.04);
+    }
+    .benefit-check {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .benefit-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .benefit-text span {
+      font-size: 13px;
+      color: var(--gray-600);
+      font-weight: 300;
+    }
+
+    /* ===========================
+       SECTION 6 — TÉMOIGNAGES
+    =========================== */
+    #temoignages {
+      padding: var(--section-pad) 0;
+      background: var(--black);
+      overflow: hidden;
+    }
+    .temoignages-track {
+      display: flex;
+      gap: 24px;
+      margin-top: 48px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .temoignages-track::-webkit-scrollbar { display: none; }
+    .temoignage-card {
+      flex-shrink: 0;
+      width: 360px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .temo-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+      color:#ffc107;
+    }
+    .star { color: #ffc107; font-size: 16px; }
+    .temo-quote {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-weight: 300;
+      font-style: italic;
+    }
+    .temo-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .temo-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .temo-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .temo-role {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+
+    /* ===========================
+       SECTION 7 — LOCALISATION
+    =========================== */
+    #localisation {
+      padding: var(--section-pad) 0;
+      background: var(--gray-100);
+    }
+    .localisation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .map-embed {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .loc-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .loc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .loc-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255,85,0,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .loc-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+    .loc-val {
+      font-size: 14px;
+      color: var(--gray-600);
+      font-weight: 300;
+    }
+
+    /* ===========================
+       SECTION 8 — COMMUNAUTÉ / RÉSEAUX
+    =========================== */
+    #communaute {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+    .social-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .social-card {
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .social-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .social-card.youtube {
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+      border-color: transparent;
+    }
+    .social-card.instagram {
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      border-color: transparent;
+    }
+    .social-icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .social-info {}
+    .social-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .social-handle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+    .social-action {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ===========================
+       SECTION 9 — CTA FINAL
+    =========================== */
+    #cta {
+      padding: var(--section-pad) 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(circle, rgba(255,85,0,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .cta-title em { font-style: italic; color: var(--accent); }
+    .cta-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-btns .btn-primary {
+      font-size: 17px;
+      padding: 18px 40px;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .footer-logo span { color: var(--purple); }
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.3s;
+      font-weight: 300;
+    }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 40px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      font-weight: 300;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .footer-social-link:hover { background: var(--accent); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .cours-grid { grid-template-columns: repeat(2, 1fr); }
+      .pourqui-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 80px 0 40px;
+        text-align: center;
+      }
+      .hero-subtitle { margin: 0 auto 40px; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { order: -1; }
+      .hero-img-wrap { max-width: 300px; }
+      .hero-quote { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-accent-card { right: 10px; }
+      .cours-grid { grid-template-columns: 1fr; }
+      .pourqui-grid { grid-template-columns: 1fr 1fr; }
+      .benefices-grid { grid-template-columns: 1fr; }
+      .benefices-img { display: none; }
+      .social-cards { grid-template-columns: 1fr; }
+      .localisation-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .pourqui-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Jay<span>Partner's</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#cours">Cours</a></li>
+          <li><a href="#localisation">Localisation</a></li>
+          <li><a href="#temoignages">Avis</a></li>
+          <li><a href="#communaute">Communauté</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary" style="padding:12px 24px; font-size:14px;">
+            📅 Réserver un cours
+          </a>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">✕</span>
+    <a href="#about" class="mobile-link">À propos</a>
+    <a href="#cours" class="mobile-link">Cours</a>
+    <a href="#localisation" class="mobile-link">Localisation</a>
+    <a href="#temoignages" class="mobile-link">Avis</a>
+    <a href="#communaute" class="mobile-link">Communauté</a>
+    <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary">📅 Réserver un cours</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">📍 Cours à Niort · Fitness Park</div>
+          <h1 class="hero-title reveal stagger-1">
+            Transforme ton corps<br />
+            et ton <em>énergie</em><br />
+            avec le Pilates.
+          </h1>
+          <p class="hero-subtitle reveal stagger-2">
+            Cours de Pilates dynamiques à Niort avec <strong>JayPartner's</strong> – équilibre, force et bien-être pour tous les niveaux.
+          </p>
+          <div class="hero-btns reveal stagger-3">
+            <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary">
+              📅 Réserver un cours
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#cours" class="btn btn-outline">Découvrir les séances</a>
+          </div>
+          <div class="hero-stats reveal stagger-4">
+            <div class="stat-item">
+              <div class="stat-num">5.0<span>★</span></div>
+              <div class="stat-label">Avis clients</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3<span>+</span></div>
+              <div class="stat-label">Types de cours</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">100<span>%</span></div>
+              <div class="stat-label">Bonne énergie</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal-right">
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <img
+                src="/assets/jay-home-website.png"
+                alt="JayPartner's coach Pilates Niort – séance wall sit"
+                loading="eager"
+              />
+            </div>
+            <div class="hero-quote">
+              J'adore aider les autres à se dépasser — chaque séance est une nouvelle transformation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-main">
+            <img
+              src="/assets/pilates-jay.png"
+              alt="JayPartner's coach Pilates Niort – soulevé de ballon"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-accent-card">
+            <div class="num">✨</div>
+            <div class="label">Coach Certifié<br />BPJEPS</div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-tag">
+            <span class="tag">À propos de JayPartner's</span>
+          </div>
+          <h2 class="section-title">Une passion,<br />une <em>mission.</em></h2>
+          <p class="section-body">
+            JayPartner's est un coach de Pilates et fitness basé à Niort, animé par une passion authentique pour le mouvement, le bien-être et la transformation personnelle.
+          </p>
+          <p class="section-body">
+            Que tu sois débutant ou sportif confirmé, Jay t'accompagne avec des séances adaptées, dynamiques et bienveillantes. Son objectif : t'aider à retrouver force, mobilité et confiance grâce au Pilates.
+          </p>
+          <div class="pill-list">
+            <span class="pill">🧘 Pilates</span>
+            <span class="pill">💪 Fitness</span>
+            <span class="pill">🔥 Mobilité</span>
+            <span class="pill">❤️ Bien-être</span>
+            <span class="pill">📍 Niort</span>
+          </div>
+          <div style="margin-top: 36px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="https://www.youtube.com/@JAYPartners" target="_blank" class="btn btn-dark">
+              ▶ Voir mes vidéos YouTube
+            </a>
+            <a href="https://www.instagram.com/jaypartner.s/" target="_blank" class="btn btn-outline" style="color:var(--black); border-color:var(--gray-200);">
+              📸 Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COURS ===================== -->
+  <section id="cours">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag" style="margin-bottom:20px; display:inline-flex;">Les séances</span>
+        <h2 class="section-title">Trois programmes,<br /><em>un seul objectif.</em></h2>
+        <p class="section-body">Des cours conçus pour renforcer, équilibrer et transformer ton corps — quelle que soit ton expérience.</p>
+      </div>
+      <div class="cours-grid">
+        <!-- Pilates Flow -->
+        <div class="cours-card reveal stagger-1">
+          <div class="cours-tag">Signature</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/strength.png" alt="strength"/></div>
+          <div class="cours-name">HIGH SCHOOL - Formule étudiante</div>
+          <p class="cours-desc">Une formule spécialement conçue pour les moins de 22 ans afin de profiter de séances à prix réduit.
+            Idéal pour les étudiants et les jeunes souhaitant s’entraîner régulièrement tout en bénéficiant d’un tarif avantageux.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+        <!-- Core & Strength -->
+        <div class="cours-card reveal stagger-2">
+          <div class="cours-tag">Intensif</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/couple-posing.png" alt="couple-posing"/></div>
+          <div class="cours-name">GYMPARTNER'S - Duo</div>
+          <p class="cours-desc">Un programme pensé pour s’entraîner à deux dans une ambiance motivante et dynamique.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+         <!-- Core & Strength -->
+        <div class="cours-card reveal stagger-2">
+          <div class="cours-tag">Intensif</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/exercise.png" alt="exercise"/></div>
+          <div class="cours-name">BRUNCH - A distance</div>
+          <p class="cours-desc">Une séance conviviale qui combine sport et moment de partage.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+         <!-- Mobilité & Recovery -->
+        <div class="cours-card reveal stagger-3">
+          <div class="cours-tag">Intensif</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/trampoline-park.png" alt="trampoline-park"/></div>
+          <div class="cours-name">BURPEES CAKE</div>
+          <p class="cours-desc">Un programme qui mélange effort et plaisir.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+         <!-- Mobilité & Recovery -->
+        <div class="cours-card reveal stagger-3">
+          <div class="cours-tag">Modéré</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/weightlift.png" alt="weightlift"/></div>
+          <div class="cours-name">BANANA DIPS</div>
+          <p class="cours-desc">Un programme dynamique axé sur le renforcement musculaire et le travail du haut du corps.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+         <!-- Mobilité & Recovery -->
+        <div class="cours-card reveal stagger-3">
+          <div class="cours-tag">Intensif</div>
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ink/48/bench-press-with-dumbbells.png" alt="bench-press-with-dumbbells"/></div>
+          <div class="cours-name">CAFE GOURMAND</div>
+          <p class="cours-desc">Un moment dédié à la récupération et au bien-être du corps.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+       
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POUR QUI ===================== -->
+  <section id="pourqui">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; max-width:540px; margin:0 auto 50px;">
+        <span class="tag" style="margin-bottom:20px; display:inline-flex;">Pour qui ?</span>
+        <h2 class="section-title">Ces cours sont faits<br /><em>pour toi.</em></h2>
+      </div>
+      <div class="pourqui-grid">
+        <div class="pourqui-card reveal stagger-1">
+          <span class="pourqui-icon">🌱</span>
+          <div class="pourqui-title">Débutants</div>
+          <p class="pourqui-desc">Aucun prérequis. Jay t'accueille là où tu es et progresse à ton rythme.</p>
+        </div>
+        <div class="pourqui-card reveal stagger-2">
+          <span class="pourqui-icon">⚡</span>
+          <div class="pourqui-title">Sportifs</div>
+          <p class="pourqui-desc">Complète ton entraînement avec du renforcement profond et de la mobilité.</p>
+        </div>
+        <div class="pourqui-card reveal stagger-3">
+          <span class="pourqui-icon">🔄</span>
+          <div class="pourqui-title">Remise en forme</div>
+          <p class="pourqui-desc">Retrouve ta vitalité, ton tonus et ta confiance progressivement.</p>
+        </div>
+        <div class="pourqui-card reveal stagger-4">
+          <span class="pourqui-icon">🧘</span>
+          <div class="pourqui-title">Bien-être</div>
+          <p class="pourqui-desc">Relâche les tensions, réduise le stress et reconnecte-toi à ton corps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENEFICES ===================== -->
+  <section id="benefices">
+    <div class="container">
+      <div class="benefices-grid">
+        <div class="benefices-img reveal-left">
+          <img
+            src="/assets/hero-jaypartners.png"
+            alt="Séance Pilates Niort JayPartner's"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal-right">
+          <span class="tag" style="margin-bottom:20px; display:inline-flex;">Transformations</span>
+          <h2 class="section-title">Ce que le FITNESS<br />va <em>changer.</em></h2>
+          <p class="section-body">Des bénéfices concrets, visibles dès les premières semaines de pratique régulière.</p>
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <div class="benefit-check">✓</div>
+              <div class="benefit-text">
+                <strong>Meilleure posture</strong>
+                <span>Redresse-toi, libère les tensions cervicales et dorsales durablement.</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-check">✓</div>
+              <div class="benefit-text">
+                <strong>Corps plus fort</strong>
+                <span>Muscles profonds renforcés, silhouette tonique et stabilité accrue.</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-check">✓</div>
+              <div class="benefit-text">
+                <strong>Réduction des douleurs</strong>
+                <span>Moins de douleurs au dos, aux hanches et aux articulations.</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-check">✓</div>
+              <div class="benefit-text">
+                <strong>Plus d'énergie</strong>
+                <span>Une pratique régulière booste ta vitalité et améliore ton sommeil.</span>
+              </div>
+            </li>
+            <li class="benefit-item">
+              <div class="benefit-check">✓</div>
+              <div class="benefit-text">
+                <strong>Confiance en toi</strong>
+                <span>Reconnecte-toi à ton corps, gagne en assurance et en sérénité.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TÉMOIGNAGES ===================== -->
+  <section id="temoignages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="tag" style="margin-bottom:20px; display:inline-flex;">Avis clients</span>
+        <h2 class="section-title" style="color:var(--white);">Ils en parlent<br /><em>mieux que nous.</em></h2>
+      </div>
+      <div class="temoignages-track">
+        <div class="temoignage-card">
+          <div class="temo-stars">★★★★★</div>
+          <p class="temo-quote">"Les cours de Jay sont incroyables. En 4 semaines, j'ai senti un vrai changement dans ma posture et mon énergie au quotidien. Je recommande à 100% !"</p>
+          <div class="temo-author">
+            <div class="temo-avatar">S</div>
+            <div>
+              <div class="temo-name">Johanna R.</div>
+              <div class="temo-role">Participante Pilates Flow · Niort</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage-card">
+          <div class="temo-stars">★★★</div>
+          <p class="temo-quote">"J'avais des douleurs chroniques au bas du dos depuis des années. Après 2 mois avec JayPartner's, je n'y pense même plus. Merci pour ta bienveillance et ta pédagogie !"</p>
+          <div class="temo-author">
+            <div class="temo-avatar">L</div>
+            <div>
+              <div class="temo-name">Christine B.</div>
+              <div class="temo-role">Core & Strength · Niort</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage-card">
+          <div class="temo-stars">★★★★</div>
+          <p class="temo-quote">"Coach passionné, à l'écoute et super motivant. L'ambiance est bienveillante et les séances sont bien construites. Je repars toujours avec le sourire !"</p>
+          <div class="temo-author">
+            <div class="temo-avatar">A</div>
+            <div>
+              <div class="temo-name">Rana K.</div>
+              <div class="temo-role">Mobilité & Recovery · Niort</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage-card">
+          <div class="temo-stars">★★★★</div>
+          <p class="temo-quote">"Débutante totale au Pilates, j'ai tout de suite été mise à l'aise. Jay explique bien, s'adapte à chacun et l'on progresse vraiment vite. Je suis convertie !"</p>
+          <div class="temo-author">
+            <div class="temo-avatar">C</div>
+            <div>
+              <div class="temo-name">Nora R.</div>
+              <div class="temo-role">Pilates Flow · Niort</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage-card">
+          <div class="temo-stars">★★★★★</div>
+          <p class="temo-quote">"En tant que basketteur, je pensais que le Pilates n'était pas pour moi. Erreur ! Les séances Core & Strength ont boosté mes performances et éliminé mes tensions. Incroyable."</p>
+          <div class="temo-author">
+            <div class="temo-avatar">T</div>
+            <div>
+              <div class="temo-name">Samuel L.</div>
+              <div class="temo-role">Sportif · Niort</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCALISATION ===================== -->
+  <section id="localisation">
+    <div class="container">
+      <div class="localisation-grid">
+        <div class="reveal-left">
+          <span class="tag" style="margin-bottom:20px; display:inline-flex;">📍 Localisation</span>
+          <h2 class="section-title">Cours de Pilates<br /><em>à Niort.</em></h2>
+          <p class="section-body">
+            Les cours JayPartner's se déroulent chez <strong>Fitness Park Niort</strong>, une salle équipée idéale pour pratiquer le Pilates dans les meilleures conditions.
+          </p>
+          <div class="loc-info">
+            <div class="loc-item">
+              <div class="loc-icon">🏋️</div>
+              <div>
+                <div class="loc-label">Lieu</div>
+                <div class="loc-val">Fitness Park Niort</div>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">📍</div>
+              <div>
+                <div class="loc-label">Ville</div>
+                <div class="loc-val">Niort, Deux-Sèvres (79)</div>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">📸</div>
+              <div>
+                <div class="loc-label">Instagram</div>
+                <div class="loc-val"><a href="https://www.instagram.com/jaypartner.s/" target="_blank" style="color:var(--purple);">@jaypartner.s</a></div>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon">▶</div>
+              <div>
+                <div class="loc-label">YouTube</div>
+                <div class="loc-val"><a href="https://www.youtube.com/@JAYPartners" target="_blank" style="color:var(--purple);">@JAYPartner's</a></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-dark">
+              📅 Réserver maintenant
+            </a>
+          </div>
+        </div>
+        <div class="map-embed reveal-right">
+          <!-- Google Maps embed – Fitness Park Niort -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2754.5625610900283!2d-0.4078147879266557!3d46.33837827098117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48073160f0e5429b%3A0xeb420b2e25eafed6!2sFitness%20Park%20-%20Salle%20de%20sport%20Niort!5e0!3m2!1sfr!2sfr!4v1773391075387!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMMUNAUTÉ / RÉSEAUX ===================== -->
+  <section id="communaute">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center; max-width:600px; margin:0 auto 0;">
+        <span class="tag" style="margin-bottom:20px; display:inline-flex;">🔥 Rejoins-nous</span>
+        <h2 class="section-title">Rejoins la communauté<br /><em>JayPartner's.</em></h2>
+        <p class="section-body">Exercices, conseils, motivation et coulisses de la vie de coach – suis Jay sur les réseaux et ne manque aucune séance.</p>
+      </div>
+      <div class="social-cards">
+        <a href="https://www.youtube.com/@JAYPartners" target="_blank" class="social-card youtube reveal stagger-1">
+          <div class="social-icon">▶️</div>
+          <div class="social-info">
+            <div class="social-name">YouTube</div>
+            <div class="social-handle">@JAYPartner's</div>
+            <div class="social-action">S'abonner →</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/jaypartner.s/" target="_blank" class="social-card instagram reveal stagger-2">
+          <div class="social-icon">📸</div>
+          <div class="social-info">
+            <div class="social-name">Instagram</div>
+            <div class="social-handle">@jaypartner.s</div>
+            <div class="social-action">Suivre →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="tag" style="margin-bottom:24px; display:inline-flex; justify-content:center;">Prêt(e) ?</span>
+        <h2 class="cta-title">
+          Prêt à transformer<br />
+          ton <em>corps ?</em>
+        </h2>
+        <p class="cta-sub">
+          Rejoins les cours de Pilates JayPartner's à Niort et commence ta transformation dès aujourd'hui.
+        </p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary">
+            📅 Réserver ma première séance
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@JAYPartners" target="_blank" class="btn btn-outline">
+            ▶ Voir mes vidéos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background: var(--black);">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">Jay<span>Partner's</span></div>
+          <p class="footer-tagline">Coach Pilates & Fitness à Niort.<br />Transforme ton corps, libère ton énergie.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#cours">Cours</a></li>
+            <li><a href="#pourqui">Pour qui</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Cours</div>
+          <ul>
+            <li><a href="#cours">Pilates Flow</a></li>
+            <li><a href="#cours">Core & Strength</a></li>
+            <li><a href="#cours">Mobilité & Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul>
+            <li><a href="https://www.instagram.com/jaypartner.s/" target="_blank">📸 Instagram</a></li>
+            <li><a href="https://www.youtube.com/@JAYPartners" target="_blank">▶ YouTube</a></li>
+            <li><a href="#localisation">📍 Niort, 79000</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 JayPartner's – Coach Pilates Niort. Tous droits réservés.</div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/jaypartner.s/" target="_blank" class="footer-social-link" aria-label="Instagram">📸</a>
+          <a href="https://www.youtube.com/@JAYPartners" target="_blank" class="footer-social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // --- Scroll animations ---
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // --- Navbar scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // --- Mobile menu ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // --- Hero text stagger on load ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroReveal = document.querySelectorAll('#hero .reveal');
+      heroReveal.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 200 + i * 150);
+      });
+      const heroRight = document.querySelector('#hero .reveal-right');
+      if (heroRight) setTimeout(() => heroRight.classList.add('visible'), 400);
+
+      const coursCard = document.querySelectorAll(".cours-card")
+       coursCard.forEach((el, i) => {
+        setTimeout(() => el.addEventListener("click",()=> {
+            window.open("https://calendly.com/jaypartners-coach", "_blank");
+        }));
+      });
+    });
+  </script>
+</body>
+</html>
