@@ -186,7 +186,11 @@
       letter-spacing: 0.02em;
     }
     .nav-links a:hover { color: var(--white); }
+    
     .nav-cta { display: flex; align-items: center; gap: 12px; }
+       @media (min-width: 800px) {
+         .nav-cta { margin-left: 20px; }
+    }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -204,7 +208,6 @@
     }
     .mobile-menu {
       display: none;
-      position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: var(--black);
       z-index: 99;
@@ -212,11 +215,12 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
+      min-height: 100vh;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       font-family: var(--font-display);
-      font-size: 32px;
+      font-size: 25px;
       font-weight: 700;
       color: var(--white);
       transition: color 0.3s;
@@ -965,7 +969,7 @@
       flex-wrap: wrap;
     }
     .cta-btns .btn-primary {
-      font-size: 17px;
+      font-size: 14px;
       padding: 18px 40px;
     }
 
@@ -1067,7 +1071,7 @@
       .hero-subtitle { margin: 0 auto 40px; }
       .hero-btns { justify-content: center; }
       .hero-stats { justify-content: center; }
-      .hero-visual { order: -1; }
+      .hero-visual { order: -1;margin-top: 50px; }
       .hero-img-wrap { max-width: 300px; }
       .hero-quote { display: none; }
       .about-grid { grid-template-columns: 1fr; }
@@ -1086,6 +1090,10 @@
       .pourqui-grid { grid-template-columns: 1fr; }
       .hero-stats { flex-direction: column; gap: 20px; }
     }
+    .img-logo {
+      width: 20%;
+      height: 20%;
+    }
   </style>
 </head>
 <body>
@@ -1094,9 +1102,14 @@
   <nav id="navbar">
     <div class="container">
       <div class="nav-inner">
-        <a href="#" class="nav-logo">Jay<span>Partner's</span></a>
+        <div style="display: flex;justify-content: center;align-items: center;">
+          <img class="img-logo" src="/assets/logo-header-jaypartners.png">
+          <a href="#" class="nav-logo">Jay<span>Partner's</span></a>
+        </div>
+        
         <ul class="nav-links">
-          <li><a href="#about">À propos</a></li>
+         <li><a href="#about" class="mobile-link">JayPartner's</a></li>
+          <li><a href="#pilates" class="mobile-link">Pilates</a></li>
           <li><a href="#cours">Cours</a></li>
           <li><a href="#localisation">Localisation</a></li>
           <li><a href="#temoignages">Avis</a></li>
@@ -1116,8 +1129,8 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-  
-    <a href="#about" class="mobile-link">À propos</a>
+    <a href="#about" class="mobile-link">JayPartner's</a>
+     <a href="#pilates" class="mobile-link">Pilates</a>
     <a href="#cours" class="mobile-link">Cours</a>
     <a href="#localisation" class="mobile-link">Localisation</a>
     <a href="#temoignages" class="mobile-link">Avis</a>
@@ -1130,14 +1143,13 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-badge reveal">📍 Cours à Niort · Fitness Park</div>
+          <div style="margin-top: 90px;" class="hero-badge reveal">📍 Cours à Niort · Fitness Park</div>
           <h1 class="hero-title reveal stagger-1">
             Transforme ton corps<br />
             et ton <em>énergie</em><br />
-            avec le Pilates.
           </h1>
           <p class="hero-subtitle reveal stagger-2">
-            Cours de Pilates dynamiques à Niort avec <strong>JayPartner's</strong> – équilibre, force et bien-être pour tous les niveaux.
+            Coachings à Niort avec <strong>JayPartner's</strong> – renforcement, force, pilates, et bien-être pour tous les niveaux.
           </p>
           <div class="hero-btns reveal stagger-3">
             <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary">
@@ -1171,7 +1183,7 @@
               />
             </div>
             <div class="hero-quote">
-              J'adore aider les autres à se dépasser — chaque séance est une nouvelle transformation.
+              J'aime aider les autres à se dépasser — chaque séance est une nouvelle transformation.
             </div>
           </div>
         </div>
@@ -1180,27 +1192,71 @@
   </section>
 
   <!-- ===================== ABOUT ===================== -->
-  <section id="about">
+   <section id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-img-wrap reveal-left">
-          <div class="about-img-main">
-            <img
-              src="/assets/pilates-jay.png"
-              alt="JayPartner's coach Pilates Niort – soulevé de ballon"
-              loading="lazy"
-            />
-          </div>
-          <div class="about-accent-card">
-            <div class="num">✨</div>
-            <div class="label">Coach Certifié<br />BPJEPS</div>
-          </div>
-        </div>
         <div class="reveal-right">
           <div class="section-tag">
             <span class="tag">À propos de JayPartner's</span>
           </div>
           <h2 class="section-title">Une passion,<br />une <em>mission.</em></h2>
+          <p class="section-body">
+            Moi c’est Justine, la créatrice de JAYPARTNER’S.</br>
+            Passionnée par l’univers de la danse, du sport et du bien-être depuis mon plus jeune âge, j’ai décidé de transformer cette passion en mission et j’ai été consacrée coach sportive en 2023.
+            
+            Je suis une coach gourmande : j’aime l’effort, le mouvement… mais aussi les petits plaisirs !
+            Parce que pour moi, le sport et la gourmandise peuvent parfaitement coexister quand on trouve le bon équilibre. Prendre soin de soi, c’est aussi savoir se faire plaisir sans culpabiliser.
+            </p>
+             <p class="section-body">
+
+               J’ai choisi ce métier pour accompagner mes JayPeak à atteindre leurs objectifs et surtout leur apogée. Ensemble, nous allons progresser, nous dépasser et gravir chaque étape jusqu’à votre peak.
+            Pourquoi JAYPARTNER’S ?
+             </p>
+        </div>
+        <div class="about-img-wrap reveal-left visible">
+          <div class="about-img-main">
+            <img src="/assets/about-jaypartners.png" alt="JayPartner's coach Pilates Niort – soulevé de ballon" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section id="revelation">
+    <div class="container">
+      <div class="about-grid">
+          <div class="about-img-wrap reveal-left visible">
+             <div class="about-img-main">
+            <img
+              src="/assets/about-jaypartners-part-two.png"
+              alt="JayPartner's coaching Revelation – Eleiko"
+              loading="lazy"
+            />
+          </div>
+          </div>
+        <div class="reveal-right">
+            <h2 class="section-title">Une<br /><em>vision.</em></h2>
+            <p class="section-body">
+              Pour moi, le sport, qu’il soit individuel ou collectif, se vit toujours mieux avec un partenaire.
+              Un partenaire pour motiver, soutenir, challenger et célébrer les progrès.
+            </p>
+            <p class="section-body">
+              Que tu sois néophyte ou athlète, je suis ta partenaire idéale pour t’aider à retrouver, développer et renforcer tes qualités physiques.
+              Alors JayPeak, prêt à atteindre ton plein potentiel avec moi ? ⏱️🔥
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+
+  <section id="pilates">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal-right">
+          <div class="section-tag">
+            <span class="tag">Séance Pilates</span>
+          </div>
+          <h2 class="section-title">Un geste,<br />un <em>équilibre.</em></h2>
           <p class="section-body">
             JayPartner's est un coach de Pilates et fitness basé à Niort, animé par une passion authentique pour le mouvement, le bien-être et la transformation personnelle.
           </p>
@@ -1223,53 +1279,31 @@
             </a>
           </div>
         </div>
+        <div class="about-img-wrap reveal-left visible">
+          <div class="about-img-main">
+            <img
+              src="/assets/pilates-jay.png"
+              alt="JayPartner's coach Pilates Niort – soulevé de ballon"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- ===================== COURS ===================== -->
   <section id="cours">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag" style="margin-bottom:20px; display:inline-flex;">Les séances</span>
+        <span class="tag" style="margin-bottom:20px; display:inline-flex;">Les programmes</span>
         <h2 class="section-title">Trois programmes,<br /><em>un seul objectif.</em></h2>
-        <p class="section-body">Des cours conçus pour renforcer, équilibrer et transformer ton corps — quelle que soit ton expérience.</p>
+        <p class="section-body"> Des séances personnalisées conçues pour toi et nos objectifs !</p>
       </div>
       <div class="cours-grid">
         <!-- Pilates Flow -->
+            <!-- Mobilité & Recovery -->
         <div class="cours-card reveal stagger-1">
-          <div class="cours-tag">Signature</div>
-          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/strength.png" alt="strength"/></div>
-          <div class="cours-name">HIGH SCHOOL - Formule étudiante</div>
-          <p class="cours-desc">Une formule spécialement conçue pour les moins de 22 ans afin de profiter de séances à prix réduit.
-            Idéal pour les étudiants et les jeunes souhaitant s’entraîner régulièrement tout en bénéficiant d’un tarif avantageux.</p>
-          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
-            Réserver →
-          </a>
-        </div>
-        <!-- Core & Strength -->
-        <div class="cours-card reveal stagger-2">
-          <div class="cours-tag">Intensif</div>
-          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/couple-posing.png" alt="couple-posing"/></div>
-          <div class="cours-name">GYMPARTNER'S - Duo</div>
-          <p class="cours-desc">Un programme pensé pour s’entraîner à deux dans une ambiance motivante et dynamique.</p>
-          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
-            Réserver →
-          </a>
-        </div>
-         <!-- Core & Strength -->
-        <div class="cours-card reveal stagger-2">
-          <div class="cours-tag">Intensif</div>
-          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/exercise.png" alt="exercise"/></div>
-          <div class="cours-name">BRUNCH - A distance</div>
-          <p class="cours-desc">Une séance conviviale qui combine sport et moment de partage.</p>
-          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
-            Réserver →
-          </a>
-        </div>
-         <!-- Mobilité & Recovery -->
-        <div class="cours-card reveal stagger-3">
-          <div class="cours-tag">Intensif</div>
+          
           <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/trampoline-park.png" alt="trampoline-park"/></div>
           <div class="cours-name">BURPEES CAKE</div>
           <p class="cours-desc">Un programme qui mélange effort et plaisir.</p>
@@ -1278,8 +1312,8 @@
           </a>
         </div>
          <!-- Mobilité & Recovery -->
-        <div class="cours-card reveal stagger-3">
-          <div class="cours-tag">Modéré</div>
+        <div class="cours-card reveal stagger-2">
+        
           <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/weightlift.png" alt="weightlift"/></div>
           <div class="cours-name">BANANA DIPS</div>
           <p class="cours-desc">Un programme dynamique axé sur le renforcement musculaire et le travail du haut du corps.</p>
@@ -1289,7 +1323,7 @@
         </div>
          <!-- Mobilité & Recovery -->
         <div class="cours-card reveal stagger-3">
-          <div class="cours-tag">Intensif</div>
+        
           <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ink/48/bench-press-with-dumbbells.png" alt="bench-press-with-dumbbells"/></div>
           <div class="cours-name">CAFE GOURMAND</div>
           <p class="cours-desc">Un moment dédié à la récupération et au bien-être du corps.</p>
@@ -1297,9 +1331,41 @@
             Réserver →
           </a>
         </div>
+
+        <!-- Mobilité & Recovery -->
+        <div class="cours-card reveal stagger-3">
+        
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ink/48/bench-press-with-dumbbells.png" alt="bench-press-with-dumbbells"/></div>
+          <div class="cours-name">GYM PARTNERS'S DUO</div>
+          <p class="cours-desc">Une séance à passée à deux.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+
+
+        <!-- Mobilité & Recovery -->
+        <div class="cours-card reveal stagger-3">
+        
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ink/48/bench-press-with-dumbbells.png" alt="bench-press-with-dumbbells"/></div>
+          <div class="cours-name">HIGH SCHOOL</div>
+          <p class="cours-desc">Une séance créée pour les étudiants.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
        
-       
-      </div>
+         <!-- Core & Strength -->
+        <div class="cours-card reveal stagger-2">
+          
+          <div class="cours-icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/exercise.png" alt="exercise"/></div>
+          <div class="cours-name">BRUNCH - A distance</div>
+          <p class="cours-desc">Une séance conviviale qui combine sport et moment de partage.</p>
+          <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-outline" style="font-size:13px; padding:10px 22px;">
+            Réserver →
+          </a>
+        </div>
+    
     </div>
   </section>
 
@@ -1314,7 +1380,7 @@
         <div class="pourqui-card reveal stagger-1">
           <span class="pourqui-icon">🌱</span>
           <div class="pourqui-title">Débutants</div>
-          <p class="pourqui-desc">Aucun prérequis. Jay t'accueille là où tu es et progresse à ton rythme.</p>
+          <p class="pourqui-desc">Aucun prérequis. </br> Jay t'accueille là où tu es et progresse à ton rythme. </p>
         </div>
         <div class="pourqui-card reveal stagger-2">
           <span class="pourqui-icon">⚡</span>
@@ -1467,8 +1533,10 @@
           <span class="tag" style="margin-bottom:20px; display:inline-flex;">📍 Localisation</span>
           <h2 class="section-title">Cours de Pilates<br /><em>à Niort.</em></h2>
           <p class="section-body">
-            Les cours JayPartner's se déroulent chez <strong>Fitness Park Niort</strong>, une salle équipée idéale pour pratiquer le Pilates dans les meilleures conditions.
+            Les coachings se déroulent chez <strong>Fitness Park Niort</strong>,une salle équipée idéale pour pratiquer votre coaching ainsi que les cours de Pilates dans les meilleures conditions.
           </p>
+         
+
           <div class="loc-info">
             <div class="loc-item">
               <div class="loc-icon">🏋️</div>
@@ -1552,7 +1620,7 @@
           ton <em>corps ?</em>
         </h2>
         <p class="cta-sub">
-          Rejoins les cours de Pilates JayPartner's à Niort et commence ta transformation dès aujourd'hui.
+          Rejoins JayPartner's et commence ta transformation dès aujourd'hui.
         </p>
         <div class="cta-btns">
           <a href="https://calendly.com/jaypartners-coach" target="_blank" class="btn btn-primary">
@@ -1642,7 +1710,7 @@
 
  
     hamburger.addEventListener('click', () =>  {
-      mobileMenu.classList.add('open')
+      mobileMenu.classList.toggle('open');
     });
     mobileClose.addEventListener('click', () => {
       mobileMenu.classList.remove('open')
