@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 interface QuizAnswer {
   id: number;
@@ -16,7 +17,7 @@ interface QuizQuestion {
 }
 @Component({
   selector: 'app-getting-started',
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, HeaderComponent],
   templateUrl: './getting-started.component.html',
   styleUrl: './getting-started.component.css'
 })
@@ -93,7 +94,7 @@ export class GettingStartedComponent {
     } else {
       this.finished = true;
       setTimeout(() => {
-        this.router.navigate(['/home']); // /home correspond au path de HomeComponent
+        this.router.navigate(['/courses']); // /home correspond au path de HomeComponent
     }, 2000);
     }
   }
