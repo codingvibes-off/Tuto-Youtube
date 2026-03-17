@@ -1,0 +1,53 @@
+
+<div class="quiz-wrapper">
+
+  <!-- ── SCORE SCREEN ────────────────────────── -->
+  <div class="score-screen" *ngIf="finished">
+    <div class="score-inner">
+      <div class="score-emoji">🎯</div>
+      <h2 class="score-title">Quiz terminé !</h2>
+      <p class="score-sub">Tu as répondu à {{ questions.length }} questions</p>
+      <div class="score-xp">⚡ +{{ score * 50 }} XP gagnés</div>
+      <button class="btn-restart" (click)="restart()">Recommencer</button>
+    </div>
+  </div>
+
+  <!-- ── QUIZ SCREEN ─────────────────────────── -->
+  <div class="quiz-screen" *ngIf="!finished">
+
+    <!-- Progress bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" [style.width.%]="progress"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="quiz-header">
+      <button class="btn-skip" (click)="skip()">
+        Passer la question
+      </button>
+      <span class="quiz-counter">{{ currentIndex + 1 }} / {{ questions.length }}</span>
+    </div>
+
+    <!-- Question -->
+    <div class="quiz-body">
+      <h1 class="quiz-question">{{ current.text }}</h1>
+
+      <!-- Answers grid -->
+      <div class="answers-grid">
+        <button
+          class="answer-block"
+          *ngFor="let answer of current.answers"
+          [class.selected]="isSelected(answer.id)"
+          [class.answered]="answered && !isSelected(answer.id)"
+          [style.background-color]="answer.color"
+          (click)="select(answer.id)">
+          <span class="answer-label" [style.color]="answer.textColor">
+            {{ answer.label }}
+          </span>
+          <span class="answer-check" *ngIf="isSelected(answer.id)">✓</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
