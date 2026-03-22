@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CoursesComponent } from '../courses/courses.component';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   navLinks = [
-    { label: 'Accueil', active: true },
-    { label: 'Cours', active: false },
-    { label: 'Bibliothèque', active: false },
-    { label: 'Emploi', active: false },
-    { label: 'Certification', active: false },
-    { label: 'QCM', active: false },
+    { root:"/home",  label: 'Accueil', active: true },
+    { root:"/courses", label: 'Cours', active: false },
+    { root:"/", label: 'Bibliothèque', active: false },
+    { root:"/jobs", label: 'Emploi', active: false },
+    { root:"/certification", label: 'Certification', active: false },
+    { root:"/quizz-question", label: 'QCM', active: false },
   ];
 
   mobileMenuOpen = false;

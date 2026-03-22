@@ -1,0 +1,112 @@
+<main class="home">
+<app-header></app-header>
+  <!-- Accent bars decoratives -->
+  <div class="accent-bar accent-bar--top"></div>
+  <div class="accent-bar accent-bar--bottom"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <p class="hero__eyebrow">// Plateforme d'apprentissage</p>
+    <h1 class="hero__title">
+      TEST AUTOMATION<br>
+      <span class="hero__title--accent">ENGINEER</span> KNOWLEDGE
+    </h1>
+    <p class="hero__subtitle">
+      Maîtrise les outils qui font les vrais pros du test logiciel.
+    </p>
+
+    <!-- Search bar -->
+    <div class="search-wrapper">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="RECHERCHE LE COURS QUI VA TE TRANSFORMER...."
+          [ngModel]="searchQuery()"
+          (ngModelChange)="onSearch($event)"
+        />
+        <button class="search-btn" aria-label="Rechercher">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Active search indicator -->
+      <div class="search-meta" *ngIf="searchQuery().length > 0">
+        <span class="search-count">{{ filteredCourses().length }} résultat(s) pour "{{ searchQuery() }}"</span>
+        <button class="search-clear" (click)="onSearch('')">✕ Effacer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses grid -->
+  <section class="courses-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="section-title__line"></span>
+        Tous les cours
+        <span class="section-count">{{ filteredCourses().length }}</span>
+      </h2>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" *ngIf="filteredCourses().length === 0">
+      <div class="empty-state__icon">⊘</div>
+      <p class="empty-state__text">Aucun cours trouvé pour <strong>"{{ searchQuery() }}"</strong></p>
+      <button class="empty-state__btn" (click)="onSearch('')">Voir tous les cours</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="courses-grid" *ngIf="filteredCourses().length > 0">
+      <article
+        class="course-card"
+        *ngFor="let course of filteredCourses(); trackBy: trackById"
+      >
+        <!-- Card top visual -->
+        <div class="card-visual">
+          <span class="card-category">{{ course.category }}</span>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Card body -->
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge" [ngClass]="levelClass(course.level)">{{ course.level }}</span>
+            <span class="card-duration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              {{ course.duration }}
+            </span>
+          </div>
+
+          <h3 class="card-title">{{ course.title }}</h3>
+          <p class="card-desc">{{ course.description }}</p>
+
+          <div class="card-tags">
+            <span class="tag" *ngFor="let tag of course.tags">{{ tag }}</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="card-lessons">{{ course.lessons }} leçons</span>
+            <button class="card-btn">
+              Démarrer
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>

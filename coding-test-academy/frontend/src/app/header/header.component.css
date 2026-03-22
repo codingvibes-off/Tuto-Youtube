@@ -7,7 +7,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  background: rgba(8, 11, 16, 0.85);
+  background: #00286ce6;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(110, 255, 160, 0.1);
@@ -37,11 +37,11 @@
 }
 
 .logo-text {
-  color: #a0aec0;
+  color: #fff;
 }
 
 .logo-accent {
-  color: #6effa0;
+  color: #ffd900;
   font-weight: 700;
 }
 
@@ -49,8 +49,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #c040f5;
-  box-shadow: 0 0 8px #c040f5, 0 0 16px rgba(192, 64, 245, 0.4);
+  background: #ffd900;
+  box-shadow: 0 0 8px #ffd900, 0 0 16 #ffd900cc;
   animation: pulse-dot 2.4s ease-in-out infinite;
   margin-left: 2px;
 }
@@ -76,7 +76,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   transition: color 0.2s ease, background 0.2s ease;
@@ -88,22 +88,21 @@
 }
 
 .nav-link--active {
-  color: #6effa0;
+  color: #ffd900;
 }
 
 .nav-link--active::after {
   content: '';
   position: absolute;
   bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; /* position horizontale au milieu du parent */
+  transform: translateX(-50%); /* centre horizontalement */
   width: 18px;
   height: 2px;
-  background: #6effa0;
+  background: #ffd900;
   border-radius: 2px;
-  box-shadow: 0 0 6px #6effa0;
+  box-shadow: 0 0 6px #ffd900;
 }
-
 /* --- CTA --- */
 .header__cta {
   margin-left: auto;
@@ -112,8 +111,8 @@
   gap: 0.5rem;
   padding: 0.45rem 1.1rem;
   background: transparent;
-  border: 1px solid #6effa0;
-  color: #6effa0;
+  border: 1px solid #ffd900;
+  color: #ffd900;
   font-family: 'Space Mono', monospace;
   font-size: 0.72rem;
   font-weight: 700;

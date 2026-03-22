@@ -10,3 +10,6 @@ src/app/
     ├── courses.json
     ├── quizzes.json
     └── jobs.json
+
+
+S'inspirer de https://www.codingame.com/start/fr/

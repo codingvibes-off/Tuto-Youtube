@@ -1,59 +1,27 @@
 
-<div class="quiz-wrapper">
-
-  <!-- ── SCORE SCREEN ────────────────────────── -->
-  <div class="score-screen" *ngIf="finished">
-    <div class="score-inner">
-      <div class="score-emoji">🎯</div>
-      <h2 class="score-title">Quiz terminé !</h2>
-      <p class="score-sub">Tu as répondu à {{ questions.length }} questions</p>
-      <div class="score-xp">⚡ +{{ score * 50 }} XP gagnés</div>
-      <button class="btn-restart" (click)="restart()">Recommencer</button>
-    </div>
+<div  *ngIf="currentQuestionIndex < answer_getting_started.length && finished!=true">
+   <div class="notification-modal" *ngIf="showModal">
+    <p>{{ answer_getting_started[currentQuestionIndex].question }}</p>
   </div>
-
-  <!-- ── QUIZ SCREEN ─────────────────────────── -->
-  <div class="quiz-screen" *ngIf="!finished">
-
-    <!-- Progress bar -->
-    <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" [style.width.%]="progress"></div>
+  
+  <main class="answers">
+    <div
+      *ngFor="let option of answer_getting_started[currentQuestionIndex].options"
+      (click)="selectAnswer(option)"
+      [ngStyle]="{ 'background-color': option.bgColor, color: option.textColor }"
+      class="answer-box"
+    >
+      {{ option.label }}
     </div>
-
-    <!-- Header -->
-    <div class="quiz-header">
-      <button class="btn-skip" (click)="skip()">
-        Passer la question
-      </button>
-      <span class="quiz-counter">{{ currentIndex + 1 }} / {{ questions.length }}</span>
+    <div class="color-line">
+      <div class="color-block" style="background-color: #00286ce6"></div>
+      <div class="color-block" style="background-color: #28a745;"></div>
+      <div class="color-block" style="background-color: #ff9800;"></div>
+      <div class="color-block" style="background-color: #9c27b0;"></div>
+      <div class="color-block" style="background-color: #f44336;"></div>
     </div>
-
-    <!-- Question -->
-    <div class="quiz-body">
-      <h1 class="quiz-question">{{ current.text }}</h1>
-
-      <!-- Answers grid -->
-      <div class="answers-grid">
-        <button
-          class="answer-block"
-          *ngFor="let answer of current.answers"
-          [class.selected]="isSelected(answer.id)"
-          [class.answered]="answered && !isSelected(answer.id)"
-          [style.background-color]="answer.color"
-          (click)="select(answer.id)">
-          <span class="answer-label" [style.color]="answer.textColor">
-            {{ answer.label }}
-          </span>
-          <span class="answer-check" *ngIf="isSelected(answer.id)">✓</span>
-        </button>
-      </div>
-    </div>
-
-  </div>
-  <div class="borders-container">
-    <div class="border-konbini"></div>
-    <div class="border-konbini"></div>
-    <div class="border-konbini"></div>
-    <div class="border-konbini"></div>
-  </div>
+  </main>
 </div>
+
+
+

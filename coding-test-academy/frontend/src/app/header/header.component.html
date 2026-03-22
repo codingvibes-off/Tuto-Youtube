@@ -12,7 +12,7 @@
     <nav class="header__nav" [class.open]="mobileMenuOpen">
       <a
         *ngFor="let link of navLinks"
-        href="#"
+        href="{{ link.root }}"
         class="nav-link"
         [class.nav-link--active]="link.active"
       >
@@ -22,7 +22,7 @@
 
     <!-- CTA button -->
     <button class="header__cta">
-      <span>Commencer</span>
+      <span>Connexion</span>
       <span class="cta-arrow">→</span>
     </button>
 

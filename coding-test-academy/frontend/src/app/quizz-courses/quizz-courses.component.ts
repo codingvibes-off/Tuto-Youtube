@@ -1,19 +1,18 @@
-import { Component, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, computed, signal } from '@angular/core';
 import { Course } from '../models/course.model';
 import { HeaderComponent } from '../header/header.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-courses',
-  standalone: true,
+  selector: 'app-quizz-courses',
   imports: [HeaderComponent, CommonModule, FormsModule],
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  standalone:true,
+  templateUrl: './quizz-courses.component.html',
+  styleUrl: './quizz-courses.component.css'
 })
-export class CoursesComponent {
-  searchQuery = signal('');
-
+export class QuizzCoursesComponent {
+   searchQuery = signal('');
   allCourses: Course[] = [
     {
       id: 1,

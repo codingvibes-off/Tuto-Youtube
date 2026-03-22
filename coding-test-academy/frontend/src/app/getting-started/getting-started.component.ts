@@ -1,113 +1,84 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
+import { CoursesComponent } from '../courses/courses.component';
+import { ResultModalComponent } from '../result-modal/result-modal.component';
 
-interface QuizAnswer {
-  id: number;
+interface AnswerOption {
   label: string;
-  color: string;
+  value: string;
+  bgColor: string;
   textColor: string;
 }
 
-interface QuizQuestion {
-  id: number;
-  text: string;
-  answers: QuizAnswer[];
-}
 @Component({
   selector: 'app-getting-started',
-  imports: [CommonModule, RouterOutlet, HeaderComponent],
   templateUrl: './getting-started.component.html',
-  styleUrl: './getting-started.component.css'
+  standalone:true,
+  imports:[CommonModule],
+  styleUrls: ['./getting-started.component.css']
 })
 export class GettingStartedComponent {
-  constructor(private router:Router){}
-  currentIndex = 0;
-  selectedId: number | null = null;
-  answered = false;
-  finished = false;
-  score = 0;
-
-  questions: QuizQuestion[] = [
+  @Output() finishedEvent = new EventEmitter<{ question: string; answer: string }[]>();
+  // Liste des questions avec leurs réponses possibles
+  answer_getting_started: { question: string; options: AnswerOption[] }[] = [
     {
-      id: 1,
-      text: 'Quel est ton prochain niveau dans le testing ?',
-      answers: [
-        { id: 1, label: 'Débutant',      color: '#7C3AED', textColor: '#fff' },
-        { id: 2, label: 'Intermédiaire', color: '#4B9B74', textColor: '#fff' },
-        { id: 3, label: 'Avancé',        color: '#D2621A', textColor: '#fff' },
-        { id: 4, label: 'Expert',        color: '#C084FC', textColor: '#fff' },
+      question: 'Quel est ton mode de test préféré ?',
+      options: [
+        { label: 'MANUEL', value: 'MANUEL', bgColor: '#000', textColor: '#fff' },
+        { label: 'AUTOMATISE', value: 'AUTOMATISE', bgColor: '#fff', textColor: '#000' }
       ]
     },
     {
-      id: 2,
-      text: 'Quel outil utilises-tu pour l\'automatisation E2E ?',
-      answers: [
-        { id: 1, label: 'Playwright',  color: '#1D7FFF', textColor: '#fff' },
-        { id: 2, label: 'Cypress',     color: '#00B894', textColor: '#fff' },
-        { id: 3, label: 'Selenium',    color: '#E17055', textColor: '#fff' },
-        { id: 4, label: 'Aucun encore',color: '#6C5CE7', textColor: '#fff' },
+      question: 'Type de boite ?',
+      options: [
+        { label: 'BOITE NOIRE', value: 'BOITE NOIRE', bgColor: '#000', textColor: '#fff' },
+        { label: 'BOITE BLANCHE', value: 'BOITE BLANCHE', bgColor: '#fff', textColor: '#000' }
       ]
     },
     {
-      id: 3,
-      text: 'Quelle est ta pratique CI/CD principale ?',
-      answers: [
-        { id: 1, label: 'Jenkins',         color: '#2D3436', textColor: '#fff' },
-        { id: 2, label: 'GitHub Actions',  color: '#0984E3', textColor: '#fff' },
-        { id: 3, label: 'GitLab CI',       color: '#E84393', textColor: '#fff' },
-        { id: 4, label: 'Je débute',       color: '#00B894', textColor: '#fff' },
+      question: 'Type de boucle ?',
+      options: [
+        { label: 'BOUCLE', value: 'BOUCLE', bgColor: '#000', textColor: '#fff' },
+        { label: 'CONDITION', value: 'CONDITION', bgColor: '#fff', textColor: '#000' }
+      ]
+    },
+    {
+      question: 'Type de test ?',
+      options: [
+        { label: 'TEST STATIQUE', value: 'TEST STATIQUE', bgColor: '#000', textColor: '#fff' },
+        { label: 'DYNAMIQUE', value: 'DYNAMIQUE', bgColor: '#fff', textColor: '#000' }
+      ]
+    },
+    {
+      question: 'Fiabilité ?',
+      options: [
+        { label: 'FLACKY TEST', value: 'FLACKY TEST', bgColor: '#000', textColor: '#fff' },
+        { label: 'STABLE TEST', value: 'STABLE TEST', bgColor: '#fff', textColor: '#000' }
       ]
     }
   ];
+  finished = false
+  currentQuestionIndex = 0;
+  response_user: { question: string; answer: string }[] = [];
+  showModal = true;
+   selectAnswer(option: AnswerOption) {
+    const currentQuestion = this.answer_getting_started[this.currentQuestionIndex];
+    this.response_user.push({ question: currentQuestion.question, answer: option.value });
 
-  get current(): QuizQuestion {
-    return this.questions[this.currentIndex];
-  }
+    // Masquer la modale
+    this.showModal = false;
 
-  get progress(): number {
-    return Math.round(((this.currentIndex) / this.questions.length) * 100);
-  }
-
-  select(id: number): void {
-    if (this.answered) return;
-    this.selectedId = id;
-    this.answered = true;
-    this.score++;
-
+    // Passer à la question suivante après un petit délai pour animation
     setTimeout(() => {
-      this.next();
-    }, 700);
-  }
+      this.currentQuestionIndex++;
+      this.showModal = this.currentQuestionIndex < this.answer_getting_started.length;
+    }, 300);
 
-  skip(): void {
-    if (this.answered) return;
-    this.next();
-  }
-
-  next(): void {
-    if (this.currentIndex < this.questions.length - 1) {
-      this.currentIndex++;
-      this.selectedId = null;
-      this.answered = false;
-    } else {
-      this.finished = true;
-      setTimeout(() => {
-        this.router.navigate(['/courses']); // /home correspond au path de HomeComponent
-    }, 2000);
+    // Afficher le tableau en console si c’est la dernière réponse
+    if (this.currentQuestionIndex >= this.answer_getting_started.length - 1) {
+      console.table(this.response_user);
+      this.finishedEvent.emit(this.response_user);
     }
-  }
-
-  restart(): void {
-    this.currentIndex = 0;
-    this.selectedId = null;
-    this.answered = false;
-    this.finished = false;
-    this.score = 0;
-  }
-
-  isSelected(id: number): boolean {
-    return this.selectedId === id;
   }
 }

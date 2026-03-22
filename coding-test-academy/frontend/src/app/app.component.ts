@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { HomeComponent } from './home/home.component';
 @Component({
   selector: 'app-root',
-  imports: [ ButtonModule, RouterOutlet, HomeComponent],
+  imports: [ ButtonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

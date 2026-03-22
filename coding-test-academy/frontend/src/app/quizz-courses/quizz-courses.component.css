@@ -3,7 +3,7 @@
 ============================ */
 
 .home {
-  background: #0D0E1A;
+background: #0D0E1A;
   position: relative;
   min-height: calc(100vh - 64px);
   padding-bottom: 6rem;
@@ -44,7 +44,7 @@
   font-family: 'Space Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: #ffd900;;
+  color: #6effa0;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
   opacity: 0;
@@ -64,7 +64,7 @@
 }
 
 .hero__title--accent {
-  color: #ffd900;;
+  color: #6effa0;
   text-shadow: 0 0 40px rgba(110, 255, 160, 0.3);
 }
 
@@ -166,7 +166,7 @@
 .search-count {
   font-family: 'Space Mono', monospace;
   font-size: 0.68rem;
-  color: #ffd900;
+  color: #6effa0;
   letter-spacing: 0.05em;
 }
 
@@ -213,8 +213,8 @@
   display: block;
   width: 32px;
   height: 2px;
-  background: #ffd900;
-  box-shadow: 0 0 6px #ffd900;
+  background: #6effa0;
+  box-shadow: 0 0 6px #6effa0;
 }
 
 .section-count {
@@ -227,7 +227,7 @@
   background: rgba(110, 255, 160, 0.1);
   border: 1px solid rgba(110, 255, 160, 0.25);
   border-radius: 20px;
-  color: #ffd900;
+  color: #6effa0;
   font-size: 0.7rem;
 }
 
@@ -245,7 +245,7 @@
    ============================ */
 .course-card {
   background: rgba(13, 17, 23, 0.8);
-  border: 1px solid rgba(255, 226, 110, 0.1);
+  border: 1px solid rgba(110, 255, 160, 0.1);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -266,7 +266,7 @@
 
 .course-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 250, 110, 0.35);
+  border-color: rgba(110, 255, 160, 0.35);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(110, 255, 160, 0.12);
 }
 
@@ -274,7 +274,7 @@
 .card-visual {
   position: relative;
   height: 130px;
-  background: linear-gradient(135deg, rgba(238, 255, 110, 0.12) 0%, rgba(255, 253, 110, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(110, 255, 160, 0.12) 0%, rgba(110, 255, 160, 0.04) 100%);
   display: flex;
   align-items: flex-end;
   padding: 1rem 1.25rem;
@@ -300,7 +300,7 @@
   right: -20px;
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, rgba(255, 250, 110, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(110, 255, 160, 0.18) 0%, transparent 70%);
   border-radius: 50%;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
@@ -316,7 +316,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #ffd900;
+  color: #6effa0;
   font-weight: 700;
 }
 
@@ -348,8 +348,8 @@
 
 .badge--beginner {
   background: rgba(110, 255, 160, 0.1);
-  color: #ffd900;
-  border: 1px solid rgba(245, 255, 110, 0.25);
+  color: #6effa0;
+  border: 1px solid rgba(110, 255, 160, 0.25);
 }
 
 .badge--intermediate {
@@ -384,7 +384,7 @@
 }
 
 .course-card:hover .card-title {
-  color: #ffd900;
+  color: #6effa0;
 }
 
 .card-desc {
@@ -436,7 +436,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffd900;
+  color: #6effa0;
   background: transparent;
   border: 1px solid rgba(110, 255, 160, 0.25);
   border-radius: 6px;
@@ -494,7 +494,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffd900;
+  color: #6effa0;
   background: rgba(110, 255, 160, 0.06);
   border: 1px solid rgba(110, 255, 160, 0.25);
   border-radius: 6px;
