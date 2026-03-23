@@ -16,12 +16,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 80px;
   text-align: center;
   cursor: pointer;
   border-radius: 8px;
   transition: transform 0.2s;
-  min-height: 45vh;
+  min-height: 46vh;
 }
 
 .answer-box:hover {
@@ -55,7 +55,7 @@
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   animation: slideDown 0.3s ease-out;
   z-index: 1000;
@@ -78,7 +78,7 @@
 }
 
 .color-block {
-  height: 50px;
+  height: 20px;
   transition: transform 0.2s;
   width: 33%;
 }

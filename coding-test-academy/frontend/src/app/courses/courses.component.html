@@ -75,7 +75,7 @@
         </div>
 
         <!-- Card body -->
-        <div class="card-body">
+        <div (click)="content_courses()" class="card-body">
           <div class="card-meta">
             <span class="badge" [ngClass]="levelClass(course.level)">{{ course.level }}</span>
             <span class="card-duration">

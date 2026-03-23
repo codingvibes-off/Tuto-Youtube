@@ -79,6 +79,8 @@ export class GettingStartedComponent {
     if (this.currentQuestionIndex >= this.answer_getting_started.length - 1) {
       console.table(this.response_user);
       this.finishedEvent.emit(this.response_user);
+      localStorage.setItem('finished-getting-started', "true");
+      console.log(localStorage.getItem("finished-getting-started"))
     }
   }
 }

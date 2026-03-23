@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  background: #1e293b;
+  padding: 1rem;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: #f8fafc;
+}

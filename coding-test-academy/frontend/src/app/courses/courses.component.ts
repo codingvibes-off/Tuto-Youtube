@@ -133,4 +133,7 @@ export class CoursesComponent {
   trackById(_: number, course: Course) {
     return course.id;
   }
+  content_courses(){
+    console.log("CLICK COURSES")
+  }
 }

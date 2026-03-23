@@ -50,7 +50,7 @@ export class HomeComponent {
   };
   finished = false
   response_user: { question: string; answer: string }[] = [];
-
+  showModal = false;
   calculateProfile(responses: { question: string; answer: string }[]): ProfileKey{
   let score: Record<string, number>= {
     QA_MANUEL: 0,
@@ -88,10 +88,21 @@ export class HomeComponent {
     }
   onFinished(responses: { question: string; answer: string }[]) {
     this.response_user = responses;
-    this.finished = true;
     const key = this.calculateProfile(responses);
     this.selectedProfile = this.profiles[key];
+    this.showModal = true;
+    this.finished = true;
     console.log("HOME RESPONSE")
+  }
+  ngOnInit(){
+    const storedValue = localStorage.getItem('finished-getting-started');
+    if (storedValue !== null) {
+      console.log(localStorage.getItem("finished-getting-started"))
+      this.finished = storedValue === 'true';
+      console.log("FINIESHD : ",this.finished)
+    } else {
+      this.finished = false;
+    }
   }
 
 
