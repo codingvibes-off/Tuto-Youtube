@@ -1,8 +1,9 @@
 import { Component, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Course } from '../models/course.model';
 import { HeaderComponent } from '../header/header.component';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-courses',
@@ -12,6 +13,7 @@ import { HeaderComponent } from '../header/header.component';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent {
+  constructor(private router:Router){}
   searchQuery = signal('');
 
   allCourses: Course[] = [
@@ -133,7 +135,12 @@ export class CoursesComponent {
   trackById(_: number, course: Course) {
     return course.id;
   }
-  content_courses(){
-    console.log("CLICK COURSES")
+  go_to_content_courses(title_courses: string) {
+    const formattedTitle = title_courses
+      .toLowerCase()
+      .replace(/\s+/g, '_'); 
+
+    this.router.navigate(['/content-courses', formattedTitle]);
   }
+
 }

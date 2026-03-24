@@ -14,6 +14,7 @@ export class CoursesMenuComponent implements OnInit {
   items: MenuItem[] = [];
 
   ngOnInit() {
+    
     this.items = [
       {
         label: 'Fondamentaux',

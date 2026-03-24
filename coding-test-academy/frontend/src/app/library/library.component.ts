@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
-  selector: 'app-jobs',
+  selector: 'app-library',
   standalone:true,
   imports: [HeaderComponent],
-  templateUrl: './jobs.component.html',
-  styleUrl: './jobs.component.css'
+  templateUrl: './library.component.html',
+  styleUrl: './library.component.css'
 })
-export class JobsComponent {
+export class LibraryComponent {
 
 }
