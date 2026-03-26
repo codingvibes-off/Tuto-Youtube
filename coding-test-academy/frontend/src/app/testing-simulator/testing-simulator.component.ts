@@ -16,6 +16,7 @@ export interface LogEntry {
   type: 'info' | 'action' | 'success' | 'error' | 'step';
   message: string;
   detail?: string;
+  testCaseId?:string;
 }
 
 interface TestStep {
@@ -91,11 +92,11 @@ export class TestingSimulatorComponent implements OnDestroy {
     });
   }
 
-  private addLog(type: LogEntry['type'], message: string, detail?: string): void {
+  private addLog(type: LogEntry['type'], message: string, detail?: string, testCaseId?:string): void {
     const now = new Date();
     const time = now.toTimeString().slice(0, 8) + '.' +
       String(now.getMilliseconds()).padStart(3, '0');
-    this.logs.push({ id: this.logIdCounter++, time, type, message, detail });
+    this.logs.push({ id: this.logIdCounter++, time, type, message, detail, testCaseId });
     this.cdr.detectChanges();
     this.scrollLogsToBottom();
   }
@@ -106,7 +107,7 @@ export class TestingSimulatorComponent implements OnDestroy {
         this.logContainer.nativeElement.scrollTop =
           this.logContainer.nativeElement.scrollHeight;
       }
-    }, 30);
+    }, 30)
   }
 
   private async typeText(
@@ -163,7 +164,7 @@ export class TestingSimulatorComponent implements OnDestroy {
       // ── Step 1: Initialisation ──
       this.currentStepIndex = 0;
       this.setProgress(5);
-      this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts');
+      this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts','0000');
       await this.wait(400);
       this.addLog('info', 'Initializing test environment…');
       await this.wait(500);
@@ -173,13 +174,13 @@ export class TestingSimulatorComponent implements OnDestroy {
       // ── Step 2: Navigate ──
       this.currentStepIndex = 1;
       this.setProgress(18);
-      this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1');
+      this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1','0001');
       await this.wait(600);
 
       // ── Step 3: Focus username ──
       this.currentStepIndex = 2;
       this.setProgress(32);
-      this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2');
+      this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2','0002');
       this.highlightUsername = true;
       this.showCursor = true;
       this.cdr.detectChanges();
@@ -188,7 +189,7 @@ export class TestingSimulatorComponent implements OnDestroy {
       // ── Step 4: Focus password ──
       this.currentStepIndex = 3;
       this.setProgress(32);
-      this.addLog('action', '00003 - Se connecter avec une image avatar.png', 'STEP 3');
+      this.addLog('action', '00003 - Se connecter avec une image avatar.png', 'STEP 3','0003');
       this.highlightUsername = true;
       this.showCursor = true;
       this.cdr.detectChanges();
@@ -197,8 +198,8 @@ export class TestingSimulatorComponent implements OnDestroy {
 
       // ── Step 4: Focus password ──
       this.currentStepIndex = 4;
-      this.setProgress(32);
-      this.addLog('action', '00003 - Se connecter avec un emoji 😎', 'STEP 4');
+      this.setProgress(64);
+      this.addLog('action', '00003 - Se connecter avec un emoji 😎', 'STEP 4','0004');
       this.highlightUsername = true;
       this.showCursor = true;
       this.cdr.detectChanges();
@@ -212,59 +213,76 @@ export class TestingSimulatorComponent implements OnDestroy {
     this.cdr.detectChanges();
   }
   async runTestCases(test_case_id:string): Promise<void> {
+    console.log("RUN TEST"+test_case_id)
+    this.resetTest()
     if (this.state === 'running') return;
-
-    // Reset
-    this.aborted = false;
-    this.clearAllTimeouts();
-    this.state = 'running';
-    this.logs = [];
-    this.progress = 0;
-    this.currentStepIndex = -1;
-    this.highlightUsername = false;
-    this.highlightPassword = false;
-    this.highlightSubmit = false;
-    this.usernameDisplayValue = '';
-    this.passwordDisplayValue = '';
-    this.form.reset();
-    this.cdr.detectChanges();
-
     try {
       await this.wait(300);
+      if(test_case_id == "0001"){
+         console.log("RUN TEST"+test_case_id)
+            // ── Step 1: Initialisation ──
+          this.currentStepIndex = 0;
+          this.setProgress(5);
+          this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts','0000');
+          await this.wait(400);
+          this.addLog('info', 'Initializing test environment…');
+          await this.wait(500);
+          this.addLog('info', 'Browser context ready', 'Chromium 122.0');
+          await this.wait(300);
 
-      // ── Step 1: Initialisation ──
-      this.currentStepIndex = 0;
-      this.setProgress(5);
-      this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts');
-      await this.wait(400);
-      this.addLog('info', 'Initializing test environment…');
-      await this.wait(500);
-      this.addLog('info', 'Browser context ready', 'Chromium 122.0');
-      await this.wait(300);
+          this.currentStepIndex = 1;
+          this.setProgress(5);
+          this.addLog('step', '→ Running test case 0001', 'testing-simulator.spec.ts');
+          await this.wait(500);
+          this.addLog('success', '✓ Success execution', '200 - OK');
 
-      // ── Step 2: Navigate ──
-      this.currentStepIndex = 1;
-      this.setProgress(18);
-      this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1');
-      await this.wait(600);
-      //this.addLog('info', 'DOM content loaded', '142ms');
-      await this.wait(200);
+          await this.typeText('username', 'john.doe@example.com', 55);
+          this.addLog('success', 'username ← "john.doe@example.com"', '18 chars typed');
+          // ── Step 2: Navigate ──
+          this.currentStepIndex = 2;
+          this.setProgress(18);
+          this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1','0001');
+          await this.wait(600);
+          //this.addLog('info', 'DOM content loaded', '142ms');
+          await this.wait(200);
 
-      // ── Step 3: Focus username ──
-      this.currentStepIndex = 2;
-      this.setProgress(32);
-      this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2');
-      this.highlightUsername = true;
-      this.showCursor = true;
-      this.cdr.detectChanges();
-      await this.wait(500);
+          // ── Step 3: Focus username ──
+          this.currentStepIndex = 3;
+          this.setProgress(32);
+          this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2', '0002');
+          this.highlightUsername = true;
+          this.showCursor = true;
+          this.cdr.detectChanges();
+          await this.wait(500);
+
+          // ── Step 4: Focus password ──
+          this.currentStepIndex = 3;
+          this.setProgress(32);
+          this.addLog('action', '00003 - Se connecter avec une image avatar.png', 'STEP 3','0003');
+          this.highlightUsername = true;
+          this.showCursor = true;
+          this.cdr.detectChanges();
+          await this.wait(500);
+
+
+          // ── Step 4: Focus password ──
+          this.currentStepIndex = 4;
+          this.setProgress(64);
+          this.addLog('action', '00003 - Se connecter avec un emoji 😎', 'STEP 4','0004');
+          this.highlightUsername = true;
+          this.showCursor = true;
+          this.cdr.detectChanges();
+          await this.wait(500);
+          this.currentStepIndex = this.totalSteps;
+      }
+  
 
        /*await this.typeText('username', 'john.doe@example.com', 55);
       await this.wait(200);
       this.addLog('success', 'username ← "john.doe@example.com"', '18 chars typed');
       this.highlightUsername = false;
       this.showCursor = false;
-      await this.wait(300);*/
+      await this.wait(300);
 
       // ── Step 4: Focus password ──
       this.currentStepIndex = 3;
@@ -293,8 +311,8 @@ export class TestingSimulatorComponent implements OnDestroy {
       await this.wait(300);
 
       this.addLog('success', '✅  Test passed — 5/5 assertions', 'Duration: 2.34s');
-      this.state = 'success';*/
-      this.currentStepIndex = this.totalSteps;
+      this.state = 'success';
+      this.currentStepIndex = this.totalSteps;*/
 
     } catch (e) {
       this.addLog('error', '❌  Test failed — unexpected error');

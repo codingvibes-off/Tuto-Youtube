@@ -187,7 +187,7 @@
         <!-- Log entries -->
         <div
           class="log-entry"
-          *ngFor="let log of logs; trackBy: trackLog"
+          *ngFor="let log of logs;let i = index; trackBy: trackLog"
           [ngClass]="'log-' + log.type"
         >
           <span class="log-time">{{ log.time }}</span>
@@ -201,7 +201,7 @@
             </ng-container>
           </span>
           <span class="log-message">{{ log.message }}</span>
-          <button class="btn-run" *ngIf="log.type === 'action'">Run test</button>
+          <button class="btn-run" *ngIf="log.type === 'action' && log.testCaseId"(click)="runTestCases(log.testCaseId)">Run test</button>
           <span class="log-detail" *ngIf="log.detail">{{ log.detail }}</span>
         </div>
 
