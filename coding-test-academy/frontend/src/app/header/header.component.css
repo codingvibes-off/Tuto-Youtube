@@ -156,7 +156,7 @@
 .header__burger span {
   display: block;
   height: 2px;
-  background: #6effa0;
+  background: #ffd900;
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
   transform-origin: center;

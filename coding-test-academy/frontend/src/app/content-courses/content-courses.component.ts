@@ -5,10 +5,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { COURSE_DATA_MANUAL_TESTING } from './content-menu-tree-files/course-data-manual-testing';
+import { QuizzContentCoursesComponent } from '../quizz-content-courses/quizz-content-courses.component';
+import { DialogModule } from 'primeng/dialog';
+import { Quizz } from '../models/quizz.model';
 
 export interface CourseTheme {
   label: string;
   items?: CourseTheme[];
+  quizz?: Quizz[];
 }
 export interface CourseData {
   themes: CourseTheme[];
@@ -16,17 +20,18 @@ export interface CourseData {
 @Component({
   selector: 'app-content-courses',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, PanelMenuModule],
+  imports: [CommonModule, HeaderComponent, PanelMenuModule, DialogModule, QuizzContentCoursesComponent],
   templateUrl: './content-courses.component.html',
   styleUrl: './content-courses.component.css'
 })
 export class ContentCoursesComponent implements OnInit {
 
   @Input() courseData: CourseData | null = null;
-
+  currentQuiz: Quizz[] = []
+  quizVisible = false;
   menuItems: MenuItem[] = [];
   selectedTheme: string = '';
-  selectedFormat: 'video' | 'script' = 'video';
+  selectedFormat: 'video' | 'script' | 'upload' = 'video';
   private defaultData: CourseTheme[] = COURSE_DATA_MANUAL_TESTING
   constructor(private route: ActivatedRoute) {
     // Initialisation ici → disponible dès le premier rendu du template
@@ -40,7 +45,7 @@ export class ContentCoursesComponent implements OnInit {
       switch(content_course_title){
         case "testing_manual":
          this.defaultData = COURSE_DATA_MANUAL_TESTING
-      }
+       }
       
     });
 
@@ -60,7 +65,6 @@ export class ContentCoursesComponent implements OnInit {
         label: theme.label,
         icon: hasChildren ? 'pi pi-folder' : 'pi pi-file',
       };
-
       if (hasChildren) {
         // Nœud parent : on passe les enfants et on force l'expansion au niveau racine
         item.items = this.buildMenuItems(theme.items!);
@@ -69,18 +73,27 @@ export class ContentCoursesComponent implements OnInit {
         }
       } else {
         // Nœud feuille : on attache le command
-        item.command = () => this.selectTheme(theme.label);
+        item.command = () => {
+        
+          if (theme.quizz) {
+            this.showQuiz(theme.quizz);  // ouvre le quiz
+          } else {
+            this.selectTheme(theme.label);
+          }
+        }
       }
-
       return item;
     });
   }
-
+  showQuiz(quizz: Quizz[]){
+      this.currentQuiz = quizz; 
+      this.quizVisible = true;  
+  }
   selectTheme(label: string): void {
     this.selectedTheme = label;
   }
 
-  setFormat(format: 'video' | 'script'): void {
+  setFormat(format: 'video' | 'script'| 'upload'): void {
     this.selectedFormat = format;
   }
 }

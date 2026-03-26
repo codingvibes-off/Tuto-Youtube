@@ -17,7 +17,7 @@ export class HeaderComponent {
     { root:"/library", label: 'Bibliothèque', active: false },
     { root:"/jobs", label: 'Emploi', active: false },
     { root:"/certification", label: 'Certification', active: false },
-    { root:"/quizz-question", label: 'QCM', active: false },
+    { root:"/quizz-courses", label: 'QCM', active: false },
   ];
    constructor(private router: Router) {
     this.router.events.subscribe(event => {

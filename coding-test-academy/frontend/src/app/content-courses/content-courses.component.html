@@ -9,10 +9,13 @@
     </div>
     <p-panelMenu [model]="menuItems" styleClass="course-panel-menu" />
   </aside>
-
+   <!-- ─── Quizz content ─── -->
+  <p-dialog header="Quiz" [(visible)]="quizVisible" [modal]="true" [closable]="true" [style]="{width: '50vw'}">
+      <app-quizz-content-courses *ngIf="currentQuiz && quizVisible" [quizz]="currentQuiz"></app-quizz-content-courses>
+  </p-dialog>
   <!-- ─── Main content ─── -->
   <main class="content-area">
-
+   
     <!-- Empty state -->
     <div *ngIf="!selectedTheme" class="empty-state">
       <span class="empty-icon">🎯</span>
@@ -47,6 +50,17 @@
             <span class="btn-label">Format</span>
             <strong class="btn-name">
               <span class="btn-name-plain">Script</span><span class="btn-name-accent">&#123; &#125;</span>
+            </strong>
+          </button>
+
+           <button
+            class="format-btn"
+            [class.active]="selectedFormat === 'upload'"
+            (click)="setFormat('upload')"
+          >
+            <span class="btn-label">Format</span>
+            <strong class="btn-name">
+              <span class="btn-name-plain">Télécharger</span><span class="btn-name-accent"><i class="pi pi-download"></i></span>
             </strong>
           </button>
         </div>
