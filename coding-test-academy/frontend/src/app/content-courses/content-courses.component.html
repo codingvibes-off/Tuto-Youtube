@@ -13,6 +13,9 @@
   <p-dialog header="Quiz" [(visible)]="quizVisible" [modal]="true" [closable]="true" [style]="{width: '50vw'}">
       <app-quizz-content-courses *ngIf="currentQuiz && quizVisible" [quizz]="currentQuiz"></app-quizz-content-courses>
   </p-dialog>
+   <p-dialog header="Simulator" [(visible)]="simulator" [modal]="true" [closable]="true" [style]="{width: '100vw',height: '100vw'}">
+      <app-testing-simulator></app-testing-simulator>
+  </p-dialog>
   <!-- ─── Main content ─── -->
   <main class="content-area">
    

@@ -4,14 +4,17 @@ export const COURSE_DATA_MANUAL_TESTING: CourseTheme[] = [
     label: 'Introduction aux tests logiciels',
     items: [
       { label: "Qu'est-ce que le test logiciel ?"},
-      {label: "Quizz 1", 
-        quizz:[ { question: "Quel est l'objectif du test logiciel ?", options: ["Détecter bugs", "Coder plus vite", "Supprimer du code"], correctAnswerIndex: 0}] 
+      {label: "Simulator niveau 1", 
+        simulator:[{testing_cases:["C1","C2","C3"]}]
       },
       { label: 'Pourquoi tester ?' },
       { label: "Les conséquences d'un défaut"},
       { label: "Le rôle du testeur dans une entreprise"},
       { label: "Qualité logicielle : définition et enjeux"},
       { label: "Vérification vs Validation"},
+       {label: "Quizz 1", 
+        quizz:[ { question: "Quel est l'objectif du test logiciel ?", options: ["Détecter bugs", "Coder plus vite", "Supprimer du code"], correctAnswerIndex: 0}] 
+      },
     ],
   },
   {

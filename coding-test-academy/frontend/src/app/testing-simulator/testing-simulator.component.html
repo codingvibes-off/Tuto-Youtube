@@ -1,0 +1,230 @@
+<div class="sim-root" [ngClass]="'state-' + state">
+
+  <!-- ══════════════════════════════════════════
+       TOOLBAR
+  ══════════════════════════════════════════ -->
+  <header class="sim-toolbar">
+    <div class="toolbar-left">
+      <span class="toolbar-dot dot-red"></span>
+      <span class="toolbar-dot dot-yellow"></span>
+      <span class="toolbar-dot dot-green"></span>
+      <span class="toolbar-title">
+        <span class="toolbar-method">POST</span>
+        /api/auth/login
+      </span>
+    </div>
+    <div class="toolbar-right">
+      <span class="toolbar-badge" [ngClass]="{
+        'badge-idle'    : state === 'idle',
+        'badge-running' : state === 'running',
+        'badge-success' : state === 'success',
+        'badge-error'   : state === 'error'
+      }">
+        <span class="badge-dot"></span>
+        {{ state === 'idle' ? 'IDLE' : state === 'running' ? 'RUNNING' : state === 'success' ? 'PASSED' : 'FAILED' }}
+      </span>
+
+      <button class="btn-reset" (click)="resetTest()" [disabled]="state === 'running'" title="Reset">
+        ↺
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       PROGRESS BAR + STEPPER
+  ══════════════════════════════════════════ -->
+  <div class="sim-progress-area">
+    <div class="progress-track">
+      <div class="progress-fill" [style.width.%]="progress"
+           [ngClass]="{ 'fill-success': state === 'success', 'fill-error': state === 'error' }">
+      </div>
+    </div>
+    <div class="step-pipeline">
+      <div
+        class="pipeline-step"
+        *ngFor="let label of stepLabels; let i = index"
+        [ngClass]="{
+          'step-done'    : i < currentStepIndex,
+          'step-active'  : i === currentStepIndex,
+          'step-pending' : i > currentStepIndex
+        }"
+      >
+        <span class="step-node">
+          <span *ngIf="i < currentStepIndex">✓</span>
+          <span *ngIf="i === currentStepIndex && state === 'running'" class="step-spinner"></span>
+          <span *ngIf="i === currentStepIndex && state !== 'running'">{{ i + 1 }}</span>
+          <span *ngIf="i > currentStepIndex">{{ i + 1 }}</span>
+        </span>
+        <span class="step-label">{{ label }}</span>
+        <span class="step-connector" *ngIf="i < stepLabels.length - 1"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       MAIN BODY — 2 columns
+  ══════════════════════════════════════════ -->
+  <div class="sim-body">
+
+    <!-- ── LEFT: Simulated Form ── -->
+    <section class="sim-panel panel-form">
+      <div class="panel-header">
+        <span class="panel-header-icon">⬡</span>
+        <span class="panel-header-title">Target Component</span>
+        <span class="panel-header-sub">login.component.html</span>
+      </div>
+
+      <div class="panel-content" [formGroup]="form">
+
+        <!-- Browser chrome mockup -->
+        <div class="browser-bar">
+          <span class="browser-lock">🔒</span>
+          <span class="browser-url">localhost:4200/login</span>
+        </div>
+
+        <!-- Simulated login form -->
+        <div class="mock-form">
+          <div class="mock-form-logo">
+            <div class="logo-shape"></div>
+            <span class="logo-text">MyApp</span>
+          </div>
+
+          <h3 class="mock-form-title">Sign in</h3>
+
+          <!-- Username -->
+          <div class="mock-field" [ngClass]="{ 'field-active': highlightUsername, 'field-filled': form.value.username }">
+            <label class="mock-label" data-testid="label-username">Email address</label>
+            <div class="mock-input-wrap">
+              <span class="mock-input-icon">✉</span>
+              <input
+                class="mock-input"
+                type="text"
+                formControlName="username"
+                data-testid="username"
+                placeholder="your@email.com"
+                [value]="usernameDisplayValue"
+                readonly
+              />
+              <span class="mock-cursor" *ngIf="highlightUsername && typingUsername">|</span>
+            </div>
+            <span class="field-scanner" *ngIf="highlightUsername"></span>
+          </div>
+
+          <!-- Password -->
+          <div class="mock-field" [ngClass]="{ 'field-active': highlightPassword, 'field-filled': form.value.password }">
+            <label class="mock-label" data-testid="label-password">Password</label>
+            <div class="mock-input-wrap">
+              <span class="mock-input-icon">🔑</span>
+              <input
+                class="mock-input"
+                type="password"
+                formControlName="password"
+                data-testid="password"
+                placeholder="••••••••"
+                [value]="passwordDisplayValue"
+                readonly
+              />
+              <span class="mock-cursor" *ngIf="highlightPassword && typingPassword">|</span>
+            </div>
+            <span class="field-scanner" *ngIf="highlightPassword"></span>
+          </div>
+
+          <!-- Submit -->
+          <button
+            class="mock-submit"
+            type="submit"
+            data-testid="submit"
+            [ngClass]="{
+              'submit-highlight': highlightSubmit,
+              'submit-success': state === 'success'
+            }"
+            [disabled]="true"
+          >
+            <span *ngIf="state !== 'success'">Sign In</span>
+            <span *ngIf="state === 'success'">✓ Authenticated</span>
+          </button>
+        </div>
+
+        <!-- Assertion badges -->
+        <div class="assertion-row" *ngIf="state !== 'idle'">
+          <span class="assertion-tag" [ngClass]="currentStepIndex >= 2 ? 'tag-ok' : 'tag-pending'">
+            username.focus ✓
+          </span>
+          <span class="assertion-tag" [ngClass]="currentStepIndex >= 3 ? 'tag-ok' : 'tag-pending'">
+            password.fill ✓
+          </span>
+          <span class="assertion-tag" [ngClass]="currentStepIndex >= 4 ? 'tag-ok' : 'tag-pending'">
+            form.valid ✓
+          </span>
+          <span class="assertion-tag" [ngClass]="currentStepIndex >= 5 ? 'tag-ok' : 'tag-pending'">
+            submit.click ✓
+          </span>
+          <span class="assertion-tag" [ngClass]="state === 'success' ? 'tag-ok' : 'tag-pending'">
+            redirect ✓
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── RIGHT: Console / Logs ── -->
+    <section class="sim-panel panel-console">
+      <div class="panel-header">
+        <span class="panel-header-icon">▸</span>
+        <span class="panel-header-title">Test Console</span>
+        <span class="panel-header-sub">{{ logs.length }} events</span>
+        <span class="console-duration" *ngIf="state === 'success'">2.34s</span>
+      </div>
+
+      <div class="console-body" #logContainer>
+
+        <!-- Empty state -->
+        <div class="console-empty" *ngIf="logs.length === 0">
+          <span class="empty-icon">⬡</span>
+          <span (click)="runTest()">Press <kbd>Run Test</kbd> to begin</span>
+        </div>
+
+        <!-- Log entries -->
+        <div
+          class="log-entry"
+          *ngFor="let log of logs; trackBy: trackLog"
+          [ngClass]="'log-' + log.type"
+        >
+          <span class="log-time">{{ log.time }}</span>
+          <span class="log-type-icon">
+            <ng-container [ngSwitch]="log.type">
+              <span *ngSwitchCase="'step'"    >◉</span>
+              <span *ngSwitchCase="'action'"  >→</span>
+              <span *ngSwitchCase="'info'"    >·</span>
+              <span *ngSwitchCase="'success'" >✓</span>
+              <span *ngSwitchCase="'error'"   >✗</span>
+            </ng-container>
+          </span>
+          <span class="log-message">{{ log.message }}</span>
+          <button class="btn-run" *ngIf="log.type === 'action'">Run test</button>
+          <span class="log-detail" *ngIf="log.detail">{{ log.detail }}</span>
+        </div>
+
+        <!-- Blinking cursor at the end while running -->
+        <div class="log-cursor" *ngIf="state === 'running'">
+          <span class="cursor-blink">█</span>
+        </div>
+
+      </div>
+
+      <!-- Console footer -->
+      <div class="console-footer">
+        <span class="footer-env">ENV: local</span>
+        <span class="footer-framework">Playwright 1.42</span>
+        <span class="footer-status" [ngClass]="{
+          'fs-ok'  : state === 'success',
+          'fs-err' : state === 'error',
+          'fs-run' : state === 'running'
+        }">
+          {{ state === 'idle' ? '○ Ready' : state === 'running' ? '● Running' : state === 'success' ? '✓ 5 passed' : '✗ Failed' }}
+        </span>
+      </div>
+    </section>
+
+  </div>
+</div>

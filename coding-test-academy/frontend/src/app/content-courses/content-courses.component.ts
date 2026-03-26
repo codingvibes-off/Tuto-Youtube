@@ -8,11 +8,14 @@ import { COURSE_DATA_MANUAL_TESTING } from './content-menu-tree-files/course-dat
 import { QuizzContentCoursesComponent } from '../quizz-content-courses/quizz-content-courses.component';
 import { DialogModule } from 'primeng/dialog';
 import { Quizz } from '../models/quizz.model';
+import { Simulator } from '../models/Simulator.model';
+import { TestingSimulatorComponent } from '../testing-simulator/testing-simulator.component';
 
 export interface CourseTheme {
   label: string;
   items?: CourseTheme[];
   quizz?: Quizz[];
+  simulator?:Simulator[];
 }
 export interface CourseData {
   themes: CourseTheme[];
@@ -20,7 +23,7 @@ export interface CourseData {
 @Component({
   selector: 'app-content-courses',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, PanelMenuModule, DialogModule, QuizzContentCoursesComponent],
+  imports: [CommonModule, HeaderComponent, PanelMenuModule, DialogModule, QuizzContentCoursesComponent, TestingSimulatorComponent],
   templateUrl: './content-courses.component.html',
   styleUrl: './content-courses.component.css'
 })
@@ -29,6 +32,7 @@ export class ContentCoursesComponent implements OnInit {
   @Input() courseData: CourseData | null = null;
   currentQuiz: Quizz[] = []
   quizVisible = false;
+  simulator = false;
   menuItems: MenuItem[] = [];
   selectedTheme: string = '';
   selectedFormat: 'video' | 'script' | 'upload' = 'video';
@@ -77,7 +81,9 @@ export class ContentCoursesComponent implements OnInit {
         
           if (theme.quizz) {
             this.showQuiz(theme.quizz);  // ouvre le quiz
-          } else {
+          } else if(theme.simulator) {
+            this.showSimulator()
+          } else{ 
             this.selectTheme(theme.label);
           }
         }
@@ -88,6 +94,9 @@ export class ContentCoursesComponent implements OnInit {
   showQuiz(quizz: Quizz[]){
       this.currentQuiz = quizz; 
       this.quizVisible = true;  
+  }
+   showSimulator(){
+     this.simulator = true; 
   }
   selectTheme(label: string): void {
     this.selectedTheme = label;
