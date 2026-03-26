@@ -24,7 +24,7 @@
         {{ state === 'idle' ? 'IDLE' : state === 'running' ? 'RUNNING' : state === 'success' ? 'PASSED' : 'FAILED' }}
       </span>
 
-      <button class="btn-reset" (click)="resetTest()" [disabled]="state === 'running'" title="Reset">
+      <button class="btn-reset" (click)="resetTest('init')" [disabled]="state === 'running'" title="Reset">
         ↺
       </button>
     </div>
@@ -172,24 +172,23 @@
       <div class="panel-header">
         <span class="panel-header-icon">▸</span>
         <span class="panel-header-title">Test Console</span>
-        <span class="panel-header-sub">{{ logs.length }} events</span>
+        <span class="panel-header-sub">{{ logsContainer.length }} events</span>
         <span class="console-duration" *ngIf="state === 'success'">2.34s</span>
       </div>
-
-      <div class="console-body" #logContainer>
-
-        <!-- Empty state -->
-        <div class="console-empty" *ngIf="logs.length === 0">
+        <div class="console-empty" *ngIf="logsContainer.length === 0">
           <span class="empty-icon">⬡</span>
-          <span (click)="runTest()">Press <kbd>Run Test</kbd> to begin</span>
+          <span style="cursor: pointer;" (click)="runTestCases('0000')">Press <kbd>Run Test</kbd> to begin</span>
         </div>
-
-        <!-- Log entries -->
+      <div *ngIf="logsContainer.length != 0"  class="console-body" #logContainer>
+        <!-- Empty state -->
+     
+        <!-- Log entries --> 
         <div
           class="log-entry"
-          *ngFor="let log of logs;let i = index; trackBy: trackLog"
+          *ngFor="let log of logsContainer;let i = index; trackBy: trackLog"
           [ngClass]="'log-' + log.type"
         >
+       
           <span class="log-time">{{ log.time }}</span>
           <span class="log-type-icon">
             <ng-container [ngSwitch]="log.type">
@@ -201,17 +200,81 @@
             </ng-container>
           </span>
           <span class="log-message">{{ log.message }}</span>
-          <button class="btn-run" *ngIf="log.type === 'action' && log.testCaseId"(click)="runTestCases(log.testCaseId)">Run test</button>
           <span class="log-detail" *ngIf="log.detail">{{ log.detail }}</span>
-        </div>
-
+       
+        </div> 
+        <button *ngIf="endTestCase === 'end_0001'" style="float: left;margin-top: 10px;" class="btn-details" (click)="moreDetails('0001')">Details</button>
+        <button style="float: right;margin-top: 10px;" class="btn-run" (click)="runTestCases('0001')">Run test</button>
         <!-- Blinking cursor at the end while running -->
         <div class="log-cursor" *ngIf="state === 'running'">
           <span class="cursor-blink">█</span>
         </div>
-
+         
       </div>
 
+       <div *ngIf="logsContainerNthChildOne.length != 0" class="console-body" #logContainer_nth_child_one>
+        <!-- Empty state -->
+     
+        <!-- Log entries --> 
+        <div
+          class="log-entry"
+          *ngFor="let log of logsContainerNthChildOne;let i = index; trackBy: trackLog"
+          [ngClass]="'log-' + log.type"
+        >
+       
+          <span class="log-time">{{ log.time }}</span>
+          <span class="log-type-icon">
+            <ng-container [ngSwitch]="log.type">
+              <span *ngSwitchCase="'step'"    >◉</span>
+              <span *ngSwitchCase="'action'"  >→</span>
+              <span *ngSwitchCase="'info'"    >·</span>
+              <span *ngSwitchCase="'success'" >✓</span>
+              <span *ngSwitchCase="'error'"   >✗</span>
+            </ng-container>
+          </span>
+          <span class="log-message">{{ log.message }}</span>
+          <span class="log-detail" *ngIf="log.detail">{{ log.detail }}</span>
+       
+        </div> 
+        <button style="float: right;margin-top: 10px;" disabled class="btn-run" (click)="runTestCases('0002')">Run test</button>
+        <!-- Blinking cursor at the end while running -->
+        <div class="log-cursor" *ngIf="state === 'running'">
+          <span class="cursor-blink">█</span>
+        </div>
+         
+      </div>
+
+        <div *ngIf="logsContainerNthChildTwo.length != 0" class="console-body" style="border-bottom:none;" #logContainer_nth_child_two>
+        <!-- Empty state -->
+     
+        <!-- Log entries --> 
+        <div
+          class="log-entry"
+          *ngFor="let log of logsContainerNthChildTwo;let i = index; trackBy: trackLog"
+          [ngClass]="'log-' + log.type"
+        >
+       
+          <span class="log-time">{{ log.time }}</span>
+          <span class="log-type-icon">
+            <ng-container [ngSwitch]="log.type">
+              <span *ngSwitchCase="'step'"    >◉</span>
+              <span *ngSwitchCase="'action'"  >→</span>
+              <span *ngSwitchCase="'info'"    >·</span>
+              <span *ngSwitchCase="'success'" >✓</span>
+              <span *ngSwitchCase="'error'"   >✗</span>
+            </ng-container>
+          </span>
+          <span class="log-message">{{ log.message }}</span>
+          <span class="log-detail" *ngIf="log.detail">{{ log.detail }}</span>
+       
+        </div> 
+        <button style="float: right;margin-top: 10px;" disabled class="btn-run" (click)="runTestCases('0003')">Run test</button>
+        <!-- Blinking cursor at the end while running -->
+        <div class="log-cursor" *ngIf="state === 'running'">
+          <span class="cursor-blink">█</span>
+        </div>
+         
+      </div>
       <!-- Console footer -->
       <div class="console-footer">
         <span class="footer-env">ENV: local</span>
@@ -224,6 +287,7 @@
           {{ state === 'idle' ? '○ Ready' : state === 'running' ? '● Running' : state === 'success' ? '✓ 5 passed' : '✗ Failed' }}
         </span>
       </div>
+     
     </section>
 
   </div>

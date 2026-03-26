@@ -8,7 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-export type SimulatorState = 'idle' | 'running' | 'success' | 'error';
+export type SimulatorState = 'idle' | 'running' | 'success' | 'error' | 'end_0001';
 
 export interface LogEntry {
   id: number;
@@ -36,21 +36,24 @@ interface TestStep {
 })
 export class TestingSimulatorComponent implements OnDestroy {
   @ViewChild('logContainer') logContainer!: ElementRef<HTMLDivElement>;
+  @ViewChild('logContainer_nth_child_one') logContainer_nth_child_one!: ElementRef<HTMLDivElement>;
+  @ViewChild('logContainer_nth_child_two') logContainer_nth_child_two!: ElementRef<HTMLDivElement>;
   @ViewChild('usernameInput') usernameInputRef!: ElementRef<HTMLInputElement>;
-
+  wait_init = 100
   form: FormGroup;
   state: SimulatorState = 'idle';
-  logs: LogEntry[] = [];
+  logsContainer: LogEntry[] = [];
+  logsContainerNthChildOne: LogEntry[] = [];
+  logsContainerNthChildTwo: LogEntry[] = [];
   progress = 0;
   currentStepIndex = -1;
   logIdCounter = 0;
-
   // Visual highlight states
   highlightUsername = false;
   highlightPassword = false;
   highlightSubmit = false;
   showCursor = false;
-
+  endTestCase = "";
   // Typewriter state
   typingUsername = false;
   typingPassword = false;
@@ -92,22 +95,53 @@ export class TestingSimulatorComponent implements OnDestroy {
     });
   }
 
-  private addLog(type: LogEntry['type'], message: string, detail?: string, testCaseId?:string): void {
+  private addLog(child: string, type: LogEntry['type'], message: string, detail?: string, testCaseId?:string): void {
     const now = new Date();
     const time = now.toTimeString().slice(0, 8) + '.' +
       String(now.getMilliseconds()).padStart(3, '0');
-    this.logs.push({ id: this.logIdCounter++, time, type, message, detail, testCaseId });
+
+      if(child == "logContainer"){
+         this.logsContainer.push({ id: this.logIdCounter++, time, type, message, detail, testCaseId });
+      }
+      if(child == "logContainer_nth_child_one"){
+         this.logsContainerNthChildOne.push({ id: this.logIdCounter++, time, type, message, detail, testCaseId });
+      }
+      if(child == "logContainer_nth_child_two"){
+         this.logsContainerNthChildTwo.push({ id: this.logIdCounter++, time, type, message, detail, testCaseId });
+      }
+   
     this.cdr.detectChanges();
-    this.scrollLogsToBottom();
+    this.scrollLogsToBottom(child);
   }
 
-  private scrollLogsToBottom(): void {
-    setTimeout(() => {
+  private scrollLogsToBottom(child:string): void {
+    if(child = "logContainer"){
+       setTimeout(() => {
       if (this.logContainer?.nativeElement) {
         this.logContainer.nativeElement.scrollTop =
           this.logContainer.nativeElement.scrollHeight;
       }
     }, 30)
+    }
+
+     if(child = "logContainer_nth_child_one"){
+        setTimeout(() => {
+      if (this.logContainer_nth_child_one?.nativeElement) {
+        this.logContainer_nth_child_one.nativeElement.scrollTop =
+          this.logContainer_nth_child_one.nativeElement.scrollHeight;
+      }
+    }, 30)
+    }
+
+     if(child = "logContainer_nth_child_two"){
+        setTimeout(() => {
+      if (this.logContainer_nth_child_two?.nativeElement) {
+        this.logContainer_nth_child_two.nativeElement.scrollTop =
+          this.logContainer_nth_child_two.nativeElement.scrollHeight;
+      }
+    }, 30)
+    }
+   
   }
 
   private async typeText(
@@ -141,7 +175,7 @@ export class TestingSimulatorComponent implements OnDestroy {
   }
 
  
-  async runTest(): Promise<void> {
+ /* async runTest(): Promise<void> {
     if (this.state === 'running') return;
     // Reset
     this.aborted = false;
@@ -157,127 +191,99 @@ export class TestingSimulatorComponent implements OnDestroy {
     this.passwordDisplayValue = '';
     this.form.reset();
     this.cdr.detectChanges();
+  }*/
+  private async runScenarioLogs(
+    container: string,
+    title: string,
+    testId: string
+  ): Promise<void> {
 
-    try {
-      await this.wait(300);
+    this.addLog(container, 'step', title, 'testing-simulator.spec.ts', testId);
+    await this.wait(this.wait_init);
 
-      // ── Step 1: Initialisation ──
-      this.currentStepIndex = 0;
-      this.setProgress(5);
-      this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts','0000');
-      await this.wait(400);
-      this.addLog('info', 'Initializing test environment…');
-      await this.wait(500);
-      this.addLog('info', 'Browser context ready', 'Chromium 122.0');
-      await this.wait(300);
+    this.addLog(container, 'info', 'Executing test environment…');
+    await this.wait(this.wait_init);
 
-      // ── Step 2: Navigate ──
-      this.currentStepIndex = 1;
-      this.setProgress(18);
-      this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1','0001');
-      await this.wait(600);
-
-      // ── Step 3: Focus username ──
-      this.currentStepIndex = 2;
-      this.setProgress(32);
-      this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2','0002');
-      this.highlightUsername = true;
-      this.showCursor = true;
-      this.cdr.detectChanges();
-      await this.wait(500);
-
-      // ── Step 4: Focus password ──
-      this.currentStepIndex = 3;
-      this.setProgress(32);
-      this.addLog('action', '00003 - Se connecter avec une image avatar.png', 'STEP 3','0003');
-      this.highlightUsername = true;
-      this.showCursor = true;
-      this.cdr.detectChanges();
-      await this.wait(500);
-
-
-      // ── Step 4: Focus password ──
-      this.currentStepIndex = 4;
-      this.setProgress(64);
-      this.addLog('action', '00003 - Se connecter avec un emoji 😎', 'STEP 4','0004');
-      this.highlightUsername = true;
-      this.showCursor = true;
-      this.cdr.detectChanges();
-      await this.wait(500);
-      this.currentStepIndex = this.totalSteps;
-
-    } catch (e) {
-      this.addLog('error', '❌  Test failed — unexpected error');
-      this.state = 'error';
-    }
-    this.cdr.detectChanges();
+    this.addLog(container, 'info', 'Browser context ready', 'Chromium 122.0');
+    await this.wait(this.wait_init);
   }
+
   async runTestCases(test_case_id:string): Promise<void> {
-    console.log("RUN TEST"+test_case_id)
-    this.resetTest()
-    if (this.state === 'running') return;
+    //if (this.state === 'running') return;
     try {
-      await this.wait(300);
-      if(test_case_id == "0001"){
-         console.log("RUN TEST"+test_case_id)
-            // ── Step 1: Initialisation ──
+      if(test_case_id == "0000"){
           this.currentStepIndex = 0;
           this.setProgress(5);
-          this.addLog('step', 'Scénarios connexion utilisateur', 'testing-simulator.spec.ts','0000');
-          await this.wait(400);
-          this.addLog('info', 'Initializing test environment…');
-          await this.wait(500);
-          this.addLog('info', 'Browser context ready', 'Chromium 122.0');
-          await this.wait(300);
+          await this.runScenarioLogs(
+            'logContainer',
+            'Scénarios connexion utilisateur 0001',
+            '0000'
+          );
 
+          await this.runScenarioLogs(
+            'logContainer_nth_child_one',
+            'Scénarios connexion utilisateur avec un emoji 😎 0002',
+            '0001'
+          );
+
+          await this.runScenarioLogs(
+            'logContainer_nth_child_two',
+            'Scénarios connexion utilisateur avec un mot de passe invalide 0003',
+            '0002'
+          );
+      }
+      await this.wait(300);
+      if(test_case_id == "0001"){
+          this.resetTest(test_case_id)
+          // ── Step 1: Execution ──
           this.currentStepIndex = 1;
+          this.aborted = false
+          this.typingUsername = true;
+          this.typingPassword = true;
+          this.setProgress(18);
+          this.addLog('logContainer','action', 'Scénarios connexion utilisateur 0001', 'STEP 1','0001');
+          this.addLog('logContainer', 'info', 'Executing test environment…');
+          this.addLog('logContainer', 'info', 'Browser context ready', 'Chromium 122.0');
+          this.addLog('logContainer','step',"→ Running test case 0001" ,'→ Running test case 0001', 'testing-simulator.spec.ts');
+           this.setProgress(32);
+          this.addLog('logContainer','success', 'username ← "john.doe@example.com"', '18 chars typed');
+          
+          this.addLog('logContainer','success', 'password ← "Sup3rS3cur3!"', '18 chars typed');
+          this.setProgress(80);
+          await this.wait(200);
+          await this.typeText('username', 'john.doe@example.com', 55);
+          await this.wait(200);
+          this.setProgress(100);
+          await this.typeText('password', 'Sup3rS3cur3!', 70);
+          this.state = 'success';
+    
+          this.addLog('logContainer','success', '✓ Success execution', '200 - OK');
+          await this.wait(600);
+          this.state = "success"
+          this.highlightUsername = true;
+          this.showCursor = true; 
+          this.cdr.detectChanges();
+          await this.wait(200);
+          this.endTestCase = "end_0001"
+
+          await this.wait(500);
+
+          /* this.currentStepIndex = 1;
           this.setProgress(5);
           this.addLog('step', '→ Running test case 0001', 'testing-simulator.spec.ts');
-          await this.wait(500);
-          this.addLog('success', '✓ Success execution', '200 - OK');
-
-          await this.typeText('username', 'john.doe@example.com', 55);
-          this.addLog('success', 'username ← "john.doe@example.com"', '18 chars typed');
-          // ── Step 2: Navigate ──
-          this.currentStepIndex = 2;
-          this.setProgress(18);
           this.addLog('action', '00001 - Se connecter avec mot de passe valide', 'STEP 1','0001');
-          await this.wait(600);
-          //this.addLog('info', 'DOM content loaded', '142ms');
-          await this.wait(200);
-
-          // ── Step 3: Focus username ──
-          this.currentStepIndex = 3;
-          this.setProgress(32);
-          this.addLog('action', '00002 - Se connecter avec mot de passe invalide', 'STEP 2', '0002');
-          this.highlightUsername = true;
-          this.showCursor = true;
-          this.cdr.detectChanges();
+          await this.typeText('username', 'john.doe@example.com', 55);
           await this.wait(500);
-
-          // ── Step 4: Focus password ──
-          this.currentStepIndex = 3;
-          this.setProgress(32);
-          this.addLog('action', '00003 - Se connecter avec une image avatar.png', 'STEP 3','0003');
-          this.highlightUsername = true;
-          this.showCursor = true;
-          this.cdr.detectChanges();
-          await this.wait(500);
-
-
-          // ── Step 4: Focus password ──
-          this.currentStepIndex = 4;
-          this.setProgress(64);
-          this.addLog('action', '00003 - Se connecter avec un emoji 😎', 'STEP 4','0004');
-          this.highlightUsername = true;
-          this.showCursor = true;
-          this.cdr.detectChanges();
-          await this.wait(500);
-          this.currentStepIndex = this.totalSteps;
+          this.addLog('success', 'username ← "john.doe@example.com"', '18 chars typed');
+          this.addLog('success', 'password ← "Sup3rS3cur3!"', '18 chars typed');
+          
+          await this.typeText('password', 'Sup3rS3cur3!', 70);
+          this.state = 'success';
+          this.addLog('success', '✓ Success execution', '200 - OK');*/
       }
-  
 
-       /*await this.typeText('username', 'john.doe@example.com', 55);
+      if(test_case_id == "0003"){
+           /*await this.typeText('username', 'john.doe@example.com', 55);
       await this.wait(200);
       this.addLog('success', 'username ← "john.doe@example.com"', '18 chars typed');
       this.highlightUsername = false;
@@ -313,28 +319,46 @@ export class TestingSimulatorComponent implements OnDestroy {
       this.addLog('success', '✅  Test passed — 5/5 assertions', 'Duration: 2.34s');
       this.state = 'success';
       this.currentStepIndex = this.totalSteps;*/
+      }
+    
 
     } catch (e) {
-      this.addLog('error', '❌  Test failed — unexpected error');
+      //this.addLog('error', '❌  Test failed — unexpected error');
       this.state = 'error';
     }
 
     this.cdr.detectChanges();
   }
-  resetTest(): void {
+  moreDetails(string:string){
+    console.log("VOIR LES DETAILS")
+  }
+  resetTest(test_case_id:string): void {
     this.clearAllTimeouts();
-    this.aborted = false;
-    this.state = 'idle';
-    this.logs = [];
-    this.progress = 0;
-    this.currentStepIndex = -1;
-    this.highlightUsername = false;
-    this.highlightPassword = false;
-    this.highlightSubmit = false;
-    this.usernameDisplayValue = '';
-    this.passwordDisplayValue = '';
-    this.form.reset();
-    this.cdr.detectChanges();
+    if(test_case_id == "0001"){
+      this.logsContainer = [];
+      this.highlightUsername = false;
+      this.highlightPassword = false;
+      this.usernameDisplayValue = '';
+      this.passwordDisplayValue = '';
+      this.form.reset();
+      this.cdr.detectChanges();
+    } else {
+          this.aborted = false;
+          this.state = 'idle';
+          this.logsContainer = [];
+          this.logsContainerNthChildOne = [];
+          this.logsContainerNthChildTwo = [];
+          this.progress = 0;
+          this.currentStepIndex = -1;
+          this.highlightUsername = false;
+          this.highlightPassword = false;
+          this.highlightSubmit = false;
+          this.usernameDisplayValue = '';
+          this.passwordDisplayValue = '';
+          this.form.reset();
+          this.cdr.detectChanges();
+    }
+
   }
 
   private setProgress(value: number): void {

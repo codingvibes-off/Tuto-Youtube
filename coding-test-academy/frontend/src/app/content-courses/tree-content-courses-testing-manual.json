@@ -4,6 +4,7 @@
     "items": [
       {
         "label": "Introduction",
+        "icon": "pi pi-file",
         "items": [
           { "label": "Qu’est-ce que le test logiciel ?" },
           { "label": "Pourquoi tester ? (qualité, risques, coûts)" }
@@ -11,6 +12,7 @@
       },
       {
         "label": "Concepts clés",
+        "icon": "pi pi-file",
         "items": [
           { "label": "Différence : bug / erreur / défaut / échec" },
           { "label": "Objectifs du test" }
@@ -18,6 +20,7 @@
       },
       {
         "label": "Profil du testeur",
+        "icon": "pi pi-file",
         "items": [
           { "label": "Qualités d’un bon testeur" },
           { "label": "Soft skills (communication, esprit critique)" }
@@ -25,6 +28,7 @@
       },
       {
         "label": "Mythes du testing",
+        "icon": "pi pi-file",
         "items": [
           { "label": "Tester = trouver des bugs uniquement" },
           { "label": "On peut tester complètement une application" }
