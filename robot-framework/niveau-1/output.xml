@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.0 on darwin)" generated="2026-03-27T08:31:47.098654" rpa="false" schemaversion="5">
+<suite id="s1" name="Hello" source="/Users/sullivan/Desktop/Tuto-Youtube/robot-framework/niveau-1/hello.robot">
+<test id="s1-t1" name="Display Hello World Message" line="9">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-27T08:31:47.128370" level="INFO">hello, world!</msg>
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-27T08:31:47.128235" elapsed="0.000177"/>
+</kw>
+<status status="PASS" start="2026-03-27T08:31:47.127377" elapsed="0.001177"/>
+</test>
+<status status="PASS" start="2026-03-27T08:31:47.099404" elapsed="0.029335"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Hello" id="s1" pass="1" fail="0" skip="0">Hello</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

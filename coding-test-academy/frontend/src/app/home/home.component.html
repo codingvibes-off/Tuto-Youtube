@@ -1,5 +1,0 @@
-
-<app-header></app-header>
-<app-getting-started (finishedEvent)="onFinished($event)" *ngIf="!finished"></app-getting-started>
-<app-courses *ngIf="finished"></app-courses>
-<app-result-modal [profile]="selectedProfile" [responses]="response_user" [show]="showModal"></app-result-modal>
