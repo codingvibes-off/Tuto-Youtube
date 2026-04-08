@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matthieu 5 — Décortiqué par Schéma</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #111418;
+    --border: #1e2530;
+    --border-bright: #2d3748;
+    --gold: #c9a84c;
+    --gold-dim: #7a6430;
+    --blue: #4a9eff;
+    --blue-dim: #1e3a5f;
+    --green: #48bb78;
+    --green-dim: #1a3a2a;
+    --purple: #9f7aea;
+    --purple-dim: #2d1b69;
+    --red: #fc8181;
+    --red-dim: #4a1c1c;
+    --text: #e2e8f0;
+    --text-dim: #718096;
+    --text-muted: #4a5568;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'Playfair Display', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    min-height: 100vh;
+    padding: 32px 20px 80px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .header::before {
+    content: '// SPEC v5.0 — MATTHIEU 5 — ANALYSE SYSTÈME';
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 52px);
+    color: var(--gold);
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+  .header h1 em {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 0.6em;
+  }
+  .badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px;
+  }
+  .badge {
+    font-size: 10px; padding: 4px 12px; border-radius: 2px;
+    letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase;
+  }
+  .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-dim); }
+  .badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-dim); }
+  .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-dim); }
+
+  /* LAYOUT PRINCIPAL */
+  .schema-root {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* SECTION WRAPPER */
+  .section {
+    margin-bottom: 40px;
+    animation: fadeIn 0.5s ease both;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 12px; padding-left: 2px;
+  }
+
+  /* CARD DE BASE */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .card:hover { border-color: var(--border-bright); transform: translateY(-1px); }
+  .card.open { border-color: var(--gold-dim); }
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 4px 0 0 4px;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card.open::before { opacity: 1; }
+
+  /* NŒUD PRINCIPAL */
+  .node-header {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13px; font-weight: 600; color: var(--text);
+  }
+  .node-id {
+    font-size: 10px; color: var(--text-muted); letter-spacing: 1px;
+    background: #1a1f2b; padding: 2px 8px; border-radius: 2px;
+  }
+  .node-tag {
+    font-size: 10px; padding: 2px 8px; border-radius: 2px;
+    font-weight: 700; letter-spacing: 1px; margin-left: auto;
+  }
+  .tag-concept { background: var(--blue-dim); color: var(--blue); }
+  .tag-theme   { background: var(--purple-dim); color: var(--purple); }
+  .tag-output  { background: var(--green-dim); color: var(--green); }
+  .tag-risk    { background: var(--red-dim); color: var(--red); }
+  .tag-core    { background: var(--gold-dim); color: var(--gold); }
+
+  .node-chevron { margin-left: 8px; color: var(--text-muted); transition: transform 0.2s; }
+  .card.open .node-chevron { transform: rotate(90deg); color: var(--gold); }
+
+  /* PANEL DÉTAIL */
+  .detail-panel {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .card.open .detail-panel { display: block; animation: panelIn 0.25s ease; }
+  @keyframes panelIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .detail-kv { display: flex; flex-direction: column; gap: 2px; }
+  .detail-key { font-size: 9px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+  .detail-val { font-size: 12px; color: var(--text); }
+
+  .detail-desc {
+    font-size: 12px; color: var(--text-dim); line-height: 1.7;
+    border-left: 2px solid var(--border-bright);
+    padding-left: 12px; margin-top: 8px;
+    font-family: var(--mono);
+  }
+
+  .verse-tag {
+    display: inline-block;
+    font-size: 10px; background: #1a1f2b; color: var(--gold);
+    padding: 1px 6px; border-radius: 2px; margin-right: 6px;
+    font-weight: 700;
+  }
+
+  /* FLOW DIAGRAM BÉATITUDES */
+  .beatitudes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .beat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .beat-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .beat-card:hover { transform: translateY(-2px); }
+  .beat-card.open { box-shadow: 0 0 0 1px var(--accent-color, var(--gold)); }
+  .beat-card:hover::after { opacity: 0.04; }
+
+  .beat-num {
+    font-size: 9px; letter-spacing: 2px; color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .beat-title {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    color: var(--text); margin-bottom: 4px;
+  }
+  .beat-promise {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .beat-attrs {
+    display: flex; flex-wrap: wrap; gap: 4px;
+  }
+  .attr-pill {
+    font-size: 9px; padding: 2px 6px; border-radius: 2px;
+    background: #1a1f2b; color: var(--text-dim); letter-spacing: 0.5px;
+  }
+  .beat-detail { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .beat-card.open .beat-detail { display: block; animation: panelIn 0.2s ease; }
+  .beat-detail p { font-size: 11.5px; color: var(--text-dim); line-height: 1.7; }
+
+  /* LIGNE DE CONNEXION / FLOW */
+  .flow-connector {
+    display: flex; align-items: center; gap: 0;
+    margin: 8px 0;
+  }
+  .flow-node {
+    flex: 1; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 10px 14px;
+    font-size: 11px; text-align: center;
+  }
+  .flow-arrow {
+    font-size: 18px; color: var(--text-muted); padding: 0 6px; flex-shrink: 0;
+  }
+  .flow-node.highlight { border-color: var(--gold-dim); color: var(--gold); }
+
+  /* TENSION TABLE */
+  .tension-table {
+    width: 100%; border-collapse: collapse; font-size: 12px;
+  }
+  .tension-table th {
+    text-align: left; padding: 8px 12px;
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted); border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+  .tension-table td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .tension-table tr:last-child td { border-bottom: none; }
+  .tension-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .col-vs { color: var(--red); font-weight: 700; text-align: center; padding: 10px 4px; }
+  .col-monde { color: var(--text-dim); }
+  .col-royaume { color: var(--green); }
+
+  /* STATUS ROW */
+  .status-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 16px;
+  }
+  .status-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 8px 14px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot-gold { background: var(--gold); }
+  .dot-green { background: var(--green); }
+  .dot-red { background: var(--red); }
+  .dot-blue { background: var(--blue); }
+
+  /* TOOLTIP VERSE */
+  .vref {
+    color: var(--gold); cursor: help; text-decoration: underline dotted;
+    text-decoration-color: var(--gold-dim);
+    position: relative;
+  }
+  .vref:hover .vtooltip { display: block; }
+  .vtooltip {
+    display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
+    background: #1a1f2b; border: 1px solid var(--border-bright);
+    border-radius: 4px; padding: 8px 12px; width: 220px;
+    font-size: 11px; color: var(--text-dim); line-height: 1.6;
+    z-index: 100; pointer-events: none;
+  }
+
+  /* SEPARATOR */
+  .sep {
+    border: none; border-top: 1px solid var(--border);
+    margin: 32px 0;
+    position: relative;
+  }
+  .sep::after {
+    content: attr(data-label);
+    position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+    background: var(--bg); padding: 0 12px;
+    font-size: 9px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  .col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media(max-width: 600px) { .col-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="schema-root">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Matthieu 5<br><em>Sermon sur la Montagne</em></h1>
+    <div class="badge-row">
+      <span class="badge badge-gold">Évangile selon Matthieu</span>
+      <span class="badge badge-blue">Versets 3–12 · Béatitudes</span>
+      <span class="badge badge-green">Analyse Système · QA View</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1 : ARCHITECTURE GLOBALE -->
+  <div class="section" style="animation-delay: 0.05s">
+    <div class="section-label">MODULE RACINE — Architecture du texte</div>
+
+    <div class="card" id="c-root" onclick="toggle('c-root')">
+      <div class="node-header">
+        <span class="node-id">ROOT</span>
+        <span>Matthieu 5 — Système de Valeurs du Royaume</span>
+        <span class="node-tag tag-core">CORE</span>
+        <span class="node-chevron">▶</span>
+      </div>
+      <div class="detail-panel">
+        <div class="detail-grid">
+          <div class="detail-kv">
+            <span class="detail-key">Auteur déclaré</span>
+            <span class="detail-val">Jésus-Christ (rapporté par Matthieu)</span>
+          </div>
+          <div class="detail-kv">
+            <span class="detail-key">Contexte</span>
+            <span class="detail-val">Sermon sur la Montagne · Galilée</span>
+          </div>
+          <div class="detail-kv">
+            <span class="detail-key">Périmètre</span>
+            <span class="detail-val">Versets 1–48 (ici focus v.3–12)</span>
+          </div>
+          <div class="detail-kv">
+            <span class="detail-key">Destinataires</span>
+            <span class="detail-val">Disciples + foules · tous croyants</span>
+          </div>
+        </div>
+        <p class="detail-desc">
+          Ce chapitre est le point d'entrée du plus long discours continu de Jésus dans les Évangiles.
+          Il introduit un <strong style="color:var(--gold)">renversement de paradigme</strong> : les valeurs du Royaume sont l'inverse des valeurs mondaines.
+          Structure observable : <span class="vref">Béatitudes (v.3-12)<span class="vtooltip">Portrait-type du citoyen du Royaume. 8 profils, 8 promesses.</span></span> →
+          <span class="vref">Métaphores d'identité (v.13-16)<span class="vtooltip">Sel = préservation, Lumière = témoignage visible.</span></span> →
+          <span class="vref">Loi et justice (v.17-48)<span class="vtooltip">Jésus n'abolit pas mais accomplit et approfondit la Torah.</span></span>.
+        </p>
+        <div class="status-row">
+          <div class="status-item"><div class="dot dot-gold"></div>Royaume annoncé (futur)</div>
+          <div class="status-item"><div class="dot dot-green"></div>Transformation intérieure</div>
+          <div class="status-item"><div class="dot dot-red"></div>Friction avec le monde</div>
+          <div class="status-item"><div class="dot dot-blue"></div>Relation Père-Fils révélée</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : THÈMES FONDATEURS -->
+  <div class="section" style="animation-delay: 0.1s">
+    <div class="section-label">THÈMES FONDATEURS — Niveau 1</div>
+    <div class="col-2">
+
+      <div class="card" id="c-t1" onclick="toggle('c-t1')">
+        <div class="node-header">
+          <span class="node-id">T-01</span>
+          <span>Dieu comme Père</span>
+          <span class="node-tag tag-theme">THÈME</span>
+          <span class="node-chevron">▶</span>
+        </div>
+        <div class="detail-panel">
+          <div class="detail-desc">
+            <span class="verse-tag">v.16, 45, 48</span>
+            Expression : <em>"votre Père qui est dans les cieux"</em>.
+            Rupture théologique : Dieu n'est plus seulement Créateur/Législateur, mais Père intime.
+            Implication : les croyants sont appelés à en reproduire le caractère (<em>homoiôsis Theou</em>).
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="c-t2" onclick="toggle('c-t2')">
+        <div class="node-header">
+          <span class="node-id">T-02</span>
+          <span>Royaume des Cieux — État</span>
+          <span class="node-tag tag-theme">THÈME</span>
+          <span class="node-chevron">▶</span>
+        </div>
+        <div class="detail-panel">
+          <div class="detail-desc">
+            <span class="verse-tag">v.3, 10, 20</span>
+            Le Royaume n'est <strong>pas encore</strong> établi dans la puissance (≠ attente messianique politico-militaire).
+            Il est déjà présent <em>intérieurement</em> chez ceux qui en ont les dispositions.
+            Tension : déjà là / pas encore pleinement manifesté.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="c-t3" onclick="toggle('c-t3')">
+        <div class="node-header">
+          <span class="node-id">T-03</span>
+          <span>Transformation Intérieure</span>
+          <span class="node-tag tag-theme">THÈME</span>
+          <span class="node-chevron">▶</span>
+        </div>
+        <div class="detail-panel">
+          <div class="detail-desc">
+            <span class="verse-tag">v.3-9</span>
+            Ce n'est pas une morale externe à suivre, mais un portrait de qui on <em>est</em>.
+            La repentance produit des dispositions : humilité, pureté, paix, miséricorde...
+            Ces qualités sont le <strong>fruit</strong>, non la condition d'entrée.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="c-t4" onclick="toggle('c-t4')">
+        <div class="node-header">
+          <span class="node-id">T-04</span>
+          <span>Friction Monde / Royaume</span>
+          <span class="node-tag tag-risk">RISQUE</span>
+          <span class="node-chevron">▶</span>
+        </div>
+        <div class="detail-panel">
+          <div class="detail-desc">
+            <span class="verse-tag">v.10-12</span>
+            Le citoyen du Royaume est en <strong>décalage structurel</strong> avec son environnement.
+            Conséquence attendue : persécution, rejet, hostilité.
+            Réponse prescrite : joie + espérance eschatologique (récompense future).
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="sep" data-label="SOUS-MODULES">
+
+  <!-- SECTION 3 : BÉATITUDES -->
+  <div class="section" style="animation-delay: 0.15s">
+    <div class="section-label">SOUS-MODULE B — Les 8 Béatitudes · v.3–9 · Cliquables</div>
+
+    <div class="beatitudes-grid">
+
+      <!-- B1 -->
+      <div class="beat-card" style="--accent-color: var(--blue);" id="b1" onclick="toggleBeat('b1')">
+        <div class="beat-num">BÉATITUDE · 01 · v.3</div>
+        <div class="beat-title">Pauvres en esprit</div>
+        <div class="beat-promise" style="color: var(--blue)">→ Le Royaume des Cieux</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">humilité</span>
+          <span class="attr-pill">dépendance à Dieu</span>
+          <span class="attr-pill">non-orgueil</span>
+        </div>
+        <div class="beat-detail">
+          <p>Ceux qui reconnaissent leur indigence spirituelle, sans s'appuyer sur leur propre sagesse ni leur mérite. Leur simplicité de cœur les rend perméables à la vérité. <em>Contraire : autosuffisance spirituelle / pharisaïsme.</em></p>
+          <div class="status-row" style="margin-top:8px">
+            <div class="status-item"><div class="dot dot-blue"></div>Entrée : maintenant</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B2 -->
+      <div class="beat-card" style="--accent-color: var(--purple);" id="b2" onclick="toggleBeat('b2')">
+        <div class="beat-num">BÉATITUDE · 02 · v.4</div>
+        <div class="beat-title">Ceux qui mènent deuil</div>
+        <div class="beat-promise" style="color: var(--purple)">→ Ils seront consolés</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">sensibilité au mal</span>
+          <span class="attr-pill">compassion</span>
+          <span class="attr-pill">espérance</span>
+        </div>
+        <div class="beat-detail">
+          <p>Souffrance authentique face à l'injustice et la corruption du monde. Tristesse qui n'est pas du désespoir — elle est portée avec foi. Dieu lui-même est la consolation promise. <em>≠ résignation passive.</em></p>
+        </div>
+      </div>
+
+      <!-- B3 -->
+      <div class="beat-card" style="--accent-color: var(--green);" id="b3" onclick="toggleBeat('b3')">
+        <div class="beat-num">BÉATITUDE · 03 · v.5</div>
+        <div class="beat-title">Les doux (débonnaires)</div>
+        <div class="beat-promise" style="color: var(--green)">→ Ils hériteront la terre</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">maîtrise de soi</span>
+          <span class="attr-pill">patience</span>
+          <span class="attr-pill">non-violence</span>
+        </div>
+        <div class="beat-detail">
+          <p>Force canalisée, non absente. Le doux ne s'impose pas, il ne domine pas par la contrainte. Caractère du Christ lui-même (Mt 11.29). Paradoxe : là où le monde conquiert par la force, le doux hérite par la patience.</p>
+        </div>
+      </div>
+
+      <!-- B4 -->
+      <div class="beat-card" style="--accent-color: var(--gold);" id="b4" onclick="toggleBeat('b4')">
+        <div class="beat-num">BÉATITUDE · 04 · v.6</div>
+        <div class="beat-title">Faim & soif de justice</div>
+        <div class="beat-promise" style="color: var(--gold)">→ Ils seront rassasiés</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">ardeur</span>
+          <span class="attr-pill">attente eschatologique</span>
+          <span class="attr-pill">insatisfaction du statu quo</span>
+        </div>
+        <div class="beat-detail">
+          <p>Aspiration profonde, viscérale, à un ordre du monde conforme à Dieu. Pas une morale passive — une faim qui consume. Pointe vers le règne futur où la justice sera entièrement établie.</p>
+        </div>
+      </div>
+
+      <!-- B5 -->
+      <div class="beat-card" style="--accent-color: #f6ad55;" id="b5" onclick="toggleBeat('b5')">
+        <div class="beat-num">BÉATITUDE · 05 · v.7</div>
+        <div class="beat-title">Les miséricordieux</div>
+        <div class="beat-promise" style="color: #f6ad55">→ Ils obtiendront miséricorde</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">compassion active</span>
+          <span class="attr-pill">pardon</span>
+          <span class="attr-pill">regard sur l'autre</span>
+        </div>
+        <div class="beat-detail">
+          <p>Portent un regard compatissant sur ceux qui souffrent ou pèchent. Reflètent le cœur de Dieu. La miséricorde exercée est corrélée à la miséricorde reçue — loi de réciprocité divine (cf. Mt 6.12).</p>
+        </div>
+      </div>
+
+      <!-- B6 -->
+      <div class="beat-card" style="--accent-color: #76e4f7;" id="b6" onclick="toggleBeat('b6')">
+        <div class="beat-num">BÉATITUDE · 06 · v.8</div>
+        <div class="beat-title">Les purs de cœur</div>
+        <div class="beat-promise" style="color: #76e4f7">→ Ils verront Dieu</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">transparence intérieure</span>
+          <span class="attr-pill">pas de duplicité</span>
+          <span class="attr-pill">intégrité</span>
+        </div>
+        <div class="beat-detail">
+          <p>Cœur sans division, sans double agenda. Éclairé par la vérité divine sans filtre ni masque. Promesse la plus haute : la <em>vision de Dieu</em> (theologia, beatitudo). Contraire : hypocrisie (double visage).</p>
+        </div>
+      </div>
+
+      <!-- B7 -->
+      <div class="beat-card" style="--accent-color: var(--green);" id="b7" onclick="toggleBeat('b7')">
+        <div class="beat-num">BÉATITUDE · 07 · v.9</div>
+        <div class="beat-title">Artisans de paix</div>
+        <div class="beat-promise" style="color: var(--green)">→ Appelés fils de Dieu</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">réconciliation</span>
+          <span class="attr-pill">initiative</span>
+          <span class="attr-pill">imitatio Dei</span>
+        </div>
+        <div class="beat-detail">
+          <p>Actifs, pas passifs. Ils <em>fabriquent</em> la paix (ποιοῦντες). Instruments de réconciliation dans un monde fracturé. Le titre "fils de Dieu" est la récompense — participation à l'identité divine.</p>
+        </div>
+      </div>
+
+      <!-- B8 -->
+      <div class="beat-card" style="--accent-color: var(--red);" id="b8" onclick="toggleBeat('b8')">
+        <div class="beat-num">BÉATITUDE · 08 · v.10-12</div>
+        <div class="beat-title">Persécutés pour la justice</div>
+        <div class="beat-promise" style="color: var(--red)">→ Le Royaume des Cieux</div>
+        <div class="beat-attrs">
+          <span class="attr-pill">fidélité sous pression</span>
+          <span class="attr-pill">rejet social</span>
+          <span class="attr-pill">récompense future</span>
+        </div>
+        <div class="beat-detail">
+          <p>La 8ème béatitude est la conséquence logique des 7 premières. Vivre selon ces principes dans un monde hostile produit inévitablement le conflit. Réponse : joie paradoxale, car la persécution confirme l'appartenance au Royaume.</p>
+          <div class="status-row" style="margin-top:8px">
+            <div class="status-item"><div class="dot dot-red"></div>Coût : persécution</div>
+            <div class="status-item"><div class="dot dot-gold"></div>Gain : Royaume (=B1)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="sep" data-label="ANALYSE COMPARATIVE">
+
+  <!-- SECTION 4 : TENSION TABLE -->
+  <div class="section" style="animation-delay: 0.2s">
+    <div class="section-label">MODULE DELTA — Tension Monde vs Royaume</div>
+    <div class="card" style="padding: 0; overflow: hidden; cursor: default;">
+      <table class="tension-table">
+        <thead>
+          <tr>
+            <th>Valeur Mondaine</th>
+            <th style="text-align:center">≠</th>
+            <th>Valeur du Royaume</th>
+            <th>Béatitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-monde">Orgueil, autosuffisance</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Pauvreté en esprit</td>
+            <td><span class="verse-tag">B1</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Stoïcisme / indifférence au mal</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Deuil (sensibilité active)</td>
+            <td><span class="verse-tag">B2</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Domination, force brute</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Douceur (force maîtrisée)</td>
+            <td><span class="verse-tag">B3</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Acceptation de l'injustice</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Faim de justice</td>
+            <td><span class="verse-tag">B4</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Justice stricte, rétribution</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Miséricorde, pardon</td>
+            <td><span class="verse-tag">B5</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Duplicité, hypocrisie</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Pureté de cœur</td>
+            <td><span class="verse-tag">B6</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Conflit, division, tribalism</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Artisan de paix</td>
+            <td><span class="verse-tag">B7</span></td>
+          </tr>
+          <tr>
+            <td class="col-monde">Évitement du conflit / conformisme</td>
+            <td class="col-vs">↔</td>
+            <td class="col-royaume">Fidélité malgré persécution</td>
+            <td><span class="verse-tag">B8</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="sep" data-label="FLOW SYSTÈME">
+
+  <!-- SECTION 5 : FLOW SYSTÈME -->
+  <div class="section" style="animation-delay: 0.25s">
+    <div class="section-label">MODULE FLOW — Cycle de Transformation</div>
+
+    <div class="flow-connector">
+      <div class="flow-node highlight">Repentance<br><small style="color:var(--text-muted)">Point d'entrée</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">Dispositions intérieures<br><small style="color:var(--text-muted)">B1–B7</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">Conduite dans le monde<br><small style="color:var(--text-muted)">sel + lumière v.13-16</small></div>
+    </div>
+    <div class="flow-connector">
+      <div class="flow-node">Friction / Persécution<br><small style="color:var(--text-muted)">B8 · inévitable</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">Espérance eschatologique<br><small style="color:var(--text-muted)">récompense future</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight">Royaume pleinement manifesté<br><small style="color:var(--text-muted)">Point de résolution</small></div>
+    </div>
+
+    <div class="card" id="c-tension" onclick="toggle('c-tension')" style="margin-top:12px">
+      <div class="node-header">
+        <span class="node-id">SYS-01</span>
+        <span>Tension "Déjà / Pas encore" — État du Royaume</span>
+        <span class="node-tag tag-concept">CONCEPT CLÉ</span>
+        <span class="node-chevron">▶</span>
+      </div>
+      <div class="detail-panel">
+        <div class="detail-desc">
+          Le Royaume des Cieux est <strong style="color:var(--green)">déjà présent</strong> dans le cœur et la vie de ceux qui vivent selon ses principes (béatitudes),
+          mais <strong style="color:var(--red)">pas encore manifesté</strong> dans sa puissance et sa gloire complètes.
+          Cette tension est le moteur de l'espérance chrétienne.
+          Les promesses des béatitudes oscillent entre le présent (v.3 : "le Royaume EST à eux") et le futur (v.4 : "ils SERONT consolés").
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center; margin-top:56px; color: var(--text-muted); font-size: 10px; letter-spacing: 2px;">
+    SCHEMA · MATTHIEU 5 · QA VIEW · TOUS ÉLÉMENTS CLIQUABLES
+  </div>
+
+</div>
+
+<script>
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+  }
+  function toggleBeat(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
