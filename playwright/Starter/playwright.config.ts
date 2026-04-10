@@ -5,12 +5,15 @@ export default defineConfig({
   reporter: 'html',
   webServer: {
     command: 'npm start',
-    url: 'http://localhost:5000/',
+    url: 'http://localhost:2930/',
     reuseExistingServer: true
   },
   use: {
-    baseURL: 'http://localhost:5000/',
-    headless: false
+    baseURL: 'http://localhost:2930/',
+    headless: true,
+    launchOptions: {
+      slowMo: 1000
+    }
   },
   // projects: [
   //   {
