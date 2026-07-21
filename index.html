@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <button onclick="loginGoogle()">Test Google</button>
+
+  <script>
+    function loginGoogle() {
+      google.accounts.id.initialize({
+        client_id: '907615936165-bf4qooc1mfk7k0318nehvgp7lg74llq3.apps.googleusercontent.com',
+        callback: (response) => {
+          console.log('OK :', response);
+        }
+      });
+      google.accounts.id.prompt();
+    }
+  </script>
+</body>
+</html>

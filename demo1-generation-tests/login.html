@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion — App Démo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --card: #121212;
+    --border: #232323;
+    --border-focus: #2DD4BF;
+    --text: #F2F2F0;
+    --text-muted: #7A7A7A;
+    --gold: #FFD700;
+    --teal: #2DD4BF;
+    --error: #FF6B6B;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(45, 212, 191, 0.06), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.05), transparent 40%),
+      var(--bg);
+    background-attachment: fixed;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px var(--teal);
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0 0 28px;
+    line-height: 1.5;
+  }
+
+  form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field:last-of-type {
+    margin-bottom: 24px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  input::placeholder {
+    color: #4A4A4A;
+    font-family: 'Inter', sans-serif;
+  }
+
+  input:hover {
+    border-color: #3a3a3a;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.14);
+  }
+
+  button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 9px;
+    border: none;
+    background: var(--teal);
+    color: #0A0A0A;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.05s ease;
+  }
+
+  button:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+
+  button:disabled {
+    background: #242424;
+    color: #5a5a5a;
+    cursor: not-allowed;
+  }
+
+  .message {
+    margin-top: 16px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    display: none;
+  }
+
+  .message.error {
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.25);
+    color: var(--error);
+  }
+
+  .message.success {
+    background: rgba(45, 212, 191, 0.08);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    color: var(--teal);
+  }
+
+  .footnote {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #4A4A4A;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .footnote .key {
+    color: var(--gold);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <p class="eyebrow">app-demo · auth</p>
+  <h1>Connexion</h1>
+  <p class="subtitle">Accédez à votre espace pour continuer.</p>
+
+  <form id="login-form" novalidate>
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        data-testid="email-input"
+        placeholder="vous@exemple.com"
+        autocomplete="email"
+      >
+    </div>
+
+    <div class="field">
+      <label for="password">Mot de passe</label>
+      <input
+        type="password"
+        id="password"
+        data-testid="password-input"
+        placeholder="8 caractères minimum"
+        autocomplete="current-password"
+      >
+    </div>
+
+    <button type="submit" id="submit-btn" data-testid="login-button" disabled>
+      Se connecter
+    </button>
+
+    <div class="message" id="error-message" data-testid="error-message"></div>
+  </form>
+
+  <p class="footnote">démo <span class="key">demo@coding-vibes.fr</span> / password123</p>
+</div>
+
+<script>
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const submitBtn = document.getElementById('submit-btn');
+  const messageEl = document.getElementById('error-message');
+  const form = document.getElementById('login-form');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function updateButtonState() {
+    submitBtn.disabled = !(emailInput.value.length > 0 && passwordInput.value.length > 0);
+  }
+  emailInput.addEventListener('input', updateButtonState);
+  passwordInput.addEventListener('input', updateButtonState);
+
+  function showMessage(text, type) {
+    messageEl.textContent = text;
+    messageEl.className = 'message ' + type;
+    messageEl.style.display = 'block';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    messageEl.style.display = 'none';
+
+    if (!emailRegex.test(emailInput.value)) {
+      showMessage("Format d'email invalide.", 'error');
+      return;
+    }
+    if (passwordInput.value.length < 8) {
+      showMessage('Le mot de passe doit contenir au moins 8 caractères.', 'error');
+      return;
+    }
+    if (emailInput.value !== 'demo@coding-vibes.fr' || passwordInput.value !== 'password123') {
+      showMessage('Identifiants invalides.', 'error');
+      return;
+    }
+    showMessage('Connexion réussie ✅', 'success');
+  });
+</script>
+
+</body>
+</html>

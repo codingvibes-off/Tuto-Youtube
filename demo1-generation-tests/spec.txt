@@ -1,0 +1,8 @@
+Fonctionnalité : Connexion utilisateur
+
+- L'utilisateur doit pouvoir se connecter avec un email valide et un mot de passe de 8 caractères minimum.
+- Le bouton "Se connecter" doit rester désactivé tant que les deux champs ne sont pas remplis.
+- Si l'email est mal formaté, afficher l'erreur "Format d'email invalide."
+- Si le mot de passe fait moins de 8 caractères, afficher l'erreur "Le mot de passe doit contenir au moins 8 caractères."
+- Si les identifiants sont corrects mais ne correspondent à aucun compte, afficher "Identifiants invalides."
+- En cas de succès, afficher un message de confirmation.

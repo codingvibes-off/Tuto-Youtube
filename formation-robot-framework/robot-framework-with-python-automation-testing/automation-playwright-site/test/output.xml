@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.0 on darwin)" generated="2026-07-13T12:32:47.070034" rpa="false" schemaversion="5">
+<suite id="s1" name="Playwright-Site-Automations" source="/Users/sullivan/Desktop/Tuto-Youtube/formation-robot-framework/robot-framework-with-python-automation-testing/automation-playwright-site/test/playwright-site-automations.robot">
+<test id="s1-t1" name="Go To docs" line="11">
+<kw name="Go to playwright site">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:47.212095" level="INFO">Opening browser 'Chrome' to base url 'https://playwright.dev/python/docs/intro'.</msg>
+<arg>https://playwright.dev/python/docs/intro</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-07-13T12:32:47.211986" elapsed="1.788509"/>
+</kw>
+<status status="PASS" start="2026-07-13T12:32:47.211606" elapsed="1.789208"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.001738" level="INFO">Clicking element 'xpath=//a[contains(text(),'Docs')]'.</msg>
+<arg>xpath=//a[contains(text(),'Docs')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.001192" elapsed="0.129689"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>xpath=${parent}//h1[contains(text(),'Installation')]</arg>
+<arg>Installation</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.131069" elapsed="0.000431"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>xpath=${parent}//h2[contains(text(),'Introduction')]</arg>
+<arg>Introduction</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.131580" elapsed="0.000150"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.149249" level="INFO">${Os} = Playwright was created specifically to accommodate the needs of end-to-end testing. Playwright supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, an...</msg>
+<var>${Os}</var>
+<arg>xpath=${parent}//p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.131806" elapsed="0.017473"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${Os}</arg>
+<arg>macOS</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.149405" elapsed="0.000200"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${Os}</arg>
+<arg>Linux</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.149672" elapsed="0.000126"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.150115" level="INFO">Clicking element 'xpath=//a[contains(text(),'Playwright library')]'.</msg>
+<arg>xpath=//a[contains(text(),'Playwright library')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.149986" elapsed="0.035759"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h1[contains(text(),'Getting started - Library')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.185893" elapsed="0.223408"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.409715" level="INFO">Clicking element 'xpath=//span[contains(text(),'Installation')]'.</msg>
+<arg>xpath=//span[contains(text(),'Installation')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.409520" elapsed="0.059052"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//li[contains(@class,'menu__list')]//span[contains(text(),'Installation')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.468731" elapsed="0.011561"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.480585" level="INFO">Clicking element '//li[contains(@class,'menu__list')]//span[contains(text(),'Installation')]'.</msg>
+<arg>//li[contains(@class,'menu__list')]//span[contains(text(),'Installation')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.480448" elapsed="0.035017"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.515747" level="INFO">Clicking element 'xpath=//a[contains(text(),'How to install Playwright Pytest')]'.</msg>
+<arg>xpath=//a[contains(text(),'How to install Playwright Pytest')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.515611" elapsed="0.038872"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.554768" level="INFO">Clicking element 'xpath=//span[contains(text(),'Installation')]'.</msg>
+<arg>xpath=//span[contains(text(),'Installation')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.554632" elapsed="0.074695"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.629727" level="INFO">Clicking element 'xpath=//a[contains(text(),'How to run the example test')]'.</msg>
+<arg>xpath=//a[contains(text(),'How to run the example test')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.629513" elapsed="0.048206"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.678051" level="INFO">Clicking element 'xpath=//span[contains(text(),'Installation')]'.</msg>
+<arg>xpath=//span[contains(text(),'Installation')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.677890" elapsed="0.040701"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>xpath=${parent}//h1[contains(text(),'Installing Playwright Pytest')]</arg>
+<arg>Installing Playwright Pytest</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.718733" elapsed="0.000257"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.719193" level="INFO">Clicking element 'xpath=//div[contains(@class,'theme-doc-markdown markdown')]//a[contains(text(),'Playwright Pytest plugin')]'.</msg>
+<arg>xpath=${parent}//a[contains(text(),'Playwright Pytest plugin')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.719077" elapsed="0.051014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.770450" level="INFO">Clicking element 'xpath=//span[contains(text(),'Installation')]'.</msg>
+<arg>xpath=//span[contains(text(),'Installation')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.770297" elapsed="0.063705"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=${parent}//a[contains(text(),'Pytest plugin')]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.835329" elapsed="0.011893"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-07-13T12:32:49.847526" level="INFO">Clicking element 'xpath=//div[contains(@class,'theme-doc-markdown markdown')]//a[contains(text(),'Pytest plugin')]'.</msg>
+<arg>xpath=${parent}//a[contains(text(),'Pytest plugin')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-07-13T12:32:49.847360" elapsed="0.052436"/>
+</kw>
+<tag>AllTests</tag>
+<tag>DOCS</tag>
+<status status="PASS" start="2026-07-13T12:32:47.211143" elapsed="2.688801"/>
+</test>
+<status status="PASS" start="2026-07-13T12:32:47.070638" elapsed="2.829668"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AllTests</stat>
+<stat pass="1" fail="0" skip="0">DOCS</stat>
+</tag>
+<suite>
+<stat name="Playwright-Site-Automations" id="s1" pass="1" fail="0" skip="0">Playwright-Site-Automations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
