@@ -1,0 +1,23 @@
+/*
+  Ce fichier n'est PAS exécuté par Playwright (extension .ts.txt volontaire).
+  Pendant l'enregistrement : copie ce contenu par-dessus tests/cart.spec.ts
+  pour casser le test en direct, puis laisse l'agent le réparer via MCP.
+
+  Ce qui a changé : le sélecteur cible un texte qui n'existe plus sur la page
+  (simulateur de refactor UI côté équipe front).
+*/
+
+import { test, expect } from '@playwright/test';
+
+test('ajoute un produit au panier', async ({ page }) => {
+  await page.goto('/');
+
+  await page.getByPlaceholder('Username').fill('standard_user');
+  await page.getByPlaceholder('Password').fill('secret_sauce');
+  await page.getByRole('button', { name: 'Login' }).click();
+
+  // sélecteur volontairement cassé : ce texte n'existe plus sur le bouton
+  await page.getByRole('button', { name: 'Ajouter au panier' }).click();
+
+  await expect(page.locator('.shopping_cart_badge')).toHaveText('1');
+});
