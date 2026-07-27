@@ -1,0 +1,5 @@
+.gmail-mcp/
+*.token.json
+.env
+node_modules/
+.claude/settings.local.json
