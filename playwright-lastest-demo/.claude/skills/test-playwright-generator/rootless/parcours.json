@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "site": "https://lastest.cloud/release-testing",
+    "generatedAt": "2026-08-19T00:00:00.000Z",
+    "generator": "test-playwright-generator",
+    "version": "1.0.0"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home Page (Release Testing)",
+      "url": "/release-testing",
+      "title": "Regression Testing for Vendor-Forced ERP & CRM Releases",
+      "elements": [
+        {
+          "name": "heroHeading",
+          "type": "heading",
+          "locator": { "strategy": "role", "role": "heading", "level": 1 }
+        },
+        {
+          "name": "mainNav",
+          "type": "navigation",
+          "locator": { "strategy": "role", "role": "navigation", "name": "Main navigation" }
+        },
+        {
+          "name": "navReleaseTestingLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Release testing", "scope": "mainNav" }
+        },
+        {
+          "name": "navFeaturesLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Features", "scope": "mainNav" }
+        },
+        {
+          "name": "navPricingLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Pricing", "scope": "mainNav" }
+        },
+        {
+          "name": "navDemosLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Demos", "scope": "mainNav" }
+        },
+        {
+          "name": "navPlaygroundLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Playground", "scope": "mainNav" }
+        },
+        {
+          "name": "navDocsLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Docs", "scope": "mainNav" }
+        },
+        {
+          "name": "navBlogLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Blog", "scope": "mainNav" }
+        },
+        {
+          "name": "sampleDiffReportLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "See a sample diff report" }
+        },
+        {
+          "name": "bookReleaseReviewCta",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Book a release-readiness review", "first": true }
+        },
+        {
+          "name": "sapVendorLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "SAP S/4HANA regression testing", "first": true }
+        },
+        {
+          "name": "salesforceVendorLink",
+          "type": "link",
+          "locator": { "strategy": "role", "role": "link", "name": "Salesforce release regression testing", "first": true }
+        }
+      ]
+    },
+    {
+      "id": "demos",
+      "name": "Saved Demos Page",
+      "url": "/demos",
+      "title": "Saved demos · 743 live Lastest reports",
+      "elements": [
+        {
+          "name": "pageHeading",
+          "type": "heading",
+          "locator": { "strategy": "role", "role": "heading", "level": 1 }
+        },
+        {
+          "name": "allCategoryChip",
+          "type": "button",
+          "locator": { "strategy": "role", "role": "button", "name": "All", "exact": false }
+        },
+        {
+          "name": "devToolsCategoryChip",
+          "type": "button",
+          "locator": { "strategy": "role", "role": "button", "name": "Developer Tools & Infra", "exact": false }
+        },
+        {
+          "name": "sortButton",
+          "type": "button",
+          "locator": { "strategy": "role", "role": "button", "name": "Recent", "exact": false }
+        },
+        {
+          "name": "firstLaunchButton",
+          "type": "link",
+          "locator": { "strategy": "css", "css": ".demo-card__launch", "first": true, "fallbackReason": "Icon-only CTA with no visible accessible text; per-company title attribute is not stable across page loads." }
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "name": "Editorial / Enterprise Page",
+      "url": "/editorial",
+      "title": "Lastest",
+      "elements": [
+        {
+          "name": "enterpriseSection",
+          "type": "section",
+          "locator": { "strategy": "role", "role": "heading", "name": "AI speed meets enterprise governance", "exact": false }
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "name": "Features Page",
+      "url": "/features",
+      "title": "Features",
+      "elements": [
+        {
+          "name": "pageHeading",
+          "type": "heading",
+          "locator": { "strategy": "role", "role": "heading", "level": 1 }
+        }
+      ]
+    },
+    {
+      "id": "sap",
+      "name": "SAP S/4HANA Vendor Page",
+      "url": "/for/sap-s4hana-regression-testing",
+      "title": "SAP S/4HANA Regression Testing & Upgrade Test Scope",
+      "elements": [
+        {
+          "name": "pageHeading",
+          "type": "heading",
+          "locator": { "strategy": "role", "role": "heading", "level": 1 }
+        }
+      ]
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce Vendor Page",
+      "url": "/for/salesforce-release-regression-testing",
+      "title": "Salesforce Release Regression Testing",
+      "elements": [
+        {
+          "name": "pageHeading",
+          "type": "heading",
+          "locator": { "strategy": "role", "role": "heading", "level": 1 }
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "home-page-loads",
+      "name": "Chargement de la page d'accueil",
+      "description": "Vérifie que la page d'accueil (release-testing) se charge correctement avec son titre et son contenu principal.",
+      "priority": "critical",
+      "tags": ["smoke", "critical", "navigation"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "expectTitle", "value": "Regression Testing for Vendor-Forced ERP & CRM Releases" },
+        { "id": 3, "action": "expectVisible", "page": "home", "element": "heroHeading" },
+        { "id": 4, "action": "expectVisible", "page": "home", "element": "mainNav" }
+      ],
+      "expectedResult": { "url": "/release-testing", "visible": "heroHeading" }
+    },
+    {
+      "id": "home-navbar-links-visible",
+      "name": "Affichage des liens du menu principal",
+      "description": "Vérifie que tous les liens de navigation principaux sont visibles depuis la page d'accueil.",
+      "priority": "high",
+      "tags": ["navigation", "regression"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "expectVisible", "page": "home", "element": "navReleaseTestingLink" },
+        { "id": 3, "action": "expectVisible", "page": "home", "element": "navFeaturesLink" },
+        { "id": 4, "action": "expectVisible", "page": "home", "element": "navPricingLink" },
+        { "id": 5, "action": "expectVisible", "page": "home", "element": "navDemosLink" },
+        { "id": 6, "action": "expectVisible", "page": "home", "element": "navPlaygroundLink" },
+        { "id": 7, "action": "expectVisible", "page": "home", "element": "navDocsLink" },
+        { "id": 8, "action": "expectVisible", "page": "home", "element": "navBlogLink" }
+      ],
+      "expectedResult": { "visible": "navBlogLink" }
+    },
+    {
+      "id": "navigate-to-demos-via-cta",
+      "name": "Accès aux démos via le lien 'See a sample diff report'",
+      "description": "Vérifie qu'un utilisateur peut accéder à la page des démos depuis le CTA de la page d'accueil.",
+      "priority": "critical",
+      "tags": ["smoke", "critical", "navigation"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "sampleDiffReportLink" },
+        { "id": 3, "action": "expectUrl", "value": "/demos" },
+        { "id": 4, "action": "expectVisible", "page": "demos", "element": "pageHeading" }
+      ],
+      "expectedResult": { "url": "/demos", "visible": "pageHeading" }
+    },
+    {
+      "id": "navigate-to-demos-via-nav",
+      "name": "Accès aux démos via le menu de navigation",
+      "description": "Vérifie qu'un utilisateur peut accéder à la page des démos via le lien 'Demos' du menu principal.",
+      "priority": "high",
+      "tags": ["navigation", "regression"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "navDemosLink" },
+        { "id": 3, "action": "expectUrl", "value": "/demos" }
+      ],
+      "expectedResult": { "url": "/demos" }
+    },
+    {
+      "id": "navigate-to-features",
+      "name": "Accès à la page Features",
+      "description": "Vérifie qu'un utilisateur peut accéder à la page Features via le menu principal.",
+      "priority": "medium",
+      "tags": ["navigation"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "navFeaturesLink" },
+        { "id": 3, "action": "expectUrl", "value": "/features" },
+        { "id": 4, "action": "expectVisible", "page": "features", "element": "pageHeading" }
+      ],
+      "expectedResult": { "url": "/features", "visible": "pageHeading" }
+    },
+    {
+      "id": "book-release-review-cta",
+      "name": "Réservation d'un point de préparation à la release",
+      "description": "Vérifie que le CTA principal 'Book a release-readiness review' redirige vers la section enterprise de la page éditoriale.",
+      "priority": "critical",
+      "tags": ["smoke", "critical", "conversion"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "bookReleaseReviewCta" },
+        { "id": 3, "action": "expectUrl", "value": "/editorial" }
+      ],
+      "expectedResult": { "url": "/editorial" }
+    },
+    {
+      "id": "navigate-to-sap-vendor-page",
+      "name": "Accès à la page vendeur SAP S/4HANA",
+      "description": "Vérifie qu'un utilisateur peut accéder à la page dédiée au test de régression SAP S/4HANA depuis la page d'accueil.",
+      "priority": "high",
+      "tags": ["navigation", "vendor"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "sapVendorLink" },
+        { "id": 3, "action": "expectUrl", "value": "/for/sap-s4hana-regression-testing" },
+        { "id": 4, "action": "expectVisible", "page": "sap", "element": "pageHeading" }
+      ],
+      "expectedResult": { "url": "/for/sap-s4hana-regression-testing", "visible": "pageHeading" }
+    },
+    {
+      "id": "navigate-to-salesforce-vendor-page",
+      "name": "Accès à la page vendeur Salesforce",
+      "description": "Vérifie qu'un utilisateur peut accéder à la page dédiée au test de régression Salesforce depuis la page d'accueil.",
+      "priority": "medium",
+      "tags": ["navigation", "vendor"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "home", "value": "/release-testing" },
+        { "id": 2, "action": "click", "page": "home", "element": "salesforceVendorLink" },
+        { "id": 3, "action": "expectUrl", "value": "/for/salesforce-release-regression-testing" },
+        { "id": 4, "action": "expectVisible", "page": "salesforce", "element": "pageHeading" }
+      ],
+      "expectedResult": { "url": "/for/salesforce-release-regression-testing", "visible": "pageHeading" }
+    },
+    {
+      "id": "demos-filter-by-category",
+      "name": "Filtrage des démos par catégorie",
+      "description": "Vérifie qu'un utilisateur peut filtrer les démos par catégorie sur la page /demos.",
+      "priority": "high",
+      "tags": ["filtering", "regression"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "demos", "value": "/demos" },
+        { "id": 2, "action": "expectVisible", "page": "demos", "element": "devToolsCategoryChip" },
+        { "id": 3, "action": "click", "page": "demos", "element": "devToolsCategoryChip" },
+        { "id": 4, "action": "expectVisible", "page": "demos", "element": "devToolsCategoryChip" }
+      ],
+      "expectedResult": { "visible": "devToolsCategoryChip" }
+    },
+    {
+      "id": "demos-launch-cta-navigation",
+      "name": "Navigation vers le formulaire de soumission Launch",
+      "description": "Vérifie que le CTA 'Launch' d'une carte de démo redirige vers le formulaire de soumission /launch/submit.",
+      "priority": "medium",
+      "tags": ["conversion", "demos"],
+      "preconditions": [],
+      "steps": [
+        { "id": 1, "action": "goto", "page": "demos", "value": "/demos" },
+        { "id": 2, "action": "click", "page": "demos", "element": "firstLaunchButton" },
+        { "id": 3, "action": "expectUrl", "value": "/launch/submit" }
+      ],
+      "expectedResult": { "url": "/launch/submit" }
+    }
+  ]
+}

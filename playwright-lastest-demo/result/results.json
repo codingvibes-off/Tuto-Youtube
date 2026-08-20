@@ -1,0 +1,837 @@
+{
+  "config": {
+    "argv": [
+      "/Users/sullivan/node_modules/node/bin/node",
+      "/Users/sullivan/Desktop/playwright-lastest-demo/node_modules/.bin/playwright",
+      "test",
+      "--workers=1",
+      "--project=chromium"
+    ],
+    "configFile": "/Users/sullivan/Desktop/playwright-lastest-demo/playwright.config.ts",
+    "rootDir": "/Users/sullivan/Desktop/playwright-lastest-demo/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/sullivan/Desktop/playwright-lastest-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "result/playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "result/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "journeys/book-release-review-cta.spec.ts",
+      "file": "journeys/book-release-review-cta.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Réservation d'un point de préparation à la release",
+          "file": "journeys/book-release-review-cta.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie que le CTA principal 'Book a release-readiness review' redirige vers la section enterprise de la page éditoriale.",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "conversion"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4294,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:10.010Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-book-release-revi-d1f36-rise-de-la-page-éditoriale--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "91fcba663858f5bc8dad-8ef0a276e8eaf5b2fc5e",
+              "file": "journeys/book-release-review-cta.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/demos-filter-by-category.spec.ts",
+      "file": "journeys/demos-filter-by-category.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Filtrage des démos par catégorie",
+          "file": "journeys/demos-filter-by-category.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut filtrer les démos par catégorie sur la page /demos.",
+              "ok": true,
+              "tags": [
+                "filtering",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4778,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:17.673Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-demos-filter-by-c-f391b-atégorie-sur-la-page-demos--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2ce63fd6b11fbb72166f-4e6bb7e88fe443d4d909",
+              "file": "journeys/demos-filter-by-category.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/demos-launch-cta-navigation.spec.ts",
+      "file": "journeys/demos-launch-cta-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Navigation vers le formulaire de soumission Launch",
+          "file": "journeys/demos-launch-cta-navigation.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie que le CTA 'Launch' d'une carte de démo redirige vers le formulaire de soumission /launch/submit.",
+              "ok": true,
+              "tags": [
+                "conversion",
+                "demos"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2907,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:22.508Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-demos-launch-cta--59487-e-soumission-launch-submit--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3729b345d5282da3dd8e-f887d85aa205c9cd0f18",
+              "file": "journeys/demos-launch-cta-navigation.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/home-navbar-links-visible.spec.ts",
+      "file": "journeys/home-navbar-links-visible.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Affichage des liens du menu principal",
+          "file": "journeys/home-navbar-links-visible.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie que tous les liens de navigation principaux sont visibles depuis la page d'accueil.",
+              "ok": true,
+              "tags": [
+                "navigation",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1828,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:25.463Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-home-navbar-links-a9357-s-depuis-la-page-d-accueil--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20aebec819fb7f11ddd-59065d0e3e46668d0129",
+              "file": "journeys/home-navbar-links-visible.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/home-page-loads.spec.ts",
+      "file": "journeys/home-page-loads.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Chargement de la page d'accueil",
+          "file": "journeys/home-page-loads.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie que la page d'accueil (release-testing) se charge correctement avec son titre et son contenu principal.",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "navigation"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2033,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:27.358Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-home-page-loads-C-94860-e-et-son-contenu-principal--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "00c5e4683db3725b15e1-ea6c7edc895dbed7d877",
+              "file": "journeys/home-page-loads.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/navigate-to-demos-via-cta.spec.ts",
+      "file": "journeys/navigate-to-demos-via-cta.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accès aux démos via le lien 'See a sample diff report'",
+          "file": "journeys/navigate-to-demos-via-cta.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut accéder à la page des démos depuis le CTA de la page d'accueil.",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "navigation"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3172,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:29.409Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-navigate-to-demos-85768-e-CTA-de-la-page-d-accueil--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c8b89c018f3d491f89a3-7600b9b09640e241aab7",
+              "file": "journeys/navigate-to-demos-via-cta.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/navigate-to-demos-via-nav.spec.ts",
+      "file": "journeys/navigate-to-demos-via-nav.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accès aux démos via le menu de navigation",
+          "file": "journeys/navigate-to-demos-via-nav.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut accéder à la page des démos via le lien 'Demos' du menu principal.",
+              "ok": true,
+              "tags": [
+                "navigation",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3752,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:32.612Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-navigate-to-demos-64054-en-Demos-du-menu-principal--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8df347edad579ff5705a-ab52bdef9c2c3ed10b53",
+              "file": "journeys/navigate-to-demos-via-nav.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/navigate-to-features.spec.ts",
+      "file": "journeys/navigate-to-features.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accès à la page Features",
+          "file": "journeys/navigate-to-features.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut accéder à la page Features via le menu principal.",
+              "ok": true,
+              "tags": [
+                "navigation"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2833,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:36.462Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-navigate-to-featu-48e55-ures-via-le-menu-principal--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "85349a90ac3db6b9dfe5-6fc0170fe07cb46163bc",
+              "file": "journeys/navigate-to-features.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/navigate-to-salesforce-vendor-page.spec.ts",
+      "file": "journeys/navigate-to-salesforce-vendor-page.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accès à la page vendeur Salesforce",
+          "file": "journeys/navigate-to-salesforce-vendor-page.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut accéder à la page dédiée au test de régression Salesforce depuis la page d'accueil.",
+              "ok": true,
+              "tags": [
+                "navigation",
+                "vendor"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2401,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:39.312Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-navigate-to-sales-176ee-e-depuis-la-page-d-accueil--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c950413684e51640ec6f-63f184124153376b3e1c",
+              "file": "journeys/navigate-to-salesforce-vendor-page.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "journeys/navigate-to-sap-vendor-page.spec.ts",
+      "file": "journeys/navigate-to-sap-vendor-page.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accès à la page vendeur SAP S/4HANA",
+          "file": "journeys/navigate-to-sap-vendor-page.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Vérifie qu'un utilisateur peut accéder à la page dédiée au test de régression SAP S/4HANA depuis la page d'accueil.",
+              "ok": true,
+              "tags": [
+                "navigation",
+                "vendor"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2277,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:41.745Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/journeys-navigate-to-sap-v-a957d-A-depuis-la-page-d-accueil--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f063beee70ab7c15cedc-abde4507856b450722c6",
+              "file": "journeys/navigate-to-sap-vendor-page.spec.ts",
+              "line": 8,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke/smoke.spec.ts",
+      "file": "smoke/smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Smoke suite",
+          "file": "smoke/smoke.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "[critical] Chargement de la page d'accueil",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "navigation"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1574,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:44.042Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/smoke-smoke-Smoke-suite-cr-912a7-gement-de-la-page-d-accueil-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2f9e57ccde56fbee371-1c09dc1a46a8f3c953c8",
+              "file": "smoke/smoke.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "[critical] Accès aux démos via le lien 'See a sample diff report'",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "navigation"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4498,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:45.633Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/smoke-smoke-Smoke-suite-cr-0082c-n-See-a-sample-diff-report--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2f9e57ccde56fbee371-9fa95f014e20bb346eec",
+              "file": "smoke/smoke.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
+              "title": "[critical] Réservation d'un point de préparation à la release",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "critical",
+                "conversion"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3173,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-19T16:53:50.196Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/sullivan/Desktop/playwright-lastest-demo/result/test-results/smoke-smoke-Smoke-suite-cr-f62e9-de-préparation-à-la-release-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2f9e57ccde56fbee371-adce4b1b6be373915542",
+              "file": "smoke/smoke.spec.ts",
+              "line": 7,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-19T16:53:08.299Z",
+    "duration": 45382.771,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "executionDate": "2026-08-19T16:53:08.299Z",
+  "site": "https://lastest.cloud/release-testing",
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "skipped": 0,
+  "flaky": 0,
+  "duration": "45.4s",
+  "pagesDiscovered": 6,
+  "journeysGenerated": 10,
+  "reportPath": "result/playwright-report/index.html",
+  "demoVideo": "result/videos/demo-scenarios.mp4"
+}
