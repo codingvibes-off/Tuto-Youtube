@@ -1,0 +1,24 @@
+{
+  "formulaire": "connexion",
+  "champs": {
+    "email": {
+      "valid": "camille.martin+login@yahoo.fr",
+      "edge": "élodie.o'connor@sous-domaine.exemple-tres-long-pour-tester-les-bornes.com",
+      "invalid": "camille.martin at yahoo.fr"
+    },
+    "password": {
+      "valid": "P@ssw0rd-2026!",
+      "edge": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐-01234567890123456789",
+      "invalid": ""
+    }
+  },
+  "cas_supplementaires": {
+    "description": "Cas additionnels pertinents pour un formulaire de login (sécurité, robustesse)",
+    "email_injection_sql": "test@test.com' OR '1'='1",
+    "email_espaces_uniquement": "   ",
+    "password_injection_sql": "' OR 1=1 --",
+    "password_trop_court": "ab",
+    "password_espaces_uniquement": "   ",
+    "password_xss": "<script>alert(1)</script>"
+  }
+}

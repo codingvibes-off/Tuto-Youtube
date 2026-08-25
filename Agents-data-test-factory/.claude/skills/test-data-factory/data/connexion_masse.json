@@ -1,0 +1,6002 @@
+[
+  {
+    "email": "laurentnicole+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "&5)T6BaL8qi+",
+    "password_category": "valid"
+  },
+  {
+    "email": "mweber+test@tele2.fr",
+    "email_category": "valid",
+    "password": "iD9i!ffx_8YY",
+    "password_category": "valid"
+  },
+  {
+    "email": "elisepons+test@laposte.net",
+    "email_category": "valid",
+    "password": "wzTf+9xUSh%VPp+x^1Wb5(r6VXNVQv3e5H4Awh^Lzz^*7vrrF+neXza!mAbv)(*S",
+    "password_category": "edge"
+  },
+  {
+    "email": "mariannecouturier+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "!jI7gbJ!_6sS",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.martineau-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "2bG40RIeA3&W",
+    "password_category": "valid"
+  },
+  {
+    "email": "elodie76+test@gmail.com",
+    "email_category": "valid",
+    "password": "hp*JhSj44K0L",
+    "password_category": "valid"
+  },
+  {
+    "email": "jneveu+test@noos.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "clebreton+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "&5SIvdM#9$3^",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lombard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lambert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "elise17+test@live.com",
+    "email_category": "valid",
+    "password": "X3CPZZMa@($#",
+    "password_category": "valid"
+  },
+  {
+    "email": "voisincamille+test@ifrance.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "oliviemaurice+test@gmail.com",
+    "email_category": "valid",
+    "password": "3P)7NiQA4y%3",
+    "password_category": "valid"
+  },
+  {
+    "email": "csauvagehotmail.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "sbourdon+test@tele2.fr",
+    "email_category": "valid",
+    "password": "i9PIo2Wq^NFO",
+    "password_category": "valid"
+  },
+  {
+    "email": "gregoire05+test@dbmail.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "dominiquelegrandlive.com",
+    "email_category": "invalid",
+    "password": "9A+edREr+15O",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.alexandre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "guillonchristiane+test@free.fr",
+    "email_category": "valid",
+    "password": "KII3PXGa)e1T",
+    "password_category": "valid"
+  },
+  {
+    "email": "augustechauvin at voila.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "dthibault+test@tele2.fr",
+    "email_category": "valid",
+    "password": "U$D%zXgv#I%0",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandria28+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "38At32gh)tdeH5B8MaAGrMlfiB3p$pg@SVf925U6SvCiOfgMgE_S1rzwQo^m$!_Y",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.durand-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "8!@m0Qx**+2Q",
+    "password_category": "valid"
+  },
+  {
+    "email": "susanne31+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "*+AE76lLTK@E",
+    "password_category": "valid"
+  },
+  {
+    "email": "ponsjosephine at wanadoo.fr",
+    "email_category": "invalid",
+    "password": "(0Vt(Zl0XTZZ",
+    "password_category": "valid"
+  },
+  {
+    "email": "sylviemaillet+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "F_$W4DOfuu00",
+    "password_category": "valid"
+  },
+  {
+    "email": "paulrodrigues at tiscali.fr",
+    "email_category": "invalid",
+    "password": "F)kiHhdnLO4U",
+    "password_category": "valid"
+  },
+  {
+    "email": "antoinettechauvet@",
+    "email_category": "invalid",
+    "password": "wO(0VRyzv)pUFcizj@%7#%kPYPId&RX8AP%lRGYnc%Zgo%&KLXAgg(ed0wQjf0)j",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.mendes-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "raymond56+test@dbmail.com",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.godard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "noemi13+test@live.com",
+    "email_category": "valid",
+    "password": "6*6*!GggrI0S",
+    "password_category": "valid"
+  },
+  {
+    "email": "pbaudry+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Uy(zLw0329Qc",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pineau-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "theodorepereira+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "qriou+test@gmail.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "pottiervirginie+test@laposte.net",
+    "email_category": "valid",
+    "password": "a!q*hfiwqQ0C",
+    "password_category": "valid"
+  },
+  {
+    "email": "celineaubert+test@dbmail.com",
+    "email_category": "valid",
+    "password": "w*7R$vsNPu1V",
+    "password_category": "valid"
+  },
+  {
+    "email": "upottier+test@gmail.com",
+    "email_category": "valid",
+    "password": "SWYxs1c1$5FJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "vwagner+test@gmail.com",
+    "email_category": "valid",
+    "password": "t1LHSh(!(%h$",
+    "password_category": "valid"
+  },
+  {
+    "email": "michelerousset at laposte.net",
+    "email_category": "invalid",
+    "password": "3#7sRa_Hr6p)P&E!5xycis+TTq_gvYi575bQkGtr#Z*xY8gUUFGVs^6x)ImDkr!r",
+    "password_category": "edge"
+  },
+  {
+    "email": "marcel22+test@free.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "anouk51+test@laposte.net",
+    "email_category": "valid",
+    "password": "Xz63STlTNz(S",
+    "password_category": "valid"
+  },
+  {
+    "email": "elise94orange.fr",
+    "email_category": "invalid",
+    "password": "s7N^ok4dlIEV",
+    "password_category": "valid"
+  },
+  {
+    "email": "hortensetorres+test@orange.fr",
+    "email_category": "valid",
+    "password": "&zl1OzEQf3AT",
+    "password_category": "valid"
+  },
+  {
+    "email": "paulgallet@",
+    "email_category": "invalid",
+    "password": "bpCNySbKx(2A",
+    "password_category": "valid"
+  },
+  {
+    "email": "da-costaphilippine at free.fr",
+    "email_category": "invalid",
+    "password": "ye%yAd2g&b6G",
+    "password_category": "valid"
+  },
+  {
+    "email": "delmaselise+test@ifrance.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "thomassimon at live.com",
+    "email_category": "invalid",
+    "password": "juCrKu(jhouYY%QBTCd9bzxhU!Jk_MNhS7HKdiN2HUTzQ57ccU(IF2Dai0DmlYKu",
+    "password_category": "edge"
+  },
+  {
+    "email": "marienicole+test@gmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.prevost-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&mZo+1)@y6JX",
+    "password_category": "valid"
+  },
+  {
+    "email": "llaurent+test@tele2.fr",
+    "email_category": "valid",
+    "password": "1YdefyX+S$C+",
+    "password_category": "valid"
+  },
+  {
+    "email": "edith99+test@live.com",
+    "email_category": "valid",
+    "password": "*y!hY(olzIT2",
+    "password_category": "valid"
+  },
+  {
+    "email": "blondelmargaret@",
+    "email_category": "invalid",
+    "password": "cV&0JbaB@BsB",
+    "password_category": "valid"
+  },
+  {
+    "email": "lmarechal+test@noos.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "mgrenier+test@noos.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "olivie10+test@free.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "francois01+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "u2GUCG!e*NHf",
+    "password_category": "valid"
+  },
+  {
+    "email": "christopherenaud+test@noos.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "nathaliepasquier+test@sfr.fr",
+    "email_category": "valid",
+    "password": "_)7G_fBn2)d%",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.maurice-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "eTj2Urag^qeh",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bertin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bourgeois-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "4g4!+AZZ)bSj",
+    "password_category": "valid"
+  },
+  {
+    "email": "antoine13@",
+    "email_category": "invalid",
+    "password": "#1@Nw2#aVMN$",
+    "password_category": "valid"
+  },
+  {
+    "email": "llemonnier+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "of6eD8kh)NWH",
+    "password_category": "valid"
+  },
+  {
+    "email": "antoinette50 at hotmail.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.leroy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ulefort at tiscali.fr",
+    "email_category": "invalid",
+    "password": "+tK+7%JwSC6i",
+    "password_category": "valid"
+  },
+  {
+    "email": "lelievregregoire@",
+    "email_category": "invalid",
+    "password": "6*%CXttv+6h$",
+    "password_category": "valid"
+  },
+  {
+    "email": "maggie16+test@live.com",
+    "email_category": "valid",
+    "password": "*V!xOuCggw73",
+    "password_category": "valid"
+  },
+  {
+    "email": "perezarnaude+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "11hWq*Rz()4K",
+    "password_category": "valid"
+  },
+  {
+    "email": "spayet+test@ifrance.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "clementyves+test@dbmail.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "edumont at live.com",
+    "email_category": "invalid",
+    "password": "jq9Zzcwq&0PR",
+    "password_category": "valid"
+  },
+  {
+    "email": "alfredparis+test@sfr.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "maggie54+test@tele2.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "astrid87+test@dbmail.com",
+    "email_category": "valid",
+    "password": "y)^0XhY*NlVY",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.barre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_bdZWCUcXI3L",
+    "password_category": "valid"
+  },
+  {
+    "email": "brundanielle@",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "bessonguillaume+test@laposte.net",
+    "email_category": "valid",
+    "password": "JcHKRChku_5C",
+    "password_category": "valid"
+  },
+  {
+    "email": "crocher+test@orange.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.perrier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "F%4AWt*Rz@4U",
+    "password_category": "valid"
+  },
+  {
+    "email": "michellephilippe+test@orange.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.meunier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "!6W*jIIj+11)",
+    "password_category": "valid"
+  },
+  {
+    "email": "julievallee+test@ifrance.com",
+    "email_category": "valid",
+    "password": "2+6UpP)tAbJq",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.costa-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.masse-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "R1^zmjR%nRWa",
+    "password_category": "valid"
+  },
+  {
+    "email": "pottieremmanuelle+test@noos.fr",
+    "email_category": "valid",
+    "password": "4!FxGzu1^4mE",
+    "password_category": "valid"
+  },
+  {
+    "email": "margotsalmon+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "GF(0NRp(A^3g",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.maurice-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "zuJX&$IAY5CNPZA78DIB$$$h3Mt*1wEA#@SpCgEjRFa3Brig(Vta2eu^S6fz2f$2",
+    "password_category": "edge"
+  },
+  {
+    "email": "nguyendaniel+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "x9w%I2wO#9^K",
+    "password_category": "valid"
+  },
+  {
+    "email": "lgonzalez+test@sfr.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marie-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "richardmorin@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "paulineruiz+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "#E&1jFNcq4_)",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.le-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Nc5dEpG!j$Nb",
+    "password_category": "valid"
+  },
+  {
+    "email": "philippinede-sousa+test@ifrance.com",
+    "email_category": "valid",
+    "password": "*H6jPUwAstb!",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lacroix-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "171^f#yzNXSZ",
+    "password_category": "valid"
+  },
+  {
+    "email": "collinroland+test@sfr.fr",
+    "email_category": "valid",
+    "password": "t#Z^*lf8hH#BXHdLox(FX#$!*BcK02srszvq7B(w^CXm76_M)phrxIL)RUayBg47",
+    "password_category": "edge"
+  },
+  {
+    "email": "marinegarniervoila.fr",
+    "email_category": "invalid",
+    "password": "1*3_R3OmL+Pt",
+    "password_category": "valid"
+  },
+  {
+    "email": "cecile20+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "i1FNvqM$%c94",
+    "password_category": "valid"
+  },
+  {
+    "email": "valerie91+test@gmail.com",
+    "email_category": "valid",
+    "password": "^rk0BTwi_gJt",
+    "password_category": "valid"
+  },
+  {
+    "email": "mauriceparent+test@laposte.net",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.potier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "paulette02+test@sfr.fr",
+    "email_category": "valid",
+    "password": "*1i#ywWsZSw8",
+    "password_category": "valid"
+  },
+  {
+    "email": "edouard32+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "^aL2O#Bhn&8X",
+    "password_category": "valid"
+  },
+  {
+    "email": "pauline44+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "1PKBS4wz$boU",
+    "password_category": "valid"
+  },
+  {
+    "email": "etiennemarcelle+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "khubert+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "3oh#sxEd!_@4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.cohen-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lamy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*xUFJ4Og9eP%",
+    "password_category": "valid"
+  },
+  {
+    "email": "dorothee39+test@live.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "dominique75+test@noos.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ramospaul+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "1_B41W1j!76U",
+    "password_category": "valid"
+  },
+  {
+    "email": "robinthierry+test@laposte.net",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "colinaudreybouygtel.fr",
+    "email_category": "invalid",
+    "password": "$KT#xM$W8Jbi",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.louis-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "JW+NODsm+p9R",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.colas-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "michele44@",
+    "email_category": "invalid",
+    "password": "9G2#3tV7f#EI",
+    "password_category": "valid"
+  },
+  {
+    "email": "eperez+test@sfr.fr",
+    "email_category": "valid",
+    "password": "JsAKZsYh%698",
+    "password_category": "valid"
+  },
+  {
+    "email": "victoire50+test@dbmail.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "dbaron+test@tele2.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.blanchard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "di#lqeFI+08E",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandremeunier+test@gmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "christinerenard+test@orange.fr",
+    "email_category": "valid",
+    "password": "^38slgv+)bH!",
+    "password_category": "valid"
+  },
+  {
+    "email": "kjacques+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "$C9I#FracEx9",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.raymond-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "remyemmanuel+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "k71JE&72&Z&L",
+    "password_category": "valid"
+  },
+  {
+    "email": "tristan27+test@sfr.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "elisemillet+test@free.fr",
+    "email_category": "valid",
+    "password": "(4Jr2&s2Q#N(",
+    "password_category": "valid"
+  },
+  {
+    "email": "guyrenault+test@free.fr",
+    "email_category": "valid",
+    "password": "A$Irp0Nz3I+M",
+    "password_category": "valid"
+  },
+  {
+    "email": "thibaut18@",
+    "email_category": "invalid",
+    "password": "(8o6(pt*#8MU",
+    "password_category": "valid"
+  },
+  {
+    "email": "lebretonmarguerite+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "noemi75+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "(d3rCHsHqM+g",
+    "password_category": "valid"
+  },
+  {
+    "email": "umoreau+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "(wf%GOitE7N4",
+    "password_category": "valid"
+  },
+  {
+    "email": "edouard65@",
+    "email_category": "invalid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "jvoisin+test@club-internet.fr",
+    "email_category": "valid",
+    "password": ")0AUi$32Jq^I",
+    "password_category": "valid"
+  },
+  {
+    "email": "marionphilippe+test@laposte.net",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "gilletauguste+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "$Oy#Ajpm1!)p",
+    "password_category": "valid"
+  },
+  {
+    "email": "jferreira@",
+    "email_category": "invalid",
+    "password": "k!5B!r_qpl1N",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bouvier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "c8W31Kkq%2ce",
+    "password_category": "valid"
+  },
+  {
+    "email": "elodiechauvet+test@voila.fr",
+    "email_category": "valid",
+    "password": "4@004*HnUWG1",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.grondin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "8mPsH0Mo5XFjMLee+W$y_9ROhS5rMZQkUnH6v0p)#^zo(sGy@OhFjhLVi_k!_ss6",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.rodrigues-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "5mO9mS#y!^CA",
+    "password_category": "valid"
+  },
+  {
+    "email": "mauricesimon+test@noos.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "hugues81+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "de-sousamichelle@",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "hamonsimone+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "(4xizXaQd2zi",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.grondin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "(vqSCz*HuBq8",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.meunier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "^cK253NmpbOw",
+    "password_category": "valid"
+  },
+  {
+    "email": "ngeorges+test@sfr.fr",
+    "email_category": "valid",
+    "password": "4w8^T_Ip$RgK",
+    "password_category": "valid"
+  },
+  {
+    "email": "fnicolas+test@free.fr",
+    "email_category": "valid",
+    "password": "873gj@IFRu9(Zs5dw(NtUg_Q#5)tPWr5SDR7C_1Jo3l4ZQY^fSgB08o#ijjdpo&0",
+    "password_category": "edge"
+  },
+  {
+    "email": "ptanguy+test@live.com",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "dorotheemasse+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "$f6JYw6M$GvY",
+    "password_category": "valid"
+  },
+  {
+    "email": "dgauthier+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "za*jG)Wu6!M2",
+    "password_category": "valid"
+  },
+  {
+    "email": "agathe06+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "XynUx(Ae&y8D",
+    "password_category": "valid"
+  },
+  {
+    "email": "albertpaulette+test@noos.fr",
+    "email_category": "valid",
+    "password": "%4bWEXh_si8y",
+    "password_category": "valid"
+  },
+  {
+    "email": "louisebarbe+test@sfr.fr",
+    "email_category": "valid",
+    "password": "!@HK8ueL_5pb",
+    "password_category": "valid"
+  },
+  {
+    "email": "juliensanchez+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jourdan-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*hQa&u5oL8Rx",
+    "password_category": "valid"
+  },
+  {
+    "email": "julien85+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "ddelattre+test@dbmail.com",
+    "email_category": "valid",
+    "password": "ODFgeSDV%4Be",
+    "password_category": "valid"
+  },
+  {
+    "email": "arousset+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "CXPjbLsSfHS1K(S%c2kfuaxbuC0UTXgrwglaVZ5S50ad6Us3TAIOZgr4&2vU76lj",
+    "password_category": "edge"
+  },
+  {
+    "email": "lemoinehenriette+test@free.fr",
+    "email_category": "valid",
+    "password": "M^V(OtCUTt3+",
+    "password_category": "valid"
+  },
+  {
+    "email": "torresmartine+test@tele2.fr",
+    "email_category": "valid",
+    "password": "b(GYt$Xx_9g@",
+    "password_category": "valid"
+  },
+  {
+    "email": "josephinelegendre+test@gmail.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "adelerossi+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "3)4zlPa+lvuo",
+    "password_category": "valid"
+  },
+  {
+    "email": "egarcia+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "m00Q%ob#*Y*u",
+    "password_category": "valid"
+  },
+  {
+    "email": "blinaudrey+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "(s3TpF*uUpFZ",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gilbert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "4IoMgsu%+dIa",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandria64+test@noos.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "bernardmartins at tiscali.fr",
+    "email_category": "invalid",
+    "password": "VGh6TwZF$QAL",
+    "password_category": "valid"
+  },
+  {
+    "email": "sbodin+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "7Jn%Rl%W4e4V",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.roche-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "xarnaud+test@tele2.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "valleedorothee+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "lebonrichardsfr.fr",
+    "email_category": "invalid",
+    "password": "8rHPSxw4)lYo",
+    "password_category": "valid"
+  },
+  {
+    "email": "navarroroland+test@gmail.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "sgonzalez@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "emmanuelle81free.fr",
+    "email_category": "invalid",
+    "password": "QeMjtNir+1yX",
+    "password_category": "valid"
+  },
+  {
+    "email": "paulineguerin@",
+    "email_category": "invalid",
+    "password": "pb6T(k7og%%G",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.fouquet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "56ww0L^rFbO_",
+    "password_category": "valid"
+  },
+  {
+    "email": "michellelefevreorange.fr",
+    "email_category": "invalid",
+    "password": "l7oac$OZ0Zm@Rkqm4KL2HBqM(tZ$idmmu%uFaa$@+p1)NBbv(@%xd)tiRY&zt22Y",
+    "password_category": "edge"
+  },
+  {
+    "email": "brunelmadeleine+test@free.fr",
+    "email_category": "valid",
+    "password": "+p5tTldm4XsW",
+    "password_category": "valid"
+  },
+  {
+    "email": "valentinemaurice+test@dbmail.com",
+    "email_category": "valid",
+    "password": "%7R8ch*5_BZw",
+    "password_category": "valid"
+  },
+  {
+    "email": "brigittegilles@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "antoinette63+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "7^s3JuVw5+p8",
+    "password_category": "valid"
+  },
+  {
+    "email": "bertinmaryse at bouygtel.fr",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "xblanchard+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lombard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "9ETgs(*t@vh6",
+    "password_category": "valid"
+  },
+  {
+    "email": "thomas96laposte.net",
+    "email_category": "invalid",
+    "password": "f6wtFC7Q_SF3",
+    "password_category": "valid"
+  },
+  {
+    "email": "cbonneau+test@laposte.net",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "fleduc+test@ifrance.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "aubrystephane+test@dbmail.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "kbesson+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.boutin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "nathalie88+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "rCeDQvgo#8Ly",
+    "password_category": "valid"
+  },
+  {
+    "email": "letelliernoemi+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "anouk40+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "adeleaubryorange.fr",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.martins-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "a8P@mBuc+kz(",
+    "password_category": "valid"
+  },
+  {
+    "email": "alopez at tele2.fr",
+    "email_category": "invalid",
+    "password": "Kay8(#ho!K$X",
+    "password_category": "valid"
+  },
+  {
+    "email": "cmoulin+test@gmail.com",
+    "email_category": "valid",
+    "password": "(*Hwn*rB_3F7",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vasseur-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "!0C#fe1y)guJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "rioumarc+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.ferreira-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "+MaIj*YGd7vX",
+    "password_category": "valid"
+  },
+  {
+    "email": "jacobjosette at bouygtel.fr",
+    "email_category": "invalid",
+    "password": "_7EKdmotEhqA",
+    "password_category": "valid"
+  },
+  {
+    "email": "lucasnicolas at yahoo.fr",
+    "email_category": "invalid",
+    "password": "pZ^m44EmkKgz",
+    "password_category": "valid"
+  },
+  {
+    "email": "renee53@",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "davidstephane+test@sfr.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "jeromerobert+test@free.fr",
+    "email_category": "valid",
+    "password": "(rL_Cfs4H5Tb",
+    "password_category": "valid"
+  },
+  {
+    "email": "jacquesmunoz at orange.fr",
+    "email_category": "invalid",
+    "password": "8f0V*KodK^M_",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivieribeiro+test@tele2.fr",
+    "email_category": "valid",
+    "password": "_609CVfWaHnK",
+    "password_category": "valid"
+  },
+  {
+    "email": "qlelievre at noos.fr",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lenoir-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "yEh6C#eKtV6#NK3mMksS_gJrNU8&@PPPCPCWnGhU3c0QXohz@olAjoZU((L7pJd^",
+    "password_category": "edge"
+  },
+  {
+    "email": "lleclerc at voila.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "cbecker+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "r34Rosx%_+Bv",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.mallet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "josetteevrard at ifrance.com",
+    "email_category": "invalid",
+    "password": "!aaMjofvw0aC",
+    "password_category": "valid"
+  },
+  {
+    "email": "daviddescamps+test@sfr.fr",
+    "email_category": "valid",
+    "password": "Op0@x%Jii0$B",
+    "password_category": "valid"
+  },
+  {
+    "email": "alfred39+test@laposte.net",
+    "email_category": "valid",
+    "password": "8KWqfDImvW57@tsio+PxTz$0yCWXSfdr84&ctlG*RSTDl5a(a#zlb+@4scNwE8Nd",
+    "password_category": "edge"
+  },
+  {
+    "email": "ehamel+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "J+3z)IieUuES",
+    "password_category": "valid"
+  },
+  {
+    "email": "lombardgabrielle+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "C$40JFyX$dG5",
+    "password_category": "valid"
+  },
+  {
+    "email": "patrickvallet+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "denislegros+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "!$7#g0PAY&mA",
+    "password_category": "valid"
+  },
+  {
+    "email": "michel40+test@voila.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.germain-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#PX4!JniIRJP",
+    "password_category": "valid"
+  },
+  {
+    "email": "xavierdijoux+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "lecontefrancoise+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "adrienne70 at yahoo.fr",
+    "email_category": "invalid",
+    "password": "3YciksEZ_XbD",
+    "password_category": "valid"
+  },
+  {
+    "email": "gabrielle54+test@free.fr",
+    "email_category": "valid",
+    "password": "D+5VkrM39GMC",
+    "password_category": "valid"
+  },
+  {
+    "email": "maggierocher+test@orange.fr",
+    "email_category": "valid",
+    "password": "$JNr&pXCZ7H8",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.garcia-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "K$27Pu%fRx&3",
+    "password_category": "valid"
+  },
+  {
+    "email": "pjoly+test@voila.fr",
+    "email_category": "valid",
+    "password": "PAlXJ!7PJ7hfVEKLbYq#aSY1M5HjC1GfFCo7iJ+kqPX3A7jF6od+qjwuHfbDTddI",
+    "password_category": "edge"
+  },
+  {
+    "email": "mathildefaivre+test@ifrance.com",
+    "email_category": "valid",
+    "password": "+LZ5whc4@v9P",
+    "password_category": "valid"
+  },
+  {
+    "email": "corinne11@",
+    "email_category": "invalid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "flopez+test@dbmail.com",
+    "email_category": "valid",
+    "password": "e3Eoz_tb@xQl",
+    "password_category": "valid"
+  },
+  {
+    "email": "xguillaume+test@live.com",
+    "email_category": "valid",
+    "password": "#dKlq6ZmIWbzl*__M0P(Dk+4S1T9RMiQEWW#8#h7W(FjevD#pj2xvu0ZVu!(9ZFE",
+    "password_category": "edge"
+  },
+  {
+    "email": "rodriguezelodie+test@voila.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "christianeramos@",
+    "email_category": "invalid",
+    "password": "p%lmYb5p63P7",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gauthier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "3XOOWUh1VD)3",
+    "password_category": "valid"
+  },
+  {
+    "email": "louispottier at laposte.net",
+    "email_category": "invalid",
+    "password": "fZFUOqoW#6v6",
+    "password_category": "valid"
+  },
+  {
+    "email": "frederic20@",
+    "email_category": "invalid",
+    "password": ")X3Xk7_)(KjF",
+    "password_category": "valid"
+  },
+  {
+    "email": "rocherlucas+test@ifrance.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "huguespasquier+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "2E8VGKlF^56a",
+    "password_category": "valid"
+  },
+  {
+    "email": "blanchardmichelle+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "a$dLM0LxsvcV",
+    "password_category": "valid"
+  },
+  {
+    "email": "fcolas+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "nm@36Jvm_Fj_",
+    "password_category": "valid"
+  },
+  {
+    "email": "ipicard+test@voila.fr",
+    "email_category": "valid",
+    "password": "ALdYLsDf@n5#",
+    "password_category": "valid"
+  },
+  {
+    "email": "bernadettebreton+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "@(5evXKsjrS1",
+    "password_category": "valid"
+  },
+  {
+    "email": "thibault69+test@live.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.monnier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "1TB5rAMvc%54",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marion-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "wKO$CeTkRt)9",
+    "password_category": "valid"
+  },
+  {
+    "email": "huguesperrin+test@orange.fr",
+    "email_category": "valid",
+    "password": "*3jVToOK9ogo",
+    "password_category": "valid"
+  },
+  {
+    "email": "turpinoceane+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "theodoregros+test@orange.fr",
+    "email_category": "valid",
+    "password": "oGF4PPNa&Tx!",
+    "password_category": "valid"
+  },
+  {
+    "email": "etiennecordier+test@sfr.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "grenierelodie+test@ifrance.com",
+    "email_category": "valid",
+    "password": "@B&GjWyjM3XC",
+    "password_category": "valid"
+  },
+  {
+    "email": "larochenathalie+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "l&AEXA%2#t4A",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.verdier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "tlejeune+test@orange.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "celina76+test@free.fr",
+    "email_category": "valid",
+    "password": "dPsRkOOj&p7c",
+    "password_category": "valid"
+  },
+  {
+    "email": "fbouvier+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "H^gMJ&iZ+7ZM",
+    "password_category": "valid"
+  },
+  {
+    "email": "blanchardadrienne+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "vgomez+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "IXs7+Ievt)9D",
+    "password_category": "valid"
+  },
+  {
+    "email": "francoise02+test@free.fr",
+    "email_category": "valid",
+    "password": "7Hy%oU7&PfPI",
+    "password_category": "valid"
+  },
+  {
+    "email": "zpetit+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "+6Wvbbq+^fsi",
+    "password_category": "valid"
+  },
+  {
+    "email": "massonanastasie+test@sfr.fr",
+    "email_category": "valid",
+    "password": "_Qik3jiNI$2F",
+    "password_category": "valid"
+  },
+  {
+    "email": "gclerc@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.ruiz-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "MXB5_UFln(V5",
+    "password_category": "valid"
+  },
+  {
+    "email": "rmarechal+test@orange.fr",
+    "email_category": "valid",
+    "password": "$zIVL)R7&5lm",
+    "password_category": "valid"
+  },
+  {
+    "email": "oaubry+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "^(IjRjsD3u5x",
+    "password_category": "valid"
+  },
+  {
+    "email": "franck99+test@hotmail.fr",
+    "email_category": "valid",
+    "password": ")kUxfhZz)0Me",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bonnin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "L%U^6qGC!5Ni",
+    "password_category": "valid"
+  },
+  {
+    "email": "margot56+test@dbmail.com",
+    "email_category": "valid",
+    "password": "#9DvcivX72RM",
+    "password_category": "valid"
+  },
+  {
+    "email": "christineauger@",
+    "email_category": "invalid",
+    "password": "5w6JUrlj(Exs",
+    "password_category": "valid"
+  },
+  {
+    "email": "aimee41+test@ifrance.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vidal-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "GD^u5^Nfyk$9",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.couturier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "zacharie33@",
+    "email_category": "invalid",
+    "password": "#4YFep%5$tH)",
+    "password_category": "valid"
+  },
+  {
+    "email": "enguyen+test@dbmail.com",
+    "email_category": "valid",
+    "password": ")maWV^23x8v$",
+    "password_category": "valid"
+  },
+  {
+    "email": "amelie74+test@gmail.com",
+    "email_category": "valid",
+    "password": "l6iO&AJD+FHz",
+    "password_category": "valid"
+  },
+  {
+    "email": "richard66+test@laposte.net",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "camille69+test@laposte.net",
+    "email_category": "valid",
+    "password": "(8$78y^*vzTV",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jean-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&9QAATjbmV4Q",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.wagner-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.begue-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$_wSmpNtu^67",
+    "password_category": "valid"
+  },
+  {
+    "email": "sabine33wanadoo.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "fourniercharlotte@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "francoise01+test@dbmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "upichon at hotmail.fr",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "scoste@",
+    "email_category": "invalid",
+    "password": "%4nh_Zb95inD",
+    "password_category": "valid"
+  },
+  {
+    "email": "ugomez+test@dbmail.com",
+    "email_category": "valid",
+    "password": "%x9N^JWbVeBD",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marques-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "@Zt@fwYt%73A",
+    "password_category": "valid"
+  },
+  {
+    "email": "joseph57+test@sfr.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "nath79+test@ifrance.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "laetitia68+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "P0!bKZ@kT373",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marques-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "J2oXTaLf^vC8",
+    "password_category": "valid"
+  },
+  {
+    "email": "christopheduval at voila.fr",
+    "email_category": "invalid",
+    "password": "R2tIprDp(H5R",
+    "password_category": "valid"
+  },
+  {
+    "email": "lucie55+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "michellerousseau+test@orange.fr",
+    "email_category": "valid",
+    "password": "q+S8JPBcj^S@",
+    "password_category": "valid"
+  },
+  {
+    "email": "blanchetnath+test@laposte.net",
+    "email_category": "valid",
+    "password": "_xg9F!dVz39n",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pichon-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "6yedPN!b_s&(",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.menard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "j96SQrq0!W!K",
+    "password_category": "valid"
+  },
+  {
+    "email": "blondeljulie+test@free.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "pierre49+test@ifrance.com",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.morel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.maillard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "coletteparent+test@free.fr",
+    "email_category": "valid",
+    "password": "!ngZhSV_3v3g",
+    "password_category": "valid"
+  },
+  {
+    "email": "bazinmarianne+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.buisson-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "astrid94+test@ifrance.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "marinmartine+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "sophiebriand+test@voila.fr",
+    "email_category": "valid",
+    "password": "%oqdXz*#j48T",
+    "password_category": "valid"
+  },
+  {
+    "email": "pguillet at ifrance.com",
+    "email_category": "invalid",
+    "password": "*%Evw3j_713V",
+    "password_category": "valid"
+  },
+  {
+    "email": "thierrygoncalves+test@noos.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "rivieremaggie+test@live.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "aureliebertinnoos.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "marchalantoine+test@gmail.com",
+    "email_category": "valid",
+    "password": "A^2x4+QaW&pQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "smaury+test@sfr.fr",
+    "email_category": "valid",
+    "password": "OoarGDeq7#6g",
+    "password_category": "valid"
+  },
+  {
+    "email": "anastasie74+test@noos.fr",
+    "email_category": "valid",
+    "password": "+0H2kX7C_$gU",
+    "password_category": "valid"
+  },
+  {
+    "email": "xclerc@",
+    "email_category": "invalid",
+    "password": "icARQgl4Qi!7",
+    "password_category": "valid"
+  },
+  {
+    "email": "lemairewilliam+test@live.com",
+    "email_category": "valid",
+    "password": "%RdGdcQl%2)d",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.le-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "gm6WX@%9CEySAcIsuo*J2TkaO+(7sujJ7g@AjtyOcH2%8F(j8Oum%8ETkEYCnulw",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gregoire-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "U#I!9^&xc4iZ",
+    "password_category": "valid"
+  },
+  {
+    "email": "claude04+test@tele2.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "yves12+test@ifrance.com",
+    "email_category": "valid",
+    "password": "34TMF*xE_li%",
+    "password_category": "valid"
+  },
+  {
+    "email": "techerchristine+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "&s1AtLDvm(z5",
+    "password_category": "valid"
+  },
+  {
+    "email": "arthurcaron+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "35B3FAMq!ms(j7LLZ_k!x7%mDdYSclpu+TMLoRH(GK#WOgxj5i^%DEn&Gi2f^Vzn",
+    "password_category": "edge"
+  },
+  {
+    "email": "collinadele+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "iynakm%TPqg@Wv4oV^8Um%M$2__bRDNbdMmok&bMdPr*TJaatA#22BWGlczm+Emo",
+    "password_category": "edge"
+  },
+  {
+    "email": "ucarre+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "7lQ6OSSxO@Pv",
+    "password_category": "valid"
+  },
+  {
+    "email": "virginie05 at tiscali.fr",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "tlemoinefree.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "hamelemile+test@sfr.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.sanchez-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "nd%F0AmheOt8",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lecoq-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "jt8EhCFC*)n5",
+    "password_category": "valid"
+  },
+  {
+    "email": "prenard+test@gmail.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "edescamps+test@laposte.net",
+    "email_category": "valid",
+    "password": "P28_iDPul&gB",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.simon-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ollivierbertrand+test@voila.fr",
+    "email_category": "valid",
+    "password": "l+#mLm3_&a2)",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lecomte-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "%dON9tL7f2Jl",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.peron-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#OXgplK*47u8",
+    "password_category": "valid"
+  },
+  {
+    "email": "xmerciervoila.fr",
+    "email_category": "invalid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "hortense14@",
+    "email_category": "invalid",
+    "password": "9HKPNtt9$#6t",
+    "password_category": "valid"
+  },
+  {
+    "email": "auroregrenier+test@laposte.net",
+    "email_category": "valid",
+    "password": "(pr5zY6@j$PU",
+    "password_category": "valid"
+  },
+  {
+    "email": "victoire86+test@noos.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "nicole42@",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "luce76+test@free.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.laurent-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "victoire43+test@ifrance.com",
+    "email_category": "valid",
+    "password": "hTkV6+Gf%%Y4",
+    "password_category": "valid"
+  },
+  {
+    "email": "marysevasseur+test@tele2.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "simone62+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "mO5OnIRxeN#c",
+    "password_category": "valid"
+  },
+  {
+    "email": "etiennecharrier+test@live.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.normand-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&204*MDeRsLr",
+    "password_category": "valid"
+  },
+  {
+    "email": "lemairecamille+test@orange.fr",
+    "email_category": "valid",
+    "password": "J@G#IWEa$B%3",
+    "password_category": "valid"
+  },
+  {
+    "email": "agnesneveufree.fr",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.sanchez-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "nathalieaubertbouygtel.fr",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "tlamy+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "rolandmeunier+test@noos.fr",
+    "email_category": "valid",
+    "password": "+2vqKc+98)K0",
+    "password_category": "valid"
+  },
+  {
+    "email": "penelope11@",
+    "email_category": "invalid",
+    "password": "$h36ar3ryBaB",
+    "password_category": "valid"
+  },
+  {
+    "email": "poirierdavid+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "eferreira+test@orange.fr",
+    "email_category": "valid",
+    "password": "PFW%)wLcT#s4",
+    "password_category": "valid"
+  },
+  {
+    "email": "marine63+test@dbmail.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.mathieu-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "edelaunay+test@noos.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.meunier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Za2Er&sa2%Vh",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.dupuy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "5(3!K9Yf0iMu",
+    "password_category": "valid"
+  },
+  {
+    "email": "rogerlecoq+test@dbmail.com",
+    "email_category": "valid",
+    "password": "p^ZHR!Xpxz5t",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gaudin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "3FEyRtB9@AGc",
+    "password_category": "valid"
+  },
+  {
+    "email": "amelierobert+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "micheledufour+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "0$h3WmWy5x!i",
+    "password_category": "valid"
+  },
+  {
+    "email": "pascalfranck@",
+    "email_category": "invalid",
+    "password": "kc_8ALje@Hj2",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.paul-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Y83Ne+nca@7K",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivierbecker+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "deniselevy+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "&gBw2Fo%Pz8N",
+    "password_category": "valid"
+  },
+  {
+    "email": "hugues95+test@gmail.com",
+    "email_category": "valid",
+    "password": "%uV1xEy0vTWq",
+    "password_category": "valid"
+  },
+  {
+    "email": "mfaivre@",
+    "email_category": "invalid",
+    "password": "z8Caz$(@^e@R",
+    "password_category": "valid"
+  },
+  {
+    "email": "chauvinrichard+test@live.com",
+    "email_category": "valid",
+    "password": "o@zzsYSe6$2s",
+    "password_category": "valid"
+  },
+  {
+    "email": "margot34+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.guillot-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&JbJV9nK#5^z",
+    "password_category": "valid"
+  },
+  {
+    "email": "hugues27+test@club-internet.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.collin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "G7d+FHv*U1x1",
+    "password_category": "valid"
+  },
+  {
+    "email": "kgregoire+test@sfr.fr",
+    "email_category": "valid",
+    "password": "io9ENHnzQ#Y1",
+    "password_category": "valid"
+  },
+  {
+    "email": "fgay+test@sfr.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "blanchardmatthieu+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "^XuhnzFVb6Cg",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.brunel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "e!_7LT9hCA^D",
+    "password_category": "valid"
+  },
+  {
+    "email": "wmerle+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "($HNzkEkgh6N",
+    "password_category": "valid"
+  },
+  {
+    "email": "simonebegue+test@ifrance.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "lefortgenevieve+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "_3v#Cyv&niLs",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jourdan-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "M++0d1Ofvg6I",
+    "password_category": "valid"
+  },
+  {
+    "email": "davidmasson@",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "lefortjoseph+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "foT%04(q0_70",
+    "password_category": "valid"
+  },
+  {
+    "email": "lbrun+test@ifrance.com",
+    "email_category": "valid",
+    "password": "Go4(4ESy*&&L",
+    "password_category": "valid"
+  },
+  {
+    "email": "ugautier@",
+    "email_category": "invalid",
+    "password": "l@EAJ4tvKwM2",
+    "password_category": "valid"
+  },
+  {
+    "email": "weissaudrey at noos.fr",
+    "email_category": "invalid",
+    "password": "h83!#Bm*d3$u*4bZgkYi!OWcZRUDBh$Ti4@*bYxZOn574ynpMJW#bPEnE5bonp$y",
+    "password_category": "edge"
+  },
+  {
+    "email": "paulvictor at voila.fr",
+    "email_category": "invalid",
+    "password": "faEkNUPRL9A#",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.francois-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "z_wk4qZk^0Vo",
+    "password_category": "valid"
+  },
+  {
+    "email": "mauricesuzanne+test@sfr.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "pierrepottier+test@gmail.com",
+    "email_category": "valid",
+    "password": "Y!3lPrs9uQ$_",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.da-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "aallain+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "kjulien@",
+    "email_category": "invalid",
+    "password": "+I9A8Uxvz8EL",
+    "password_category": "valid"
+  },
+  {
+    "email": "marinealves+test@gmail.com",
+    "email_category": "valid",
+    "password": "&jc68pzT%5Hc",
+    "password_category": "valid"
+  },
+  {
+    "email": "margaret42+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "Y+7H!yjLkc^L",
+    "password_category": "valid"
+  },
+  {
+    "email": "chevalierisabellehotmail.fr",
+    "email_category": "invalid",
+    "password": "PkK1XmNdf!zd",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.girard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "B(n0AMieqbd5",
+    "password_category": "valid"
+  },
+  {
+    "email": "margueritejean+test@tele2.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "alixmarques+test@live.com",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "alexandrie13+test@voila.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.perrier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "francoisbernard@",
+    "email_category": "invalid",
+    "password": "(rQU!Gruk2Qq",
+    "password_category": "valid"
+  },
+  {
+    "email": "hguyon+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "OSLf#aXI)RnuK8t6@(K9x_WdPBJYBDp+%kH01Wz+yJX$b*z740fuT3GzXlnbWG+Z",
+    "password_category": "edge"
+  },
+  {
+    "email": "fperret+test@gmail.com",
+    "email_category": "valid",
+    "password": "t_8^Ajr_5FZB",
+    "password_category": "valid"
+  },
+  {
+    "email": "victoire94+test@noos.fr",
+    "email_category": "valid",
+    "password": "OOo^zGPj!2o5",
+    "password_category": "valid"
+  },
+  {
+    "email": "gilletluce+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "Mjx8tQ^D^TUL",
+    "password_category": "valid"
+  },
+  {
+    "email": "efournier+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "r+0lg@Jt*WU0uLlnzwEC4x^ZUj5OZmCG%nhpGY_llk0RAXTrm(hq%!()CPaqk2Xw",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.neveu-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "vetienne+test@tele2.fr",
+    "email_category": "valid",
+    "password": "C%C@Yf5bjrJ1",
+    "password_category": "valid"
+  },
+  {
+    "email": "laurence68+test@ifrance.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "thibault16+test@noos.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "huguesmartins@",
+    "email_category": "invalid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "hpetit+test@voila.fr",
+    "email_category": "valid",
+    "password": "zlea9yRxnL(o",
+    "password_category": "valid"
+  },
+  {
+    "email": "bernardceline@",
+    "email_category": "invalid",
+    "password": "jI6Aybhj8lO+",
+    "password_category": "valid"
+  },
+  {
+    "email": "dupontalfred+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "michaudguy at gmail.com",
+    "email_category": "invalid",
+    "password": "5(G!N@qisF+4",
+    "password_category": "valid"
+  },
+  {
+    "email": "christophecollet+test@live.com",
+    "email_category": "valid",
+    "password": "!2fDMytt_LU6",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.boyer-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "6vbfiCTRxpTp#DR3Wz$p2xOrgSm4s9*JNkVdqVZg_orU#ENaiDe@5vzr6LK3Z6jE",
+    "password_category": "edge"
+  },
+  {
+    "email": "uraynaud+test@tele2.fr",
+    "email_category": "valid",
+    "password": "x#OGfY^b#I7c",
+    "password_category": "valid"
+  },
+  {
+    "email": "emmanuelleleclercq+test@gmail.com",
+    "email_category": "valid",
+    "password": "M(FumLiK272&&L)+gQz2!4jZk5UaHO61NTyT*quN)dZlj*^D3UFP6v&H%$5P^fic",
+    "password_category": "edge"
+  },
+  {
+    "email": "georgeshugues+test@noos.fr",
+    "email_category": "valid",
+    "password": "!&W^RbKa5RtT",
+    "password_category": "valid"
+  },
+  {
+    "email": "penelope74+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "bN6FjhPED&eW",
+    "password_category": "valid"
+  },
+  {
+    "email": "brunmargaret at club-internet.fr",
+    "email_category": "invalid",
+    "password": "^EBAF0Cmcbbh",
+    "password_category": "valid"
+  },
+  {
+    "email": "suzannebernier+test@ifrance.com",
+    "email_category": "valid",
+    "password": "#3@Z9Uvx&2ze",
+    "password_category": "valid"
+  },
+  {
+    "email": "legergerard at gmail.com",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "xchauvin+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "luciecordier+test@live.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.nicolas-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "valleezacharie+test@laposte.net",
+    "email_category": "valid",
+    "password": "Y%uSz20aY637",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.perret-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "0*S#Ll@tMl8R",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jean-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "0Symx!rQ(d*Z",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.petitjean-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "mctjKSi&ffHak2xU%2Z3u8TIBRYvOXux6O9d&JG&Rh5X9AW2G5ANWw0o&bTVTvQ+",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.dumont-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "63Kq6IaD&iAo",
+    "password_category": "valid"
+  },
+  {
+    "email": "parenteugene+test@laposte.net",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "merlemargaret+test@laposte.net",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "alphonselefevre+test@voila.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "cbarre+test@live.com",
+    "email_category": "valid",
+    "password": "(6ERJGykQaAy",
+    "password_category": "valid"
+  },
+  {
+    "email": "josette34@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "dumontedith+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "3cIaxhx3$4gH",
+    "password_category": "valid"
+  },
+  {
+    "email": "barremichelle+test@live.com",
+    "email_category": "valid",
+    "password": "yxIGUOtL(@0B",
+    "password_category": "valid"
+  },
+  {
+    "email": "patriciarenard@",
+    "email_category": "invalid",
+    "password": "d#g9IsxxpqLv",
+    "password_category": "valid"
+  },
+  {
+    "email": "martheweiss+test@live.com",
+    "email_category": "valid",
+    "password": "$7Dmfu5eLdVI",
+    "password_category": "valid"
+  },
+  {
+    "email": "christine03+test@sfr.fr",
+    "email_category": "valid",
+    "password": "@^o3_W%eA%bs",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lopez-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "gaillardvictoire+test@tele2.fr",
+    "email_category": "valid",
+    "password": "pos+r#^iTfdMm1gOOQbLP!!t)xPkY&Ur2izL1TbkGnG0&ntVxgcGoHrTpwJ(&6T!",
+    "password_category": "edge"
+  },
+  {
+    "email": "nguillet at noos.fr",
+    "email_category": "invalid",
+    "password": "$DGdZO!et3S#",
+    "password_category": "valid"
+  },
+  {
+    "email": "audreycosta+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "5vr6ayOy*OQG",
+    "password_category": "valid"
+  },
+  {
+    "email": "julieandre+test@gmail.com",
+    "email_category": "valid",
+    "password": "4e4JK5jiX4P@",
+    "password_category": "valid"
+  },
+  {
+    "email": "marianneberthelot+test@orange.fr",
+    "email_category": "valid",
+    "password": "l*$0OtJ@EQil",
+    "password_category": "valid"
+  },
+  {
+    "email": "drenaud+test@ifrance.com",
+    "email_category": "valid",
+    "password": "WA4%nVYcks*u",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.benard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "fpichon+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lefort-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "laure92+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.meyer-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "q$d17M#q^R8C",
+    "password_category": "valid"
+  },
+  {
+    "email": "le-rouxwilliam+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "%e4d)LnCFza@1SZy2P*58r0Ph7W%yPzgj@gFXsfcQ^S0CA1@P19uwnF^wDMqPnqF",
+    "password_category": "edge"
+  },
+  {
+    "email": "jacques96+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "A*3ubEr+rXZL",
+    "password_category": "valid"
+  },
+  {
+    "email": "colette50 at hotmail.fr",
+    "email_category": "invalid",
+    "password": "_*FU4aX3Sj50",
+    "password_category": "valid"
+  },
+  {
+    "email": "hmercier@",
+    "email_category": "invalid",
+    "password": "V7Q9dOjz%ZZn",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.navarro-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "g)fz2dF!f$3F",
+    "password_category": "valid"
+  },
+  {
+    "email": "arthurguibert+test@live.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lebon-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "u672TexG#FN+",
+    "password_category": "valid"
+  },
+  {
+    "email": "chauvetveronique+test@live.com",
+    "email_category": "valid",
+    "password": "lm8RfAYsf_zj",
+    "password_category": "valid"
+  },
+  {
+    "email": "xdelahaye+test@live.com",
+    "email_category": "valid",
+    "password": "_FXUflco5&02",
+    "password_category": "valid"
+  },
+  {
+    "email": "marieparent+test@laposte.net",
+    "email_category": "valid",
+    "password": "uBfD2ux(4M9GJJ!94cNbd5M)dNIhpxldLRiA!cYLzJyp)TG2XyZrSrLhvG7x@j(m",
+    "password_category": "edge"
+  },
+  {
+    "email": "udaniel@",
+    "email_category": "invalid",
+    "password": "Sh4$WMoN8@mY",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.clement-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Aq1UMiB_wE#L",
+    "password_category": "valid"
+  },
+  {
+    "email": "gregoire63@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "susan02+test@orange.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "jeannineleblanc+test@tele2.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "benjamin80+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "josette61+test@tele2.fr",
+    "email_category": "valid",
+    "password": "Q779W8ye)cLm",
+    "password_category": "valid"
+  },
+  {
+    "email": "renee73+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "T3f$&ggrRqPl",
+    "password_category": "valid"
+  },
+  {
+    "email": "hubertcharles+test@dbmail.com",
+    "email_category": "valid",
+    "password": "4uQ5PPhY+1wc",
+    "password_category": "valid"
+  },
+  {
+    "email": "hruiz+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "h^2Wq@T4@5&u",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.arnaud-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": ")+I2aVajDl8H",
+    "password_category": "valid"
+  },
+  {
+    "email": "dominique01+test@gmail.com",
+    "email_category": "valid",
+    "password": "%b)#7OFm#3ph",
+    "password_category": "valid"
+  },
+  {
+    "email": "ysauvage+test@laposte.net",
+    "email_category": "valid",
+    "password": "V84hUo9id*j7",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jacquot-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "5i*kSHKbu2Y*",
+    "password_category": "valid"
+  },
+  {
+    "email": "ymasse+test@laposte.net",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.paul-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "d8Bk!r9xa_%x",
+    "password_category": "valid"
+  },
+  {
+    "email": "jacques78@",
+    "email_category": "invalid",
+    "password": "6gNkpij9JAY*",
+    "password_category": "valid"
+  },
+  {
+    "email": "mbernier+test@laposte.net",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "lefebvrealain+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "B87OaqKXG@yJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.peltier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*4kk$Vph7nP#",
+    "password_category": "valid"
+  },
+  {
+    "email": "matthieu36+test@sfr.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "daniellegautiertiscali.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "fmarin+test@orange.fr",
+    "email_category": "valid",
+    "password": "QdsZ73UzL+Xf",
+    "password_category": "valid"
+  },
+  {
+    "email": "jourdanjuliette+test@gmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "daviddorothee+test@dbmail.com",
+    "email_category": "valid",
+    "password": "#16rlf4o%V%r",
+    "password_category": "valid"
+  },
+  {
+    "email": "chartierodette+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "iRSgnWPv%213V0SuP@c9FzkRk9NdGB!_hI3t()0yF7_JA5lg!8tFgZ59UaJ1lCK!",
+    "password_category": "edge"
+  },
+  {
+    "email": "girardguy+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "SkQk8Px3qKRtG1_COnWeXNy5Y)U&FQuW#239VnXDSMz+bKRsLKgKjpxg4W^zy$aK",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.barbier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "5&1BOGwRj(RI",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.becker-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "gilles87+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "%_P$Gjvh!2IR",
+    "password_category": "valid"
+  },
+  {
+    "email": "fischerlaurent+test@dbmail.com",
+    "email_category": "valid",
+    "password": ")t1^iqeb4^AY",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.masson-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "cle-gall+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": ")IKVDx)sg6C&",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivier88+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "#a@VWuffG67@",
+    "password_category": "valid"
+  },
+  {
+    "email": "truiz+test@gmail.com",
+    "email_category": "valid",
+    "password": "RZa0NeoX!0Wu",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pelletier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "b^lR0rb3@01p",
+    "password_category": "valid"
+  },
+  {
+    "email": "brunelmonique+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "charleshelene at yahoo.fr",
+    "email_category": "invalid",
+    "password": "Jbih8N$8a^ff",
+    "password_category": "valid"
+  },
+  {
+    "email": "torrestimothee+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "upineau+test@orange.fr",
+    "email_category": "valid",
+    "password": "_6_uvJ^a+7M3",
+    "password_category": "valid"
+  },
+  {
+    "email": "aleroy@",
+    "email_category": "invalid",
+    "password": "4TG^vYc2@wLW",
+    "password_category": "valid"
+  },
+  {
+    "email": "celine43+test@voila.fr",
+    "email_category": "valid",
+    "password": "(oZJv)PK1oQ%",
+    "password_category": "valid"
+  },
+  {
+    "email": "urey+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "86m0tqsj+nNv",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.caron-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$4&yQg48!7S&",
+    "password_category": "valid"
+  },
+  {
+    "email": "schneiderchristine+test@gmail.com",
+    "email_category": "valid",
+    "password": "#6K8cBGmCjvx",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.levy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "guillotrobert+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "!RcfEKh3b4M$",
+    "password_category": "valid"
+  },
+  {
+    "email": "coletteguichard+test@noos.fr",
+    "email_category": "valid",
+    "password": "^T8@2#hfedSv",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivierdaniel+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "letellierroger@",
+    "email_category": "invalid",
+    "password": "LN9K+1l^)_5S",
+    "password_category": "valid"
+  },
+  {
+    "email": "edouard36+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "grondinvirginie+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.garcia-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "METfiz2$(B2I",
+    "password_category": "valid"
+  },
+  {
+    "email": "vincent01+test@dbmail.com",
+    "email_category": "valid",
+    "password": "wwPU9)xZGt$wxDDQZPFjM*duu4f_2%g86RZ@bY&PetA(v14wgzL%pwx6oO#$9HGk",
+    "password_category": "edge"
+  },
+  {
+    "email": "edouardtecher+test@gmail.com",
+    "email_category": "valid",
+    "password": "W6YK@(Km^xGx",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.rousseau-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&#&y8C!r0xO4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.devaux-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "ujoseph+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vallet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_62PegC%v7Ms",
+    "password_category": "valid"
+  },
+  {
+    "email": "timotheeguillonyahoo.fr",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.blanchet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pierre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.techer-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "^4TiDXrfBNVA",
+    "password_category": "valid"
+  },
+  {
+    "email": "penelope49+test@dbmail.com",
+    "email_category": "valid",
+    "password": "aCCzPqqHT_s9",
+    "password_category": "valid"
+  },
+  {
+    "email": "ztechergmail.com",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "francoisgosselinvoila.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "aimee87+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "de-oliveirasuzanne+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "vincent14+test@free.fr",
+    "email_category": "valid",
+    "password": ")fCik&5RK9b)",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marty-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "legendrenathalie+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "f$+5PjUxUknYTeIGU@#YDir1Dwg#03z*6!*nv5KM+tesQgrZD1Xl!vUzWKgP&uPV",
+    "password_category": "edge"
+  },
+  {
+    "email": "valeriecollet+test@tele2.fr",
+    "email_category": "valid",
+    "password": "7d4tQOUDk@PX",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lambert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&B4Kzr8)*%gW",
+    "password_category": "valid"
+  },
+  {
+    "email": "susan79+test@gmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.leroy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_$sz$ahj6Z75KbNEPVKI&ggM55zPOxx1Ruht9bCV9nG*XMgQ+c$WH8#UX$7)LJqf",
+    "password_category": "edge"
+  },
+  {
+    "email": "spetitjean+test@voila.fr",
+    "email_category": "valid",
+    "password": "q^F$IeOoWWP6",
+    "password_category": "valid"
+  },
+  {
+    "email": "baronaurelie+test@tele2.fr",
+    "email_category": "valid",
+    "password": "%s7HMadw(1m8",
+    "password_category": "valid"
+  },
+  {
+    "email": "nleroux+test@laposte.net",
+    "email_category": "valid",
+    "password": "hW0zt&h#&M5K",
+    "password_category": "valid"
+  },
+  {
+    "email": "poulainbernadette@",
+    "email_category": "invalid",
+    "password": "#5B)xP95bl1Y",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marques-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "mbesson+test@sfr.fr",
+    "email_category": "valid",
+    "password": "C2Zh6Vyi!8Re",
+    "password_category": "valid"
+  },
+  {
+    "email": "theresehenry+test@noos.fr",
+    "email_category": "valid",
+    "password": "T2&UCj3Qf467",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pinto-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "9&FROhLit*03",
+    "password_category": "valid"
+  },
+  {
+    "email": "lefortcatherine+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "l!9SXEdsQS#1",
+    "password_category": "valid"
+  },
+  {
+    "email": "antoinette46+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "(gs0Zt3Oom(u",
+    "password_category": "valid"
+  },
+  {
+    "email": "marinyves+test@live.com",
+    "email_category": "valid",
+    "password": "4nfKy7UrJ*uY",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.texier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "isalmonbouygtel.fr",
+    "email_category": "invalid",
+    "password": "1+fJb)S%i8)^",
+    "password_category": "valid"
+  },
+  {
+    "email": "couturierhenri+test@sfr.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.moreno-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "jean61+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "michele36@",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lacroix-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "hx!3#PLtgO$h",
+    "password_category": "valid"
+  },
+  {
+    "email": "margaud29+test@free.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "moniquelefebvre+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "%1WwDj1$!(I+",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.le-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Y4258ns$+tUj",
+    "password_category": "valid"
+  },
+  {
+    "email": "philippinemasson+test@tele2.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "sklein+test@orange.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.letellier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "18Q$s$UaO&qw",
+    "password_category": "valid"
+  },
+  {
+    "email": "didiercharles+test@gmail.com",
+    "email_category": "valid",
+    "password": "ruH%%2Yyz879",
+    "password_category": "valid"
+  },
+  {
+    "email": "sophiemaillard+test@orange.fr",
+    "email_category": "valid",
+    "password": "Thg_ZpoK@buE1mY3AsQl!XLcLbq05QjvaGI+gxvSUrURr5lJhLJYGp)5!kLF7a8e",
+    "password_category": "edge"
+  },
+  {
+    "email": "jprevost@",
+    "email_category": "invalid",
+    "password": "9RVt0I^J*0q)",
+    "password_category": "valid"
+  },
+  {
+    "email": "zlelievre+test@ifrance.com",
+    "email_category": "valid",
+    "password": "7mml*rUH7+d*jBfTJov@WqIPXNcO%ffe*dpHAmPw#U9#am@Wf0S)kM%A%**F6RXq",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.guillet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "6w2asdfZXBAkmivcu#xqSGS0t24TQXA0&s08MpN0Be6CJL2&8!fLw6NdHI84Z3#i",
+    "password_category": "edge"
+  },
+  {
+    "email": "claudinelacroix+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "12Hypvln%1SZ",
+    "password_category": "valid"
+  },
+  {
+    "email": "dumontjulie+test@laposte.net",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vallet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "@chd@dGlr%8Y",
+    "password_category": "valid"
+  },
+  {
+    "email": "reneperrier+test@tele2.fr",
+    "email_category": "valid",
+    "password": "qVeWa6_wu7HX9@Hm+Lu@FdXb0&pFV2xYQh+Du1p0W7KA9i79dIFJq%H6r#+MH$dx",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gillet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "A7Z0Pj^o*Zjf",
+    "password_category": "valid"
+  },
+  {
+    "email": "suzannegeorges+test@dbmail.com",
+    "email_category": "valid",
+    "password": "^4V@Hlm4Sou_",
+    "password_category": "valid"
+  },
+  {
+    "email": "efoucher at ifrance.com",
+    "email_category": "invalid",
+    "password": "9S#LOe)xO!m3JkVHFj+NqaBVdR2STnoc@GQ*AMUzwmfk2pDJLv*ZRDJ1@zYpjqHo",
+    "password_category": "edge"
+  },
+  {
+    "email": "penelopeverdier+test@tele2.fr",
+    "email_category": "valid",
+    "password": "yORobNxjU^9s",
+    "password_category": "valid"
+  },
+  {
+    "email": "benoitdavid+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "boulaymargot+test@laposte.net",
+    "email_category": "valid",
+    "password": "p!7S(xmFowxH",
+    "password_category": "valid"
+  },
+  {
+    "email": "pierre40free.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "joubertlucas+test@voila.fr",
+    "email_category": "valid",
+    "password": "+3lUojld&^rV",
+    "password_category": "valid"
+  },
+  {
+    "email": "maillotjosette@",
+    "email_category": "invalid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.auger-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$TDHfSkaO2N+",
+    "password_category": "valid"
+  },
+  {
+    "email": "elodie05+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "*(kLM9b1yB3u",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.roux-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "9(DnaXOvi5a7",
+    "password_category": "valid"
+  },
+  {
+    "email": "augustinallainwanadoo.fr",
+    "email_category": "invalid",
+    "password": "W#MfNCbvK34L",
+    "password_category": "valid"
+  },
+  {
+    "email": "anastasie83+test@dbmail.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.rossi-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$o74Tx8xQ#N6",
+    "password_category": "valid"
+  },
+  {
+    "email": "etiennephilippine@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.schneider-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "honore13+test@noos.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ypotier+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "(68YkL*wU9_!",
+    "password_category": "valid"
+  },
+  {
+    "email": "alix08+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "8UJOAKXbV1t(",
+    "password_category": "valid"
+  },
+  {
+    "email": "corinne84free.fr",
+    "email_category": "invalid",
+    "password": "Hz0C2Zru$gj9",
+    "password_category": "valid"
+  },
+  {
+    "email": "martineaubernadette+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "qboutin+test@live.com",
+    "email_category": "valid",
+    "password": "H+9Q2DjCPiw2",
+    "password_category": "valid"
+  },
+  {
+    "email": "rene91+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "%w98DcG(5@)3",
+    "password_category": "valid"
+  },
+  {
+    "email": "maggieleblanc+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "$7%ZTwbBygJ!",
+    "password_category": "valid"
+  },
+  {
+    "email": "sophie45+test@noos.fr",
+    "email_category": "valid",
+    "password": "w)h7n4AcMU(P8Agc6j!1Tck(+Ep)b77gwxZP#EX&1SuT((nzshZAKFJf4D54j@Le",
+    "password_category": "edge"
+  },
+  {
+    "email": "alphonse68+test@free.fr",
+    "email_category": "valid",
+    "password": "5j^aDyCYpsw8",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.roux-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "w6bhGPnc$PM@",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivieleclercnoos.fr",
+    "email_category": "invalid",
+    "password": "!pOwGZcqqG!7",
+    "password_category": "valid"
+  },
+  {
+    "email": "therese94+test@sfr.fr",
+    "email_category": "valid",
+    "password": "*fi0h%mN8kIm",
+    "password_category": "valid"
+  },
+  {
+    "email": "adrienneherve+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "remyroy+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jean-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "gB6FTiUcd(KO",
+    "password_category": "valid"
+  },
+  {
+    "email": "hbecker+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "q7mAeG^D(lRf",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.guibert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": ")a6D3cnMc%3@",
+    "password_category": "valid"
+  },
+  {
+    "email": "rodrigueshortense+test@gmail.com",
+    "email_category": "valid",
+    "password": "S&MSSRsH#W4s",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.barbe-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_cZt3NZnk4EX",
+    "password_category": "valid"
+  },
+  {
+    "email": "gaudinmarie+test@laposte.net",
+    "email_category": "valid",
+    "password": "QgT_I4iW$F1S",
+    "password_category": "valid"
+  },
+  {
+    "email": "potierhenriette+test@ifrance.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "valerie09+test@ifrance.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "carrejulien+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "XHZdzmU4+&4N",
+    "password_category": "valid"
+  },
+  {
+    "email": "maryse01+test@orange.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "bernadette59+test@live.com",
+    "email_category": "valid",
+    "password": "zieb5Bedg)h@",
+    "password_category": "valid"
+  },
+  {
+    "email": "chevalieradele+test@ifrance.com",
+    "email_category": "valid",
+    "password": "o7^f6SXjd2cX",
+    "password_category": "valid"
+  },
+  {
+    "email": "jhernandez+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "l*Jq208nJ16t",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.fernandez-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "olamywanadoo.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "cordiermargaret+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "_@rGc84ySIy2",
+    "password_category": "valid"
+  },
+  {
+    "email": "noemi89+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "(k0zweVqiLiY",
+    "password_category": "valid"
+  },
+  {
+    "email": "milletandree+test@noos.fr",
+    "email_category": "valid",
+    "password": "$0FySIoCSJM3",
+    "password_category": "valid"
+  },
+  {
+    "email": "morindiane at bouygtel.fr",
+    "email_category": "invalid",
+    "password": "!$PsNugh2Y3Z",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.charpentier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "jacquelineperezsfr.fr",
+    "email_category": "invalid",
+    "password": "yJ8(q8o&_*hG",
+    "password_category": "valid"
+  },
+  {
+    "email": "martelarthur+test@free.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.le-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Jj+Hrka#z&0*",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.delattre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "valerierenard+test@dbmail.com",
+    "email_category": "valid",
+    "password": "*5$TB6!X*q5t",
+    "password_category": "valid"
+  },
+  {
+    "email": "reynaudlucas at laposte.net",
+    "email_category": "invalid",
+    "password": "@!MppT(oW%Q5",
+    "password_category": "valid"
+  },
+  {
+    "email": "andre94voila.fr",
+    "email_category": "invalid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "chauveauolivie+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "^06Dkafe7dZa",
+    "password_category": "valid"
+  },
+  {
+    "email": "nfoucher+test@ifrance.com",
+    "email_category": "valid",
+    "password": "xmVQL_De!w14",
+    "password_category": "valid"
+  },
+  {
+    "email": "philippinedurand+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "4I^p0UWw3N8O",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.grondin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "J0WR7a^i*O!c",
+    "password_category": "valid"
+  },
+  {
+    "email": "huguesbriandorange.fr",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "gautieramelie+test@dbmail.com",
+    "email_category": "valid",
+    "password": ")CS(je57^52a@aa)_v4mzoYj#lRYqThI5h@YIaxI4WXpBJwUY5Kx&@XQV3pBm6vF",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.grenier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "2&dHoYgaFAc5",
+    "password_category": "valid"
+  },
+  {
+    "email": "carremargot+test@laposte.net",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "guydelattre+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "clairedumont@",
+    "email_category": "invalid",
+    "password": "$Zy5c)kLSrlF",
+    "password_category": "valid"
+  },
+  {
+    "email": "lemoineleon@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bousquet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "M1LOn6*a)y#n",
+    "password_category": "valid"
+  },
+  {
+    "email": "yvestorres+test@gmail.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "acarpentier@",
+    "email_category": "invalid",
+    "password": "S_9X%(0u&jS#",
+    "password_category": "valid"
+  },
+  {
+    "email": "capucinecourtois+test@noos.fr",
+    "email_category": "valid",
+    "password": "NT2@4IBkyy9K",
+    "password_category": "valid"
+  },
+  {
+    "email": "ogimenez+test@sfr.fr",
+    "email_category": "valid",
+    "password": "A7jEED4w@4IW",
+    "password_category": "valid"
+  },
+  {
+    "email": "genevieve51+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "%hU2kfJtM!w8",
+    "password_category": "valid"
+  },
+  {
+    "email": "frederique15+test@free.fr",
+    "email_category": "valid",
+    "password": "dM2Pi&k5#%^H",
+    "password_category": "valid"
+  },
+  {
+    "email": "alfredcordier+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "70yPNtdi*WoD",
+    "password_category": "valid"
+  },
+  {
+    "email": "neveualphonse+test@ifrance.com",
+    "email_category": "valid",
+    "password": "A(yEIEtak)7%",
+    "password_category": "valid"
+  },
+  {
+    "email": "klanglois+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "ze5$Cescx%Jq",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.descamps-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "b&8sWEqRIgP7lp@cud##e(gPF9g8&2_i*)3ATI4J#XFuDzTrzYWCl1oqi#%IQ9p2",
+    "password_category": "edge"
+  },
+  {
+    "email": "delannoyvictoirenoos.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "josephjacquet+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "7zkBlg$5_D7Y",
+    "password_category": "valid"
+  },
+  {
+    "email": "mvallet+test@orange.fr",
+    "email_category": "valid",
+    "password": "**TtYUJSvJ39",
+    "password_category": "valid"
+  },
+  {
+    "email": "lelievrewilliam+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "ihumbert+test@live.com",
+    "email_category": "valid",
+    "password": "_ZWZUy_a_1*z",
+    "password_category": "valid"
+  },
+  {
+    "email": "christianerodriguez+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "thierryleon+test@gmail.com",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "lucy18+test@live.com",
+    "email_category": "valid",
+    "password": "(hU#LVcZq$V8",
+    "password_category": "valid"
+  },
+  {
+    "email": "valerieblot+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "i3ahc2Ve(8%I",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.antoine-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "zr%)1VDwd$k%",
+    "password_category": "valid"
+  },
+  {
+    "email": "francoisfaivre+test@ifrance.com",
+    "email_category": "valid",
+    "password": "PZR@YpyUtkS8",
+    "password_category": "valid"
+  },
+  {
+    "email": "aimee07+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "DlC2vNvb)0^!",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.michel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "david90+test@orange.fr",
+    "email_category": "valid",
+    "password": "X+8HQrnk^hBy",
+    "password_category": "valid"
+  },
+  {
+    "email": "yveslainevoila.fr",
+    "email_category": "invalid",
+    "password": "y!BvRJ1uv^2a",
+    "password_category": "valid"
+  },
+  {
+    "email": "dorothee35+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.le-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$ECLBkRuK2Z^",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.baudry-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": ")L52Krw(%g4G",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandrielouis+test@live.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "bertrand49@",
+    "email_category": "invalid",
+    "password": "9aJxd1pL@YHV",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.martins-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "gMAZ6U77*6kF",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.millet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "bernadette06+test@orange.fr",
+    "email_category": "valid",
+    "password": "D*3$hzMw&0o_",
+    "password_category": "valid"
+  },
+  {
+    "email": "olivierleleu+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "rL^0Ziyug^@5",
+    "password_category": "valid"
+  },
+  {
+    "email": "dominiquebourgeois+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "0@Ltm0Lx_1Kn",
+    "password_category": "valid"
+  },
+  {
+    "email": "auroresalmon+test@orange.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "pottieredith+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "broche+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "llacombe+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "uoT0WfnlI)!g",
+    "password_category": "valid"
+  },
+  {
+    "email": "laurent40live.com",
+    "email_category": "invalid",
+    "password": "&_oQvNnwS8nS",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.guerin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "119Yc2x7(%C6",
+    "password_category": "valid"
+  },
+  {
+    "email": "arnaude17@",
+    "email_category": "invalid",
+    "password": "6!!6fOubZ&Vm",
+    "password_category": "valid"
+  },
+  {
+    "email": "jeannine65+test@tele2.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "claireroux+test@orange.fr",
+    "email_category": "valid",
+    "password": "rLDL6Buj$@&x",
+    "password_category": "valid"
+  },
+  {
+    "email": "margaret99 at dbmail.com",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "guy32+test@live.com",
+    "email_category": "valid",
+    "password": "_j0Iuct!Ca36",
+    "password_category": "valid"
+  },
+  {
+    "email": "camille30+test@orange.fr",
+    "email_category": "valid",
+    "password": "1!rXvOZh)Wh2",
+    "password_category": "valid"
+  },
+  {
+    "email": "thibaut37+test@orange.fr",
+    "email_category": "valid",
+    "password": "@7zNhuYC#6KG",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lamy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "e^_G9vwCIF6L",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.meunier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "adelaidebonnet+test@gmail.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "alexandria96+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "anaisdumas+test@tele2.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "flebon+test@tele2.fr",
+    "email_category": "valid",
+    "password": "W)t4J)QgS(KP",
+    "password_category": "valid"
+  },
+  {
+    "email": "munoznoemi+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "A55BE^vT%CPw",
+    "password_category": "valid"
+  },
+  {
+    "email": "thereserousseau@",
+    "email_category": "invalid",
+    "password": "*kOR8jU@+3o9",
+    "password_category": "valid"
+  },
+  {
+    "email": "duboisandree+test@free.fr",
+    "email_category": "valid",
+    "password": "^lZ#W1oo4r9C",
+    "password_category": "valid"
+  },
+  {
+    "email": "caronbenoit+test@noos.fr",
+    "email_category": "valid",
+    "password": "%3ZfmLB+54F&",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lemaitre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "yIFlF68d*5Ly",
+    "password_category": "valid"
+  },
+  {
+    "email": "ipelletier+test@laposte.net",
+    "email_category": "valid",
+    "password": "%+k3KCiq3u6E",
+    "password_category": "valid"
+  },
+  {
+    "email": "philippefranck+test@gmail.com",
+    "email_category": "valid",
+    "password": "sw#D^nWm$c1_KwKb6+dOvhN915TPyvh0NO2u#K(wR7RAw_jw7og32NSi)N9mPahS",
+    "password_category": "edge"
+  },
+  {
+    "email": "qblot at laposte.net",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.tanguy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "3C5bIcmN(FxA",
+    "password_category": "valid"
+  },
+  {
+    "email": "lherve+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "*k5dKnZt^Y97",
+    "password_category": "valid"
+  },
+  {
+    "email": "paulguilbert+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "gilbert33+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "M1AhPN4W$717",
+    "password_category": "valid"
+  },
+  {
+    "email": "raymondcouturier+test@noos.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ogodard+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "0kR#(muR&0oG",
+    "password_category": "valid"
+  },
+  {
+    "email": "jourdanmichel+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "Ws@+SFhH8en4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.michaud-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "claudine37+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "fE41_5)r&sZHweQw0tXn^83SaZnf^QlIe)1N@eeaV99d^H5Zf$+5K(3+7tlyK9pN",
+    "password_category": "edge"
+  },
+  {
+    "email": "samsonodette+test@live.com",
+    "email_category": "valid",
+    "password": "eH7DT&AF@5BI",
+    "password_category": "valid"
+  },
+  {
+    "email": "rogerblot+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "VU^Z*og^p0R+",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jourdan-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "thibault02+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "frederic27+test@gmail.com",
+    "email_category": "valid",
+    "password": "xu6HzfCEe*8!",
+    "password_category": "valid"
+  },
+  {
+    "email": "victoire57+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "laurencepasquier+test@live.com",
+    "email_category": "valid",
+    "password": "%7r*QOpQX(CC",
+    "password_category": "valid"
+  },
+  {
+    "email": "adeleleclercq+test@noos.fr",
+    "email_category": "valid",
+    "password": "Ro!5w*GznkWe",
+    "password_category": "valid"
+  },
+  {
+    "email": "helenemaillard+test@orange.fr",
+    "email_category": "valid",
+    "password": "6Hi9n3YiM1COzF!p)83+l5&f#o4jrZj_M0D*W9I8mGVT+Ev3^Roe7qeG$Q_H0OmJ",
+    "password_category": "edge"
+  },
+  {
+    "email": "boyeremilie+test@noos.fr",
+    "email_category": "valid",
+    "password": "577VqV++*fS$LqrP$BlY&XQb+jMzzolv4R5OnJIJ&HCZ%IC5yrqh!aRIw*xDcJ@A",
+    "password_category": "edge"
+  },
+  {
+    "email": "eaubert at ifrance.com",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ilaroche+test@laposte.net",
+    "email_category": "valid",
+    "password": "h0&D2MZBwt3&Bdaq2t8eg1%Mx+mCsoVdW7ghc&YM6i3VFg$4FBz93JrV^9brA*RB",
+    "password_category": "edge"
+  },
+  {
+    "email": "tpereira at voila.fr",
+    "email_category": "invalid",
+    "password": "I$0ZV4FstBv(",
+    "password_category": "valid"
+  },
+  {
+    "email": "leducphilippe+test@dbmail.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.rossi-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "toussaintaimee+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "+Sq5qzz6CPuiFSmbTJ(*9E&pJMCIb9LrLEgAm$LhFw6zrT8M)Um$$A%oY!h#!Oje",
+    "password_category": "edge"
+  },
+  {
+    "email": "edith61+test@dbmail.com",
+    "email_category": "valid",
+    "password": ")3Ha6e^yNKJ4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.riviere-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "imbertxavier+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "$9WDztwTYCAV",
+    "password_category": "valid"
+  },
+  {
+    "email": "benoit74+test@dbmail.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.renault-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "renee74 at ifrance.com",
+    "email_category": "invalid",
+    "password": "D%B%6WCPYkwE",
+    "password_category": "valid"
+  },
+  {
+    "email": "larocheadelaide+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "&6v7bOhNxodJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.joubert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "5qeEdHgjE_O2smA2CMTc(0mv9Ge0QQUfhL(vcswU^AEp4e)7PZfyimO)cP*kGYrS",
+    "password_category": "edge"
+  },
+  {
+    "email": "poiriergabriel+test@noos.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "maryse73@",
+    "email_category": "invalid",
+    "password": "nNZ*SrzI*I+K5e0nsJQk_bfsTgTVGUU3v%+kfu^KbF3x$x)qo8ac4()U#Lx81*S3",
+    "password_category": "edge"
+  },
+  {
+    "email": "antoinereynaud+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.mallet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "j364#(Tm$sMz",
+    "password_category": "valid"
+  },
+  {
+    "email": "martinjean+test@free.fr",
+    "email_category": "valid",
+    "password": "u+UsvLgWY0&I",
+    "password_category": "valid"
+  },
+  {
+    "email": "remypaul+test@orange.fr",
+    "email_category": "valid",
+    "password": "75C(o_Kv%hO4",
+    "password_category": "valid"
+  },
+  {
+    "email": "ggros+test@dbmail.com",
+    "email_category": "valid",
+    "password": "uh$S2_QMdv4C6Xf7+9tHB1671@X@h4ywxK%F@Ja66+(wu3^PmFo3jO^(Slrhv61S",
+    "password_category": "edge"
+  },
+  {
+    "email": "pperon+test@voila.fr",
+    "email_category": "valid",
+    "password": "m++5Vnk*)TGl",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.petitjean-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "aurelie06dbmail.com",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "arnaude73+test@free.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "anouk94+test@sfr.fr",
+    "email_category": "valid",
+    "password": "!y^_PPXys91I",
+    "password_category": "valid"
+  },
+  {
+    "email": "yhoarau@",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "marguerite79 at ifrance.com",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lebreton-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "NrQHW5ISXuE$oAd6@K7DAkqY47v)#1b1%2Uw_$KP^EL%G_L^_JSMyaUG!5MQwv!T",
+    "password_category": "edge"
+  },
+  {
+    "email": "rgregoire+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "#s*8X0Or@1oU",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.peron-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "M_ZX40lheLTj",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.charpentier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#LA0zG5&8jzD",
+    "password_category": "valid"
+  },
+  {
+    "email": "thibaultfrancois@",
+    "email_category": "invalid",
+    "password": "1nW^h@i)$7H!",
+    "password_category": "valid"
+  },
+  {
+    "email": "raynaudmonique+test@tele2.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.masse-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "C%Uw(5het_7i",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.joubert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "9IaSJ5zs^2BQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "pierrebenjamin@",
+    "email_category": "invalid",
+    "password": "L52TxH+l^k%0",
+    "password_category": "valid"
+  },
+  {
+    "email": "vledouxgmail.com",
+    "email_category": "invalid",
+    "password": "^S_BBcx^22FE",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.breton-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.boutin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.remy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Q0_L3_Mwsaxa",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vasseur-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Pb7psYdbUo)3",
+    "password_category": "valid"
+  },
+  {
+    "email": "umahe+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marchand-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "8G3*qdTnAEKY",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bodin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "denise03 at free.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.besson-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "!Ux$7egx8b2W",
+    "password_category": "valid"
+  },
+  {
+    "email": "peronfrederique+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "R!0*z)BHTh48",
+    "password_category": "valid"
+  },
+  {
+    "email": "xleveque+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "&jCs(XnB%2Jy",
+    "password_category": "valid"
+  },
+  {
+    "email": "farnaud+test@free.fr",
+    "email_category": "valid",
+    "password": "SYo1MapfoyOM7Ylicrt4^Bi2IcOzl*fI6*p_g1+TI49OqZNTzoyJzMMg@xuCfFzF",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lopez-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bazin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "marcelle59+test@gmail.com",
+    "email_category": "valid",
+    "password": "%W4(%6t^S^Sm",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.adam-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_@+dwRVrr0P$",
+    "password_category": "valid"
+  },
+  {
+    "email": "marianne71+test@ifrance.com",
+    "email_category": "valid",
+    "password": "))@PrPwR+5fA",
+    "password_category": "valid"
+  },
+  {
+    "email": "loiseaulucy+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "$(^xenCxoV1R",
+    "password_category": "valid"
+  },
+  {
+    "email": "fgrenier+test@orange.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "costacelina+test@free.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "odescamps+test@dbmail.com",
+    "email_category": "valid",
+    "password": "0)4raFd1ITQS",
+    "password_category": "valid"
+  },
+  {
+    "email": "nathaliedelaunay+test@noos.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "patricia55+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "buissonfranck+test@live.com",
+    "email_category": "valid",
+    "password": "CxggBllkA!1_",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.lemoine-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "dcouturier+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "o3hAbvXzfFF)",
+    "password_category": "valid"
+  },
+  {
+    "email": "martinezines+test@gmail.com",
+    "email_category": "valid",
+    "password": "*3lFv+Ba&6FE",
+    "password_category": "valid"
+  },
+  {
+    "email": "blanchetjeromevoila.fr",
+    "email_category": "invalid",
+    "password": "s41X1wTaY!h2",
+    "password_category": "valid"
+  },
+  {
+    "email": "christiane43+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "&3+VUG8h%Jk4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.goncalves-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "@4^(gZBlQzbR",
+    "password_category": "valid"
+  },
+  {
+    "email": "brunmichel@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "jerometanguy+test@dbmail.com",
+    "email_category": "valid",
+    "password": "%MZq0yoe2mdQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "mariefaivre+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "9q1UuVD4&NIz",
+    "password_category": "valid"
+  },
+  {
+    "email": "faivrefranck at gmail.com",
+    "email_category": "invalid",
+    "password": "^eaadVawc6hI",
+    "password_category": "valid"
+  },
+  {
+    "email": "pauline68+test@tele2.fr",
+    "email_category": "valid",
+    "password": "$L9!pTFF2Ip620xovDPlJPCpxNKp81C!OQJk)%oCF_)GQzw23&zmlzItavejs_Ox",
+    "password_category": "edge"
+  },
+  {
+    "email": "edouardparent+test@tele2.fr",
+    "email_category": "valid",
+    "password": "ar(u0jBUL_2_4e2*w9BsRtOZ&1FN4@36xGAj0$NWo^9NExncF%nO#fpjI07LRa8w",
+    "password_category": "edge"
+  },
+  {
+    "email": "aboulay+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "21lpTQvIGQBg^fo8re^_3V2Vy6DQ_Tp!U74t&IVBaJqUcicY+i$Scxj%o2YT0MfJ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.benard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "n+9r!Zrxk!K(",
+    "password_category": "valid"
+  },
+  {
+    "email": "elodielopez+test@club-internet.fr",
+    "email_category": "valid",
+    "password": ")(ThzN1a&4PM",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.breton-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "(zsbVmwHJOQ9",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marion-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#MnGsVE0hK8!",
+    "password_category": "valid"
+  },
+  {
+    "email": "hpoirier+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "2@7Sxs6+GS&I",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.traore-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "F#5X@YxcuK3D",
+    "password_category": "valid"
+  },
+  {
+    "email": "luccamus@",
+    "email_category": "invalid",
+    "password": "#zJ*CdhT6x(3",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.wagner-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "yULRf7gd*8J(",
+    "password_category": "valid"
+  },
+  {
+    "email": "kpelletier@",
+    "email_category": "invalid",
+    "password": "&5cHsv*)z#aB",
+    "password_category": "valid"
+  },
+  {
+    "email": "elodie27+test@voila.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "weberalexandria+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "r_FvJRflRX8y",
+    "password_category": "valid"
+  },
+  {
+    "email": "margaux40 at free.fr",
+    "email_category": "invalid",
+    "password": ")_zOljYtU9Z*",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.perret-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "stephanevincent+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.ribeiro-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marie-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "B6ch%oEN!8Wv",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.rolland-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#AjbKZc9Hf9u",
+    "password_category": "valid"
+  },
+  {
+    "email": "juliettemenard+test@free.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ochauvin+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.prevost-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "oberger+test@noos.fr",
+    "email_category": "valid",
+    "password": "g7RoCRR)+Xp!",
+    "password_category": "valid"
+  },
+  {
+    "email": "nda-costa at bouygtel.fr",
+    "email_category": "invalid",
+    "password": "@7KoxxkS%3r2",
+    "password_category": "valid"
+  },
+  {
+    "email": "agathe91+test@noos.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.baudry-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "f+^l1CJmZs9l",
+    "password_category": "valid"
+  },
+  {
+    "email": "margaretlaunay@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "smenard+test@gmail.com",
+    "email_category": "valid",
+    "password": "2x2Hgph%(EmJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "wmunoz+test@sfr.fr",
+    "email_category": "valid",
+    "password": "^78*NAv@Fai&",
+    "password_category": "valid"
+  },
+  {
+    "email": "mbarthelemyyahoo.fr",
+    "email_category": "invalid",
+    "password": "(G_17Wi^gU)k",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.boulay-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "!DE7&6RiS%35",
+    "password_category": "valid"
+  },
+  {
+    "email": "oceanedaniel+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "%7kuMn#j7tLE",
+    "password_category": "valid"
+  },
+  {
+    "email": "martinslouis+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "MGKEQ(bZ+7EC",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.alexandre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "macejuliette+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "d3#)qmr6lg1K",
+    "password_category": "valid"
+  },
+  {
+    "email": "descampsthomas+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "_M1PG%c!+tdb",
+    "password_category": "valid"
+  },
+  {
+    "email": "hdelahaye+test@gmail.com",
+    "email_category": "valid",
+    "password": "4Um8ayhW**Ri",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.riviere-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "+5RKaNzBnOIo",
+    "password_category": "valid"
+  },
+  {
+    "email": "fleuryvictoire+test@sfr.fr",
+    "email_category": "valid",
+    "password": "@isaMWg5K9Ve",
+    "password_category": "valid"
+  },
+  {
+    "email": "yroger+test@free.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "guyonaudrey at bouygtel.fr",
+    "email_category": "invalid",
+    "password": "i#84Q(9gd)y)",
+    "password_category": "valid"
+  },
+  {
+    "email": "royroland+test@live.com",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gautier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "+1OKtG*hENlV",
+    "password_category": "valid"
+  },
+  {
+    "email": "marinedescamps@",
+    "email_category": "invalid",
+    "password": "x0r_GKZt%f*6",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.godard-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "h(oR$x6s8Gq2",
+    "password_category": "valid"
+  },
+  {
+    "email": "lecomtewilliam+test@orange.fr",
+    "email_category": "valid",
+    "password": "jdUAW3d&!0ur",
+    "password_category": "valid"
+  },
+  {
+    "email": "iguillet+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "08sALwA8^E+4",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.ruiz-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "++bioTVADG8C",
+    "password_category": "valid"
+  },
+  {
+    "email": "maurycatherine+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "37JVQUeoOQN@",
+    "password_category": "valid"
+  },
+  {
+    "email": "yves53 at gmail.com",
+    "email_category": "invalid",
+    "password": "#9&QlwXlOnlQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "meyerjuliensfr.fr",
+    "email_category": "invalid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.delannoy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "##t99BhmvByR",
+    "password_category": "valid"
+  },
+  {
+    "email": "elisabethmercier@",
+    "email_category": "invalid",
+    "password": "b(fvgvBdGk+3",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bruneau-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "o&6UR*wZRh)+",
+    "password_category": "valid"
+  },
+  {
+    "email": "bousquetcecile+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "boulaylaurent+test@dbmail.com",
+    "email_category": "valid",
+    "password": "&0TuzrA9RkY^",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.diaz-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "_(6LJz3wKQu8",
+    "password_category": "valid"
+  },
+  {
+    "email": "gtecher+test@noos.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "eguibert+test@ifrance.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "cecile22+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "L!5LEvWmfc4A",
+    "password_category": "valid"
+  },
+  {
+    "email": "lemaitreanastasie+test@tele2.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.voisin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "#6(rFkU#y*WR",
+    "password_category": "valid"
+  },
+  {
+    "email": "aferrand@",
+    "email_category": "invalid",
+    "password": "c%TdTppDWh+6",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.brunel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "&q#By@r8(3h!",
+    "password_category": "valid"
+  },
+  {
+    "email": "galletpenelope+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "@eEOYdha7Hnv",
+    "password_category": "valid"
+  },
+  {
+    "email": "luciebrunel+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "*t824EiSeg8k",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.perrin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "jeromeda-silva+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "S5of&WLuMJ@0WjO9L8qnDXts4IkPU!^FqwjJS2HngWB&Wy%n*fefqFdZsaT!tjQX",
+    "password_category": "edge"
+  },
+  {
+    "email": "oceanehamel+test@ifrance.com",
+    "email_category": "valid",
+    "password": "@*)xNasf589r",
+    "password_category": "valid"
+  },
+  {
+    "email": "gautieredouard+test@voila.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "guilbertzoe+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "ID8IOlo36l+N",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.bertrand-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "9HE1&hxQ)HU@",
+    "password_category": "valid"
+  },
+  {
+    "email": "tgiraud+test@free.fr",
+    "email_category": "valid",
+    "password": "T*5)#tFqE+9b",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.barbe-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "luc00+test@live.com",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "aimeefournier+test@ifrance.com",
+    "email_category": "valid",
+    "password": "V(6XXhrtp(FP",
+    "password_category": "valid"
+  },
+  {
+    "email": "gabriellebuisson+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "gilbertleveque@",
+    "email_category": "invalid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "ple-gall+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.pineau-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*aBg&xS@n6pm",
+    "password_category": "valid"
+  },
+  {
+    "email": "clairearnaud+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "thomaspotiersfr.fr",
+    "email_category": "invalid",
+    "password": "ES$aKBrIdm%7",
+    "password_category": "valid"
+  },
+  {
+    "email": "denis14+test@noos.fr",
+    "email_category": "valid",
+    "password": "x#X!8A8v#ALQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "louise84+test@yahoo.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "rdijoux+test@live.com",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.morin-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "iUC60Kek$n^E",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.noel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "amelie78 at sfr.fr",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "veronique21@",
+    "email_category": "invalid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "yperonsfr.fr",
+    "email_category": "invalid",
+    "password": "&Bj6LCl*^NQQ",
+    "password_category": "valid"
+  },
+  {
+    "email": "qlopes+test@noos.fr",
+    "email_category": "valid",
+    "password": "N*0Qzbrl*_3#",
+    "password_category": "valid"
+  },
+  {
+    "email": "obegue+test@voila.fr",
+    "email_category": "valid",
+    "password": "d62pm+t(S(Yo",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.begue-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "oparis+test@tele2.fr",
+    "email_category": "valid",
+    "password": "*_l#Z9X*8Vk&&K@^&xB%rjkgI0Acgf2b@!1PVq#27CR((6pJw&4csphHKEXH2y^$",
+    "password_category": "edge"
+  },
+  {
+    "email": "arthur36+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "emoreno+test@gmail.com",
+    "email_category": "valid",
+    "password": "NWxS8gwAdf5!",
+    "password_category": "valid"
+  },
+  {
+    "email": "rochecharlotte+test@gmail.com",
+    "email_category": "valid",
+    "password": "!5D9xsRfIV5R",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.da-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "theophilemarechal+test@orange.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "ugerard+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "turpinmichelle+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "paul96+test@noos.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "philippemendes+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "W4NePur*&oQ)",
+    "password_category": "valid"
+  },
+  {
+    "email": "nathalieboucher+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "dperrier+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "hX#Rte$oZ!5+",
+    "password_category": "valid"
+  },
+  {
+    "email": "zdelahaye+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "wN!7L0HhgKGl",
+    "password_category": "valid"
+  },
+  {
+    "email": "gillesguillaume+test@gmail.com",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "aurelie56+test@dbmail.com",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gregoire-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.blot-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "suzannegregoire+test@gmail.com",
+    "email_category": "valid",
+    "password": "(*0HKF4g#9sE",
+    "password_category": "valid"
+  },
+  {
+    "email": "bleconte+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "traoreedouard+test@tiscali.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "krenard@",
+    "email_category": "invalid",
+    "password": "1#l1vBoHjWJM",
+    "password_category": "valid"
+  },
+  {
+    "email": "webernoemi+test@orange.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.gomes-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "f1Nj0soj&iti",
+    "password_category": "valid"
+  },
+  {
+    "email": "jeannine43+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "b_eOya$c_n3_",
+    "password_category": "valid"
+  },
+  {
+    "email": "xjacob+test@noos.fr",
+    "email_category": "valid",
+    "password": "#9$28zfKrGK4",
+    "password_category": "valid"
+  },
+  {
+    "email": "warnaud+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "O1t#&QMv+pxk",
+    "password_category": "valid"
+  },
+  {
+    "email": "alvesaurore+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "U(%7s8q1VM8)",
+    "password_category": "valid"
+  },
+  {
+    "email": "paullopes+test@free.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "olivieblinwanadoo.fr",
+    "email_category": "invalid",
+    "password": "r6CEaZXU&$DA",
+    "password_category": "valid"
+  },
+  {
+    "email": "wleroy+test@laposte.net",
+    "email_category": "valid",
+    "password": "^h5IUqjv#^jL",
+    "password_category": "valid"
+  },
+  {
+    "email": "echarles+test@laposte.net",
+    "email_category": "valid",
+    "password": "dtg05Vhc&&u*",
+    "password_category": "valid"
+  },
+  {
+    "email": "alfredde-oliveira+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "k6aG8d3a)PUB",
+    "password_category": "valid"
+  },
+  {
+    "email": "etiennechauvin+test@tele2.fr",
+    "email_category": "valid",
+    "password": "xwQLcP9a#zz0",
+    "password_category": "valid"
+  },
+  {
+    "email": "mathildebodin+test@live.com",
+    "email_category": "valid",
+    "password": "$ej+M(k3_^41",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.raynaud-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "$Q5LAz9a2DJA",
+    "password_category": "valid"
+  },
+  {
+    "email": "danielleverdier+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "!WOCW(kt*O0X",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.leroy-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "^W474h+!*gTJ",
+    "password_category": "valid"
+  },
+  {
+    "email": "edithpons+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "5(R8rEdN(6$T",
+    "password_category": "valid"
+  },
+  {
+    "email": "benoitpierre+test@laposte.net",
+    "email_category": "valid",
+    "password": "O%6fx45^a(*W",
+    "password_category": "valid"
+  },
+  {
+    "email": "noemidupuy+test@live.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "corinne82+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "M%4G(#Mqk#WV",
+    "password_category": "valid"
+  },
+  {
+    "email": "jacquesmeunier+test@sfr.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "marianne22+test@tele2.fr",
+    "email_category": "valid",
+    "password": "09ilIT)5^qG2",
+    "password_category": "valid"
+  },
+  {
+    "email": "aimeboulanger+test@gmail.com",
+    "email_category": "valid",
+    "password": "!79zJmzp(iNN",
+    "password_category": "valid"
+  },
+  {
+    "email": "alice45voila.fr",
+    "email_category": "invalid",
+    "password": "L%0LFD!AWoc%",
+    "password_category": "valid"
+  },
+  {
+    "email": "alfredhernandez+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "N(8Y*kgd1YzK",
+    "password_category": "valid"
+  },
+  {
+    "email": "baudrythomas+test@ifrance.com",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "maggie17 at yahoo.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "michaudcaroline+test@noos.fr",
+    "email_category": "valid",
+    "password": "@o1B6Imv0+^L",
+    "password_category": "valid"
+  },
+  {
+    "email": "frederic16+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "@Z_UZ+o%$V3n",
+    "password_category": "valid"
+  },
+  {
+    "email": "emilejourdantiscali.fr",
+    "email_category": "invalid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "lamyhugues+test@noos.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "francoise73+test@hotmail.fr",
+    "email_category": "valid",
+    "password": " ",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.jacquet-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "R@bG*i%jmHN3",
+    "password_category": "valid"
+  },
+  {
+    "email": "maggie56+test@dbmail.com",
+    "email_category": "valid",
+    "password": "D&DM4ZKb5XT5",
+    "password_category": "valid"
+  },
+  {
+    "email": "michelsanchez+test@club-internet.fr",
+    "email_category": "valid",
+    "password": "xQpgeEzXr*c2",
+    "password_category": "valid"
+  },
+  {
+    "email": "zcarre+test@bouygtel.fr",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "guybourgeoissfr.fr",
+    "email_category": "invalid",
+    "password": "do+9NzyQxXQK",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.fabre-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*doD46K4L(V1",
+    "password_category": "valid"
+  },
+  {
+    "email": "sebastiennormandvoila.fr",
+    "email_category": "invalid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.vidal-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "*_#@2kBoxk3X",
+    "password_category": "valid"
+  },
+  {
+    "email": "gillesguillaume+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "u1URuccV*381",
+    "password_category": "valid"
+  },
+  {
+    "email": "lemonnierchristine+test@ifrance.com",
+    "email_category": "valid",
+    "password": "G@d4%9TcDfzc",
+    "password_category": "valid"
+  },
+  {
+    "email": "germainelise+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "3oHI4SMAf(XS",
+    "password_category": "valid"
+  },
+  {
+    "email": "charlotteperez+test@free.fr",
+    "email_category": "valid",
+    "password": "rn7ZuGSxU#c7",
+    "password_category": "valid"
+  },
+  {
+    "email": "rollandlaurence+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.aubert-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "berthelotsylvie@",
+    "email_category": "invalid",
+    "password": "%I4#Om^XRfzW",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.duval-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "%ie&#kBkP9VH",
+    "password_category": "valid"
+  },
+  {
+    "email": "ameliemarechal+test@gmail.com",
+    "email_category": "valid",
+    "password": "+*CEpFJz8FO_",
+    "password_category": "valid"
+  },
+  {
+    "email": "patrick42+test@voila.fr",
+    "email_category": "valid",
+    "password": "yROzm6@rs9r+",
+    "password_category": "valid"
+  },
+  {
+    "email": "xavier90+test@ifrance.com",
+    "email_category": "valid",
+    "password": "E3$4NS0b#GUu",
+    "password_category": "valid"
+  },
+  {
+    "email": "manon84+test@tele2.fr",
+    "email_category": "valid",
+    "password": "@kZPNko9T+8)",
+    "password_category": "valid"
+  },
+  {
+    "email": "hmartel+test@sfr.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "tparis+test@voila.fr",
+    "email_category": "valid",
+    "password": "+8c#xRycvEMT",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.weber-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "I&1C%wBiphAO",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandrie38+test@hotmail.fr",
+    "email_category": "valid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "guillaumepayet+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "$3u2NeAoKqO#",
+    "password_category": "valid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.marie-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "Tr3s#Löng_MotDePasseÀvecÉmoji🔐",
+    "password_category": "edge"
+  },
+  {
+    "email": "gilbertvincent+test@free.fr",
+    "email_category": "valid",
+    "password": "' OR 1=1 --",
+    "password_category": "invalid"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.garnier-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "victor57@",
+    "email_category": "invalid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "erobin@",
+    "email_category": "invalid",
+    "password": "UbNbJqi)^0bC",
+    "password_category": "valid"
+  },
+  {
+    "email": "aimeeraymond+test@noos.fr",
+    "email_category": "valid",
+    "password": "z1P6iM#G%qfE",
+    "password_category": "valid"
+  },
+  {
+    "email": "emiliepelletier+test@voila.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "descampsraymonddbmail.com",
+    "email_category": "invalid",
+    "password": "",
+    "password_category": "invalid"
+  },
+  {
+    "email": "salbert+test@gmail.com",
+    "email_category": "valid",
+    "password": "#3Z4w3)zSTq0",
+    "password_category": "valid"
+  },
+  {
+    "email": "gilbert88+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "12345678",
+    "password_category": "edge"
+  },
+  {
+    "email": "élise.o'brien@sous-domaine.martel-tres-long-domaine-de-test.com",
+    "email_category": "edge",
+    "password": "r+pZXfsbNY6_",
+    "password_category": "valid"
+  },
+  {
+    "email": "tfontaine+test@yahoo.fr",
+    "email_category": "valid",
+    "password": "ab",
+    "password_category": "invalid"
+  },
+  {
+    "email": "delaunayeleonore+test@free.fr",
+    "email_category": "valid",
+    "password": "T^w#3Ge_6m31",
+    "password_category": "valid"
+  },
+  {
+    "email": "antoinettelefevre@",
+    "email_category": "invalid",
+    "password": "x$xiTPXN_j7E^G+1K98MR&tc_^c+OPCeb*obi4ky9Dhp6rVigu%8SsvbW*p4O1g&",
+    "password_category": "edge"
+  },
+  {
+    "email": "robinmichele+test@noos.fr",
+    "email_category": "valid",
+    "password": "ke4TmAlx)eyw",
+    "password_category": "valid"
+  },
+  {
+    "email": "benjaminduval+test@orange.fr",
+    "email_category": "valid",
+    "password": "_G#2VBSq6vKP",
+    "password_category": "valid"
+  },
+  {
+    "email": "alexandre01+test@laposte.net",
+    "email_category": "valid",
+    "password": "mciZ71^0*k1@b&1M)!Lm9ht)CR9KC_%*hHQ4QYshfE@To5tds*1Z@%x3zk+mRPW)",
+    "password_category": "edge"
+  },
+  {
+    "email": "aureliegerard@",
+    "email_category": "invalid",
+    "password": "eK$BC%Uq(!f9",
+    "password_category": "valid"
+  },
+  {
+    "email": "vchauveau+test@sfr.fr",
+    "email_category": "valid",
+    "password": "(VdkCaloPs2J",
+    "password_category": "valid"
+  },
+  {
+    "email": "michel04+test@live.com",
+    "email_category": "valid",
+    "password": "        ",
+    "password_category": "edge"
+  },
+  {
+    "email": "barbephilippe+test@wanadoo.fr",
+    "email_category": "valid",
+    "password": "_E5F0chzssDw",
+    "password_category": "valid"
+  },
+  {
+    "email": "renauddanielle+test@ifrance.com",
+    "email_category": "valid",
+    "password": "5R%_s7nCCsJR",
+    "password_category": "valid"
+  }
+]
