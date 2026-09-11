@@ -1,0 +1,59 @@
+@if (loading) {
+  <div class="page container">
+    <div class="skeleton" style="height: 500px; border-radius: 20px;"></div>
+  </div>
+} @else if (!flight) {
+  <div class="page container">
+    <p class="muted">Ce vol est introuvable.</p>
+    <a routerLink="/resultats" class="btn btn-outline">← Retour aux résultats</a>
+  </div>
+} @else {
+  <section class="page container fade-in">
+    <a routerLink="/resultats" class="back-link" data-testid="detail-back">← Retour aux résultats</a>
+
+    <div class="detail-hero card">
+      <img [src]="flight.imageUrl" [alt]="flight.destination.city" />
+      <div class="detail-info">
+        <span class="badge badge-teal">Vol {{ flight.stops === 0 ? 'direct' : flight.stops + ' escale' }}</span>
+        <p class="offer-kind">{{ flight.airline }}</p>
+        <h2 data-testid="detail-title">{{ flight.departAirport }} → {{ flight.destination.city }}</h2>
+        <p class="muted">
+          Départ {{ flight.departTime | date: 'EEEE dd MMMM, HH:mm' }} · Arrivée {{ flight.arriveTime | date: 'HH:mm' }}
+        </p>
+
+        <div class="schedule-line">
+          <div>
+            <small>Aller</small>
+            <b>{{ flight.departAirport }}</b>
+          </div>
+          <span class="duration">{{ flight.durationMinutes }} min</span>
+          <div>
+            <small>Arrivée</small>
+            <b>{{ flight.arriveAirport }}</b>
+          </div>
+        </div>
+
+        <div class="price-line">
+          <div>
+            <small>Prix par voyageur</small>
+            <strong data-testid="detail-price">{{ flight.price }} €</strong>
+          </div>
+          <button class="btn btn-primary" data-testid="add-to-cart" [disabled]="adding" (click)="addToCart()">
+            {{ adding ? 'Ajout...' : 'Ajouter au panier →' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-columns">
+      <div>
+        <h3>Ce qui vous attend</h3>
+        <p class="muted">Bagage cabine inclus, sélection de repas à bord et assistance locale à l'arrivée.</p>
+      </div>
+      <div>
+        <h3>Inclus dans votre réservation</h3>
+        <p class="muted">Modification gratuite jusqu'à 48h avant le départ · Annulation flexible.</p>
+      </div>
+    </div>
+  </section>
+}

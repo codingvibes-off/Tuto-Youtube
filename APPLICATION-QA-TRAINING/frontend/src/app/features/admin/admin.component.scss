@@ -1,0 +1,168 @@
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 8px 0 34px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+}
+
+.live-dot {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric span {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.metric strong {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-tabs button {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+}
+
+.admin-tabs button.active {
+  color: var(--text);
+  border-color: var(--gold);
+}
+
+.admin-table {
+  padding: 8px 0 20px;
+}
+
+.table-heading {
+  padding: 18px 24px 6px;
+}
+
+.table-heading h3 {
+  font-size: 19px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr 0.7fr 1fr;
+  gap: 12px;
+  padding: 14px 24px;
+  font-size: 12.5px;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  min-width: 640px;
+}
+
+.table-row-head {
+  color: var(--text-faint);
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.6px;
+  border-top: none;
+}
+
+.status {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.status.cancelled {
+  color: var(--danger);
+}
+
+.offers-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.offer-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.offer-form h3 {
+  font-size: 18px;
+}
+
+.offers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.offer-row {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.offer-row h4 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.offer-row .badge {
+  margin-top: 8px;
+}
+
+.offer-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 960px) {
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+  .offers-layout {
+    grid-template-columns: 1fr;
+  }
+}

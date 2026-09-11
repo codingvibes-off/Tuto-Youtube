@@ -1,0 +1,81 @@
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">L'ÉVASION, BIEN COMPOSÉE</p>
+    <h1>Le prochain chapitre<br /><em>commence ici.</em></h1>
+    <p class="hero-text">
+      Des escapades qui restent en tête, des adresses choisies avec soin, et une réservation qui ne vous fait pas
+      perdre de temps.
+    </p>
+
+    <div class="search-panel card" data-testid="search-panel">
+      <div class="search-grid">
+        <label class="field field-wide">
+          <span>Destination</span>
+          <input data-testid="search-destination" [(ngModel)]="destination" placeholder="Où allez-vous ?" name="destination" />
+        </label>
+
+        <label class="field">
+          <span>Départ</span>
+          <input data-testid="search-departure" type="date" [(ngModel)]="departDate" name="departDate" />
+        </label>
+
+        <label class="field">
+          <span>Retour</span>
+          <input data-testid="search-return" type="date" [(ngModel)]="returnDate" name="returnDate" />
+        </label>
+
+        <div class="field">
+          <span>Voyageurs</span>
+          <div class="stepper">
+            <button type="button" class="stepper-btn" data-testid="travelers-decrement" (click)="decrement()" aria-label="Retirer un voyageur">−</button>
+            <span class="stepper-value" data-testid="travelers-value">{{ travelers() }}</span>
+            <button type="button" class="stepper-btn" data-testid="travelers-increment" (click)="increment()" aria-label="Ajouter un voyageur">+</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary search-button" data-testid="search-submit" (click)="search()">
+          Rechercher →
+        </button>
+      </div>
+      <p class="search-hint">✓ Réservation flexible &nbsp; ✓ Prix transparents &nbsp; ✓ Support 24/7</p>
+    </div>
+
+    <div class="hero-stats">
+      <div><strong>48k+</strong><span>voyageurs conquis</span></div>
+      <div><strong>120+</strong><span>destinations inspirantes</span></div>
+      <div><strong>4.9/5</strong><span>note moyenne</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="destinations container">
+  <div class="section-heading">
+    <p class="eyebrow">DESTINATIONS PHARES</p>
+    <h2>Vos prochaines évasions.</h2>
+  </div>
+
+  @if (loadingDestinations) {
+    <div class="destination-grid">
+      @for (i of [1, 2, 3, 4]; track i) {
+        <div class="skeleton destination-skeleton"></div>
+      }
+    </div>
+  } @else {
+    <div class="destination-grid" data-testid="popular-destinations">
+      @for (destination of popularDestinations; track destination.id) {
+        <button
+          class="destination-card"
+          [attr.data-testid]="'destination-card-' + destination.slug"
+          (click)="searchDestination(destination.city)"
+        >
+          <img [src]="destination.imageUrl" [alt]="destination.city" loading="lazy" />
+          <div class="destination-overlay">
+            <span class="destination-country">{{ destination.country }}</span>
+            <h3>{{ destination.city }}</h3>
+          </div>
+        </button>
+      }
+    </div>
+  }
+</section>

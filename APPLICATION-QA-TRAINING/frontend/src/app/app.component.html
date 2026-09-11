@@ -1,0 +1,51 @@
+<div class="shell">
+  <header class="topbar">
+    <a routerLink="/" class="brand" data-testid="brand-home">
+      <span class="brand-mark">V</span>
+      <span>voyago</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a routerLink="/resultats" routerLinkActive="active" data-testid="nav-explore">Explorer</a>
+      <a routerLink="/compte" routerLinkActive="active" data-testid="nav-bookings">Mes réservations</a>
+      @if (auth.isAdmin) {
+        <a routerLink="/admin" routerLinkActive="active" data-testid="nav-admin">Admin</a>
+      }
+    </nav>
+
+    <div class="header-actions">
+      <a routerLink="/panier" class="icon-button" data-testid="nav-cart">
+        Panier
+        @if (cart.items().length) {
+          <span class="cart-count" data-testid="cart-count">{{ cart.items().length }}</span>
+        }
+      </a>
+
+      @if (auth.isLoggedIn) {
+        <a routerLink="/compte" class="avatar" data-testid="nav-account" [title]="auth.currentUser()?.name ?? ''">{{ initials }}</a>
+        <button class="btn btn-ghost" data-testid="logout" (click)="logout()">Se déconnecter</button>
+      } @else {
+        <a routerLink="/connexion" class="btn btn-outline" data-testid="nav-login">Connexion</a>
+        <a routerLink="/inscription" class="btn btn-primary" data-testid="nav-register">Créer un compte</a>
+      }
+    </div>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Voyago — démo pédagogique Coding Vibes</span>
+    <span>Voyager mieux, simplement.</span>
+    <span>Besoin d'aide ? <b>hello&#64;voyago.demo</b></span>
+  </footer>
+
+  <div class="toast-stack" data-testid="toast-stack">
+    @for (message of toast.messages(); track message.id) {
+      <div class="toast" [class]="'toast-' + message.kind" [attr.data-testid]="'toast-' + message.kind">
+        {{ message.text }}
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<section class="page auth-page">
+  <div class="auth-card card fade-in">
+    <p class="eyebrow">BIENVENUE CHEZ VOYAGO</p>
+    <h2>Prêt à partir ?</h2>
+    <p class="muted">Créez votre espace voyageur en quelques secondes.</p>
+
+    <form (ngSubmit)="submit()" #form="ngForm">
+      <label class="field">
+        <span>Nom complet</span>
+        <input data-testid="auth-name" required [(ngModel)]="name" name="name" placeholder="Alex Martin" />
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input data-testid="auth-email" required type="email" [(ngModel)]="email" name="email" placeholder="vous@exemple.com" />
+      </label>
+
+      <label class="field">
+        <span>Mot de passe</span>
+        <input data-testid="auth-password" required type="password" [(ngModel)]="password" name="password" placeholder="6 caractères minimum" />
+        <span class="field-hint">6 caractères minimum</span>
+      </label>
+
+      @if (errorMessage) {
+        <div class="alert alert-error" data-testid="register-error">{{ errorMessage }}</div>
+      }
+
+      <button class="btn btn-primary btn-full" data-testid="auth-submit" type="submit" [disabled]="!formValid || submitting">
+        {{ submitting ? 'Création...' : 'Créer mon compte →' }}
+      </button>
+    </form>
+
+    <a routerLink="/connexion" class="btn btn-ghost btn-full" data-testid="toggle-auth">J'ai déjà un compte</a>
+  </div>
+</section>

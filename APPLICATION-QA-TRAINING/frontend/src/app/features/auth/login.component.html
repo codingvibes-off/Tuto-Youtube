@@ -1,0 +1,31 @@
+<section class="page auth-page">
+  <div class="auth-card card fade-in">
+    <p class="eyebrow">BIENVENUE CHEZ VOYAGO</p>
+    <h2>Content de vous revoir.</h2>
+    <p class="muted">Retrouvez vos voyages en un clin d'œil.</p>
+
+    <form (ngSubmit)="submit()" #form="ngForm">
+      <label class="field">
+        <span>Email</span>
+        <input data-testid="auth-email" required type="email" [(ngModel)]="email" name="email" placeholder="vous@exemple.com" />
+      </label>
+
+      <label class="field">
+        <span>Mot de passe</span>
+        <input data-testid="auth-password" required type="password" [(ngModel)]="password" name="password" placeholder="Votre mot de passe" />
+      </label>
+
+      @if (errorMessage) {
+        <div class="alert alert-error" data-testid="login-error">{{ errorMessage }}</div>
+      }
+
+      <button class="btn btn-primary btn-full" data-testid="auth-submit" type="submit" [disabled]="!email || !password || submitting">
+        {{ submitting ? 'Connexion...' : 'Se connecter →' }}
+      </button>
+    </form>
+
+    <p class="demo-hint muted">Compte de démo : alex.martin&#64;voyago.demo / Voyage2026</p>
+
+    <a routerLink="/inscription" class="btn btn-ghost btn-full" data-testid="toggle-auth">Créer un compte</a>
+  </div>
+</section>

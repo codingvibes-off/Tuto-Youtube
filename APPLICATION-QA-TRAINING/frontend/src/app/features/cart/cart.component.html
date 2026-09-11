@@ -1,0 +1,74 @@
+<section class="page container">
+  <p class="eyebrow">VOTRE SÉLECTION</p>
+  <h2>Le voyage prend forme.</h2>
+
+  @if (loading) {
+    <div class="skeleton" style="height: 260px; border-radius: 20px; margin-top: 30px;"></div>
+  } @else if (cartService.items().length === 0) {
+    <div class="empty-state card" data-testid="empty-cart">
+      <span>✦</span>
+      <h3>Votre panier est encore vide</h3>
+      <a routerLink="/resultats" class="btn btn-primary" data-testid="empty-cart-explore">Explorer les offres</a>
+    </div>
+  } @else {
+    <div class="cart-layout">
+      <div class="cart-items" data-testid="cart-items">
+        @for (item of cartService.items(); track item.id) {
+          <article class="cart-item card" [attr.data-testid]="'cart-item-' + item.id">
+            <img [src]="item.imageUrl" [alt]="item.label" />
+            <div class="cart-item-body">
+              <span class="badge" [class.badge-teal]="item.type === 'FLIGHT'" [class.badge-gold]="item.type === 'HOTEL'">
+                {{ item.type === 'FLIGHT' ? 'Vol' : 'Hôtel' }}
+              </span>
+              <h3>{{ item.label }}</h3>
+              <p class="muted">
+                {{ item.startDate | date: 'dd MMM yyyy' }}
+                @if (item.endDate) { → {{ item.endDate | date: 'dd MMM yyyy' }} }
+              </p>
+
+              <div class="travelers-control">
+                <span>Voyageurs</span>
+                <button type="button" [attr.data-testid]="'cart-decrement-' + item.id" (click)="updateTravelers(item, item.travelers - 1)">−</button>
+                <span [attr.data-testid]="'cart-travelers-' + item.id">{{ item.travelers }}</span>
+                <button type="button" [attr.data-testid]="'cart-increment-' + item.id" (click)="updateTravelers(item, item.travelers + 1)">+</button>
+              </div>
+            </div>
+
+            <strong>{{ item.unitPrice * item.travelers }} €</strong>
+            <button class="remove-button" [attr.data-testid]="'remove-cart-' + item.id" (click)="remove(item)" aria-label="Retirer">×</button>
+          </article>
+        }
+      </div>
+
+      <aside class="summary card">
+        <p class="filter-title">Récapitulatif</p>
+
+        <div class="promo-row">
+          @if (cartService.promoCode()) {
+            <div class="promo-applied" data-testid="promo-applied">
+              <span>Code {{ cartService.promoCode() }} appliqué</span>
+              <button type="button" data-testid="remove-promo" (click)="removePromoCode()">Retirer</button>
+            </div>
+          } @else {
+            <div class="promo-input">
+              <input data-testid="promo-input" [(ngModel)]="promoInput" placeholder="Code promo (ex. VOYAGO10)" />
+              <button class="btn btn-outline" data-testid="apply-promo" (click)="applyPromoCode()">Appliquer</button>
+            </div>
+            @if (promoError) {
+              <p class="field-error" data-testid="promo-error">{{ promoError }}</p>
+            }
+          }
+        </div>
+
+        <div><span>Sous-total</span><b data-testid="cart-subtotal">{{ cartService.subtotal() }} €</b></div>
+        @if (cartService.promoCode()) {
+          <div><span>Réduction</span><b data-testid="cart-discount">− {{ cartService.discountAmount() | number: '1.0-2' }} €</b></div>
+        }
+        <hr />
+        <div class="total-line"><span>Total</span><b data-testid="cart-total">{{ cartService.total() | number: '1.0-2' }} €</b></div>
+
+        <button class="btn btn-primary btn-full" data-testid="checkout-button" (click)="goToPayment()">Passer au paiement →</button>
+      </aside>
+    </div>
+  }
+</section>

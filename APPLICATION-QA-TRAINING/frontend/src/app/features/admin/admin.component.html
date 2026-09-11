@@ -1,0 +1,100 @@
+<section class="page container">
+  <p class="eyebrow">CONSOLE VOYAGO</p>
+  <div class="section-heading">
+    <div>
+      <h2>Vue d'ensemble.</h2>
+      <p class="muted">Les signaux clés de la plateforme, en direct.</p>
+    </div>
+    <span class="live-dot">● En direct</span>
+  </div>
+
+  @if (loading) {
+    <div class="skeleton" style="height: 120px; margin-bottom: 30px;"></div>
+  } @else if (stats) {
+    <div class="metric-grid">
+      <div class="metric">
+        <span>Réservations confirmées</span>
+        <strong data-testid="admin-booking-count">{{ stats.bookingCount }}</strong>
+      </div>
+      <div class="metric">
+        <span>Chiffre d'affaires</span>
+        <strong data-testid="admin-revenue">{{ stats.revenue | number: '1.0-2' }} €</strong>
+      </div>
+      <div class="metric">
+        <span>Comptes créés</span>
+        <strong data-testid="admin-user-count">{{ stats.userCount }}</strong>
+      </div>
+    </div>
+  }
+
+  <div class="admin-tabs">
+    <button [class.active]="tab === 'bookings'" data-testid="admin-tab-bookings" (click)="tab = 'bookings'">Réservations</button>
+    <button [class.active]="tab === 'offers'" data-testid="admin-tab-offers" (click)="tab = 'offers'">Offres</button>
+  </div>
+
+  @if (tab === 'bookings') {
+    <div class="admin-table card">
+      <div class="table-heading">
+        <h3>Toutes les réservations</h3>
+      </div>
+      <div class="table-scroll">
+        <div class="table-row table-row-head">
+          <span>Référence</span><span>Client</span><span>Contenu</span><span>Total</span><span>Statut</span>
+        </div>
+        @for (booking of bookings; track booking.id) {
+          <div class="table-row" [attr.data-testid]="'admin-booking-' + booking.reference">
+            <span>{{ booking.reference }}</span>
+            <span>{{ booking.user?.name }}</span>
+            <span>{{ booking.items[0].label }}<span *ngIf="booking.items.length > 1"> +{{ booking.items.length - 1 }}</span></span>
+            <b>{{ booking.totalPrice }} €</b>
+            <span class="status" [class.cancelled]="booking.status === 'CANCELLED'">
+              {{ booking.status === 'CONFIRMED' ? 'Confirmée' : 'Annulée' }}
+            </span>
+          </div>
+        }
+        @if (!bookings.length) {
+          <p class="muted" style="padding: 24px;">Aucune réservation pour le moment.</p>
+        }
+      </div>
+    </div>
+  } @else {
+    <div class="offers-layout">
+      <form class="offer-form card" (ngSubmit)="createOffer()">
+        <h3>Nouvelle offre</h3>
+        <label class="field">
+          <span>Titre</span>
+          <input data-testid="offer-title" required [(ngModel)]="newOffer.title" name="title" placeholder="Semaine dorée à Tokyo" />
+        </label>
+        <label class="field">
+          <span>Description</span>
+          <input data-testid="offer-description" required [(ngModel)]="newOffer.description" name="description" placeholder="Vol + hôtel, 7 nuits..." />
+        </label>
+        <label class="field">
+          <span>Remise (%)</span>
+          <input data-testid="offer-discount" type="number" min="1" max="90" required [(ngModel)]="newOffer.discountPercent" name="discountPercent" />
+        </label>
+        <button class="btn btn-primary" data-testid="offer-submit" type="submit" [disabled]="creatingOffer">
+          {{ creatingOffer ? 'Création...' : 'Créer l\'offre' }}
+        </button>
+      </form>
+
+      <div class="offers-list" data-testid="offers-list">
+        @for (offer of offers; track offer.id) {
+          <article class="offer-row card" [attr.data-testid]="'offer-row-' + offer.id">
+            <div>
+              <h4>{{ offer.title }}</h4>
+              <p class="muted">{{ offer.description }}</p>
+              <span class="badge badge-gold">-{{ offer.discountPercent }}%</span>
+            </div>
+            <div class="offer-actions">
+              <button class="btn btn-outline" [attr.data-testid]="'toggle-offer-' + offer.id" (click)="toggleOffer(offer)">
+                {{ offer.active ? 'Désactiver' : 'Activer' }}
+              </button>
+              <button class="btn btn-ghost" [attr.data-testid]="'delete-offer-' + offer.id" (click)="deleteOffer(offer)">Supprimer</button>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  }
+</section>

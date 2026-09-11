@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./backend
+    container_name: voyago-backend
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "file:./dev.db"
+      JWT_SECRET: "voyago-demo-secret-change-me"
+      JWT_EXPIRES_IN: "7d"
+      PORT: "3000"
+      CORS_ORIGIN: "http://localhost:4200"
+    volumes:
+      - backend-data:/app/prisma
+
+  frontend:
+    build: ./frontend
+    container_name: voyago-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend-data:

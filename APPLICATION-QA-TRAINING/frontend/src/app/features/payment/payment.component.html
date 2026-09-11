@@ -1,0 +1,62 @@
+<section class="page container">
+  <a routerLink="/panier" class="back-link" data-testid="payment-back">← Retour au panier</a>
+  <p class="eyebrow">DERNIÈRE ÉTAPE</p>
+  <h2>Finalisez votre réservation.</h2>
+
+  <div class="payment-layout">
+    <form class="payment-form card" (ngSubmit)="pay()" #form="ngForm">
+      <h3>Informations de paiement</h3>
+
+      <label class="field">
+        <span>Nom sur la carte</span>
+        <input data-testid="cardholder-name" required [(ngModel)]="cardholderName" name="cardholderName" placeholder="Alex Martin" />
+      </label>
+
+      <label class="field">
+        <span>Numéro de carte</span>
+        <input
+          data-testid="card-number"
+          required
+          maxlength="19"
+          [(ngModel)]="cardNumber"
+          name="cardNumber"
+          placeholder="4242 4242 4242 4242"
+        />
+        <span class="field-hint">Démo : un numéro se terminant par un chiffre pair est accepté.</span>
+      </label>
+
+      <div class="split-fields">
+        <label class="field">
+          <span>Expiration</span>
+          <input data-testid="card-expiry" required [(ngModel)]="expiry" name="expiry" placeholder="MM/YY" />
+        </label>
+        <label class="field">
+          <span>CVV</span>
+          <input data-testid="card-cvv" required maxlength="3" [(ngModel)]="cvv" name="cvv" placeholder="123" />
+        </label>
+      </div>
+
+      @if (errorMessage) {
+        <div class="alert alert-error" data-testid="payment-error">{{ errorMessage }}</div>
+      }
+
+      <p class="secure-note">⌁ Paiement simulé et sécurisé pour la démo — aucune vraie carte n'est débitée.</p>
+
+      <button class="btn btn-primary btn-full" data-testid="pay-submit" type="submit" [disabled]="!formValid || submitting">
+        {{ submitting ? 'Traitement...' : 'Payer ' + (cartService.total() | number: '1.0-2') + ' €' }}
+      </button>
+    </form>
+
+    <aside class="summary card">
+      <p class="filter-title">Votre réservation</p>
+      @for (item of cartService.items(); track item.id) {
+        <div>
+          <span>{{ item.label }} ({{ item.travelers }})</span>
+          <b>{{ item.unitPrice * item.travelers }} €</b>
+        </div>
+      }
+      <hr />
+      <div class="total-line"><span>Total</span><b data-testid="payment-total">{{ cartService.total() | number: '1.0-2' }} €</b></div>
+    </aside>
+  </div>
+</section>

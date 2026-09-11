@@ -1,0 +1,62 @@
+@if (loading) {
+  <div class="page container">
+    <div class="skeleton" style="height: 500px; border-radius: 20px;"></div>
+  </div>
+} @else if (!hotel) {
+  <div class="page container">
+    <p class="muted">Cet hôtel est introuvable.</p>
+    <a routerLink="/resultats" class="btn btn-outline">← Retour aux résultats</a>
+  </div>
+} @else {
+  <section class="page container fade-in">
+    <a routerLink="/resultats" class="back-link" data-testid="detail-back">← Retour aux résultats</a>
+
+    <div class="detail-hero card">
+      <img [src]="hotel.imageUrl" [alt]="hotel.name" />
+      <div class="detail-info">
+        <span class="badge badge-gold">{{ hotel.stars }}★ Hôtel</span>
+        <p class="offer-kind">{{ hotel.destination.city }}, {{ hotel.destination.country }}</p>
+        <h2 data-testid="detail-title">{{ hotel.name }}</h2>
+        <p class="muted">{{ hotel.address }}</p>
+
+        <div class="detail-rating" data-testid="detail-rating">
+          ★ {{ hotel.rating || '—' }} <span>· {{ hotel.reviewCount }} avis</span>
+        </div>
+
+        <div class="amenities">
+          @for (amenity of hotel.amenities; track amenity) {
+            <span class="badge badge-teal">{{ amenity }}</span>
+          }
+        </div>
+
+        <div class="price-line">
+          <div>
+            <small>{{ nights }} nuit{{ nights > 1 ? 's' : '' }} · par voyageur</small>
+            <strong data-testid="detail-price">{{ hotel.pricePerNight }} €</strong>
+          </div>
+          <button class="btn btn-primary" data-testid="add-to-cart" [disabled]="adding" (click)="addToCart()">
+            {{ adding ? 'Ajout...' : 'Ajouter au panier →' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-section">
+      <h3>Avis voyageurs</h3>
+      <div class="reviews-grid" data-testid="reviews-list">
+        @for (review of reviews; track review.id) {
+          <div class="review-card card">
+            <div class="review-head">
+              <b>{{ review.author }}</b>
+              <span class="rating">★ {{ review.rating }}</span>
+            </div>
+            <p class="muted">{{ review.comment }}</p>
+          </div>
+        }
+        @if (!reviews.length) {
+          <p class="muted">Aucun avis pour le moment.</p>
+        }
+      </div>
+    </div>
+  </section>
+}
