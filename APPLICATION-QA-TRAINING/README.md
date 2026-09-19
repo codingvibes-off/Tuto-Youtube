@@ -73,6 +73,178 @@ Le conteneur backend applique les migrations et réinitialise le jeu de
 données de démo à chaque démarrage (pratique pour repartir d'un état propre
 avant un enregistrement).
 
+## Commandes Docker
+
+Toutes les commandes se lancent **depuis la racine du repo** (là où se trouve
+`docker-compose.yml`). Prérequis : Docker Desktop démarré (`docker info` doit
+répondre).
+
+Noms utilisés dans ce projet :
+
+| Élément | Nom |
+|---|---|
+| Services Compose | `backend`, `frontend` |
+| Conteneurs | `voyago-backend`, `voyago-frontend` |
+| Volume (base SQLite) | `backend-data` (préfixé par Compose : `application-qa-training_backend-data`) |
+| Ports | frontend `4200` → 80, backend `3000` → 3000 |
+
+### Démarrer / arrêter
+
+```bash
+docker compose up --build            # build + démarre (logs au premier plan, Ctrl+C pour arrêter)
+docker compose up -d --build         # idem en arrière-plan (detached)
+docker compose up -d                 # démarre sans rebuild (images déjà construites)
+docker compose up -d backend         # ne démarre que le backend
+docker compose up -d --build --force-recreate   # recrée les conteneurs même sans changement
+
+docker compose stop                  # arrête les conteneurs (sans les supprimer)
+docker compose start                 # relance des conteneurs arrêtés
+docker compose restart               # redémarre tout (rejoue migrations + seed du backend)
+docker compose restart backend       # redémarre un seul service
+
+docker compose down                  # arrête ET supprime conteneurs + réseau (le volume est conservé)
+docker compose down -v               # idem + supprime le volume : base de données effacée
+docker compose down --rmi local      # idem + supprime les images construites par le compose
+```
+
+### Build
+
+```bash
+docker compose build                 # construit toutes les images
+docker compose build backend         # construit une seule image
+docker compose build --no-cache      # rebuild complet, sans cache (après un souci de dépendances)
+docker compose pull                  # met à jour les images de base distantes (node, nginx)
+
+docker build -t voyago-backend ./backend     # build manuel de l'image backend
+docker build -t voyago-frontend ./frontend   # build manuel de l'image frontend
+```
+
+### État et logs
+
+```bash
+docker compose ps                    # état des services (Up / Exited, ports)
+docker compose ps -a                 # inclut les conteneurs arrêtés
+docker compose top                   # processus qui tournent dans chaque conteneur
+docker compose logs                  # logs de tous les services
+docker compose logs -f               # suit les logs en direct
+docker compose logs -f backend       # suit les logs du backend uniquement
+docker compose logs --tail 100 backend   # 100 dernières lignes
+docker compose logs -t backend       # avec horodatage
+docker compose events                # flux d'événements Docker du projet
+docker stats                         # CPU / mémoire des conteneurs en direct
+```
+
+### Entrer dans un conteneur / exécuter une commande
+
+```bash
+docker compose exec backend sh       # shell dans le backend (alpine : sh, pas bash)
+docker compose exec frontend sh      # shell dans le frontend (nginx)
+docker exec -it voyago-backend sh    # idem via le nom du conteneur
+
+# Prisma / base de données (dans le backend)
+docker compose exec backend npx prisma migrate deploy   # applique les migrations
+docker compose exec backend npx prisma db seed          # rejoue le seed (données de démo)
+docker compose exec backend npx prisma migrate reset --force   # reset complet + seed
+docker compose exec backend npx prisma studio           # UI de la base (port non publié par défaut)
+
+# Lancer un conteneur jetable à partir du service (supprimé à la fin)
+docker compose run --rm backend sh
+docker compose run --rm backend npm test
+
+# Config nginx du frontend
+docker compose exec frontend nginx -t                   # vérifie la config
+docker compose exec frontend nginx -s reload            # recharge nginx
+```
+
+### Vérifications rapides (smoke tests)
+
+```bash
+curl -s http://localhost:3000/api/catalog/flights
+curl -s -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"alex.martin@voyago.demo","password":"Voyage2026"}'
+curl -I http://localhost:4200        # le frontend répond (nginx)
+```
+
+### Fichiers : copier depuis / vers un conteneur
+
+```bash
+docker compose cp backend:/app/prisma/dev.db ./dev.db.backup   # sauvegarde la base SQLite
+docker compose cp ./dev.db.backup backend:/app/prisma/dev.db   # la restaure (puis: docker compose restart backend)
+```
+
+> Attention : le backend **reseed la base à chaque démarrage**. Une base
+> restaurée est donc écrasée au prochain `restart` / `up`.
+
+### Volumes et données
+
+```bash
+docker volume ls                                       # liste les volumes
+docker volume inspect application-qa-training_backend-data   # détails (chemin, date)
+docker volume rm application-qa-training_backend-data  # supprime le volume (conteneurs arrêtés requis)
+docker compose down -v                                 # supprime conteneurs + volumes du projet
+```
+
+### Réseau
+
+```bash
+docker network ls                    # liste les réseaux
+docker compose port backend 3000     # port hôte associé au port 3000 du backend
+docker compose config                # affiche le compose final (variables résolues) et le valide
+docker compose config --services     # liste les services
+```
+
+### Images et conteneurs (commandes Docker de base)
+
+```bash
+docker ps                            # conteneurs en cours
+docker ps -a                         # tous les conteneurs
+docker images                        # images locales
+docker inspect voyago-backend        # détails complets d'un conteneur (JSON)
+docker logs -f voyago-backend        # logs d'un conteneur
+docker stop voyago-backend           # arrête un conteneur
+docker start voyago-backend          # démarre un conteneur arrêté
+docker restart voyago-backend        # redémarre un conteneur
+docker rm voyago-backend             # supprime un conteneur arrêté
+docker rm -f voyago-backend          # supprime un conteneur même en cours
+docker rmi <image>                   # supprime une image
+docker history <image>               # couches d'une image (taille de chaque étape)
+```
+
+### Nettoyage
+
+```bash
+docker container prune               # supprime les conteneurs arrêtés
+docker image prune                   # supprime les images orphelines (<none>)
+docker image prune -a                # supprime toutes les images non utilisées
+docker volume prune                  # supprime les volumes non utilisés
+docker network prune                 # supprime les réseaux non utilisés
+docker builder prune                 # vide le cache de build
+docker system df                     # espace disque utilisé par Docker
+docker system prune                  # nettoyage général (conteneurs, réseaux, images orphelines)
+docker system prune -a --volumes     # ⚠️ nettoyage total, y compris volumes : tout ce qui n'est pas utilisé
+```
+
+### Repartir de zéro (reset complet du projet)
+
+```bash
+docker compose down -v --rmi local   # supprime conteneurs, volume et images du projet
+docker compose build --no-cache      # reconstruit proprement
+docker compose up -d                 # relance avec une base neuve
+```
+
+### Dépannage
+
+| Symptôme | Commande / solution |
+|---|---|
+| `port is already allocated` (3000 / 4200) | Un `npm start` / `ng serve` local tourne déjà : l'arrêter, ou voir `lsof -i :3000` / `lsof -i :4200`, ou changer les ports publiés dans `docker-compose.yml` |
+| `Cannot connect to the Docker daemon` | Lancer Docker Desktop, puis `docker info` |
+| Le backend redémarre en boucle | `docker compose logs --tail 100 backend` |
+| Les changements de code ne sont pas pris en compte | Il n'y a pas de bind-mount : `docker compose up -d --build` pour reconstruire |
+| Données de démo corrompues / modifiées | `docker compose restart backend` (migrations + seed rejoués) ou `docker compose down -v` |
+| Build qui échoue de manière inexplicable | `docker compose build --no-cache` |
+| Le frontend affiche 502 sur `/api` | Le backend n'est pas encore prêt : `docker compose ps` puis `docker compose logs -f backend` |
+
 ## Comptes de démonstration
 
 | Rôle  | Email                     | Mot de passe |
