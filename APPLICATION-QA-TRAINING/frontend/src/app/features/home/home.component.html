@@ -29,15 +29,30 @@
           <span>Voyageurs</span>
           <div class="stepper">
             <button type="button" class="stepper-btn" data-testid="travelers-decrement" (click)="decrement()" aria-label="Retirer un voyageur">−</button>
-            <span class="stepper-value" data-testid="travelers-value">{{ travelers() }}</span>
+            <input
+              class="stepper-value"
+              data-testid="travelers-value"
+              type="number"
+              [ngModel]="travelers()"
+              (ngModelChange)="setTravelers($event)"
+              name="travelers"
+              aria-label="Nombre de voyageurs"
+            />
             <button type="button" class="stepper-btn" data-testid="travelers-increment" (click)="increment()" aria-label="Ajouter un voyageur">+</button>
           </div>
         </div>
 
-        <button class="btn btn-primary search-button" data-testid="search-submit" (click)="search()">
+        <button class="btn btn-primary search-button" data-testid="search-submit" [disabled]="travelersInvalid" (click)="search()">
           Rechercher →
         </button>
       </div>
+
+      @if (travelersInvalid) {
+        <p class="field-error" data-testid="travelers-error">
+          Entre {{ MIN_TRAVELERS }} et {{ MAX_TRAVELERS }} voyageurs pour lancer une recherche.
+        </p>
+      }
+
       <p class="search-hint">✓ Réservation flexible &nbsp; ✓ Prix transparents &nbsp; ✓ Support 24/7</p>
     </div>
 

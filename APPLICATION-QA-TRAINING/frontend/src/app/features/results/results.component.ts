@@ -16,6 +16,9 @@ type SortOption = 'recommended' | 'price-asc' | 'price-desc' | 'rating';
   styleUrl: './results.component.scss',
 })
 export class ResultsComponent implements OnInit {
+  readonly MIN_TRAVELERS = 1;
+  readonly MAX_TRAVELERS = 9;
+
   destination = '';
   departDate = '';
   returnDate = '';
@@ -47,7 +50,18 @@ export class ResultsComponent implements OnInit {
     });
   }
 
+  get travelersInvalid(): boolean {
+    return this.travelers < this.MIN_TRAVELERS || this.travelers > this.MAX_TRAVELERS;
+  }
+
   private load(): void {
+    if (this.travelersInvalid) {
+      this.loading = false;
+      this.flights = [];
+      this.hotels = [];
+      return;
+    }
+
     this.loading = true;
     this.error = '';
 

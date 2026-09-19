@@ -17,11 +17,10 @@ export class HomeComponent implements OnInit {
   departDate = this.defaultDepart();
   returnDate = this.defaultReturn();
 
-  // BUG_CONNU #2 (voir BUGS_CONNUS.md) : ce compteur "voyageurs" est géré à
-  // la main (pas un <input type="number" min="1">) et `decrement()` ne
-  // vérifie jamais qu'on reste au-dessus de 1. On peut donc atteindre 0,
-  // voire un nombre négatif, et lancer la recherche avec cette valeur :
-  // l'API accepte elle aussi 0 voyageur (cf. SearchQueryDto côté backend).
+  // Règle métier : entre 1 et 9 voyageurs par recherche (BUG_CONNU #2 fixé
+  // côté front ; le backend applique la même borne dans SearchQueryDto).
+  readonly MIN_TRAVELERS = 1;
+  readonly MAX_TRAVELERS = 9;
   travelers = signal(2);
 
   popularDestinations: Destination[] = [];
@@ -54,15 +53,27 @@ export class HomeComponent implements OnInit {
     return d.toISOString().slice(0, 10);
   }
 
+  get travelersInvalid(): boolean {
+    return this.travelers() < this.MIN_TRAVELERS || this.travelers() > this.MAX_TRAVELERS;
+  }
+
   increment(): void {
     this.travelers.update((v) => v + 1);
   }
 
   decrement(): void {
-    this.travelers.update((v) => v - 1);
+    this.travelers.update((v) => Math.max(0, v - 1));
+  }
+
+  setTravelers(value: number): void {
+    this.travelers.set(Number.isFinite(value) ? value : 0);
   }
 
   search(): void {
+    if (this.travelersInvalid) {
+      return;
+    }
+
     this.router.navigate(['/resultats'], {
       queryParams: {
         destination: this.destination || undefined,

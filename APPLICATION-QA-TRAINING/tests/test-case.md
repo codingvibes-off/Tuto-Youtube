@@ -18,9 +18,10 @@
 - **Type :** Nominal
 - **Préconditions :** L'utilisateur est sur la page d'accueil / recherche
 - **Étapes :**
-  1. Renseigner la ville de départ
-  2. Renseigner la ville d'arrivée
-  3. Choisir une date de départ (et retour si aller-retour)
+  1. Renseigner une destination
+  2. Renseigner une date de départ
+  3. Choisir une date de retour
+  4. Choisir un nombre de voyageur
   4. Cliquer sur "Rechercher"
 - **Résultat attendu :** Une liste de vols correspondants s'affiche, triée (ex. par prix ou horaire)
 
@@ -53,6 +54,36 @@
 - **Type :** Erreur
 - **Étapes :** Mode aller-retour, choisir une date retour < date départ
 - **Résultat attendu :** Message d'erreur, impossible de lancer la recherche
+
+### TC-VOY-01 — Nombre de voyageurs inférieur au minimum
+- **Type :** Erreur
+- **Donnée :** 0 voyageur
+- **Étapes :** Renseigner 0 voyageur puis cliquer sur "Rechercher"
+- **Résultat attendu :** La recherche est bloquée
+
+### TC-VOY-02 — Nombre de voyageurs au minimum
+- **Type :** Alternatif
+- **Donnée :** 1 voyageur
+- **Étapes :** Renseigner 1 voyageur puis cliquer sur "Rechercher"
+- **Résultat attendu :** La recherche est acceptée
+
+### TC-VOY-03 — Nombre de voyageurs nominal
+- **Type :** Nominal
+- **Donnée :** 5 voyageurs
+- **Étapes :** Renseigner 5 voyageurs puis cliquer sur "Rechercher"
+- **Résultat attendu :** La recherche est acceptée
+
+### TC-VOY-04 — Nombre de voyageurs au maximum
+- **Type :** Alternatif
+- **Donnée :** 9 voyageurs
+- **Étapes :** Renseigner 9 voyageurs puis cliquer sur "Rechercher"
+- **Résultat attendu :** La recherche est acceptée
+
+### TC-VOY-05 — Nombre de voyageurs supérieur au maximum
+- **Type :** Erreur
+- **Donnée :** 10 voyageurs
+- **Étapes :** Renseigner 10 voyageurs puis cliquer sur "Rechercher"
+- **Résultat attendu :** La recherche est bloquée
 
 ---
 
@@ -139,6 +170,6 @@
 
 | Fonctionnalité | Nominal | Alternatif | Erreur |
 |---|---|---|---|
-| Recherche de vol | TC-01 | TC-02 | TC-03, TC-04, TC-05, TC-06, TC-07 |
+| Recherche de vol | TC-01, TC-VOY-03 | TC-02, TC-VOY-02, TC-VOY-04 | TC-03, TC-04, TC-05, TC-06, TC-07, TC-VOY-01, TC-VOY-05 |
 | Sélection du voyage | TC-08, TC-12 | TC-09, TC-10 | TC-11 |
 | Finalisation | TC-13, TC-20 | TC-16 | TC-14, TC-15, TC-17, TC-18, TC-19 |

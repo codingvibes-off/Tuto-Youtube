@@ -1,12 +1,10 @@
 import { Type } from 'class-transformer';
-import { IsIn, IsInt, IsOptional, IsString } from 'class-validator';
+import { IsIn, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 
-// BUG_CONNU #2 (voir BUGS_CONNUS.md) : `travelers` est bien un entier
-// (@IsInt) mais aucune borne minimale n'est imposée ici (pas de @Min(1)).
-// Rien n'empêche non plus `returnDate` d'être antérieure à `departDate` :
-// il n'existe aucune validation croisée entre les deux champs.
-// -> une recherche avec 0 voyageur ou un retour avant le départ est acceptée
-// telle quelle par l'API.
+// BUG_CONNU #2 (voir BUGS_CONNUS.md) : le volet "voyageurs" est corrigé
+// (bornes 1-9 ci-dessous), mais rien n'empêche encore `returnDate` d'être
+// antérieure à `departDate` : il n'existe aucune validation croisée entre
+// les deux champs.
 export class SearchQueryDto {
   @IsOptional()
   @IsString()
@@ -27,6 +25,8 @@ export class SearchQueryDto {
   @IsOptional()
   @Type(() => Number)
   @IsInt()
+  @Min(1)
+  @Max(9)
   travelers?: number;
 
   @IsOptional()

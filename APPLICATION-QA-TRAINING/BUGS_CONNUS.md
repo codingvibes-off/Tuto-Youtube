@@ -35,28 +35,27 @@ donc pas pourquoi son inscription échoue.
 
 ## BUG_CONNU #2 — Valeur limite : voyageurs à 0 / dates incohérentes
 
+**Statut :** volet "voyageurs" corrigé (règle métier 1-9 voyageurs par
+recherche). Le volet "dates incohérentes" reste ouvert, voir plus bas.
+
 **Catégorie :** valeur limite mal gérée.
 
-**Où :**
-- Front (origine du bug) : [`frontend/src/app/features/home/home.component.ts`](frontend/src/app/features/home/home.component.ts) — méthode `decrement()`. Le compteur de voyageurs peut descendre à 0, voire en négatif : rien ne le bloque à 1.
-- Back (aucun garde-fou) :
-  - [`backend/src/catalog/dto/search-query.dto.ts`](backend/src/catalog/dto/search-query.dto.ts) — `travelers` n'a pas de `@Min(1)`, et rien ne compare `departDate`/`returnDate`.
-  - [`backend/src/cart/dto/add-cart-item.dto.ts`](backend/src/cart/dto/add-cart-item.dto.ts) — même absence de `@Min(1)` sur `travelers`.
+**Correction appliquée (voyageurs) :**
+- Front : [`frontend/src/app/features/home/home.component.ts`](frontend/src/app/features/home/home.component.ts) — le compteur `travelers` est un champ éditable (`data-testid="travelers-value"`, saisie libre au clavier en plus des boutons `-`/`+`) ; `travelersInvalid` détecte une valeur hors `[MIN_TRAVELERS=1, MAX_TRAVELERS=9]` et désactive alors le bouton `search-submit`, avec un message d'erreur (`data-testid="travelers-error"`) affiché sous la grille de recherche dans [`home.component.html`](frontend/src/app/features/home/home.component.html).
+- Front (garde-fou défensif) : [`frontend/src/app/features/results/results.component.ts`](frontend/src/app/features/results/results.component.ts) — si `/resultats` est atteint avec un `travelers` hors de `[1, 9]` (URL forgée), le chargement est bloqué et l'alerte `data-testid="travelers-warning"` l'indique clairement (elle ne dit plus "la recherche a été exécutée quand même").
+- Back : [`backend/src/catalog/dto/search-query.dto.ts`](backend/src/catalog/dto/search-query.dto.ts) et [`backend/src/cart/dto/add-cart-item.dto.ts`](backend/src/cart/dto/add-cart-item.dto.ts) — `travelers` a maintenant `@Min(1)` et `@Max(9)`, donc l'API rejette ces valeurs avec un `400`.
 
-**Comment le déclencher :** sur la page d'accueil, cliquer sur "−" jusqu'à
-atteindre 0 voyageur, puis lancer une recherche. Le message d'avertissement
-visible (`data-testid="travelers-warning"` sur `/resultats`) prévient qu'il
-y a un souci, **mais la recherche s'exécute quand même**, et rien
-n'empêche d'aller jusqu'au bout : ajout au panier avec 0 voyageur possible
-(le sous-total affiche alors 0 €), paiement, et réservation confirmée avec
-0 voyageur — visible ensuite dans l'espace admin.
+**Cas de test associés (analyse aux valeurs limites) :**
 
-De la même façon, rien ne vérifie qu'une date de retour choisie sur
-l'accueil est postérieure à la date de départ.
 
-**Pourquoi c'est un bon cas de test :** c'est une valeur limite (0 est la
-frontière juste sous le minimum métier attendu de 1) non gérée à la fois
-côté UI et côté API — deux couches à corriger, pas une seule.
+**Non couvert par ce correctif :** la mise à jour de la quantité de
+voyageurs *dans le panier* (`cart-increment-*` / `cart-decrement-*` dans
+[`cart.component.html`](frontend/src/app/features/cart/cart.component.html), route `PATCH /api/cart/items/:id` via [`update-cart-item.dto.ts`](backend/src/cart/dto/update-cart-item.dto.ts)) n'a pas été borné — elle peut encore descendre à 0. À traiter dans un épisode dédié si besoin.
+
+**Bug restant — dates incohérentes :** rien ne vérifie qu'une date de
+retour choisie sur l'accueil est postérieure à la date de départ, ni côté
+front ni côté back (`SearchQueryDto`). Toujours reproductible et toujours
+un bon cas de test aux valeurs limites / cas négatif.
 
 ---
 

@@ -12,12 +12,13 @@
     <button class="btn btn-outline" data-testid="modify-search" (click)="modifySearch()">Modifier la recherche</button>
   </div>
 
-  @if (travelers < 1) {
+  @if (travelersInvalid) {
     <div class="alert alert-error travelers-warning" data-testid="travelers-warning">
-      Nombre de voyageurs invalide ({{ travelers }}). La recherche a tout de même été exécutée.
+      Nombre de voyageurs invalide ({{ travelers }}). La recherche a été bloquée : choisissez entre {{ MIN_TRAVELERS }} et {{ MAX_TRAVELERS }} voyageurs.
     </div>
   }
 
+  @if (!travelersInvalid) {
   <div class="results-layout">
     <aside class="filters card">
       <p class="filter-title">Filtrer par</p>
@@ -117,4 +118,5 @@
       }
     </div>
   </div>
+  }
 </section>

@@ -84,12 +84,34 @@
 .stepper-value {
   font-weight: 700;
   font-size: 14px;
-  min-width: 20px;
+  width: 36px;
   text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  -moz-appearance: textfield;
+}
+
+.stepper-value::-webkit-outer-spin-button,
+.stepper-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field-error {
+  margin: 14px 2px 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--error, #e5484d);
 }
 
 .search-button {
   height: 46px;
+}
+
+.search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .search-hint {

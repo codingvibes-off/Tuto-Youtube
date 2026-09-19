@@ -1,4 +1,4 @@
-import { IsIn, IsInt, IsOptional, IsString } from 'class-validator';
+import { IsIn, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 
 export class AddCartItemDto {
   @IsIn(['FLIGHT', 'HOTEL'])
@@ -7,10 +7,9 @@ export class AddCartItemDto {
   @IsInt()
   refId: number;
 
-  // BUG_CONNU #2 (voir BUGS_CONNUS.md) : pas de @Min(1) ici non plus, à
-  // l'image de SearchQueryDto. Une réservation à 0 voyageur peut donc aller
-  // jusqu'au bout du tunnel d'achat.
   @IsInt()
+  @Min(1)
+  @Max(9)
   travelers: number;
 
   @IsString()
